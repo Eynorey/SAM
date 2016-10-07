@@ -1,5 +1,6 @@
-# SE
-Software engineering project
+# Skill Access Manager - S.A.M.
+
+Our Software Engineering Project
 
 Useful Links:
 
