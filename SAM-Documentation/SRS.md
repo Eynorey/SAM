@@ -54,7 +54,7 @@ The requirements specified in the document are to be applied to the SAM Project.
 ACTORS: There are three types of actors: __guests__, __users__ and __admins__.
 
 * Guests – visitors, who either do not have a personal account or are not logged into their profile
-* Users – registered SAM-users
+* Users – logged in SAM-users
 * Admins – (extends users) initially SAM-developers, later on a support team with enhanced abilities on the website.
 
 SUBSYSTEMS: There are four subsystems to the platform: __user system__, __course system__, __dashboard__ and __admin console__. 
@@ -167,7 +167,8 @@ An admin has the power to punish a user for violation of Terms and Conditions pr
 •	specify measurable task times for typical tasks or base the new system’s usability requirements on other systems that the users know and like
 •	specify requirement to conform to common usability standards, such as IBM’s CUA standards Microsoft’s GUI standards]
 #### 3.2.1	<Usability Requirement One>
-[The requirement description goes here.]
+
+
 ### 3.3	Reliability 
 [Requirements for reliability of the system should be specified here. Some suggestions follow:
 •	Availability—specify the percentage of time available ( xx.xx%), hours of use, maintenance access, degraded mode operations, and so on.
@@ -224,7 +225,7 @@ n/a
 
 #### 3.9.3	Software Interfaces
 
-tbd
+SAM should be running in all common Browsers like Firefox, Chrome, Edge, Internet Explorer and Safari. 
 
 #### 3.9.4	Communications Interfaces
 
@@ -240,7 +241,7 @@ tbd
 
 ### 3.12	Applicable Standards
 
-tbd
+A lot of Clean Code concepts will be used.
 
 ## 4.	Supporting Information
 
