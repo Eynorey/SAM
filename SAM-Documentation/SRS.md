@@ -81,7 +81,7 @@ The following document will provide all the requirement information connected to
 * Reliability
 * Performance
 * Supportability
-* Design constraints 
+* Design constraints
 
 All the externally obtained components, relevant interfaces and licensing requirements as well as legal disclaimers and standards (if applicable) are going to be listed in chapters 3.8 through 3.12. Chapter 4 will provide the reader with the supporting information for the present document.
 
@@ -101,67 +101,67 @@ We at SAM believe that everyone has some skills to offer. Something you do as a 
 
 ![](../uploads/UML/uml.svg)
 
-## 3.	Specific Requirements 
+## 3.	Specific Requirements
 
 ### 3.1	Functionality
 
-The overall use case diagram, which gives an overview for the project as a whole, devides SAM-System into four different blocks or subsystems: 
+The overall use case diagram, which gives an overview for the project as a whole, devides SAM-System into four different blocks or subsystems:
 * User system
 * Course system
 * Dashboard
 * Admin console
 
-These are going to represent the organizational structure of the present chapter. Each use case covered in the diagram is going to be described in a separate section of a corresponding block with a functional requirements connected to the use case in question. 
+These are going to represent the organizational structure of the present chapter. Each use case covered in the diagram is going to be described in a separate section of a corresponding block with a functional requirements connected to the use case in question.
 
 #### 3.1.1	User System
 
 ##### Register
-Any unregistered user (guest) is able to create an account (register) on the SAM-Page by providing the following information: 
+Any unregistered user (guest) is able to create an account (register) on the SAM-Page by providing the following information:
 
 - name
 - e-mail
 - password
 
-Before the registration can come into force, the user is asked to agree to the Terms and Conditions provided by the SAM Initiative and confirm his e-mail address by following a link. After the e-mail has been confirmed a guest can log into his profile. 
+Before the registration can come into force, the user is asked to agree to the Terms and Conditions provided by the SAM Initiative and confirm his e-mail address by following a link. After the e-mail has been confirmed a guest can log into his profile.
 ##### Log In
 Any registered guest can perform a log in operation. Inserting correct registration data in the corresponding fields opens access to a user profile on the SAM platform.  
 ##### Log out
 Logged in users can change their role to "guest" by clicking on the "Log out" button.
 ##### Manage Account
-Any logged in user can add, edit or delete personal information in his profile. 
+Any logged in user can add, edit or delete personal information in his profile.
 
 #### 3.1.2	Course System
 
 ##### Search Available Courses
-Any platform visitor (guest/admin/user) is able to see and navigate the list of courses offered by SAM-users. These can be searched and sorted by any relevant criteria (such as subject, name or tutor). General information about each course can be obtained from the list, whereas detailed course discription is shown after a click on the chosen course. 
+Any platform visitor (guest/admin/user) is able to see and navigate the list of courses offered by SAM-users. These can be searched and sorted by any relevant criteria (such as subject, name or tutor). General information about each course can be obtained from the list, whereas detailed course discription is shown after a click on the chosen course.
 ##### Book Course
-Any user can book a course, as long as his credit points cover the costs of the course and the course is taking place any time after the booking operation has been performed. 
+Any user can book a course, as long as his credit points cover the costs of the course and the course is taking place any time after the booking operation has been performed.
 ##### Offer Course
-Any user can offer a course by giving detailed information about it and defining point in time, when the course will take place. 
+Any user can offer a course by giving detailed information about it and defining point in time, when the course will take place.
 ##### Rate Course
-Users, who partisipated in a SAM-course, can rate it by filling in a short questionnaire about their experience. 
+Users, who partisipated in a SAM-course, can rate it by filling in a short questionnaire about their experience.
 
 #### 3.1.3	Dashboard
 
 ##### See Available Credits
-Credit Points or credits are users financial resources. Registering on the platform (see chapter 3.1.1.1) provides the new user with a start capital which can be spent on available courses (see chapter 3.1.2.2). Further credits can be earned by giving courses. The dashboard interface provides the user with information about his Credit Points account.   
+Credit Points or credits are users financial resources. Registering on the platform (see chapter 3.1.1.1) provides the new user with a start capital which can be spent on available courses (see chapter 3.1.2.2). Further credits can be earned by giving courses. The dashboard interface provides the user with information about his Credit Points account.
 ##### See Recommended Courses
-Depending on the information provided in the profile (see chapter 3.1.1.4), SAM can put together a personalized list of courses, which might be interesting for the user. These are accessible from the dashboard interface. 
+Depending on the information provided in the profile (see chapter 3.1.1.4), SAM can put together a personalized list of courses, which might be interesting for the user. These are accessible from the dashboard interface.
 ##### Check Course Ratings
-Dashboard provides logged in users with the rating of the courses they have given in the past, based on the reviews of those who attended these courses (see chapter 3.1.2.4). 
+Dashboard provides logged in users with the rating of the courses they have given in the past, based on the reviews of those who attended these courses (see chapter 3.1.2.4).
 ##### See Skill Tree
-Any user can track his or her progress in form of a skill tree, which is developed by SAM to visualize the knowledge obtained while using the platform. 
+Any user can track his or her progress in form of a skill tree, which is developed by SAM to visualize the knowledge obtained while using the platform.
 ##### See Schedule
-All the booked and offered courses, which take place at any point in the future can be seen in the schedule. Schedule is a part of the dashbord interface and helps users to plan their time by reminding them about the upcoming events.  
+All the booked and offered courses, which take place at any point in the future can be seen in the schedule. Schedule is a part of the dashbord interface and helps users to plan their time by reminding them about the upcoming events.
 
 #### 3.1.4	Admin console
 
 ##### Moderate Courses
-A user with admin privileges can disapprove of any course offered on the platform based on the guidelines provided by the SAM Initiative. The denounced course has to be removed from the platform or edited to comply with the guidelines. 
+A user with admin privileges can disapprove of any course offered on the platform based on the guidelines provided by the SAM Initiative. The denounced course has to be removed from the platform or edited to comply with the guidelines.
 ##### Moderate Users
-An admin has the power to punish a user for violation of Terms and Conditions provided by the SAM Initiative. 
+An admin has the power to punish a user for violation of Terms and Conditions provided by the SAM Initiative.
 
-### 3.2	Usability 
+### 3.2	Usability
 [This section includes all those requirements that affect usability. For example,
 •	specify the required training time for a normal users and a power user to become productive at particular operations
 •	specify measurable task times for typical tasks or base the new system’s usability requirements on other systems that the users know and like
@@ -169,7 +169,7 @@ An admin has the power to punish a user for violation of Terms and Conditions pr
 #### 3.2.1	<Usability Requirement One>
 
 
-### 3.3	Reliability 
+### 3.3	Reliability
 [Requirements for reliability of the system should be specified here. Some suggestions follow:
 •	Availability—specify the percentage of time available ( xx.xx%), hours of use, maintenance access, degraded mode operations, and so on.
 •	Mean Time Between Failures (MTBF) — this is usually specified in hours, but it could also be specified in terms of days, months or years.
@@ -200,7 +200,7 @@ An admin has the power to punish a user for violation of Terms and Conditions pr
 [Describes the requirements, if any, for o-line user documentation, help systems, help about notices, and so forth.]
 ### 3.8	Purchased Components
 
-As for now, we will be using the free options provided by Microsoft Azure and other completely free tools. If we find ourselves needing more, we will switch to a paid option and update this section accordingly.	
+As for now, we will be using the free options provided by Microsoft Azure and other completely free tools. If we find ourselves needing more, we will switch to a paid option and update this section accordingly.
 
 ### 3.9	Interfaces
 
@@ -208,15 +208,15 @@ tbd
 
 #### 3.9.1	User Interfaces
 
-There will be the following user interfaces implemented which will soloely be accessible through the web:		
- * **Landing page** showing available courses to guests of the site		
- * **Login screen** enabling users to register or log in		
- * **Dashboard**		
-   * display recommended courses		
-   * book courses		
-   * offer courses		
-   * show profile info		
- * **Settings** to edit profile or account information		
+There will be the following user interfaces implemented which will soloely be accessible through the web:
+ * **Landing page** showing available courses to guests of the site
+ * **Login screen** enabling users to register or log in
+ * **Dashboard**
+   * display recommended courses
+   * book courses
+   * offer courses
+   * show profile info
+ * **Settings** to edit profile or account information
  * **Admin Console** to moderate courses and user profiles
 
 #### 3.9.2	Hardware Interfaces
@@ -225,7 +225,7 @@ n/a
 
 #### 3.9.3	Software Interfaces
 
-SAM should be running in all common Browsers like Firefox, Chrome, Edge, Internet Explorer and Safari. 
+SAM should be running in all common Browsers like Firefox, Chrome, Edge, Internet Explorer and Safari.
 
 #### 3.9.4	Communications Interfaces
 
