@@ -60,7 +60,7 @@ We at SAM believe that everyone has some skills to offer. Something you do as a 
 
 ### 2.2	Use Case Diagram
 
-__[INSERT UML]__
+![](../uploads/UML/uml.svg)
 
 ## 3.	Specific Requirements 
 
@@ -118,24 +118,53 @@ These are going to represent the organizational structure of the present chapter
 [The requirement description goes here.]
 ### 3.7	On-line User Documentation and Help System Requirements
 [Describes the requirements, if any, for o-line user documentation, help systems, help about notices, and so forth.]
+
 ### 3.8	Purchased Components
-[This section describes any purchased components to be used with the system, any applicable licensing or usage restrictions, and any associated compatibility and interoperability or interface standards.]
+
+As for now, we will be using the free options provided by Microsoft Azure and other completely free tools. If we find ourselves needing more, we will switch to a paid option and update this section accordingly.
+
+
 ### 3.9	Interfaces
-[This section defines the interfaces that must be supported by the application. It should contain adequate specificity, protocols, ports and logical addresses, and the like, so that the software can be developed and verified against the interface requirements.]
+
+tbd
+
 #### 3.9.1	User Interfaces
-[Describe the user interfaces that are to be implemented by the software.]
+
+There will be the following user interfaces implemented which will soloely be accessible through the web:
+* **Landing page** showing available courses to guests of the site
+* **Login screen** enabling users to register or log in
+* **Dashboard**
+  * display recommended courses
+  * book courses
+  * offer courses
+  * show profile info
+* **Settings** to edit profile or account information
+* **Admin Console** to moderate courses and user profiles
+
 #### 3.9.2	Hardware Interfaces
-[This section defines any hardware interfaces that are to be supported by the software, including logical structure, physical addresses, expected behavior, and so on.]
+
+n/a
+
 #### 3.9.3	Software Interfaces
-[This section describes software interfaces to other components of the software system. These may be purchased components, components reused from another application or components being developed for subsystems outside of the scope of this SRS but with which this software application must interact.]
+
+tbd
+
 #### 3.9.4	Communications Interfaces
-[Describe any communications interfaces to other systems or devices such as local area networks, remote serial devices, and so forth.]
+
+The service will be hosted on and will be accessible only through the internet, thus an internet conneciton is required.
+
 ### 3.10	Licensing Requirements
-[Defines any licensing enforcement requirements or other usage restriction requirements that are to be exhibited by the software.]
+
+Under public GitHub license.
+
 ### 3.11	Legal, Copyright, and Other Notices
-[This section describes any necessary legal disclaimers, warranties, copyright notices, patent notices, wordmark, trademark, or logo compliance issues for the software.]
+
+tbd
+
 ### 3.12	Applicable Standards
-[This section describes by reference any applicable standard and the specific sections of any such standards which apply to the system being described. For example, this could include legal, quality and regulatory standards, industry standards for usability, interoperability, internationalization, operating system compliance, and so forth.]
+
+tbd
+
 ## 4.	Supporting Information
 [The supporting information makes the SRS easier to use.  It includes:
 •	Table of contents
