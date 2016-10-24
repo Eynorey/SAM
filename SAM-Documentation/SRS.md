@@ -1,5 +1,5 @@
 ***
-<p style="font-size:40px" align="right">SAM Initiative</p>
+### <div align="right">SAM Initiative</div>
 ***
 <br>
 <br>
@@ -8,22 +8,57 @@
 Software Requirements Specification<br>
 For Skill Access Manager Application </h2>
 
-<p align="right">Version 1.0</p>
+<div align="right">Version 1.0</div>
 
-<p align="center"><font size="10">Software Requirements Specification</font></p>
 <br>
+<br>
+<br>
+
+## Table of Contents
+
+1. [Introduction](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#1---introduction)
+  1. [Purpose](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#11-purpose)
+  2. [Scope](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#12-scope)
+  3. [Definitions, Acronyms, and Abbreviations](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#13-definitions-acronyms-and-abbreviations)
+  4. [References](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#14-references)
+  5. [Overview](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#15-overview)
+2. [Overall Description](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#2---overall-description)
+  1. [Vision](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#21-vision)
+  2. [Use Case Diagram](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#22-use-case-diagram)
+3. [Specific Requirements](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#3---specific-requirements)
+  1. [Functionality](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#31-functionality)
+  2. [Usability](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#32-usability)
+  3. [Reliability](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#33-reliability)
+  4. [Performance](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#34-performance)
+  5. [Supportability](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#35-supportability)
+  6. [Design constraints](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#36-design-constraints)
+  7. [On-line User Documentation and Help System Requirements](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#37-on-line-user-documentation-and-help-system-requirements)
+  8. [Purchased Components](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#38-purchased-components)
+  9. [Interfaces](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#39-interfaces)
+  10. [Licensing Requirements](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#310----licensing-requirements)
+  11. [Legal, Copyright, and Other Notices](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#311----legal-copyright-and-other-notices)
+  12. [Applicable Standards](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#312----applicable-standards)
+4. [Supporting Information](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#4---supporting-information) 
+  
+<br>
+<br>
+###<div align="center"><font size="10">Software Requirements Specification</font></div>
+<br>
+
 ## 1.	Introduction
 ### 1.1	Purpose
 This Software Requirements Specification was created to collect and organize the requirements for the Skill Access Management Application. It includes a thorough description of the expected functionality for the project concerned, as well as the nonfunctional requirements. These are crucial for the purposes of establishing the understanding between the suppliers of the software and the customers, as well as minimizing the risks connected to the misinterpreting customer’s expectations. The document will furthermore provide the basis for costs-estimation and later validation of the results achieved.  
 ### 1.2	Scope
 The requirements specified in the document are to be applied to the SAM Project. The Skill Access Manager is a free-to-use social platform, which provides a common space for people who want to share their knowledge and profit from other people’s expertise.
-<br>
+
 ACTORS: There are three types of actors: __guests__, __users__ and __admins__.
+
 * Guests – visitors, who either do not have a personal account or are not logged into their profile
 * Users – registered SAM-users
 * Admins – (extends users) initially SAM-developers, later on a support team with enhanced abilities on the website.
 
 SUBSYSTEMS: There are four subsystems to the platform: __user system__, __course system__, __dashboard__ and __admin console__. 
+
 * User system – allows the actors to be identified as users/guests/admins,  store personal information relevant to the platform. 
 * Course system – allows users to create new, search or book available and rate their attended courses.
 * Dashboard – gives users an overview of their progress as tutors (depending on given courses) or students (depending on attended courses), scheduled and recommended classes and account balance. 
@@ -41,6 +76,7 @@ Definitions, Acronyms and Abbreviations relevant for the interpretation of the p
 ### 1.5	Overview
 
 The following document will provide all the requirement information connected to the SAM-Project. It will introduce the overall description of the project, based on the vision and a use case diagram. In order to achieve a high level of specification in defining the requirements, all the functions presented in the diagram are going to be examined separately (see chapter 3.1). Further requirements are going to be divided into the following five categories: 
+
 * Usability
 * Reliability
 * Performance
@@ -54,13 +90,16 @@ All the externally obtained components, relevant interfaces and licensing requir
 ### 2.1	Vision
 
 Long before the digital era, the world has come to realize that knowledge is the key to any type of development. However, by the end of the 20th century the essence of knowledge itself has been changed dramatically. The new level of information accessibility made it into common property rather than a privilege. The fact, that a kid with a smartphone is no worse than a walking encyclopedia, caused a focus shift from information to skill.
+
 Today, Internet can offer a broad variety of information, but fails to teach you how to apply it. Acquiring practical skills is therefore still associated with a new expense item in the budget and having to leave the comfort of your own home. Our platform is designed to change that.
+
 Skill Access Manager, or SAM, will become a network connecting you to those who are ready to share practical knowledge in hundreds of different spheres and those, who want to learn exactly what you have to offer. Earn points by helping your peers out with whatever you like doing most, whether it is playing piano, skating, or solving mathematical equations. Get rated by your students and invest the points earned to learn from others. It is really as simple as that.
+
 We at SAM believe that everyone has some skills to offer. Something you do as a hobby, or without even thinking about it twice, is what others are dying to learn. Use that to become the better version of yourself. Acquire new skills and share them with others. Smartify yourself. Today. With SAM.
 
 ### 2.2	Use Case Diagram
 
-![](../uploads/UML/uml.svg)
+__[INSERT UML]__
 
 ## 3.	Specific Requirements 
 
@@ -81,6 +120,25 @@ These are going to represent the organizational structure of the present chapter
 ##### 3.1.1.3 Log out
 ##### 3.1.1.4 Manage Account
 
+#### 3.1.2	Course System
+
+##### 3.1.2.1	Search Available Courses
+##### 3.1.2.2 Book Course
+##### 3.1.2.3 Offer Course
+##### 3.1.2.4 Rate Course
+
+#### 3.1.3	Dashboard
+
+##### 3.1.3.1	See Available Credits
+##### 3.1.3.2 See Recommended Courses
+##### 3.1.3.3 Check Course Ratings
+##### 3.1.3.4 See Skill Tree
+##### 3.1.3.5 See Schedule
+
+#### 3.1.1	Admin console
+
+##### 3.1.1.1 Moderate Courses
+##### 3.1.1.2 Moderate Users
 
 ### 3.2	Usability 
 [This section includes all those requirements that affect usability. For example,
@@ -118,53 +176,24 @@ These are going to represent the organizational structure of the present chapter
 [The requirement description goes here.]
 ### 3.7	On-line User Documentation and Help System Requirements
 [Describes the requirements, if any, for o-line user documentation, help systems, help about notices, and so forth.]
-
 ### 3.8	Purchased Components
-
-As for now, we will be using the free options provided by Microsoft Azure and other completely free tools. If we find ourselves needing more, we will switch to a paid option and update this section accordingly.
-
-
+[This section describes any purchased components to be used with the system, any applicable licensing or usage restrictions, and any associated compatibility and interoperability or interface standards.]
 ### 3.9	Interfaces
-
-tbd
-
+[This section defines the interfaces that must be supported by the application. It should contain adequate specificity, protocols, ports and logical addresses, and the like, so that the software can be developed and verified against the interface requirements.]
 #### 3.9.1	User Interfaces
-
-There will be the following user interfaces implemented which will soloely be accessible through the web:
-* **Landing page** showing available courses to guests of the site
-* **Login screen** enabling users to register or log in
-* **Dashboard**
-  * display recommended courses
-  * book courses
-  * offer courses
-  * show profile info
-* **Settings** to edit profile or account information
-* **Admin Console** to moderate courses and user profiles
-
+[Describe the user interfaces that are to be implemented by the software.]
 #### 3.9.2	Hardware Interfaces
-
-n/a
-
+[This section defines any hardware interfaces that are to be supported by the software, including logical structure, physical addresses, expected behavior, and so on.]
 #### 3.9.3	Software Interfaces
-
-tbd
-
+[This section describes software interfaces to other components of the software system. These may be purchased components, components reused from another application or components being developed for subsystems outside of the scope of this SRS but with which this software application must interact.]
 #### 3.9.4	Communications Interfaces
-
-The service will be hosted on and will be accessible only through the internet, thus an internet conneciton is required.
-
+[Describe any communications interfaces to other systems or devices such as local area networks, remote serial devices, and so forth.]
 ### 3.10	Licensing Requirements
-
-Under public GitHub license.
-
+[Defines any licensing enforcement requirements or other usage restriction requirements that are to be exhibited by the software.]
 ### 3.11	Legal, Copyright, and Other Notices
-
-tbd
-
+[This section describes any necessary legal disclaimers, warranties, copyright notices, patent notices, wordmark, trademark, or logo compliance issues for the software.]
 ### 3.12	Applicable Standards
-
-tbd
-
+[This section describes by reference any applicable standard and the specific sections of any such standards which apply to the system being described. For example, this could include legal, quality and regulatory standards, industry standards for usability, interoperability, internationalization, operating system compliance, and so forth.]
 ## 4.	Supporting Information
 [The supporting information makes the SRS easier to use.  It includes:
 •	Table of contents
