@@ -162,42 +162,69 @@ A user with admin privileges can disapprove of any course offered on the platfor
 An admin has the power to punish a user for violation of Terms and Conditions provided by the SAM Initiative.
 
 ### 3.2	Usability
-[This section includes all those requirements that affect usability. For example,
-•	specify the required training time for a normal users and a power user to become productive at particular operations
-•	specify measurable task times for typical tasks or base the new system’s usability requirements on other systems that the users know and like
-•	specify requirement to conform to common usability standards, such as IBM’s CUA standards Microsoft’s GUI standards]
-#### 3.2.1	<Usability Requirement One>
 
+We plan on designing the user interface in an intuitive and self-explaining way, so that there will be no need for further documents or tutorials on how to use the site.
+
+Once we start looking at the UI and workflows, we will also have a look at best practices and try to adjust to common usability standards, such as IBM’s CUA standards and Microsoft’s GUI standards.
+
+Optimizing efficnency is not a priority, as the platform should mainly be fun and easy to use, so there will be no need to provide dedicated power user options as this is not a productivity tool.
+
+#### 3.2.1	Requirement One: no training time needed
+
+The goal is that a user registers, maybe gets some hints on where he can do the most important things to get started, and will be able to use the platform without any further hurdles right away.
+
+#### 3.2.2 Requirement Two: No function overload
+
+The platform will do amny things of its own, so there is no need to create either large amounts of seetings, nor an overwhelming toolkit of functions which would need explanation for the user.
+
+#### 3.2.3 Requirement Three: Natural workflow
+
+The platform and its functionalities should feel natural to use, and user should find the things they want to do where they expect them, and at the first place they look for them.
+
+But of course, we might be blinded by what we think is best, or we might tink we know what will be easiest to use, but the truth is that we will need to invite people unknown to the platform, give them specific tasks and observe their behavior.
+After that, we can adjust our workflow design accordingly.
 
 ### 3.3	Reliability
-[Requirements for reliability of the system should be specified here. Some suggestions follow:
-•	Availability—specify the percentage of time available ( xx.xx%), hours of use, maintenance access, degraded mode operations, and so on.
-•	Mean Time Between Failures (MTBF) — this is usually specified in hours, but it could also be specified in terms of days, months or years.
-•	Mean Time To Repair (MTTR)—how long is the system allowed to be out of operation after it has failed?
-•	Accuracy—specifies precision (resolution) and accuracy (by some known standard) that is required in the system’s output.
-•	Maximum Bugs or Defect Rate—usually expressed in terms of bugs per thousand lines of code (bugs/KLOC) or bugs per function-point( bugs/function-point).
-•	Bugs or Defect Rate—categorized in terms of minor, significant, and critical bugs: the requirement(s) must define what is meant by a “critical” bug; for example, complete loss of data or a complete inability to use certain parts of the system’s functionality.]
-#### 3.3.1	<Reliability Requirement One>
-[The requirement description.]
+
+The server will ideally be available 24/7. Though as of now, we have little impact on this as the free Azure plan works the following way:
+
+There is a certain amount of memory and computing power available on each server, each customer gets their portion of it, depending on what they pay for. The remaining resources (also while the machines of the paying customers are idle) will be distributed over free plan users such as us. So depending on the load there is on the servers by paying customers, our service might be running more or less stable and performing accordingly.
+
+Azure does deliver detailed insights and analytics on performance, failed HTTP requests, internal server errors, reliability and so on.
+
+Should the platform grow, this might not be an option anymore at some point, forcing us to move to a paid plan.
+
+As development begins and we will have some experiences on how this behaves, we will have better understanding of the reliability.
+
 ### 3.4	Performance
-[The system’s performance characteristics are outlined in this section. Include specific response times. Where applicable, reference related Use Cases by name.
-•	Response time for a transaction (average, maximum)
-•	Throughput, for example, transactions per second
-•	Capacity, for example, the number of customers or transactions the system can accommodate
-•	Degradation modes (what is the acceptable mode of operation when the system has been degraded in some manner)
-•	Resource utilization, such as memory, disk, communications, and so forth.
-#### 3.4.1	<Performance Requirement One>
-[The requirement description goes here.]
+
+tbd
+
+as we haven't started developing at the time of writing, specific thoughts on performance have not been given yet. As we start developing, there will be both single function time measurements and load tests.
+
+We will update this document once we have a test environment set up which deliveres first results and insights.
+
 ### 3.5	Supportability
-[This section indicates any requirements that will enhance the supportability or maintainability of the system being built, including coding standards, naming conventions, class libraries, maintenance access, and maintenance utilities.]
-#### 3.5.1	<Supportability Requirement One>
-[The requirement description goes here.]
+
+In order to maintain supportability and readability of our code, we will try to adopt the latest clean code standard as far as possible and establish an understandable naming convention which will be used throughout the project.
+
+As the website will be hosted on Azure and probably be managed via the Team Foundation Services platform, it will be easy to upgrade the frameworks and tools on which the application is running, as integrated plug-ins or tools for CI and so forth will be updated to newer versions automatically.
+
 ### 3.6	Design Constraints
-[This section indicates any design constraints on the system being built. Design constraints represent design decisions that have been mandated and must be adhered to.  Examples include software languages, software process requirements, prescribed use of developmental tools, architectural and design constraints, purchased components, class libraries, and so on.]
-#### 3.6.1	<Design Constraint One>
-[The requirement description goes here.]
+
+tbd.
+
+All we know at the moment is that we will focus on providing both a modern but also a little playful or fun design, as this will be a platform where learning will also be fun and very social.
+
+This page will be updated once we decided on technologies and programming languages regarding frontend and design.
+
 ### 3.7	On-line User Documentation and Help System Requirements
-[Describes the requirements, if any, for o-line user documentation, help systems, help about notices, and so forth.]
+
+As descvibed earier under the topic of [Usability](#32-usability), the goal is to eliminate the need for a help system or a documentation by delivering an intuitive and self-explaining user interface.
+
+However, at some points it might be necessary to use helping popups explaining a certain functionality.
+One could also think of a small kind of walkthrough or tutorial for newly registered users, highlighting the first few steps to get started.
+
 ### 3.8	Purchased Components
 
 As for now, we will be using the free options provided by Microsoft Azure and other completely free tools. If we find ourselves needing more, we will switch to a paid option and update this section accordingly.
