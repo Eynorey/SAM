@@ -116,29 +116,50 @@ These are going to represent the organizational structure of the present chapter
 #### 3.1.1	User System
 
 ##### 3.1.1.1	Register
+Any unregistered user (guest) is able to create an account (register) on the SAM-Page by providing the following information: 
+
+- name
+- e-mail
+- password
+
+Before the registration can come into force, the user is asked to agree to the Terms and Conditions provided by the SAM Initiative and confirm his e-mail address by following a link. After the e-mail has been confirmed a guest can log into his profile. 
 ##### 3.1.1.2 Log In
+Any registered guest can perform a log in operation. Inserting correct registration data in the corresponding fields opens access to a user profile on the SAM platform.  
 ##### 3.1.1.3 Log out
+Logged in users can change their role to "guest" by clicking on the "Log out" button.
 ##### 3.1.1.4 Manage Account
+Any logged in user can add, edit or delete personal information in his profile. 
 
 #### 3.1.2	Course System
 
 ##### 3.1.2.1	Search Available Courses
+Any platform visitor (guest/admin/user) is able to see and navigate the list of courses offered by SAM-users. These can be searched and sorted by any relevant criteria (such as subject, name or tutor). General information about each course can be obtained from the list, whereas detailed course discription is shown after a click on the chosen course. 
 ##### 3.1.2.2 Book Course
+Any user can book a course, as long as his credit points cover the costs of the course and the course is taking place any time after the booking operation has been performed. 
 ##### 3.1.2.3 Offer Course
+Any user can offer a course by giving detailed information about it and defining point in time, when the course will take place. 
 ##### 3.1.2.4 Rate Course
+Users, who partisipated in a SAM-course, can rate it by filling in a short questionnaire about their experience. 
 
 #### 3.1.3	Dashboard
 
 ##### 3.1.3.1	See Available Credits
+Credit Points or credits are users financial resources. Registering on the platform (see chapter 3.1.1.1) provides the new user with a start capital which can be spent on available courses (see chapter 3.1.2.2). Further credits can be earned by giving courses. The dashboard interface provides the user with information about his Credit Points account.   
 ##### 3.1.3.2 See Recommended Courses
+Depending on the information provided in the profile (see chapter 3.1.1.4), SAM can put together a personalized list of courses, which might be interesting for the user. These are accessible from the dashboard interface. 
 ##### 3.1.3.3 Check Course Ratings
+Dashboard provides logged in users with the rating of the courses they have given in the past, based on the reviews of those who attended these courses (see chapter 3.1.2.4). 
 ##### 3.1.3.4 See Skill Tree
+Any user can track his or her progress in form of a skill tree, which is developed by SAM to visualize the knowledge obtained while using the platform. 
 ##### 3.1.3.5 See Schedule
+All the booked and offered courses, which take place at any point in the future can be seen in the schedule. Schedule is a part of the dashbord interface and helps users to plan their time by reminding them about the upcoming events.  
 
-#### 3.1.1	Admin console
+#### 3.1.4	Admin console
 
-##### 3.1.1.1 Moderate Courses
-##### 3.1.1.2 Moderate Users
+##### 3.1.4.1 Moderate Courses
+A user with admin privileges can disapprove of any course offered on the platform based on the guidelines provided by the SAM Initiative. The denounced course has to be removed from the platform or edited to comply with the guidelines. 
+##### 3.1.4.2 Moderate Users
+An admin has the power to punish a user for violation of Terms and Conditions provided by the SAM Initiative. 
 
 ### 3.2	Usability 
 [This section includes all those requirements that affect usability. For example,
