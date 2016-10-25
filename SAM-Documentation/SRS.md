@@ -8,7 +8,7 @@
 Software Requirements Specification<br>
 For Skill Access Manager Application </h2>
 
-####<div align="right">Version 1.0</div>
+####<div align="right">Version 2.0</div>
 
 <br>
 <br>
@@ -16,29 +16,29 @@ For Skill Access Manager Application </h2>
 
 ## Table of Contents
 
-1. [Introduction](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#1---introduction)
-  1. [Purpose](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#11-purpose)
-  2. [Scope](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#12-scope)
-  3. [Definitions, Acronyms, and Abbreviations](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#13-definitions-acronyms-and-abbreviations)
-  4. [References](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#14-references)
-  5. [Overview](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#15-overview)
-2. [Overall Description](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#2---overall-description)
-  1. [Vision](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#21-vision)
-  2. [Use Case Diagram](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#22-use-case-diagram)
-3. [Specific Requirements](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#3---specific-requirements)
-  1. [Functionality](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#31-functionality)
-  2. [Usability](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#32-usability)
-  3. [Reliability](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#33-reliability)
-  4. [Performance](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#34-performance)
-  5. [Supportability](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#35-supportability)
-  6. [Design constraints](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#36-design-constraints)
-  7. [On-line User Documentation and Help System Requirements](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#37-on-line-user-documentation-and-help-system-requirements)
-  8. [Purchased Components](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#38-purchased-components)
-  9. [Interfaces](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#39-interfaces)
-  10. [Licensing Requirements](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#310----licensing-requirements)
-  11. [Legal, Copyright, and Other Notices](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#311----legal-copyright-and-other-notices)
-  12. [Applicable Standards](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#312----applicable-standards)
-4. [Supporting Information](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/SRS.md#4---supporting-information) 
+1. [Introduction](#1---introduction)
+  1. [Purpose](#11-purpose)
+  2. [Scope](#12-scope)
+  3. [Definitions, Acronyms, and Abbreviations](#13-definitions-acronyms-and-abbreviations)
+  4. [References](#14-references)
+  5. [Overview](#15-overview)
+2. [Overall Description](#2---overall-description)
+  1. [Vision](#21-vision)
+  2. [Use Case Diagram](#22-use-case-diagram)
+3. [Specific Requirements](#3---specific-requirements)
+  1. [Functionality](#31-functionality)
+  2. [Usability](#32-usability)
+  3. [Reliability](#33-reliability)
+  4. [Performance](#34-performance)
+  5. [Supportability](#35-supportability)
+  6. [Design constraints](#36-design-constraints)
+  7. [On-line User Documentation and Help System Requirements](#37-on-line-user-documentation-and-help-system-requirements)
+  8. [Purchased Components](#38-purchased-components)
+  9. [Interfaces](#39-interfaces)
+  10. [Licensing Requirements](#310----licensing-requirements)
+  11. [Legal, Copyright, and Other Notices](#311----legal-copyright-and-other-notices)
+  12. [Applicable Standards](#312----applicable-standards)
+4. [Supporting Information](#4---supporting-information) 
   
 <br>
 <br>
@@ -99,7 +99,7 @@ We at SAM believe that everyone has some skills to offer. Something you do as a 
 
 ### 2.2	Use Case Diagram
 
-![](../uploads/UML/uml.svg)
+![](https://rawgit.com/Eynorey/SAM/master/uploads/UML/uml.svg)
 
 ## 3.	Specific Requirements
 
