@@ -1116,7 +1116,7 @@
 									"target": {
 										"$ref": "AAAAAAFX5nRiLAFoEVw="
 									},
-									"stereotype": "extends",
+									"stereotype": "extend",
 									"visibility": "public"
 								},
 								{
@@ -3163,19 +3163,19 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 377,
-									"top": 281,
-									"width": 59.99169921875,
+									"left": 387,
+									"top": 272,
+									"width": 53.49169921875,
 									"height": 13,
 									"autoResize": false,
-									"alpha": 1.5707963267948966,
-									"distance": 30,
+									"alpha": 1.8276593888601018,
+									"distance": 37.36308338453881,
 									"hostEdge": {
 										"$ref": "AAAAAAFX5nyRahsrfvQ="
 									},
 									"edgePosition": 1,
 									"underline": false,
-									"text": "«extends»",
+									"text": "«extend»",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5
 								},
@@ -11215,9 +11215,9 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 775,
+									"left": 751,
 									"top": 759,
-									"width": 0,
+									"width": 48.0517578125,
 									"height": 13,
 									"autoResize": false,
 									"alpha": 1.5707963267948966,
@@ -11227,6 +11227,7 @@
 									},
 									"edgePosition": 1,
 									"underline": false,
+									"text": "+access",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5
 								},
@@ -11248,9 +11249,9 @@
 									"showShadow": true,
 									"containerChangeable": false,
 									"containerExtending": false,
-									"left": 746,
+									"left": 748,
 									"top": 760,
-									"width": 59.998046875,
+									"width": 54.919921875,
 									"height": 13,
 									"autoResize": false,
 									"alpha": 1.5707956125091824,
@@ -11260,7 +11261,7 @@
 									},
 									"edgePosition": 1,
 									"underline": false,
-									"text": "«enables»",
+									"text": "«access»",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5
 								},
@@ -14351,13 +14352,27 @@
 											"_parent": {
 												"$ref": "AAAAAAFX5pu+rnLVwBE="
 											},
+											"ownedElements": [
+												{
+													"_type": "UMLUseCase",
+													"_id": "AAAAAAFYCjthVlzkgYo=",
+													"_parent": {
+														"$ref": "AAAAAAFX9bZzh2m1Ayc="
+													},
+													"stereotype": "access",
+													"visibility": "public",
+													"isAbstract": false,
+													"isFinalSpecialization": false,
+													"isLeaf": false
+												}
+											],
 											"source": {
 												"$ref": "AAAAAAFX5pu+rnLVwBE="
 											},
 											"target": {
 												"$ref": "AAAAAAFX5pRo3GM5W+I="
 											},
-											"stereotype": "enables",
+											"stereotype": "access",
 											"visibility": "public"
 										}
 									],
