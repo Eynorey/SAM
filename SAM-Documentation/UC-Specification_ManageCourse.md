@@ -5,7 +5,7 @@
 <br>
 <br>
 <h2 align="right"> Skill Access Manager<br>
-Use-Case Specification: Offer and manage course </h2>
+Use-Case Specification: Manage course offerings </h2>
 
 ####<div align="right">Version 1.0</div>
 
@@ -15,7 +15,7 @@ Use-Case Specification: Offer and manage course </h2>
 
 ## Table of Contents
 
-1. [Offer and manage course](#1-offer-course)
+1. [Manage course offerings](#1-offer-course)
   1. [Brief Description](#11-brief-description)
 2. [Flow of Events](#2-flow-of-events)
   1. [Basic Flow](#21-basic-flow)
@@ -42,7 +42,7 @@ Use-Case Specification: Offer and manage course </h2>
 ###<div align="center"><font size="10">Use-Case Specification: Offer Course</font></div>
 <br>
 
-##1. Offer and manage course
+##1. Manage course offerings
 ###1.1 Brief Description
 The purpose of this use case is to create and organize offered courses on the SAM platform. You need it to inform the system what you are willing to teach. After that, the system can recommend the course to users who want to learn the course's contents.
 
