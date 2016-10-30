@@ -56,7 +56,7 @@ You can also directly jump to the list of your offered courses by pressing the b
 
 By clicking on a course entry in the course list, a screen with the course details will be displayed. Two actions will be available at this point. You can either delete the course or edit the course (redirection to the course edit form). In both cases the relevant participants will be informed via email.
 
-![](https://rawgit.com/Eynorey/SAM/master/uploads/UML/ad_manage-course.svg)
+![](https://rawgit.com/Eynorey/SAM/master/uploads/activity_diagrams/ad_manage-course.svg)
 
 ###2.2 Alternative Flows
 ####2.2.1 First Alternative Flow
