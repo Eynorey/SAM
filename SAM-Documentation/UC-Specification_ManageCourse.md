@@ -5,7 +5,7 @@
 <br>
 <br>
 <h2 align="right"> Skill Access Manager<br>
-Use-Case Specification: Offer Course </h2>
+Use-Case Specification: Offer and manage course </h2>
 
 ####<div align="right">Version 1.0</div>
 
