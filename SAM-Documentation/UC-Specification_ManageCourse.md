@@ -15,7 +15,7 @@ Use-Case Specification: Offer and manage course </h2>
 
 ## Table of Contents
 
-1. [Offer Course](#1-offer-course)
+1. [Offer and manage course](#1-offer-course)
   1. [Brief Description](#11-brief-description)
 2. [Flow of Events](#2-flow-of-events)
   1. [Basic Flow](#21-basic-flow)
@@ -42,17 +42,21 @@ Use-Case Specification: Offer and manage course </h2>
 ###<div align="center"><font size="10">Use-Case Specification: Offer Course</font></div>
 <br>
 
-##1. Offer Course
+##1. Offer and manage course
 ###1.1 Brief Description
->_[The description briefly conveys the role and purpose of the use case. A single paragraph will suffice for this description.]_
+The purpose of this use case is to create and organize offered courses on the SAM platform. You need it to inform the system what you are willing to teach. After that, the system can recommend the course to users who want to learn the course's contents.
 
 ##2. Flow of Events
+
 ###2.1 Basic Flow
+
+Any logged in user can click the "offer new course" button. After filling in the course details and pressing of the confirm butten, the system checks if the course data is valid. If not, the user is asked to fill in correct details. If the course data is valid, the course will be added to the list of offered courses, which is displayed afterwards.
+
+You can also directly jump to the list of your offered courses by pressing the button "list courses". If no courses exist, you will be shown a button to create a new course.
+
+By clicking on a course entry in the course list, a screen with the course details will be displayed. Two actions will be available at this point. You can either delete the course or edit the course (redirection to the course edit form). In both cases the relevant participants will be informed via email.
+
 ![](https://rawgit.com/Eynorey/SAM/master/uploads/UML/ad_manage-course.svg)
->_[This use case starts when the actor does something. An actor always initiates use cases. The use case describes what the actor does and what the system does in response. It is phrased in the form of a dialog between the actor and the system.
-The use case describes what happens inside the system, but not how or why. If information is exchanged, be specific about what is passed back and forth. For example, it is not very illuminating to say that the actor enters customer information. It is better to say the actor enters the customer’s name and address. A Glossary of Terms is often useful to keep the complexity of the use case manageableyou may want to define things like customer information there to keep the use case from drowning in details. 
-Simple alternatives may be presented within the text of the use case. If it only takes a few sentences to describe what happens when there is an alternative, do it directly within the Flow of Events section. If the alternative flow is more complex, use a separate section to describe it. For example, an Alternative Flow subsection explains how to describe more complex alternatives. 
-A picture is sometimes worth a thousand words, though there is no substitute for clean, clear prose. If it improves clarity, feel free to paste graphical depictions of user interfaces, process flows or other figures into the use case. If a flow chart is useful to present a complex decision process, by all means use it!  Similarly for state-dependent behavior, a state-transition diagram often clarifies the behavior of a system better than pages upon pages of text. Use the right presentation medium for your problem, but be wary of using terminology, notations or figures that your audience may not understand. Remember that your purpose is to clarify, not obscure.]_
 
 ###2.2 Alternative Flows
 ####2.2.1 First Alternative Flow
