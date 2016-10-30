@@ -102,6 +102,14 @@ We at SAM believe that everyone has some skills to offer. Something you do as a 
 
 ![](https://rawgit.com/Eynorey/SAM/master/uploads/UML/uml.svg)
 
+User System
+
+* [Register](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/UC-Specification_Register.md)
+
+Course System
+
+*  [Manage course offerings](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/UC-Specification_ManageCourse.md)
+
 ## 3.	Specific Requirements
 
 ### 3.1	Functionality
