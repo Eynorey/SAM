@@ -5065,7 +5065,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "offer and manage course",
+											"text": "manage course offerings",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -14476,7 +14476,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFX5ogtkTz9Ncg="
 									},
-									"name": "offer and manage course",
+									"name": "manage course offerings",
 									"visibility": "public",
 									"isAbstract": false,
 									"isFinalSpecialization": false,
