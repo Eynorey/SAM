@@ -48,6 +48,7 @@ Use-Case Specification: Offer and manage course </h2>
 
 ##2. Flow of Events
 ###2.1 Basic Flow
+![](https://rawgit.com/Eynorey/SAM/master/uploads/UML/ad_manage-course.svg)
 >_[This use case starts when the actor does something. An actor always initiates use cases. The use case describes what the actor does and what the system does in response. It is phrased in the form of a dialog between the actor and the system.
 The use case describes what happens inside the system, but not how or why. If information is exchanged, be specific about what is passed back and forth. For example, it is not very illuminating to say that the actor enters customer information. It is better to say the actor enters the customer’s name and address. A Glossary of Terms is often useful to keep the complexity of the use case manageableyou may want to define things like customer information there to keep the use case from drowning in details. 
 Simple alternatives may be presented within the text of the use case. If it only takes a few sentences to describe what happens when there is an alternative, do it directly within the Flow of Events section. If the alternative flow is more complex, use a separate section to describe it. For example, an Alternative Flow subsection explains how to describe more complex alternatives. 
