@@ -100,7 +100,7 @@ We at SAM believe that everyone has some skills to offer. Something you do as a 
 
 ### 2.2	Use Case Diagram
 
-![](https://rawgit.com/Eynorey/SAM/master/uploads/UML/uml.svg)
+![](https://rawgit.com/Eynorey/SAM/master/uploads/usecase/uc_01.svg)
 
 User System
 
