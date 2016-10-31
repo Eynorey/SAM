@@ -49,12 +49,12 @@ The purpose of this use case is for a new user (guest) to create an account on t
 ##2. Flow of Events
 ###2.1 Basic Flow
 
-![](https://rawgit.com/Eynorey/SAM/master/uploads/UML/Activity-Diagram_Register.svg)
+![](https://rawgit.com/Eynorey/SAM/master/uploads/activity_diagrams/ad_register.svg)
 ###2.2 Alternative Flows
 ####2.2.1 First Alternative Flow
 If the "check emails" activity is unsuccessful after a number of repetitions an alternative flow can be chosen.
 
-![](https://rawgit.com/Eynorey/SAM/master/uploads/UML/Activity-Diagram_Register-Alternative1.svg)
+![](https://rawgit.com/Eynorey/SAM/master/uploads/activity_diagrams/ad_register-alt1.svg)
 
 ##3. Special Requirements
 >_[A special requirement is typically a nonfunctional requirement that is specific to a use case, but is not easily or naturally specified in the text of the use case’s event flow. Examples of special requirements include legal and regulatory requirements, application standards, and quality attributes of the system to be built including usability, reliability, performance or supportability requirements. Additionally, other requirementssuch as operating systems and environments, compatibility requirements, and design constraintsshould be captured in this section.]_
@@ -68,6 +68,9 @@ If the "check emails" activity is unsuccessful after a number of repetitions an 
 ###3.7 On-line User Documentation and Help System Requirements
 ###3.8 Purchased Components
 ###3.9 Interfaces
+
+![](https://rawgit.com/Eynorey/SAM/master/uploads/wireframes/wf_register.svg)
+
 ###3.10 Licensing Requirements
 ###3.11 Legal, Copyright, and Other Notices
 ###3.12 Applicable Standards
