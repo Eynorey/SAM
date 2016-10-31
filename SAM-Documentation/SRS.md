@@ -71,8 +71,7 @@ Definitions, Acronyms and Abbreviations relevant for the interpretation of the p
 |Title |	Date	| Publishing organization |
 |------|----------------|-------------------------|
 |[Project Glossary](https://github.com/Eynorey/SAM/wiki/Project-Glossary "SAM Project Glossary") |	23/10/16 | SAM Initiative |
-|[Project Blog](https://smartifytheworld.wordpress.com/)|27/10/16|SAM Initiative|
-|-|-|-|
+|[Project Blog](https://smartifytheworld.wordpress.com/)|27/10/16|SAM Initiative||-|-|-|
 
 ### 1.5	Overview
 
@@ -100,7 +99,7 @@ We at SAM believe that everyone has some skills to offer. Something you do as a 
 
 ### 2.2	Use Case Diagram
 
-![](https://rawgit.com/Eynorey/SAM/master/uploads/usecase/uc_01.svg)
+![](https://rawgit.com/Eynorey/SAM/master/uploads/usecase/ud_01.svg)
 
 User System
 
