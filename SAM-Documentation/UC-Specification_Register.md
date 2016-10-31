@@ -68,6 +68,9 @@ If the "check emails" activity is unsuccessful after a number of repetitions an 
 ###3.7 On-line User Documentation and Help System Requirements
 ###3.8 Purchased Components
 ###3.9 Interfaces
+
+![](https://rawgit.com/Eynorey/SAM/master/uploads/wireframes/wf_register.svg)
+
 ###3.10 Licensing Requirements
 ###3.11 Legal, Copyright, and Other Notices
 ###3.12 Applicable Standards
