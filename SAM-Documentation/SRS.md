@@ -144,7 +144,7 @@ Any logged in user can add, edit or delete personal information in his profile.
 Any platform visitor (guest/admin/user) is able to see and navigate the list of courses offered by SAM-users. These can be searched and sorted by any relevant criteria (such as subject, name or tutor). General information about each course can be obtained from the list, whereas detailed course discription is shown after a click on the chosen course.
 ##### Book Course
 Any user can book a course, as long as his credit points cover the costs of the course and the course is taking place any time after the booking operation has been performed.
-##### Offer Course
+##### Manage Course Offerings
 Any user can offer a course by giving detailed information about it and defining point in time, when the course will take place.
 ##### Rate Course
 Users, who partisipated in a SAM-course, can rate it by filling in a short questionnaire about their experience.
