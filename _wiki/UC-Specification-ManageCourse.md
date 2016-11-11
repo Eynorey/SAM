@@ -5,9 +5,7 @@
 
 ## Use-Case Specification: Manage course offerings [CRUD]
 
-###### Version 1.0
-
-<br>
+###### <div style="text-align: right">Version 1.0</div>
 <br>
 <br>
 
