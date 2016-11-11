@@ -1,10 +1,11 @@
 ## Abbreviations
-* ***SAM*** - Skill Access Manager
-* ***SRS*** - Software Requirements Specification
-* ***GUI*** - graphical user interface
-* 
 
-***
+*   **_SAM_** - Skill Access Manager
+*   **_SRS_** - Software Requirements Specification
+*   **_GUI_** - graphical user interface
+
+* * *
 
 ## Definitions
-***Software Requirements Specification*** - a document, which captures the complete software requirements for the system, or a portion of the system.
+
+**_Software Requirements Specification_** - a document, which captures the complete software requirements for the system, or a portion of the system.
