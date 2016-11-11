@@ -8,7 +8,9 @@
 
 ## Use-Case Specification: Register
 
-###### Version 1.0
+###### <div style="text-align: right">Version 1.0</div>
+<br>
+<br>
 
 ## Table of Contents
 
