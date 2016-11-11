@@ -1,42 +1,43 @@
-* * *
+***
 
 ### SAM Initiative
+###### Skill Access Manager
 
-* * *
+***
 
-### Skill Access Manager
+# Software Requirements Specification for Skill Access Manager Application
 
-## Software Requirements Specification for Skill Access Manager Application
-
-###### Version 2.0
+###### <div style="text-align: right"> Version 2.0 </div>
+<br>
+<br>
 
 ## Table of Contents
 
-1.  [Introduction](#1---introduction)
-    1.  [Purpose](#11-purpose)
-    2.  [Scope](#12-scope)
-    3.  [Definitions, Acronyms, and Abbreviations](#13-definitions-acronyms-and-abbreviations)
-    4.  [References](#14-references)
-    5.  [Overview](#15-overview)
-2.  [Overall Description](#2---overall-description)
-    1.  [Vision](#21-vision)
-    2.  [Use Case Diagram](#22-use-case-diagram)
-3.  [Specific Requirements](#3---specific-requirements)
-    1.  [Functionality](#31-functionality)
-    2.  [Usability](#32-usability)
-    3.  [Reliability](#33-reliability)
-    4.  [Performance](#34-performance)
-    5.  [Supportability](#35-supportability)
-    6.  [Design constraints](#36-design-constraints)
-    7.  [On-line User Documentation and Help System Requirements](#37-on-line-user-documentation-and-help-system-requirements)
-    8.  [Purchased Components](#38-purchased-components)
-    9.  [Interfaces](#39-interfaces)
-    10.  [Licensing Requirements](#310----licensing-requirements)
-    11.  [Legal, Copyright, and Other Notices](#311----legal-copyright-and-other-notices)
-    12.  [Applicable Standards](#312----applicable-standards)
-4.  [Supporting Information](#4---supporting-information)
+1.  [Introduction](# 1---introduction)
+    1.  [Purpose](# 11-purpose)
+    2.  [Scope](# 12-scope)
+    3.  [Definitions, Acronyms, and Abbreviations](# 13-definitions-acronyms-and-abbreviations)
+    4.  [References](# 14-references)
+    5.  [Overview](# 15-overview)
+2.  [Overall Description](# 2---overall-description)
+    1.  [Vision](# 21-vision)
+    2.  [Use Case Diagram](# 22-use-case-diagram)
+3.  [Specific Requirements](# 3---specific-requirements)
+    1.  [Functionality](# 31-functionality)
+    2.  [Usability](# 32-usability)
+    3.  [Reliability](# 33-reliability)
+    4.  [Performance](# 34-performance)
+    5.  [Supportability](# 35-supportability)
+    6.  [Design constraints](# 36-design-constraints)
+    7.  [On-line User Documentation and Help System Requirements](# 37-on-line-user-documentation-and-help-system-requirements)
+    8.  [Purchased Components](# 38-purchased-components)
+    9.  [Interfaces](# 39-interfaces)
+    10.  [Licensing Requirements](# 310----licensing-requirements)
+    11.  [Legal, Copyright, and Other Notices](# 311----legal-copyright-and-other-notices)
+    12.  [Applicable Standards](# 312----applicable-standards)
+4.  [Supporting Information](# 4---supporting-information)
 
-<font size="10">Software Requirements Specification</font>
+# Software Requirements Specification
 
 ## 1\. Introduction
 
@@ -63,7 +64,7 @@ SUBSYSTEMS: There are four subsystems to the platform: **user system**, **course
 
 ### 1.3 Definitions, Acronyms, and Abbreviations
 
-Definitions, Acronyms and Abbreviations relevant for the interpretation of the present document can be found in the [Project Glossary](https://github.com/Eynorey/SAM/wiki/Project-Glossary "SAM Project Glossary").
+Definitions, Acronyms and Abbreviations relevant for the interpretation of the present document can be found in the [Project Glossary](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/wiki/ProjectGlossary).
 
 ### 1.4 References
 
@@ -102,11 +103,11 @@ We at SAM believe that everyone has some skills to offer. Something you do as a 
 
 User System
 
-*   [Register](/_docs/UC-Specification-Register.md)
+*   [Register](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/docs/UC-Specification-Register)
 
 Course System
 
-*   [Manage course offerings](/_docs/UC-Specification-ManageCourse.md)
+*   [Manage course offerings](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/docs/UC-Specification-ManageCourse)
 
 ## 3\. Specific Requirements
 
