@@ -8,7 +8,9 @@
 
 ## Software Requirements Specification for Skill Access Manager Application
 
-###### Version 2.0
+###### <div style="text-align: right">Version 2.0</div>
+<br>
+<br>
 
 ## Table of Contents
 
