@@ -1,13 +1,11 @@
 ***
-### <div align="right">SAM Initiative</div>
+### SAM Initiative
 ***
-<br>
-<br>
-<br>
-<h2 align="right"> Skill Access Manager<br>
-Use-Case Specification: Manage course offerings [CRUD]</h2>
+### Skill Access Manager
 
-#### <div align="right">Version 1.0</div>
+## Use-Case Specification: Manage course offerings [CRUD]
+
+###### Version 1.0
 
 <br>
 <br>
