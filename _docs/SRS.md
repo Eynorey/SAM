@@ -1,15 +1,16 @@
-***
+* * *
 
 ### SAM Initiative
+
 ###### Skill Access Manager
 
-***
+* * *
 
 # Software Requirements Specification for Skill Access Manager Application
 
-###### <div style="text-align: right"> Version 2.0 </div>
-<br>
-<br>
+###### Version 2.0
+
+![workItem]({"id":"TOC"})
 
 ## Table of Contents
 
