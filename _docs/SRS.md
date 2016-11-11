@@ -99,7 +99,7 @@ We at SAM believe that everyone has some skills to offer. Something you do as a 
 
 ### 2.2 Use Case Diagram
 
-![](uc_01.png)
+![](ud_01.png)
 
 User System
 
