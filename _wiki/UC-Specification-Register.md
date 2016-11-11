@@ -1,39 +1,38 @@
-***
+* * *
+
 ### SAM Initiative
-***
+
+* * *
 
 ### Skill Access Manager
+
 # Use-Case Specification: Register
 
 ###### Version 1.0
 
-<br>
-<br>
-<br>
-
 ## Table of Contents
 
-1. [Register](#1-register)
-  1. [Brief Description](#11-brief-description)
-2. [Flow of Events](#2-flow-of-events)
-  1. [Basic Flow](#21-basic-flow)
-  2. [Alternative Flows](#22-alternative-flows)
-3. [Special Requirements](#3-special-requirements)
-  1. [Functionality](#31-functionality)
-  2. [Usability](#32-usability)
-  3. [Reliability](#33-reliability)
-  4. [Performance](#34-performance)
-  5. [Supportability](#35-supportability)
-  6. [Design constraints](#36-design-constraints)
-  7. [On-line User Documentation and Help System Requirements](#37-on-line-user-documentation-and-help-system-requirements)
-  8. [Purchased Components](#38-purchased-components)
-  9. [Interfaces](#39-interfaces)
-  10. [Licensing Requirements](310-licencing-requirements)
-  11. [Legal, Copyright, and Other Notices](#311-legal-copyright-and-other-notices)
-  12. [Applicable Standards](#312-applicable-standards)
-4. [Preconditions](#4-preconditions)
-5. [Postconditions](#5-postconditions)
-6. [Extension Points](#6-extension-points)
+1.  [Register](#1-register)
+    1.  [Brief Description](#11-brief-description)
+2.  [Flow of Events](#2-flow-of-events)
+    1.  [Basic Flow](#21-basic-flow)
+    2.  [Alternative Flows](#22-alternative-flows)
+3.  [Special Requirements](#3-special-requirements)
+    1.  [Functionality](#31-functionality)
+    2.  [Usability](#32-usability)
+    3.  [Reliability](#33-reliability)
+    4.  [Performance](#34-performance)
+    5.  [Supportability](#35-supportability)
+    6.  [Design constraints](#36-design-constraints)
+    7.  [On-line User Documentation and Help System Requirements](#37-on-line-user-documentation-and-help-system-requirements)
+    8.  [Purchased Components](#38-purchased-components)
+    9.  [Interfaces](#39-interfaces)
+    10.  [Licensing Requirements](310-licencing-requirements)
+    11.  [Legal, Copyright, and Other Notices](#311-legal-copyright-and-other-notices)
+    12.  [Applicable Standards](#312-applicable-standards)
+4.  [Preconditions](#4-preconditions)
+5.  [Postconditions](#5-postconditions)
+6.  [Extension Points](#6-extension-points)
 
 ### Use-Case Specification: Register
 
@@ -49,7 +48,9 @@ The purpose of this use case is for a new user (guest) to create an account on t
 
 ### 2.2 Alternative Flows
 
-#### 2.2.1 First Alternative Flow If the "check emails" activity is unsuccessful after a number of repetitions an alternative flow can be chosen.
+#### 2.2.1
+
+First Alternative Flow If the "check emails" activity is unsuccessful after a number of repetitions an alternative flow can be chosen.
 
 ## 3\. Special Requirements
 
