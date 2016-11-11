@@ -1,9 +1,9 @@
 ***
 ### SAM Initiative
+###### Skill Access Manager
 ***
-### Skill Access Manager
 
-## Use-Case Specification: Manage course offerings [CRUD]
+# Use-Case Specification: Manage course offerings [CRUD]
 
 ###### <div style="text-align: right">Version 1.0</div>
 <br>
@@ -33,11 +33,6 @@
 5. [Postconditions](# 5-postconditions)
 6. [Extension Points](# 6-extension-points)
   
-<br>
-<br>
-### <div align="center"><font size="10">Use-Case Specification: Offer Course</font></div>
-<br>
-
 ## 1. Manage course offerings
 ### 1.1 Brief Description
 The purpose of this use case is to create and organize offered courses on the SAM platform. You need it to inform the system what you are willing to teach. After that, the system can recommend the course to users who want to learn the course's contents.
@@ -52,7 +47,7 @@ You can also directly jump to the list of your offered courses by pressing the b
 
 By clicking on a course entry in the course list, a screen with the course details will be displayed. Two actions will be available at this point. You can either delete the course or edit the course (redirection to the course edit form). In both cases the relevant participants will be informed via email.
 
-![](https://rawgit.com/Eynorey/SAM/master/uploads/activity_diagrams/ad_manage-course.svg)
+![](ad_manage-course.png)
 
 ### 2.2 Alternative Flows
 #### 2.2.1 First Alternative Flow
@@ -77,7 +72,7 @@ By clicking on a course entry in the course list, a screen with the course detai
 ### 3.8 Purchased Components
 ### 3.9 Interfaces
 
-![](https://rawgit.com/Eynorey/SAM/master/uploads/wireframes/wf_manage-course.svg)
+![](wf_manage-course.png)
 
 ### 3.10 Licensing Requirements
 ### 3.11 Legal, Copyright, and Other Notices
