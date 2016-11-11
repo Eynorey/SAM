@@ -1,14 +1,11 @@
-* * *
-
+***
 ### SAM Initiative
+***
 
-* * *
+### Skill Access Manager
+## Software Requirements Specification for Skill Access Manager Application
 
-## Skill Access Manager
-Software Requirements Specification
-For Skill Access Manager Application
-
-Version 2.0
+###### Version 2.0
 
 ## Table of Contents
 
