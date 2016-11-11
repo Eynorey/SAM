@@ -102,11 +102,11 @@ We at SAM believe that everyone has some skills to offer. Something you do as a 
 
 User System
 
-*   [Register](/docs/UC-Specification-Register.md)
+*   [Register](/_docs/UC-Specification-Register.md)
 
 Course System
 
-*   [Manage course offerings](/docs/UC-Specification-ManageCourse.md)
+*   [Manage course offerings](/_docs/UC-Specification-ManageCourse.md)
 
 ## 3\. Specific Requirements
 
