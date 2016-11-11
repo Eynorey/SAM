@@ -98,17 +98,17 @@ We at SAM believe that everyone has some skills to offer. Something you do as a 
 
 ### 2.2 Use Case Diagram
 
-![](pasted-image-161111124021.svg+xml)
+![](uc_01.svg)
 
 User System
 
-*   [Register](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/UC-Specification_Register.md)
+*   [Register](docs/UC-Specification-Register.md)
 
 Course System
 
-*   [Manage course offerings](https://github.com/Eynorey/SAM/blob/master/SAM-Documentation/UC-Specification_ManageCourse.md)
+*   [Manage course offerings](docs/UC-Specification-ManageCourse.md)
 
-## 3\. Specific Requirements
+## 3. Specific Requirements
 
 ### 3.1 Functionality
 
