@@ -8,9 +8,7 @@
 
 ## Software Requirements Specification for Skill Access Manager Application
 
-###### <div style="text-align: right">Version 2.0</div>
-<br>
-<br>
+###### Version 2.0
 
 ## Table of Contents
 
@@ -100,7 +98,7 @@ We at SAM believe that everyone has some skills to offer. Something you do as a 
 
 ### 2.2 Use Case Diagram
 
-![](https://rawgit.com/Eynorey/SAM/master/uploads/usecase/ud_01.svg)
+![](pasted-image-161111124021.svg+xml)
 
 User System
 
