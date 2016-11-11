@@ -10,10 +10,9 @@
 
 ###### Version 2.0
 
-<br>
-<br>
-
 ## Table of Contents
+
+1.  [Introduction](# 1--Introduction)
 
 1.  [Introduction](# 1---introduction)
     1.  [Purpose](# 11-purpose)
