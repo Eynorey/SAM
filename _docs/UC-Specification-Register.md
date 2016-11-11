@@ -1,12 +1,9 @@
-* * *
-
+***
 ### SAM Initiative
+###### Skill Access Manager
+***
 
-* * *
-
-### Skill Access Manager
-
-## Use-Case Specification: Register
+# Use-Case Specification: Register
 
 ###### <div style="text-align: right">Version 1.0</div>
 <br>
@@ -36,7 +33,6 @@
 5.  [Postconditions](#5-postconditions)
 6.  [Extension Points](#6-extension-points)
 
-### Use-Case Specification: Register
 
 ## 1\. Register
 
