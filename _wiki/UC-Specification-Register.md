@@ -6,7 +6,7 @@
 
 ### Skill Access Manager
 
-# Use-Case Specification: Register
+## Use-Case Specification: Register
 
 ###### Version 1.0
 
