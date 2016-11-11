@@ -69,8 +69,8 @@ Definitions, Acronyms and Abbreviations relevant for the interpretation of the p
 
 | Title | Date | Publishing organization |
 | --- | --- | --- |
-| [Project Glossary](https://github.com/Eynorey/SAM/wiki/Project-Glossary "SAM Project Glossary") | 23/10/16 | SAM Initiative |
-| [Project Blog](https://smartifytheworld.wordpress.com/) | 27/10/16 | SAM Initiative |  | - | - | - |
+| [Project Glossary](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/wiki/ProjectGlossary) | 23/10/16 | SAM Initiative |
+| [Project Blog](https://smartifytheworld.wordpress.com/) | 27/10/16 | SAM Initiative |
 
 ### 1.5 Overview
 
