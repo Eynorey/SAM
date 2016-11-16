@@ -1,8 +1,9 @@
 ## Abbreviations
 
+*   **AD** - activity diagram
+*   **GUI** - graphical user interface
 *   **_SAM_** - Skill Access Manager
 *   **_SRS_** - Software Requirements Specification
-*   **_GUI_** - graphical user interface
 
 * * *
 
