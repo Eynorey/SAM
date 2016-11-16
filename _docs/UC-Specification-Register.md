@@ -76,6 +76,8 @@ First Alternative Flow If the "check emails" activity is unsuccessful after a nu
 
 ### 3.9 Interfaces
 
+![](wf_register.png)
+
 ### 3.10 Licensing Requirements
 
 ### 3.11 Legal, Copyright, and Other Notices
