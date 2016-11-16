@@ -44,7 +44,11 @@ The purpose of this use case is for a new user (guest) to create an account on t
 
 ### 2.1 Basic Flow
 
+![](ad_register.png)
+
 ### 2.2 Alternative Flows
+
+![](ad_register-alt1.png)
 
 #### 2.2.1
 
