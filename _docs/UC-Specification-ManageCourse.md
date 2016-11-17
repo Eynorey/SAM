@@ -78,6 +78,10 @@ The list of courses can be accessed by creating a new course or jumped to by pre
 
 ### 3.1 Functionality
 
+See Gherkin .feature file below
+
+![](feature_manage-course.png)
+
 ### 3.2 Usability
 
 ### 3.3 Reliability
