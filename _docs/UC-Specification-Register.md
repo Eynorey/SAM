@@ -60,6 +60,10 @@ First Alternative Flow If the "check emails" activity is unsuccessful after a nu
 
 ### 3.1 Functionality
 
+See Gherkin .feature file below
+
+![](feature_register.png)
+
 ### 3.2 Usability
 
 ### 3.3 Reliability
