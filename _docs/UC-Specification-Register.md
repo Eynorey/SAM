@@ -1,13 +1,14 @@
-***
+* * *
+
 ### SAM Initiative
+
 ###### Skill Access Manager
-***
+
+* * *
 
 # Use-Case Specification: Register
 
-###### <div style="text-align: right">Version 1.0</div>
-<br>
-<br>
+###### Version 1.0
 
 ## Table of Contents
 
@@ -32,7 +33,6 @@
 4.  [Preconditions](# 4-preconditions)
 5.  [Postconditions](# 5-postconditions)
 6.  [Extension Points](# 6-extension-points)
-
 
 ## 1\. Register
 
@@ -61,6 +61,8 @@ First Alternative Flow If the "check emails" activity is unsuccessful after a nu
 ### 3.1 Functionality
 
 See Gherkin .feature file below
+
+[Link to file](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_git/sam-private?path=%2Fapplication%2Fsrc%2Ftest%2Ffeatures%2Fuser%2register.feature&version=GBmaster&_a=contents)
 
 ![](feature_register.png)
 
