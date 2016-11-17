@@ -44,15 +44,19 @@ The purpose of this use case is to create and organize offered courses on the SA
 
 ### 2.1 Basic Flow
 
-The basic flow of the use case _Manage Course_ can be represented by the standard CRUD activity diagram. The user enters the use case by offering a new course (Create) or attempting to view the list of available courses. The two activities are connected with each other through saving or adding new item operations. Three further operations can be invoked from the course list: view details (Read), Delete and edit (Update).  
+The basic flow of the use case _Manage Course_ can be represented by the standard CRUD activity diagram. The user enters the use case by offering a new course (Create) or attempting to view the list of available courses. The two activities are connected with each other through saving or adding new item operations. Three further operations can be invoked from the course list: view details (Read), Delete and edit (Update).
 
-![](pasted-image-161117100713.svg+xml)
+![](pasted-image-161117110134.png)
 
-Any logged in user can click the "offer new course" button. After filling in the course details and pressing of the confirm butten, the system checks if the course data is valid. If not, the user is asked to fill in correct details. If the course data is valid, the course will be added to the list of offered courses, which is displayed afterwards.
+A closer look at the activities, which come in place in case a user decides to offer a new course is provided in the following activity diagram. 
 
-You can also directly jump to the list of your offered courses by pressing the button "list courses". If no courses exist, you will be shown a button to create a new course.
+![](pasted-image-161117110337.png)
 
-By clicking on a course entry in the course list, a screen with the course details will be displayed. Two actions will be available at this point. You can either delete the course or edit the course (redirection to the course edit form). In both cases the relevant participants will be informed via email.
+Any logged in user can click the "offer new course" button. At this point the system would show an edit form (also used in the "Update" scenario. After filling in the course details and pressing the confirm button, the system checks if the course data is valid. If not, the user is notified about the problem and asked to fill in the correct details. If the course data is valid, the course will be added to the list of offered courses, which is displayed afterwards. As the necessary steps are equal for Update and Create operation, the system is going to send an email to the participants of the course. As the list of participants is empty at this point, the email not going to be sent and the system is switching to the list overview, which is presented in the following diagram. 
+
+![](pasted-image-161117113249.png)
+
+The list of courses can be accessed by creating a new course or jumped to by pressing the corresponding menu-button. If no courses exist in the list, the "offer new course" button is going to be shown instead. Clicking on a course entry in an non-empty course list calls a screen with the course details. Two actions will be available at this point. You can either delete the course or edit the course (redirection to the course edit form). In both cases the relevant participants will be informed via email.
 
 ### 2.2 Alternative Flows
 
