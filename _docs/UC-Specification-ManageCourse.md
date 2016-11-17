@@ -48,11 +48,11 @@ The basic flow of the use case _Manage Course_ can be represented by the standar
 
 ![](pasted-image-161117110134.png)
 
-A closer look at the activities, which come in place in case a user decides to offer a new course is provided in the following activity diagram. 
+A closer look at the activities, which come in place in case a user decides to offer a new course is provided in the following activity diagram.
 
 ![](pasted-image-161117110337.png)
 
-Any logged in user can click the "offer new course" button. At this point the system would show an edit form (also used in the "Update" scenario. After filling in the course details and pressing the confirm button, the system checks if the course data is valid. If not, the user is notified about the problem and asked to fill in the correct details. If the course data is valid, the course will be added to the list of offered courses, which is displayed afterwards. As the necessary steps are equal for Update and Create operation, the system is going to send an email to the participants of the course. As the list of participants is empty at this point, the email not going to be sent and the system is switching to the list overview, which is presented in the following diagram. 
+Any logged in user can click the "offer new course" button. At this point the system would show an edit form (also used in the "Update" scenario. After filling in the course details and pressing the confirm button, the system checks if the course data is valid. If not, the user is notified about the problem and asked to fill in the correct details. If the course data is valid, the course will be added to the list of offered courses, which is displayed afterwards. As the necessary steps are equal for Update and Create operation, the system is going to send an email to the participants of the course. As the list of participants is empty at this point, the email not going to be sent and the system is switching to the list overview, which is presented in the following diagram.
 
 ![](pasted-image-161117113249.png)
 
@@ -79,6 +79,8 @@ The list of courses can be accessed by creating a new course or jumped to by pre
 ### 3.1 Functionality
 
 See Gherkin .feature file below
+
+[Link to file](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_git/sam-private?path=%2Fapplication%2Fsrc%2Ftest%2Ffeatures%2Fcourse%2Fmanage_course_offerings.feature&version=GBmaster&_a=contents)
 
 ![](feature_manage-course.png)
 
@@ -122,6 +124,6 @@ See Gherkin .feature file below
 
 > _[Extension points of the use case.]_
 
-### 6.1<name of="" extension="" point=""></name>
+### 6.1<name point="" extension="" of=""></name>
 
 > _[Definition of the location of the extension point in the flow of events.]_
