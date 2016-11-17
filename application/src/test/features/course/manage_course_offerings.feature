@@ -9,7 +9,7 @@ Feature: Manage Course Offerings
     Scenario: Create new course offering
         Given The the page "offered courses" is displayed
         When The "Offer Course" button is clicked
-        Then The
+        Then The page "Create or edit a Course" is displayed
 
     Scenario: Read course details
         Given The the page "offered courses" is displayed
@@ -20,9 +20,8 @@ Feature: Manage Course Offerings
     Scenario: Update course details
         Given The the page "Course Details" is displayed
         When The "Edit" button is clicked
-        Then The page "Edit Course Details" is displayed
+        Then The page "Create or edit a Course" is displayed
 
     Scenario: Delete course
-
 
 
