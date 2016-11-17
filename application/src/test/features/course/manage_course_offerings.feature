@@ -3,25 +3,29 @@ Feature: Manage Course Offerings
 
     Scenario: List courses
         Given I am on the dashboard
-        When The "My courses" button is clicked
-        Then The page "offered courses" is displayed
+        When the "My courses" button is clicked
+        Then the page "offered courses" is displayed
 
     Scenario: Create new course offering
-        Given The the page "offered courses" is displayed
-        When The "Offer Course" button is clicked
-        Then The page "Create or edit a Course" is displayed
+        Given the page "offered courses" is displayed
+        When the "Offer Course" button is clicked
+        Then the page "Create or edit a Course" is displayed
 
     Scenario: Read course details
-        Given The the page "offered courses" is displayed
+        Given the page "offered courses" is displayed
         When A course is selected
-        And The "Details" button is clicked
-        Then The page "Course Details" is displayed
+        And the "Details" button is clicked
+        Then the page "Course Details" is displayed
 
     Scenario: Update course details
-        Given The the page "Course Details" is displayed
-        When The "Edit" button is clicked
-        Then The page "Create or edit a Course" is displayed
+        Given the page "Course Details" is displayed
+        When the "Edit" button is clicked
+        Then the page "Create or edit a Course" is displayed
 
     Scenario: Delete course
-
+        Given the page "Course Details" is displayed
+        When the "Delete Course" button is clicked
+        Then a confirmation dialog is shown
+        When the "Confirm" button is clicked
+        Then the selected course will be removed from the database
 
