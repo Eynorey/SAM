@@ -1,0 +1,22 @@
+version: '2'
+services:
+    sam-app:
+        image: sam
+        external_links:
+            - sam-mysql:mysql
+            - sam-elasticsearch:elasticsearch
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/sam?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
+        ports:
+            - 8080:8080
+    sam-mysql:
+        extends:
+            file: mysql.yml
+            service: sam-mysql
+    sam-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: sam-elasticsearch
