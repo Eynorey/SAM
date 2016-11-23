@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>de.saminitiative.sam.web.rest</OriginalElement>
+  <nodes>
+    <node x="5146.695431893686" y="1873.5">de.saminitiative.sam.repository.SkillRepository</node>
+    <node x="36.5" y="550.5">de.saminitiative.sam.repository.AuthorityRepository</node>
+    <node x="0.0" y="3127.0">de.saminitiative.sam.web.rest.errors.ErrorConstants</node>
+    <node x="697.875" y="2947.0">de.saminitiative.sam.web.rest.errors.ParameterizedErrorVM</node>
+    <node x="3953.067857142857" y="2200.5">de.saminitiative.sam.web.rest.CourseResource</node>
+    <node x="593.0" y="3545.0">de.saminitiative.sam.domain.util.FixedH2Dialect</node>
+    <node x="2322.875" y="2936.0">de.saminitiative.sam.domain.util.JSR310DateConverters.LocalDateTimeToDateConverter</node>
+    <node x="327.50000000000006" y="2936.0">de.saminitiative.sam.web.rest.errors.FieldErrorVM</node>
+    <node x="4676.109523809524" y="2609.0">de.saminitiative.sam.web.rest.SkillResourceIntTest</node>
+    <node x="2908.195431893686" y="1851.5">de.saminitiative.sam.repository.ProfileRepository</node>
+    <node x="1045.875" y="3127.0">de.saminitiative.sam.web.rest.LogsResource</node>
+    <node x="2668.875" y="2936.0">de.saminitiative.sam.domain.util.JSR310DateConverters.DateToLocalDateConverter</node>
+    <node x="5356.90119047619" y="2642.0">de.saminitiative.sam.web.rest.AuditResourceIntTest</node>
+    <node x="1649.875" y="2936.0">de.saminitiative.sam.domain.util.JSR310DateConverters.ZonedDateTimeToDateConverter</node>
+    <node x="5604.695431893686" y="2211.5">de.saminitiative.sam.repository.PersistenceAuditEventRepository</node>
+    <node x="0.0" y="3545.0">de.saminitiative.sam.web.rest.SocialController</node>
+    <node x="34.70000000000027" y="55.0">de.saminitiative.sam.domain.Authority</node>
+    <node x="1186.0155961609419" y="0.0">de.saminitiative.sam.domain.PersistentToken</node>
+    <node x="265.0539590254698" y="1264.5">de.saminitiative.sam.repository.PersistentTokenRepository</node>
+    <node x="3306.875" y="2936.0">de.saminitiative.sam.domain.util.JSR310PersistenceConverters.LocalDateConverter</node>
+    <node x="3240.195431893686" y="2233.0">de.saminitiative.sam.web.rest.TestUtil</node>
+    <node x="1755.3620985603523" y="2653.0">de.saminitiative.sam.web.rest.UserResourceIntTest</node>
+    <node x="1041.875" y="2936.0">de.saminitiative.sam.web.rest.vm.LoggerVM</node>
+    <node x="462.0539590254698" y="2576.0">de.saminitiative.sam.web.rest.AccountResourceIntTest</node>
+    <node x="4770.695431893686" y="2200.5">de.saminitiative.sam.web.rest.SkillResource</node>
+    <node x="4724.195431893686" y="1873.5">de.saminitiative.sam.repository.search.SkillSearchRepository</node>
+    <node x="347.0" y="3104.0">de.saminitiative.sam.web.rest.errors.ErrorVM</node>
+    <node x="1167.2074566260592" y="1796.5">de.saminitiative.sam.repository.UserRepository</node>
+    <node x="5844.240596160942" y="2675.0">de.saminitiative.sam.repository.CustomAuditEventRepository</node>
+    <node x="1617.2074566260592" y="2200.5">de.saminitiative.sam.web.rest.UserResource</node>
+    <node x="5276.695431893686" y="2222.0">de.saminitiative.sam.web.rest.AuditResource</node>
+    <node x="3806.3456256921363" y="2609.0">de.saminitiative.sam.web.rest.CourseResourceIntTest</node>
+    <node x="5626.89336471022" y="1818.5">de.saminitiative.sam.domain.PersistentAuditEvent</node>
+    <node x="3555.195431893686" y="2244.5">de.saminitiative.sam.SamApp</node>
+    <node x="4622.990596160942" y="11.0">de.saminitiative.sam.domain.Skill</node>
+    <node x="3498.0956256921363" y="2719.0">de.saminitiative.sam.ApplicationWebXml</node>
+    <node x="1932.092857142857" y="1286.5">de.saminitiative.sam.repository.search.UserSearchRepository</node>
+    <node x="1184.5155961609419" y="374.0">de.saminitiative.sam.domain.User</node>
+    <node x="1470.875" y="3060.0">de.saminitiative.sam.domain.util.JSR310PersistenceConverters.ZonedDateTimeConverter</node>
+    <node x="3809.1407899593924" y="308.0">de.saminitiative.sam.domain.Course</node>
+    <node x="4367.195431893686" y="1851.5">de.saminitiative.sam.repository.CourseRepository</node>
+    <node x="1542.0155961609419" y="55.5">de.saminitiative.sam.domain.AbstractAuditingEntity</node>
+    <node x="2001.875" y="2936.0">de.saminitiative.sam.domain.util.JSR310DateConverters.DateToLocalDateTimeConverter</node>
+    <node x="1322.875" y="2936.0">de.saminitiative.sam.domain.util.JSR310DateConverters.DateToZonedDateTimeConverter</node>
+    <node x="2582.0956256921363" y="2609.0">de.saminitiative.sam.web.rest.ProfileResourceIntTest</node>
+    <node x="717.2074566260594" y="1740.0">de.saminitiative.sam.web.rest.vm.ManagedUserVM</node>
+    <node x="317.0" y="3545.0">de.saminitiative.sam.web.rest.ProfileInfoResource</node>
+    <node x="295.50000000000006" y="3339.0">de.saminitiative.sam.web.rest.errors.ExceptionTranslator</node>
+    <node x="3941.195431893686" y="1851.5">de.saminitiative.sam.web.rest.util.PaginationUtil</node>
+    <node x="280.0645994832021" y="2156.0">de.saminitiative.sam.web.rest.AccountResource</node>
+    <node x="2201.592857142857" y="912.0">de.saminitiative.sam.domain.Profile</node>
+    <node x="3761.195431893686" y="1873.5">de.saminitiative.sam.repository.search.CourseSearchRepository</node>
+    <node x="1008.0" y="3545.0">de.saminitiative.sam.domain.util.JSR310DateConverters</node>
+    <node x="2552.195431893686" y="1818.5">de.saminitiative.sam.web.rest.util.HeaderUtil</node>
+    <node x="2484.217857142857" y="2200.5">de.saminitiative.sam.web.rest.ProfileResource</node>
+    <node x="416.5539590254698" y="1840.0">de.saminitiative.sam.web.rest.vm.KeyAndPasswordVM</node>
+    <node x="780.0" y="3545.0">de.saminitiative.sam.domain.util.JSR310PersistenceConverters</node>
+    <node x="2146.875" y="3060.0">de.saminitiative.sam.domain.util.JSR310PersistenceConverters.LocalDateTimeConverter</node>
+    <node x="625.0" y="3159.5">de.saminitiative.sam.web.rest.errors.CustomParameterizedException</node>
+    <node x="2374.195431893686" y="1873.5">de.saminitiative.sam.repository.search.ProfileSearchRepository</node>
+    <node x="2987.875" y="2936.0">de.saminitiative.sam.domain.util.JSR310DateConverters.LocalDateToDateConverter</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="de.saminitiative.sam.repository.PersistenceAuditEventRepository" target="de.saminitiative.sam.domain.PersistentAuditEvent">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResourceIntTest" target="de.saminitiative.sam.web.rest.AccountResource">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.CourseResourceIntTest" target="de.saminitiative.sam.domain.Course">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.SkillResource" target="de.saminitiative.sam.repository.search.SkillSearchRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResourceIntTest" target="de.saminitiative.sam.SamApp">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.CourseResourceIntTest" target="de.saminitiative.sam.repository.CourseRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResourceIntTest" target="de.saminitiative.sam.repository.UserRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.ProfileResourceIntTest" target="de.saminitiative.sam.repository.search.ProfileSearchRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.UserResourceIntTest" target="de.saminitiative.sam.domain.User">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResourceIntTest" target="de.saminitiative.sam.repository.AuthorityRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.CourseResourceIntTest" target="de.saminitiative.sam.repository.search.CourseSearchRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResource" target="de.saminitiative.sam.web.rest.vm.KeyAndPasswordVM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.CourseResource" target="de.saminitiative.sam.web.rest.util.HeaderUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResource" target="de.saminitiative.sam.web.rest.util.HeaderUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.repository.search.ProfileSearchRepository" target="de.saminitiative.sam.domain.Profile">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.domain.Course" target="de.saminitiative.sam.domain.Skill">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.repository.PersistentTokenRepository" target="de.saminitiative.sam.domain.User">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.CourseResource" target="de.saminitiative.sam.web.rest.util.PaginationUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.domain.util.JSR310PersistenceConverters.ZonedDateTimeConverter" target="de.saminitiative.sam.domain.util.JSR310DateConverters.ZonedDateTimeToDateConverter">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.repository.UserRepository" target="de.saminitiative.sam.domain.User">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.repository.PersistentTokenRepository" target="de.saminitiative.sam.domain.PersistentToken">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.CourseResourceIntTest" target="de.saminitiative.sam.web.rest.TestUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.repository.AuthorityRepository" target="de.saminitiative.sam.domain.Authority">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.domain.User" target="de.saminitiative.sam.domain.AbstractAuditingEntity">
+      <point x="204.0" y="-191.0" />
+      <point x="1626.5155961609419" y="288.0" />
+      <point x="1655.0155961609419" y="288.0" />
+      <point x="0.0" y="58.5" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.UserResource" target="de.saminitiative.sam.web.rest.vm.ManagedUserVM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.errors.ExceptionTranslator" target="de.saminitiative.sam.web.rest.errors.ErrorConstants">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.ProfileResource" target="de.saminitiative.sam.web.rest.util.PaginationUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.domain.util.JSR310PersistenceConverters.ZonedDateTimeConverter" target="de.saminitiative.sam.domain.util.JSR310DateConverters.DateToZonedDateTimeConverter">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.repository.CustomAuditEventRepository" target="de.saminitiative.sam.repository.PersistenceAuditEventRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.SkillResourceIntTest" target="de.saminitiative.sam.domain.Skill">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.CourseResourceIntTest" target="de.saminitiative.sam.web.rest.CourseResource">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.CourseResource" target="de.saminitiative.sam.repository.search.CourseSearchRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.domain.Profile" target="de.saminitiative.sam.domain.Course">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.ApplicationWebXml" target="de.saminitiative.sam.SamApp">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.vm.ManagedUserVM" target="de.saminitiative.sam.domain.User">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResource" target="de.saminitiative.sam.repository.PersistentTokenRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.ProfileResourceIntTest" target="de.saminitiative.sam.web.rest.TestUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.SkillResourceIntTest" target="de.saminitiative.sam.SamApp">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.UserResource" target="de.saminitiative.sam.repository.search.UserSearchRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.UserResourceIntTest" target="de.saminitiative.sam.repository.UserRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.repository.SkillRepository" target="de.saminitiative.sam.domain.Skill">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.SkillResourceIntTest" target="de.saminitiative.sam.web.rest.TestUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResource" target="de.saminitiative.sam.repository.UserRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.repository.search.SkillSearchRepository" target="de.saminitiative.sam.domain.Skill">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.CourseResourceIntTest" target="de.saminitiative.sam.SamApp">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.LogsResource" target="de.saminitiative.sam.web.rest.vm.LoggerVM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.ProfileResource" target="de.saminitiative.sam.repository.search.ProfileSearchRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.ProfileResource" target="de.saminitiative.sam.domain.Profile">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.domain.Profile" target="de.saminitiative.sam.domain.Skill">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AuditResourceIntTest" target="de.saminitiative.sam.web.rest.AuditResource">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.ProfileResourceIntTest" target="de.saminitiative.sam.SamApp">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.SkillResource" target="de.saminitiative.sam.repository.SkillRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.ProfileResource" target="de.saminitiative.sam.web.rest.util.HeaderUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.SkillResourceIntTest" target="de.saminitiative.sam.repository.SkillRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResource" target="de.saminitiative.sam.web.rest.vm.ManagedUserVM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.SkillResource" target="de.saminitiative.sam.domain.Skill">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.ProfileResource" target="de.saminitiative.sam.repository.ProfileRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.domain.PersistentToken" target="de.saminitiative.sam.domain.User">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.UserResource" target="de.saminitiative.sam.domain.User">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.CourseResource" target="de.saminitiative.sam.domain.Course">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AuditResource" target="de.saminitiative.sam.web.rest.util.PaginationUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AuditResourceIntTest" target="de.saminitiative.sam.repository.PersistenceAuditEventRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.CourseResource" target="de.saminitiative.sam.repository.CourseRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.ProfileResourceIntTest" target="de.saminitiative.sam.web.rest.ProfileResource">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.ProfileResourceIntTest" target="de.saminitiative.sam.domain.Profile">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.errors.ExceptionTranslator" target="de.saminitiative.sam.web.rest.errors.CustomParameterizedException">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.SkillResource" target="de.saminitiative.sam.web.rest.util.HeaderUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.domain.util.JSR310PersistenceConverters.LocalDateTimeConverter" target="de.saminitiative.sam.domain.util.JSR310DateConverters.LocalDateTimeToDateConverter">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.SkillResource" target="de.saminitiative.sam.web.rest.util.PaginationUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.domain.User" target="de.saminitiative.sam.domain.Authority">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.repository.CustomAuditEventRepository" target="de.saminitiative.sam.domain.PersistentAuditEvent">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.repository.search.CourseSearchRepository" target="de.saminitiative.sam.domain.Course">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.UserResource" target="de.saminitiative.sam.repository.UserRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.domain.User" target="de.saminitiative.sam.domain.PersistentToken">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.UserResourceIntTest" target="de.saminitiative.sam.web.rest.UserResource">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResourceIntTest" target="de.saminitiative.sam.web.rest.TestUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResourceIntTest" target="de.saminitiative.sam.domain.Authority">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.domain.util.JSR310PersistenceConverters.LocalDateTimeConverter" target="de.saminitiative.sam.domain.util.JSR310DateConverters.DateToLocalDateTimeConverter">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.domain.Profile" target="de.saminitiative.sam.domain.User">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResourceIntTest" target="de.saminitiative.sam.web.rest.vm.ManagedUserVM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.errors.ExceptionTranslator" target="de.saminitiative.sam.web.rest.errors.ErrorVM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.errors.ExceptionTranslator" target="de.saminitiative.sam.web.rest.errors.ParameterizedErrorVM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResource" target="de.saminitiative.sam.domain.User">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.errors.CustomParameterizedException" target="de.saminitiative.sam.web.rest.errors.ParameterizedErrorVM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.repository.search.UserSearchRepository" target="de.saminitiative.sam.domain.User">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.UserResourceIntTest" target="de.saminitiative.sam.SamApp">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.errors.ErrorVM" target="de.saminitiative.sam.web.rest.errors.FieldErrorVM">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.SkillResourceIntTest" target="de.saminitiative.sam.web.rest.SkillResource">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.SkillResourceIntTest" target="de.saminitiative.sam.repository.search.SkillSearchRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.UserResource" target="de.saminitiative.sam.web.rest.util.PaginationUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResourceIntTest" target="de.saminitiative.sam.domain.User">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.ProfileResourceIntTest" target="de.saminitiative.sam.repository.ProfileRepository">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.repository.ProfileRepository" target="de.saminitiative.sam.domain.Profile">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.repository.CourseRepository" target="de.saminitiative.sam.domain.Course">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AccountResource" target="de.saminitiative.sam.domain.PersistentToken">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AuditResourceIntTest" target="de.saminitiative.sam.SamApp">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.AuditResourceIntTest" target="de.saminitiative.sam.domain.PersistentAuditEvent">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="de.saminitiative.sam.web.rest.UserResource" target="de.saminitiative.sam.web.rest.util.HeaderUtil">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.24640486725663716" x="3053.7923681257016" y="1938.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+

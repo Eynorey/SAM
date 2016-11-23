@@ -1,0 +1,48 @@
+relationship ManyToMany{
+	Profile{user(login)} to User
+}
+
+entity Profile {
+	Credibility Integer
+    Credits Double
+    Degree String
+    Semester Integer
+    Faculty String
+    University String
+    Birthday ZonedDateTime
+}
+
+relationship ManyToMany{
+	Profile{offeredCourses(Title)} to Course
+}
+
+relationship ManyToMany{
+	Profile{occupiedCourses(Title)} to Course
+}
+
+relationship ManyToMany{
+	Profile{skills(Name)} to Skill
+}
+
+entity Course {
+	Title String
+    Description String
+    Start ZonedDateTime
+    End ZonedDateTime
+    Location String
+}
+
+entity Skill {
+	Name String
+    Description String
+}
+
+relationship ManyToMany {
+	Course{dependencies(Name)} to Skill
+}
+
+relationship ManyToMany {
+	Course{skillsToLearn(Name)} to Skill
+}
+
+paginate all with pager
