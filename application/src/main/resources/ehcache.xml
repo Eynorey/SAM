@@ -42,5 +42,57 @@
            timeToLiveSeconds="3600">
     </cache>
 
+    <cache name="de.saminitiative.sam.domain.Profile"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="de.saminitiative.sam.domain.Profile.occupations"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="de.saminitiative.sam.domain.Profile.users"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="de.saminitiative.sam.domain.Profile.offerings"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="de.saminitiative.sam.domain.Profile.skills"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="de.saminitiative.sam.domain.Course"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="de.saminitiative.sam.domain.Course.dependencies"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="de.saminitiative.sam.domain.Course.contents"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="de.saminitiative.sam.domain.Skill"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="de.saminitiative.sam.domain.Profile.offeredCourses"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="de.saminitiative.sam.domain.Profile.occupiedCourses"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="de.saminitiative.sam.domain.Course.skills"
+        timeToLiveSeconds="3600">
+    </cache>
+
+    <cache name="de.saminitiative.sam.domain.Course.skillsToLearns"
+        timeToLiveSeconds="3600">
+    </cache>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </ehcache>

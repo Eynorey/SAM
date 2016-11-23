@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "dependencies",
+            "otherEntityName": "skill",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "skillsToLearn",
+            "otherEntityName": "skill",
+            "otherEntityField": "name",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "start",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "end",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "location",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161123115435",
+    "entityTableName": "course",
+    "dto": "no",
+    "pagination": "pager",
+    "service": "no"
+}

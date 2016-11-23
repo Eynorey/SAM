@@ -1,0 +1,72 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "offeredCourses",
+            "otherEntityName": "course",
+            "otherEntityField": "title",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "occupiedCourses",
+            "otherEntityName": "course",
+            "otherEntityField": "title",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "skills",
+            "otherEntityName": "skill",
+            "otherEntityField": "name",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "credibility",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "credits",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "degree",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "semester",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "faculty",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "university",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "birthday",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20161123115434",
+    "entityTableName": "profile",
+    "dto": "no",
+    "pagination": "pager",
+    "service": "no"
+}
