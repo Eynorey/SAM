@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>de.saminitiative.sam.domain.Course</OriginalElement>
+  <nodes>
+    <node x="370.0" y="571.0">de.saminitiative.sam.domain.Skill</node>
+    <node x="640.0" y="571.0">de.saminitiative.sam.domain.Authority</node>
+    <node x="0.0" y="189.0">de.saminitiative.sam.domain.User</node>
+    <node x="470.0" y="0.0">de.saminitiative.sam.domain.Profile</node>
+    <node x="0.0" y="571.0">de.saminitiative.sam.domain.Course</node>
+    <node x="90.0" y="0.0">de.saminitiative.sam.domain.AbstractAuditingEntity</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="de.saminitiative.sam.domain.User" target="de.saminitiative.sam.domain.AbstractAuditingEntity">
+      <point x="0.0" y="-168.5" />
+      <point x="0.0" y="69.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8003128258602711" x="949.0" y="422.65732899022805" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

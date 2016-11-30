@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>de.saminitiative.sam.web.rest.AccountResource</OriginalElement>
+  <nodes>
+    <node x="289.0" y="464.0">de.saminitiative.sam.web.rest.LogsResource</node>
+    <node x="235.0" y="0.0">de.saminitiative.sam.web.rest.UserResource</node>
+    <node x="0.0" y="324.0">de.saminitiative.sam.web.rest.ProfileResource</node>
+    <node x="0.0" y="464.0">de.saminitiative.sam.web.rest.AuditResource</node>
+    <node x="195.0" y="324.0">de.saminitiative.sam.web.rest.ProfileInfoResource</node>
+    <node x="390.0" y="184.0">de.saminitiative.sam.web.rest.CourseResource</node>
+    <node x="0.0" y="0.0">de.saminitiative.sam.web.rest.AccountResource</node>
+    <node x="195.0" y="184.0">de.saminitiative.sam.web.rest.SocialController</node>
+    <node x="0.0" y="184.0">de.saminitiative.sam.web.rest.SkillResource</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.1180622009569379" x="273.4555472344067" y="229.4166218576303" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
