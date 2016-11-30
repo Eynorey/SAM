@@ -64,7 +64,7 @@ The project SAM will use the MVC-principles. We will use Spring as our framework
 
 ## 3\. Architectural Goals and Constraints
 
-The main goal of the MVC architecture is to separate the view from the logic. Therefore, the view does not implement any logic, but gets all the precompiled information from the controller. Spring as utilized by JHipster automatically creates projects based on the MVC pattern.
+The main goal of the MVC architecture is to separate the view from the logic. Therefore, the view does not implement any logic, but gets all the precompiled information from the controller. Spring as utilized by JHipster automatically creates projects based on the MVC pattern.
 
 ## 4\. Use-Case View
 
@@ -79,6 +79,8 @@ The main goal of the MVC architecture is to separate the view from the logic. Th
 ## 6\. Process View
 
 ## 7\. Deployment View
+
+![](ar_deployment-view.png)
 
 ## 8\. Implementation View
 
