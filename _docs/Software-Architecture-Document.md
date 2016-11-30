@@ -11,6 +11,7 @@
 ###### Version 1.0
 
 ## Table of Contents
+
 1.  [Introduction](# 1---introduction)
     1.  [Purpose](# 11-purpose)
     2.  [Scope](# 12-scope)
@@ -23,16 +24,15 @@
     1.  [Use-Case Realizations](# 11-use-case-realizations)
 5.  [Logical View](# 2---logical-view)
     1.  [Overview](# 11-overview)
-    1.  [Architecturally Significant Design Packages](# 11-architecturally-significant-design-packages)
+    2.  [Architecturally Significant Design Packages](# 11-architecturally-significant-design-packages)
 6.  [Process View](# 3---process-view)
 7.  [Deployment View](# 3---deployment-view)
 8.  [Implementation View](# 3---implementation-view)
     1.  [Overview](# 11-overview)
-    1.  [Layers](# 11-layers)
+    2.  [Layers](# 11-layers)
 9.  [Data View](# 3---data-view)
-10. [Size and Performance](# 3---size-and-performance)
-11. [Quality](# 3---quality)
-
+10.  [Size and Performance](# 3---size-and-performance)
+11.  [Quality](# 3---quality)
 
 # Software Architecture Document
 
@@ -58,7 +58,13 @@
 
 ## 2\. Architectural Representation
 
+The project SAM will use the MVC-principles. We will use Spring as our framework, which delivers the necessary tools to define the project architecture.
+
+![](spring-mvc.jpeg)
+
 ## 3\. Architectural Goals and Constraints
+
+The main goal of the MVC architecture is to separate the view from the logic. Therefore, the view does not implement any logic, but gets all the precompiled information from the controller. Spring as utilized by JHipster automatically creates projects based on the MVC pattern.
 
 ## 4\. Use-Case View
 
