@@ -74,7 +74,7 @@ The main goal of the MVC architecture is to separate the view from the logic. Th
 
 ### 5.1 Overview
 ![](ar_model.png)
-![](ar_controller.png)
+![](ar_control.png)
 
 ### 5.2 Architecturally Significant Design Packages
 
