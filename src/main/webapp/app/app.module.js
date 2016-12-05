@@ -3,7 +3,7 @@
 
     angular
         .module('samApp', [
-            'ngStorage', 
+            'ngStorage',
             'ngResource',
             'ngCookies',
             'ngAria',

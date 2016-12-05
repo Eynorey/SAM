@@ -40,7 +40,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20161123115435",
+    "changelogDate": "20161205132736",
     "entityTableName": "course",
     "dto": "no",
     "pagination": "pager",

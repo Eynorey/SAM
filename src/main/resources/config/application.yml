@@ -18,10 +18,10 @@ management:
             enabled: false # When using the MailService, configure an SMTP server and set this to true
 spring:
     application:
-        name: SAM
+        name: sam
     profiles:
-        # The commented value for `active` can be replaced with valid spring profiles to load.
-        # Otherwise, it will be filled in by maven when building the WAR file
+        # The commented value for `active` can be replaced with valid Spring profiles to load.
+        # Otherwise, it will be filled in by gradle when building the WAR file
         # Either way, it can be overridden by `--spring.profiles.active` value passed in the commandline or `-Dspring.profiles.active` set in `JAVA_OPTS`
         active: #spring.profiles.active#
     jackson:
@@ -31,7 +31,8 @@ spring:
         hibernate:
             ddl-auto: none
             naming:
-                strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
+                physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+                implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
     messages:
         basename: i18n/messages
     mvc:
@@ -83,10 +84,10 @@ jhipster:
         #allow-credentials: true
         #max-age: 1800
     mail:
-        from: SAM@localhost
+        from: sam@localhost
     swagger:
-        title: SAM API
-        description: SAM API documentation
+        title: sam API
+        description: sam API documentation
         version: 0.0.1
         termsOfServiceUrl:
         contactName:
@@ -97,5 +98,5 @@ jhipster:
     social:
         redirectAfterSignIn: "/#/home"
     ribbon:
-        # comma seperated list of profiles to show a ribbon on the GUI
+        # comma separated list of profiles to show a ribbon on the GUI
         displayOnActiveProfiles: dev

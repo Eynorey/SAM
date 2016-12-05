@@ -152,7 +152,9 @@ public class JHipsterProperties {
 
     public static class Mail {
 
-        private String from = "SAM@localhost";
+        private String from = "sam@localhost";
+
+        private String baseUrl = "";
 
         public String getFrom() {
             return from;
@@ -160,6 +162,14 @@ public class JHipsterProperties {
 
         public void setFrom(String from) {
             this.from = from;
+        }
+
+        public String getBaseUrl() {
+            return baseUrl;
+        }
+
+        public void setBaseUrl(String baseUrl) {
+            this.baseUrl = baseUrl;
         }
     }
 
@@ -188,9 +198,9 @@ public class JHipsterProperties {
 
     public static class Swagger {
 
-        private String title = "SAM API";
+        private String title = "sam API";
 
-        private String description = "SAM API documentation";
+        private String description = "sam API documentation";
 
         private String version = "0.0.1";
 
@@ -283,9 +293,9 @@ public class JHipsterProperties {
 
         private final Jmx jmx = new Jmx();
 
-        private final Spark spark = new Spark();
-
         private final Graphite graphite = new Graphite();
+
+        private final Prometheus prometheus = new Prometheus();
 
         private final Logs logs = new Logs();
 
@@ -293,12 +303,12 @@ public class JHipsterProperties {
             return jmx;
         }
 
-        public Spark getSpark() {
-            return spark;
-        }
-
         public Graphite getGraphite() {
             return graphite;
+        }
+
+        public Prometheus getPrometheus() {
+            return prometheus;
         }
 
         public Logs getLogs() {
@@ -318,39 +328,6 @@ public class JHipsterProperties {
             }
         }
 
-        public static class Spark {
-
-            private boolean enabled = false;
-
-            private String host = "localhost";
-
-            private int port = 9999;
-
-            public boolean isEnabled() {
-                return enabled;
-            }
-
-            public void setEnabled(boolean enabled) {
-                this.enabled = enabled;
-            }
-
-            public String getHost() {
-                return host;
-            }
-
-            public void setHost(String host) {
-                this.host = host;
-            }
-
-            public int getPort() {
-                return port;
-            }
-
-            public void setPort(int port) {
-                this.port = port;
-            }
-        }
-
         public static class Graphite {
 
             private boolean enabled = false;
@@ -359,7 +336,7 @@ public class JHipsterProperties {
 
             private int port = 2003;
 
-            private String prefix = "SAM";
+            private String prefix = "sam";
 
             public boolean isEnabled() {
                 return enabled;
@@ -394,7 +371,30 @@ public class JHipsterProperties {
             }
         }
 
-        public static  class Logs {
+        public static class Prometheus {
+
+            private boolean enabled = false;
+
+            private String endpoint = "/prometheusMetrics";
+
+            public boolean isEnabled() {
+                return enabled;
+            }
+
+            public void setEnabled(boolean enabled) {
+                this.enabled = enabled;
+            }
+
+            public String getEndpoint() {
+                return endpoint;
+            }
+
+            public void setEndpoint(String endpoint) {
+                this.endpoint = endpoint;
+            }
+        }
+
+        public static class Logs {
 
             private boolean enabled = false;
 

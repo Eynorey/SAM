@@ -1,98 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
-         name="CM1"
-         updateCheck="false"
-         maxBytesLocalHeap="16M">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns='http://www.ehcache.org/v3'
+         xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd">
 
-    <!--
-      This is a default configuration, it is re-configured by the CacheConfiguration Spring Bean, using the
-      properties from the resources/config/*.yml files.
-    -->
+    <cache-template name="simple">
+        <expiry>
+            <ttl unit="seconds">3600</ttl>
+        </expiry>
+        <heap>100</heap>
+    </cache-template>
 
-    <diskStore path="java.io.tmpdir"/>
+    <cache alias="de.saminitiative.sam.domain.User" uses-template="simple"/>
 
-    <defaultCache
-            eternal="false"
-            overflowToDisk="false"
-            />
+    <cache alias="de.saminitiative.sam.domain.Authority" uses-template="simple"/>
 
-    <cache name="de.saminitiative.sam.domain.User"
-           timeToLiveSeconds="3600">
-    </cache>
+    <cache alias="de.saminitiative.sam.domain.User.authorities" uses-template="simple"/>
 
-    <cache name="de.saminitiative.sam.domain.Authority"
-           timeToLiveSeconds="3600">
-    </cache>
+    <cache alias="de.saminitiative.sam.domain.PersistentToken" uses-template="simple"/>
 
-    <cache name="de.saminitiative.sam.domain.User.authorities"
-           timeToLiveSeconds="3600">
-    </cache>
+    <cache alias="de.saminitiative.sam.domain.User.persistentTokens" uses-template="simple"/>
 
-    <cache name="de.saminitiative.sam.domain.PersistentToken"
-           timeToLiveSeconds="3600">
-    </cache>
+    <cache alias="de.saminitiative.sam.social.SocialUserConnection" uses-template="simple"/>
 
-    <cache name="de.saminitiative.sam.domain.User.persistentTokens"
-           timeToLiveSeconds="3600">
-    </cache>
-    
+    <cache alias="de.saminitiative.sam.domain.Profile" uses-template="simple"/>
 
-    <cache name="de.saminitiative.sam.social.SocialUserConnection"
-           timeToLiveSeconds="3600">
-    </cache>
+    <cache alias="de.saminitiative.sam.domain.Profile.users" uses-template="simple"/>
 
-    <cache name="de.saminitiative.sam.domain.Profile"
-        timeToLiveSeconds="3600">
-    </cache>
+    <cache alias="de.saminitiative.sam.domain.Profile.offeredCourses" uses-template="simple"/>
 
-    <cache name="de.saminitiative.sam.domain.Profile.occupations"
-        timeToLiveSeconds="3600">
-    </cache>
+    <cache alias="de.saminitiative.sam.domain.Profile.occupiedCourses" uses-template="simple"/>
 
-    <cache name="de.saminitiative.sam.domain.Profile.users"
-        timeToLiveSeconds="3600">
-    </cache>
+    <cache alias="de.saminitiative.sam.domain.Profile.skills" uses-template="simple"/>
 
-    <cache name="de.saminitiative.sam.domain.Profile.offerings"
-        timeToLiveSeconds="3600">
-    </cache>
+    <cache alias="de.saminitiative.sam.domain.Course" uses-template="simple"/>
 
-    <cache name="de.saminitiative.sam.domain.Profile.skills"
-        timeToLiveSeconds="3600">
-    </cache>
+    <cache alias="de.saminitiative.sam.domain.Course.dependencies" uses-template="simple"/>
 
-    <cache name="de.saminitiative.sam.domain.Course"
-        timeToLiveSeconds="3600">
-    </cache>
+    <cache alias="de.saminitiative.sam.domain.Course.skillsToLearns" uses-template="simple"/>
 
-    <cache name="de.saminitiative.sam.domain.Course.dependencies"
-        timeToLiveSeconds="3600">
-    </cache>
-
-    <cache name="de.saminitiative.sam.domain.Course.contents"
-        timeToLiveSeconds="3600">
-    </cache>
-
-    <cache name="de.saminitiative.sam.domain.Skill"
-        timeToLiveSeconds="3600">
-    </cache>
-
-    <cache name="de.saminitiative.sam.domain.Profile.offeredCourses"
-        timeToLiveSeconds="3600">
-    </cache>
-
-    <cache name="de.saminitiative.sam.domain.Profile.occupiedCourses"
-        timeToLiveSeconds="3600">
-    </cache>
-
-    <cache name="de.saminitiative.sam.domain.Course.skills"
-        timeToLiveSeconds="3600">
-    </cache>
-
-    <cache name="de.saminitiative.sam.domain.Course.skillsToLearns"
-        timeToLiveSeconds="3600">
-    </cache>
+    <cache alias="de.saminitiative.sam.domain.Skill" uses-template="simple"/>
 
     <!-- jhipster-needle-ehcache-add-entry -->
-</ehcache>
+</config>

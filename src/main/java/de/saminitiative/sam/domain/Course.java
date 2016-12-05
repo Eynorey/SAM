@@ -183,7 +183,7 @@ public class Course implements Serializable {
             return false;
         }
         Course course = (Course) o;
-        if(course.id == null || id == null) {
+        if (course.id == null || id == null) {
             return false;
         }
         return Objects.equals(id, course.id);

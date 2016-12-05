@@ -9,24 +9,23 @@ import de.saminitiative.sam.repository.search.SkillSearchRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import static org.hamcrest.Matchers.hasItem;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -39,11 +38,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = SamApp.class)
 public class SkillResourceIntTest {
 
-    private static final String DEFAULT_NAME = "AAAAA";
-    private static final String UPDATED_NAME = "BBBBB";
+    private static final String DEFAULT_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_NAME = "BBBBBBBBBB";
 
-    private static final String DEFAULT_DESCRIPTION = "AAAAA";
-    private static final String UPDATED_DESCRIPTION = "BBBBB";
+    private static final String DEFAULT_DESCRIPTION = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
     @Inject
     private SkillRepository skillRepository;
@@ -64,7 +63,7 @@ public class SkillResourceIntTest {
 
     private Skill skill;
 
-    @PostConstruct
+    @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
         SkillResource skillResource = new SkillResource();
@@ -102,9 +101,9 @@ public class SkillResourceIntTest {
         // Create the Skill
 
         restSkillMockMvc.perform(post("/api/skills")
-                .contentType(TestUtil.APPLICATION_JSON_UTF8)
-                .content(TestUtil.convertObjectToJsonBytes(skill)))
-                .andExpect(status().isCreated());
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(skill)))
+            .andExpect(status().isCreated());
 
         // Validate the Skill in the database
         List<Skill> skills = skillRepository.findAll();
@@ -126,11 +125,11 @@ public class SkillResourceIntTest {
 
         // Get all the skills
         restSkillMockMvc.perform(get("/api/skills?sort=id,desc"))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                .andExpect(jsonPath("$.[*].id").value(hasItem(skill.getId().intValue())))
-                .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
-                .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(jsonPath("$.[*].id").value(hasItem(skill.getId().intValue())))
+            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
+            .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
     }
 
     @Test
@@ -153,7 +152,7 @@ public class SkillResourceIntTest {
     public void getNonExistingSkill() throws Exception {
         // Get the skill
         restSkillMockMvc.perform(get("/api/skills/{id}", Long.MAX_VALUE))
-                .andExpect(status().isNotFound());
+            .andExpect(status().isNotFound());
     }
 
     @Test
@@ -171,9 +170,9 @@ public class SkillResourceIntTest {
                 .description(UPDATED_DESCRIPTION);
 
         restSkillMockMvc.perform(put("/api/skills")
-                .contentType(TestUtil.APPLICATION_JSON_UTF8)
-                .content(TestUtil.convertObjectToJsonBytes(updatedSkill)))
-                .andExpect(status().isOk());
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(updatedSkill)))
+            .andExpect(status().isOk());
 
         // Validate the Skill in the database
         List<Skill> skills = skillRepository.findAll();
@@ -197,8 +196,8 @@ public class SkillResourceIntTest {
 
         // Get the skill
         restSkillMockMvc.perform(delete("/api/skills/{id}", skill.getId())
-                .accept(TestUtil.APPLICATION_JSON_UTF8))
-                .andExpect(status().isOk());
+            .accept(TestUtil.APPLICATION_JSON_UTF8))
+            .andExpect(status().isOk());
 
         // Validate ElasticSearch is empty
         boolean skillExistsInEs = skillSearchRepository.exists(skill.getId());

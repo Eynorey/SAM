@@ -1,7 +1,7 @@
 {
   "generator-jhipster": {
-    "jhipsterVersion": "3.10.0",
-    "baseName": "SAM",
+    "jhipsterVersion": "3.12.0",
+    "baseName": "sam",
     "packageName": "de.saminitiative.sam",
     "packageFolder": "de/saminitiative/sam",
     "serverPort": "8080",
@@ -14,14 +14,13 @@
     "prodDatabaseType": "mysql",
     "searchEngine": "elasticsearch",
     "messageBroker": false,
-    "buildTool": "maven",
+    "buildTool": "gradle",
     "enableSocialSignIn": true,
-    "rememberMeKey": "f2606a2fd9605fb9799dc8a03404ae4d966530a0",
+    "rememberMeKey": "389b2cba67caa73d7d17d899fec170076c8b81f3",
     "useSass": false,
     "applicationType": "monolith",
     "testFrameworks": [
-      "gatling",
-      "cucumber"
+      "gatling"
     ],
     "jhiPrefix": "jhi",
     "enableTranslation": false

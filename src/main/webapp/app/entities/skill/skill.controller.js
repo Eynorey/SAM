@@ -5,11 +5,11 @@
         .module('samApp')
         .controller('SkillController', SkillController);
 
-    SkillController.$inject = ['$scope', '$state', 'Skill', 'SkillSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
+    SkillController.$inject = ['$scope', '$state', 'Skill', 'SkillSearch', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];
 
-    function SkillController ($scope, $state, Skill, SkillSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
+    function SkillController ($scope, $state, Skill, SkillSearch, ParseLinks, AlertService, paginationConstants, pagingParams) {
         var vm = this;
-        
+
         vm.loadPage = loadPage;
         vm.predicate = pagingParams.predicate;
         vm.reverse = pagingParams.ascending;
@@ -57,12 +57,12 @@
             }
         }
 
-        function loadPage (page) {
+        function loadPage(page) {
             vm.page = page;
             vm.transition();
         }
 
-        function transition () {
+        function transition() {
             $state.transitionTo($state.$current, {
                 page: vm.page,
                 sort: vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc'),
@@ -70,7 +70,7 @@
             });
         }
 
-        function search (searchQuery) {
+        function search(searchQuery) {
             if (!searchQuery){
                 return vm.clear();
             }
@@ -82,7 +82,7 @@
             vm.transition();
         }
 
-        function clear () {
+        function clear() {
             vm.links = null;
             vm.page = 1;
             vm.predicate = 'id';

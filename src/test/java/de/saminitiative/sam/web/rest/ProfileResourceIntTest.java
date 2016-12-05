@@ -9,28 +9,28 @@ import de.saminitiative.sam.repository.search.ProfileSearchRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import static org.hamcrest.Matchers.hasItem;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.time.Instant;
 import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.ZoneOffset;
 import java.time.ZoneId;
 import java.util.List;
 
+import static de.saminitiative.sam.web.rest.TestUtil.sameInstant;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -49,21 +49,20 @@ public class ProfileResourceIntTest {
     private static final Double DEFAULT_CREDITS = 1D;
     private static final Double UPDATED_CREDITS = 2D;
 
-    private static final String DEFAULT_DEGREE = "AAAAA";
-    private static final String UPDATED_DEGREE = "BBBBB";
+    private static final String DEFAULT_DEGREE = "AAAAAAAAAA";
+    private static final String UPDATED_DEGREE = "BBBBBBBBBB";
 
     private static final Integer DEFAULT_SEMESTER = 1;
     private static final Integer UPDATED_SEMESTER = 2;
 
-    private static final String DEFAULT_FACULTY = "AAAAA";
-    private static final String UPDATED_FACULTY = "BBBBB";
+    private static final String DEFAULT_FACULTY = "AAAAAAAAAA";
+    private static final String UPDATED_FACULTY = "BBBBBBBBBB";
 
-    private static final String DEFAULT_UNIVERSITY = "AAAAA";
-    private static final String UPDATED_UNIVERSITY = "BBBBB";
+    private static final String DEFAULT_UNIVERSITY = "AAAAAAAAAA";
+    private static final String UPDATED_UNIVERSITY = "BBBBBBBBBB";
 
-    private static final ZonedDateTime DEFAULT_BIRTHDAY = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneId.systemDefault());
+    private static final ZonedDateTime DEFAULT_BIRTHDAY = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
     private static final ZonedDateTime UPDATED_BIRTHDAY = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
-    private static final String DEFAULT_BIRTHDAY_STR = DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(DEFAULT_BIRTHDAY);
 
     @Inject
     private ProfileRepository profileRepository;
@@ -84,7 +83,7 @@ public class ProfileResourceIntTest {
 
     private Profile profile;
 
-    @PostConstruct
+    @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
         ProfileResource profileResource = new ProfileResource();
@@ -127,9 +126,9 @@ public class ProfileResourceIntTest {
         // Create the Profile
 
         restProfileMockMvc.perform(post("/api/profiles")
-                .contentType(TestUtil.APPLICATION_JSON_UTF8)
-                .content(TestUtil.convertObjectToJsonBytes(profile)))
-                .andExpect(status().isCreated());
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(profile)))
+            .andExpect(status().isCreated());
 
         // Validate the Profile in the database
         List<Profile> profiles = profileRepository.findAll();
@@ -156,16 +155,16 @@ public class ProfileResourceIntTest {
 
         // Get all the profiles
         restProfileMockMvc.perform(get("/api/profiles?sort=id,desc"))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                .andExpect(jsonPath("$.[*].id").value(hasItem(profile.getId().intValue())))
-                .andExpect(jsonPath("$.[*].credibility").value(hasItem(DEFAULT_CREDIBILITY)))
-                .andExpect(jsonPath("$.[*].credits").value(hasItem(DEFAULT_CREDITS.doubleValue())))
-                .andExpect(jsonPath("$.[*].degree").value(hasItem(DEFAULT_DEGREE.toString())))
-                .andExpect(jsonPath("$.[*].semester").value(hasItem(DEFAULT_SEMESTER)))
-                .andExpect(jsonPath("$.[*].faculty").value(hasItem(DEFAULT_FACULTY.toString())))
-                .andExpect(jsonPath("$.[*].university").value(hasItem(DEFAULT_UNIVERSITY.toString())))
-                .andExpect(jsonPath("$.[*].birthday").value(hasItem(DEFAULT_BIRTHDAY_STR)));
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(jsonPath("$.[*].id").value(hasItem(profile.getId().intValue())))
+            .andExpect(jsonPath("$.[*].credibility").value(hasItem(DEFAULT_CREDIBILITY)))
+            .andExpect(jsonPath("$.[*].credits").value(hasItem(DEFAULT_CREDITS.doubleValue())))
+            .andExpect(jsonPath("$.[*].degree").value(hasItem(DEFAULT_DEGREE.toString())))
+            .andExpect(jsonPath("$.[*].semester").value(hasItem(DEFAULT_SEMESTER)))
+            .andExpect(jsonPath("$.[*].faculty").value(hasItem(DEFAULT_FACULTY.toString())))
+            .andExpect(jsonPath("$.[*].university").value(hasItem(DEFAULT_UNIVERSITY.toString())))
+            .andExpect(jsonPath("$.[*].birthday").value(hasItem(sameInstant(DEFAULT_BIRTHDAY))));
     }
 
     @Test
@@ -185,7 +184,7 @@ public class ProfileResourceIntTest {
             .andExpect(jsonPath("$.semester").value(DEFAULT_SEMESTER))
             .andExpect(jsonPath("$.faculty").value(DEFAULT_FACULTY.toString()))
             .andExpect(jsonPath("$.university").value(DEFAULT_UNIVERSITY.toString()))
-            .andExpect(jsonPath("$.birthday").value(DEFAULT_BIRTHDAY_STR));
+            .andExpect(jsonPath("$.birthday").value(sameInstant(DEFAULT_BIRTHDAY)));
     }
 
     @Test
@@ -193,7 +192,7 @@ public class ProfileResourceIntTest {
     public void getNonExistingProfile() throws Exception {
         // Get the profile
         restProfileMockMvc.perform(get("/api/profiles/{id}", Long.MAX_VALUE))
-                .andExpect(status().isNotFound());
+            .andExpect(status().isNotFound());
     }
 
     @Test
@@ -216,9 +215,9 @@ public class ProfileResourceIntTest {
                 .birthday(UPDATED_BIRTHDAY);
 
         restProfileMockMvc.perform(put("/api/profiles")
-                .contentType(TestUtil.APPLICATION_JSON_UTF8)
-                .content(TestUtil.convertObjectToJsonBytes(updatedProfile)))
-                .andExpect(status().isOk());
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(updatedProfile)))
+            .andExpect(status().isOk());
 
         // Validate the Profile in the database
         List<Profile> profiles = profileRepository.findAll();
@@ -247,8 +246,8 @@ public class ProfileResourceIntTest {
 
         // Get the profile
         restProfileMockMvc.perform(delete("/api/profiles/{id}", profile.getId())
-                .accept(TestUtil.APPLICATION_JSON_UTF8))
-                .andExpect(status().isOk());
+            .accept(TestUtil.APPLICATION_JSON_UTF8))
+            .andExpect(status().isOk());
 
         // Validate ElasticSearch is empty
         boolean profileExistsInEs = profileSearchRepository.exists(profile.getId());
@@ -277,6 +276,6 @@ public class ProfileResourceIntTest {
             .andExpect(jsonPath("$.[*].semester").value(hasItem(DEFAULT_SEMESTER)))
             .andExpect(jsonPath("$.[*].faculty").value(hasItem(DEFAULT_FACULTY.toString())))
             .andExpect(jsonPath("$.[*].university").value(hasItem(DEFAULT_UNIVERSITY.toString())))
-            .andExpect(jsonPath("$.[*].birthday").value(hasItem(DEFAULT_BIRTHDAY_STR)));
+            .andExpect(jsonPath("$.[*].birthday").value(hasItem(sameInstant(DEFAULT_BIRTHDAY))));
     }
 }

@@ -72,7 +72,7 @@ public class Skill implements Serializable {
             return false;
         }
         Skill skill = (Skill) o;
-        if(skill.id == null || id == null) {
+        if (skill.id == null || id == null) {
             return false;
         }
         return Objects.equals(id, skill.id);

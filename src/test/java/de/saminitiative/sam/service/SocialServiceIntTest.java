@@ -5,6 +5,7 @@ import de.saminitiative.sam.domain.Authority;
 import de.saminitiative.sam.domain.User;
 import de.saminitiative.sam.repository.AuthorityRepository;
 import de.saminitiative.sam.repository.UserRepository;
+import de.saminitiative.sam.repository.search.UserSearchRepository;
 import de.saminitiative.sam.service.MailService;
 
 import org.junit.Before;
@@ -41,6 +42,9 @@ public class SocialServiceIntTest {
     @Inject
     private UserRepository userRepository;
 
+    @Inject
+    private UserSearchRepository userSearchRepository;
+
     @Mock
     private MailService mockMailService;
 
@@ -64,6 +68,7 @@ public class SocialServiceIntTest {
         ReflectionTestUtils.setField(socialService, "passwordEncoder", passwordEncoder);
         ReflectionTestUtils.setField(socialService, "mailService", mockMailService);
         ReflectionTestUtils.setField(socialService, "userRepository", userRepository);
+        ReflectionTestUtils.setField(socialService, "userSearchRepository", userSearchRepository);
         ReflectionTestUtils.setField(socialService, "usersConnectionRepository", mockUsersConnectionRepository);
     }
 

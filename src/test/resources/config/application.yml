@@ -13,12 +13,12 @@
 
 spring:
     application:
-        name: SAM
+        name: sam
     jackson:
         serialization.write_dates_as_timestamps: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:SAM;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:sam;DB_CLOSE_DELAY=-1
         name:
         username:
         password:
@@ -30,7 +30,8 @@ spring:
         hibernate:
             ddl-auto: none
             naming:
-                strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
+                physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+                implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
         properties:
             hibernate.cache.use_second_level_cache: false
             hibernate.cache.use_query_cache: false
@@ -75,12 +76,12 @@ jhipster:
     security:
         rememberMe:
             # security key (this key should be unique for your application, and kept secret)
-            key: f2606a2fd9605fb9799dc8a03404ae4d966530a0
+            key: 389b2cba67caa73d7d17d899fec170076c8b81f3
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
     swagger:
-        title: SAM API
-        description: SAM API documentation
+        title: sam API
+        description: sam API documentation
         version: 0.0.1
         termsOfServiceUrl:
         contactName:

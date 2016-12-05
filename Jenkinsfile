@@ -1,4 +1,8 @@
 node {
+    stage('checkout') {
+        checkout scm
+    }
+
     // uncomment these 2 lines and edit the name 'node-4.6.0' according to what you choose in configuration
     // def nodeHome = tool name: 'node-4.6.0', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
     // env.PATH = "${nodeHome}/bin:${env.PATH}"
@@ -10,27 +14,35 @@ node {
         sh "gulp -v"
     }
 
-    stage('checkout') {
-        checkout scm
-    }
-
     stage('npm install') {
         sh "npm install"
     }
 
     stage('clean') {
-        sh "./mvnw clean"
+        sh "./gradlew clean"
     }
 
     stage('backend tests') {
-        sh "./mvnw test"
+        try {
+            sh "./gradlew test"
+        } catch(err) {
+            throw err
+        } finally {
+            step([$class: 'JUnitResultArchiver', testResults: '**/build/**/TEST-*.xml'])
+        }
     }
 
     stage('frontend tests') {
-        sh "gulp test"
+        try {
+            sh "gulp test"
+        } catch(err) {
+            throw err
+        } finally {
+            step([$class: 'JUnitResultArchiver', testResults: '**/build/test-results/karma/TESTS-*.xml'])
+        }
     }
 
     stage('packaging') {
-        sh "./mvnw package -Pprod -DskipTests"
+        sh "./gradlew bootRepackage -Pprod -x test"
     }
 }

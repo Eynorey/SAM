@@ -32,7 +32,7 @@ public class SamApp {
     private Environment env;
 
     /**
-     * Initializes SAM.
+     * Initializes sam.
      * <p>
      * Spring profiles can be configured with a program arguments --spring.profiles.active=your-active-profile
      * <p>

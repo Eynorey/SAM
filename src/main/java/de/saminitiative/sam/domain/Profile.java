@@ -275,7 +275,7 @@ public class Profile implements Serializable {
             return false;
         }
         Profile profile = (Profile) o;
-        if(profile.id == null || id == null) {
+        if (profile.id == null || id == null) {
             return false;
         }
         return Objects.equals(id, profile.id);

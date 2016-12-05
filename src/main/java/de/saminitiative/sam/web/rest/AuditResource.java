@@ -7,7 +7,6 @@ import de.saminitiative.sam.web.rest.util.PaginationUtil;
 import org.springframework.boot.actuate.audit.AuditEvent;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpHeaders;
@@ -21,7 +20,7 @@ import java.util.List;
  * REST controller for getting the audit events.
  */
 @RestController
-@RequestMapping("/management/jhipster/audits")
+@RequestMapping("/management/audits")
 public class AuditResource {
 
     private AuditEventService auditEventService;
@@ -41,7 +40,7 @@ public class AuditResource {
     @GetMapping
     public ResponseEntity<List<AuditEvent>> getAll(Pageable pageable) throws URISyntaxException {
         Page<AuditEvent> page = auditEventService.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/audits");
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/management/audits");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
@@ -57,12 +56,12 @@ public class AuditResource {
 
     @GetMapping(params = {"fromDate", "toDate"})
     public ResponseEntity<List<AuditEvent>> getByDates(
-        @RequestParam(value = "fromDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fromDate,
-        @RequestParam(value = "toDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate toDate,
+        @RequestParam(value = "fromDate") LocalDate fromDate,
+        @RequestParam(value = "toDate") LocalDate toDate,
         Pageable pageable) throws URISyntaxException {
 
         Page<AuditEvent> page = auditEventService.findByDates(fromDate.atTime(0, 0), toDate.atTime(23, 59), pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/audits");
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/management/audits");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 

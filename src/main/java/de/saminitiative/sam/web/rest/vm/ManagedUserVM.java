@@ -6,7 +6,6 @@ import java.util.Set;
 
 import de.saminitiative.sam.domain.User;
 import de.saminitiative.sam.service.dto.UserDTO;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
