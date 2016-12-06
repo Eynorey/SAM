@@ -142,7 +142,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     }
 
     public boolean getActivated() {
-        return true;
+        return activated;
     }
 
     public void setActivated(boolean activated) {
