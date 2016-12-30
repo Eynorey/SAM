@@ -62,7 +62,7 @@ First Alternative Flow If the "check emails" activity is unsuccessful after a nu
 
 See Gherkin .feature file below
 
-[Link to file](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_git/sam-private?path=%2Fapplication%2Fsrc%2Ftest%2Ffeatures%2Fuser%2Fregister.feature&version=GBmaster&_a=contents)
+[Link to file](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_git/sam-private?path=%2Fsrc%2Ftest%2Ffeatures%2Fuser%2Fregister.feature&version=GBmaster&_a=contents)
 
 ![](feature_register.png)
 
