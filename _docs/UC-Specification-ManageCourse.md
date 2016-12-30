@@ -80,7 +80,7 @@ The list of courses can be accessed by creating a new course or jumped to by pre
 
 See Gherkin .feature file below
 
-[Link to file](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_git/sam-private?path=%2Fapplication%2Fsrc%2Ftest%2Ffeatures%2Fcourse%2Fmanage_course_offerings.feature&version=GBmaster&_a=contents)
+[Link to file](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_git/sam-private?path=%2Fsrc%2Ftest%2Ffeatures%2Fcourse%2Fmanage_course_offerings.feature&version=GBmaster&_a=contents)
 
 ![](feature_manage-course.png)
 
