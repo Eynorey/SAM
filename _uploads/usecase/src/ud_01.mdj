@@ -14116,9 +14116,9 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
-											"left": -302,
-											"top": 246,
-											"width": 0,
+											"left": 1199.5,
+											"top": 638,
+											"width": 154,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -14147,7 +14147,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "planned for end of 2016",
+											"text": "[DONE] end of 2016",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -15105,7 +15105,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "planned for end of 2016",
+					"name": "[DONE] end of 2016",
+					"stereotype": "",
 					"visibility": "public",
 					"isAbstract": false,
 					"isFinalSpecialization": false,
