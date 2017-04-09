@@ -23,7 +23,7 @@ public class Course implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "title")
@@ -32,10 +32,10 @@ public class Course implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "start")
+    @Column(name = "jhi_start")
     private ZonedDateTime start;
 
-    @Column(name = "end")
+    @Column(name = "jhi_end")
     private ZonedDateTime end;
 
     @Column(name = "location")
@@ -43,17 +43,17 @@ public class Course implements Serializable {
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "course_dependencies",
-               joinColumns = @JoinColumn(name="courses_id", referencedColumnName="ID"),
-               inverseJoinColumns = @JoinColumn(name="dependencies_id", referencedColumnName="ID"))
-    private Set<Skill> dependencies = new HashSet<>();
+    @JoinTable(name = "course_implied_skills",
+               joinColumns = @JoinColumn(name="courses_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="implied_skills_id", referencedColumnName="id"))
+    private Set<Skill> impliedSkills = new HashSet<>();
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "course_skills_to_learn",
-               joinColumns = @JoinColumn(name="courses_id", referencedColumnName="ID"),
-               inverseJoinColumns = @JoinColumn(name="skills_to_learns_id", referencedColumnName="ID"))
-    private Set<Skill> skillsToLearns = new HashSet<>();
+    @JoinTable(name = "course_acquirable_skills",
+               joinColumns = @JoinColumn(name="courses_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="acquirable_skills_id", referencedColumnName="id"))
+    private Set<Skill> acquirableSkills = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -128,50 +128,50 @@ public class Course implements Serializable {
         this.location = location;
     }
 
-    public Set<Skill> getDependencies() {
-        return dependencies;
+    public Set<Skill> getImpliedSkills() {
+        return impliedSkills;
     }
 
-    public Course dependencies(Set<Skill> skills) {
-        this.dependencies = skills;
+    public Course impliedSkills(Set<Skill> skills) {
+        this.impliedSkills = skills;
         return this;
     }
 
-    public Course addDependencies(Skill skill) {
-        dependencies.add(skill);
+    public Course addImpliedSkills(Skill skill) {
+        this.impliedSkills.add(skill);
         return this;
     }
 
-    public Course removeDependencies(Skill skill) {
-        dependencies.remove(skill);
+    public Course removeImpliedSkills(Skill skill) {
+        this.impliedSkills.remove(skill);
         return this;
     }
 
-    public void setDependencies(Set<Skill> skills) {
-        this.dependencies = skills;
+    public void setImpliedSkills(Set<Skill> skills) {
+        this.impliedSkills = skills;
     }
 
-    public Set<Skill> getSkillsToLearns() {
-        return skillsToLearns;
+    public Set<Skill> getAcquirableSkills() {
+        return acquirableSkills;
     }
 
-    public Course skillsToLearns(Set<Skill> skills) {
-        this.skillsToLearns = skills;
+    public Course acquirableSkills(Set<Skill> skills) {
+        this.acquirableSkills = skills;
         return this;
     }
 
-    public Course addSkillsToLearn(Skill skill) {
-        skillsToLearns.add(skill);
+    public Course addAcquirableSkills(Skill skill) {
+        this.acquirableSkills.add(skill);
         return this;
     }
 
-    public Course removeSkillsToLearn(Skill skill) {
-        skillsToLearns.remove(skill);
+    public Course removeAcquirableSkills(Skill skill) {
+        this.acquirableSkills.remove(skill);
         return this;
     }
 
-    public void setSkillsToLearns(Set<Skill> skills) {
-        this.skillsToLearns = skills;
+    public void setAcquirableSkills(Set<Skill> skills) {
+        this.acquirableSkills = skills;
     }
 
     @Override

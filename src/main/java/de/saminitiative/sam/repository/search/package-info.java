@@ -1,4 +1,4 @@
 /**
- * Spring Data ElasticSearch repositories.
+ * Spring Data Elasticsearch repositories.
  */
 package de.saminitiative.sam.repository.search;

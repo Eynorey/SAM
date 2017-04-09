@@ -17,7 +17,6 @@ import org.springframework.social.connect.UserProfile;
 import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.stereotype.Service;
 
-import javax.inject.Inject;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Optional;
@@ -25,25 +24,32 @@ import java.util.Set;
 
 @Service
 public class SocialService {
+
     private final Logger log = LoggerFactory.getLogger(SocialService.class);
 
-    @Inject
-    private UsersConnectionRepository usersConnectionRepository;
+    private final UsersConnectionRepository usersConnectionRepository;
 
-    @Inject
-    private AuthorityRepository authorityRepository;
+    private final AuthorityRepository authorityRepository;
 
-    @Inject
-    private PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
-    @Inject
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    @Inject
-    private UserSearchRepository userSearchRepository;
+    private final MailService mailService;
 
-    @Inject
-    private MailService mailService;
+    private final UserSearchRepository userSearchRepository;
+
+    public SocialService(UsersConnectionRepository usersConnectionRepository, AuthorityRepository authorityRepository,
+            PasswordEncoder passwordEncoder, UserRepository userRepository,
+            MailService mailService, UserSearchRepository userSearchRepository) {
+
+        this.usersConnectionRepository = usersConnectionRepository;
+        this.authorityRepository = authorityRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.userRepository = userRepository;
+        this.mailService = mailService;
+        this.userSearchRepository = userSearchRepository;
+    }
 
     public void deleteUserSocialConnection(String login) {
         ConnectionRepository connectionRepository = usersConnectionRepository.createConnectionRepository(login);
@@ -61,12 +67,13 @@ public class SocialService {
         }
         UserProfile userProfile = connection.fetchUserProfile();
         String providerId = connection.getKey().getProviderId();
-        User user = createUserIfNotExist(userProfile, langKey, providerId);
+        String imageUrl = connection.getImageUrl();
+        User user = createUserIfNotExist(userProfile, langKey, providerId, imageUrl);
         createSocialConnection(user.getLogin(), connection);
         mailService.sendSocialRegistrationValidationEmail(user, providerId);
     }
 
-    private User createUserIfNotExist(UserProfile userProfile, String langKey, String providerId) {
+    private User createUserIfNotExist(UserProfile userProfile, String langKey, String providerId, String imageUrl) {
         String email = userProfile.getEmail();
         String userName = userProfile.getUsername();
         if (!StringUtils.isBlank(userName)) {
@@ -102,6 +109,7 @@ public class SocialService {
         newUser.setActivated(true);
         newUser.setAuthorities(authorities);
         newUser.setLangKey(langKey);
+        newUser.setImageUrl(imageUrl);
 
         userSearchRepository.save(newUser);
         return userRepository.save(newUser);

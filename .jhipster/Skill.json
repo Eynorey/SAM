@@ -11,7 +11,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20161205132737",
+    "changelogDate": "20170409171349",
     "entityTableName": "skill",
     "dto": "no",
     "pagination": "pager",

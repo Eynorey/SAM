@@ -5,9 +5,10 @@
         .module('samApp')
         .controller('SkillController', SkillController);
 
-    SkillController.$inject = ['$scope', '$state', 'Skill', 'SkillSearch', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];
+    SkillController.$inject = ['$state', 'Skill', 'SkillSearch', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];
 
-    function SkillController ($scope, $state, Skill, SkillSearch, ParseLinks, AlertService, paginationConstants, pagingParams) {
+    function SkillController($state, Skill, SkillSearch, ParseLinks, AlertService, paginationConstants, pagingParams) {
+
         var vm = this;
 
         vm.loadPage = loadPage;

@@ -6,7 +6,7 @@
             <div class="col-xs-4 no-padding-left">
                 <button class="btn btn-primary" ui-sref="profile.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span class="hidden-xs" >
+                    <span class="hidden-xs-down" >
                         Create new Profile
                     </span>
                 </button>
@@ -43,6 +43,7 @@
                     <th jh-sort-by="faculty"><span>Faculty</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="university"><span>University</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="birthday"><span>Birthday</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="user.login"><span>User</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -56,25 +57,28 @@
                     <td>{{profile.faculty}}</td>
                     <td>{{profile.university}}</td>
                     <td>{{profile.birthday | date:'medium'}}</td>
+                    <td>
+                        {{profile.user.login}}
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
                                     ui-sref="profile-detail({id:profile.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm"></span>
+                                <span class="hidden-sm-down"></span>
                             </button>
                             <button type="submit"
                                     ui-sref="profile.edit({id:profile.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm"></span>
+                                <span class="hidden-sm-down"></span>
                             </button>
                             <button type="submit"
                                     ui-sref="profile.delete({id:profile.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm"></span>
+                                <span class="hidden-sm-down"></span>
                             </button>
                         </div>
                     </td>

@@ -4,7 +4,7 @@ import de.saminitiative.sam.domain.Course;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 /**
- * Spring Data ElasticSearch repository for the Course entity.
+ * Spring Data Elasticsearch repository for the Course entity.
  */
 public interface CourseSearchRepository extends ElasticsearchRepository<Course, Long> {
 }

@@ -4,7 +4,7 @@
         {
             "relationshipType": "many-to-many",
             "otherEntityRelationshipName": "",
-            "relationshipName": "dependencies",
+            "relationshipName": "impliedSkills",
             "otherEntityName": "skill",
             "otherEntityField": "name",
             "ownerSide": true
@@ -12,7 +12,7 @@
         {
             "relationshipType": "many-to-many",
             "otherEntityRelationshipName": "",
-            "relationshipName": "skillsToLearn",
+            "relationshipName": "acquirableSkills",
             "otherEntityName": "skill",
             "otherEntityField": "name",
             "ownerSide": true
@@ -40,7 +40,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20161205132736",
+    "changelogDate": "20170409171348",
     "entityTableName": "course",
     "dto": "no",
     "pagination": "pager",

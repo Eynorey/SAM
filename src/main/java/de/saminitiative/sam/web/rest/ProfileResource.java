@@ -7,6 +7,8 @@ import de.saminitiative.sam.repository.ProfileRepository;
 import de.saminitiative.sam.repository.search.ProfileSearchRepository;
 import de.saminitiative.sam.web.rest.util.HeaderUtil;
 import de.saminitiative.sam.web.rest.util.PaginationUtil;
+import io.swagger.annotations.ApiParam;
+import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -16,7 +18,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.inject.Inject;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -34,12 +35,17 @@ import static org.elasticsearch.index.query.QueryBuilders.*;
 public class ProfileResource {
 
     private final Logger log = LoggerFactory.getLogger(ProfileResource.class);
-        
-    @Inject
-    private ProfileRepository profileRepository;
 
-    @Inject
-    private ProfileSearchRepository profileSearchRepository;
+    private static final String ENTITY_NAME = "profile";
+        
+    private final ProfileRepository profileRepository;
+
+    private final ProfileSearchRepository profileSearchRepository;
+
+    public ProfileResource(ProfileRepository profileRepository, ProfileSearchRepository profileSearchRepository) {
+        this.profileRepository = profileRepository;
+        this.profileSearchRepository = profileSearchRepository;
+    }
 
     /**
      * POST  /profiles : Create a new profile.
@@ -53,12 +59,12 @@ public class ProfileResource {
     public ResponseEntity<Profile> createProfile(@RequestBody Profile profile) throws URISyntaxException {
         log.debug("REST request to save Profile : {}", profile);
         if (profile.getId() != null) {
-            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("profile", "idexists", "A new profile cannot already have an ID")).body(null);
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new profile cannot already have an ID")).body(null);
         }
         Profile result = profileRepository.save(profile);
         profileSearchRepository.save(result);
         return ResponseEntity.created(new URI("/api/profiles/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert("profile", result.getId().toString()))
+            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
     }
 
@@ -81,7 +87,7 @@ public class ProfileResource {
         Profile result = profileRepository.save(profile);
         profileSearchRepository.save(result);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert("profile", profile.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, profile.getId().toString()))
             .body(result);
     }
 
@@ -90,12 +96,10 @@ public class ProfileResource {
      *
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of profiles in body
-     * @throws URISyntaxException if there is an error to generate the pagination HTTP headers
      */
     @GetMapping("/profiles")
     @Timed
-    public ResponseEntity<List<Profile>> getAllProfiles(Pageable pageable)
-        throws URISyntaxException {
+    public ResponseEntity<List<Profile>> getAllProfiles(@ApiParam Pageable pageable) {
         log.debug("REST request to get a page of Profiles");
         Page<Profile> page = profileRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/profiles");
@@ -113,11 +117,7 @@ public class ProfileResource {
     public ResponseEntity<Profile> getProfile(@PathVariable Long id) {
         log.debug("REST request to get Profile : {}", id);
         Profile profile = profileRepository.findOneWithEagerRelationships(id);
-        return Optional.ofNullable(profile)
-            .map(result -> new ResponseEntity<>(
-                result,
-                HttpStatus.OK))
-            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(profile));
     }
 
     /**
@@ -132,7 +132,7 @@ public class ProfileResource {
         log.debug("REST request to delete Profile : {}", id);
         profileRepository.delete(id);
         profileSearchRepository.delete(id);
-        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("profile", id.toString())).build();
+        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 
     /**
@@ -142,12 +142,10 @@ public class ProfileResource {
      * @param query the query of the profile search 
      * @param pageable the pagination information
      * @return the result of the search
-     * @throws URISyntaxException if there is an error to generate the pagination HTTP headers
      */
     @GetMapping("/_search/profiles")
     @Timed
-    public ResponseEntity<List<Profile>> searchProfiles(@RequestParam String query, Pageable pageable)
-        throws URISyntaxException {
+    public ResponseEntity<List<Profile>> searchProfiles(@RequestParam String query, @ApiParam Pageable pageable) {
         log.debug("REST request to search for a page of Profiles for query {}", query);
         Page<Profile> page = profileSearchRepository.search(queryStringQuery(query), pageable);
         HttpHeaders headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/profiles");

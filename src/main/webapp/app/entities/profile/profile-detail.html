@@ -34,9 +34,7 @@
         </dd>
         <dt><span>User</span></dt>
         <dd>
-            <span ng-repeat="user in vm.profile.users">
-                {{user.login}}{{$last ? '' : ', '}}
-            </span>
+            {{vm.profile.user.login}}
         </dd>
         <dt><span>Offered Courses</span></dt>
         <dd>
@@ -66,6 +64,6 @@
 
     <button type="button" ui-sref="profile-detail.edit({id:vm.profile.id})" class="btn btn-primary">
         <span class="glyphicon glyphicon-pencil"></span>
-        <span class="hidden-xs hidden-sm"> Edit</span>
+        <span class="hidden-sm-down"> Edit</span>
     </button>
 </div>

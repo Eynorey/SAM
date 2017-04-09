@@ -5,9 +5,9 @@
         .module('samApp')
         .controller('ProfileDialogController', ProfileDialogController);
 
-    ProfileDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Profile', 'User', 'Course', 'Skill'];
+    ProfileDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Profile', 'User', 'Course', 'Skill'];
 
-    function ProfileDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Profile, User, Course, Skill) {
+    function ProfileDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Profile, User, Course, Skill) {
         var vm = this;
 
         vm.profile = entity;

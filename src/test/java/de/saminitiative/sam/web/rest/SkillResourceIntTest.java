@@ -5,22 +5,22 @@ import de.saminitiative.sam.SamApp;
 import de.saminitiative.sam.domain.Skill;
 import de.saminitiative.sam.repository.SkillRepository;
 import de.saminitiative.sam.repository.search.SkillSearchRepository;
+import de.saminitiative.sam.web.rest.errors.ExceptionTranslator;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.util.List;
 
@@ -44,19 +44,22 @@ public class SkillResourceIntTest {
     private static final String DEFAULT_DESCRIPTION = "AAAAAAAAAA";
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
 
-    @Inject
+    @Autowired
     private SkillRepository skillRepository;
 
-    @Inject
+    @Autowired
     private SkillSearchRepository skillSearchRepository;
 
-    @Inject
+    @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
 
-    @Inject
+    @Autowired
     private PageableHandlerMethodArgumentResolver pageableArgumentResolver;
 
-    @Inject
+    @Autowired
+    private ExceptionTranslator exceptionTranslator;
+
+    @Autowired
     private EntityManager em;
 
     private MockMvc restSkillMockMvc;
@@ -66,11 +69,10 @@ public class SkillResourceIntTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        SkillResource skillResource = new SkillResource();
-        ReflectionTestUtils.setField(skillResource, "skillSearchRepository", skillSearchRepository);
-        ReflectionTestUtils.setField(skillResource, "skillRepository", skillRepository);
+        SkillResource skillResource = new SkillResource(skillRepository, skillSearchRepository);
         this.restSkillMockMvc = MockMvcBuilders.standaloneSetup(skillResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
+            .setControllerAdvice(exceptionTranslator)
             .setMessageConverters(jacksonMessageConverter).build();
     }
 
@@ -82,8 +84,8 @@ public class SkillResourceIntTest {
      */
     public static Skill createEntity(EntityManager em) {
         Skill skill = new Skill()
-                .name(DEFAULT_NAME)
-                .description(DEFAULT_DESCRIPTION);
+            .name(DEFAULT_NAME)
+            .description(DEFAULT_DESCRIPTION);
         return skill;
     }
 
@@ -99,22 +101,40 @@ public class SkillResourceIntTest {
         int databaseSizeBeforeCreate = skillRepository.findAll().size();
 
         // Create the Skill
-
         restSkillMockMvc.perform(post("/api/skills")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(skill)))
             .andExpect(status().isCreated());
 
         // Validate the Skill in the database
-        List<Skill> skills = skillRepository.findAll();
-        assertThat(skills).hasSize(databaseSizeBeforeCreate + 1);
-        Skill testSkill = skills.get(skills.size() - 1);
+        List<Skill> skillList = skillRepository.findAll();
+        assertThat(skillList).hasSize(databaseSizeBeforeCreate + 1);
+        Skill testSkill = skillList.get(skillList.size() - 1);
         assertThat(testSkill.getName()).isEqualTo(DEFAULT_NAME);
         assertThat(testSkill.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
 
-        // Validate the Skill in ElasticSearch
+        // Validate the Skill in Elasticsearch
         Skill skillEs = skillSearchRepository.findOne(testSkill.getId());
         assertThat(skillEs).isEqualToComparingFieldByField(testSkill);
+    }
+
+    @Test
+    @Transactional
+    public void createSkillWithExistingId() throws Exception {
+        int databaseSizeBeforeCreate = skillRepository.findAll().size();
+
+        // Create the Skill with an existing ID
+        skill.setId(1L);
+
+        // An entity with an existing ID cannot be created, so this API call must fail
+        restSkillMockMvc.perform(post("/api/skills")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(skill)))
+            .andExpect(status().isBadRequest());
+
+        // Validate the Alice in the database
+        List<Skill> skillList = skillRepository.findAll();
+        assertThat(skillList).hasSize(databaseSizeBeforeCreate);
     }
 
     @Test
@@ -123,7 +143,7 @@ public class SkillResourceIntTest {
         // Initialize the database
         skillRepository.saveAndFlush(skill);
 
-        // Get all the skills
+        // Get all the skillList
         restSkillMockMvc.perform(get("/api/skills?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
@@ -166,8 +186,8 @@ public class SkillResourceIntTest {
         // Update the skill
         Skill updatedSkill = skillRepository.findOne(skill.getId());
         updatedSkill
-                .name(UPDATED_NAME)
-                .description(UPDATED_DESCRIPTION);
+            .name(UPDATED_NAME)
+            .description(UPDATED_DESCRIPTION);
 
         restSkillMockMvc.perform(put("/api/skills")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -175,15 +195,33 @@ public class SkillResourceIntTest {
             .andExpect(status().isOk());
 
         // Validate the Skill in the database
-        List<Skill> skills = skillRepository.findAll();
-        assertThat(skills).hasSize(databaseSizeBeforeUpdate);
-        Skill testSkill = skills.get(skills.size() - 1);
+        List<Skill> skillList = skillRepository.findAll();
+        assertThat(skillList).hasSize(databaseSizeBeforeUpdate);
+        Skill testSkill = skillList.get(skillList.size() - 1);
         assertThat(testSkill.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testSkill.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
 
-        // Validate the Skill in ElasticSearch
+        // Validate the Skill in Elasticsearch
         Skill skillEs = skillSearchRepository.findOne(testSkill.getId());
         assertThat(skillEs).isEqualToComparingFieldByField(testSkill);
+    }
+
+    @Test
+    @Transactional
+    public void updateNonExistingSkill() throws Exception {
+        int databaseSizeBeforeUpdate = skillRepository.findAll().size();
+
+        // Create the Skill
+
+        // If the entity doesn't have an ID, it will be created instead of just being updated
+        restSkillMockMvc.perform(put("/api/skills")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(skill)))
+            .andExpect(status().isCreated());
+
+        // Validate the Skill in the database
+        List<Skill> skillList = skillRepository.findAll();
+        assertThat(skillList).hasSize(databaseSizeBeforeUpdate + 1);
     }
 
     @Test
@@ -199,13 +237,13 @@ public class SkillResourceIntTest {
             .accept(TestUtil.APPLICATION_JSON_UTF8))
             .andExpect(status().isOk());
 
-        // Validate ElasticSearch is empty
+        // Validate Elasticsearch is empty
         boolean skillExistsInEs = skillSearchRepository.exists(skill.getId());
         assertThat(skillExistsInEs).isFalse();
 
         // Validate the database is empty
-        List<Skill> skills = skillRepository.findAll();
-        assertThat(skills).hasSize(databaseSizeBeforeDelete - 1);
+        List<Skill> skillList = skillRepository.findAll();
+        assertThat(skillList).hasSize(databaseSizeBeforeDelete - 1);
     }
 
     @Test
@@ -222,5 +260,11 @@ public class SkillResourceIntTest {
             .andExpect(jsonPath("$.[*].id").value(hasItem(skill.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
+    }
+
+    @Test
+    @Transactional
+    public void equalsVerifier() throws Exception {
+        TestUtil.equalsVerifier(Skill.class);
     }
 }

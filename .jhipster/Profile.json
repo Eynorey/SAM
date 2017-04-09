@@ -2,12 +2,12 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "many-to-many",
-            "otherEntityRelationshipName": "",
+            "relationshipType": "one-to-one",
             "relationshipName": "user",
             "otherEntityName": "user",
             "otherEntityField": "login",
-            "ownerSide": true
+            "ownerSide": true,
+            "otherEntityRelationshipName": "profile"
         },
         {
             "relationshipType": "many-to-many",
@@ -64,7 +64,7 @@
             "fieldType": "ZonedDateTime"
         }
     ],
-    "changelogDate": "20161205132735",
+    "changelogDate": "20170409171347",
     "entityTableName": "profile",
     "dto": "no",
     "pagination": "pager",

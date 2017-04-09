@@ -47,7 +47,7 @@
             }
         })
         .state('course-detail', {
-            parent: 'entity',
+            parent: 'course',
             url: '/course/{id}',
             data: {
                 authorities: ['ROLE_USER'],

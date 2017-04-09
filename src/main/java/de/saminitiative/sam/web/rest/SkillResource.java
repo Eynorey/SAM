@@ -7,6 +7,8 @@ import de.saminitiative.sam.repository.SkillRepository;
 import de.saminitiative.sam.repository.search.SkillSearchRepository;
 import de.saminitiative.sam.web.rest.util.HeaderUtil;
 import de.saminitiative.sam.web.rest.util.PaginationUtil;
+import io.swagger.annotations.ApiParam;
+import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -16,7 +18,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.inject.Inject;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -34,12 +35,17 @@ import static org.elasticsearch.index.query.QueryBuilders.*;
 public class SkillResource {
 
     private final Logger log = LoggerFactory.getLogger(SkillResource.class);
-        
-    @Inject
-    private SkillRepository skillRepository;
 
-    @Inject
-    private SkillSearchRepository skillSearchRepository;
+    private static final String ENTITY_NAME = "skill";
+        
+    private final SkillRepository skillRepository;
+
+    private final SkillSearchRepository skillSearchRepository;
+
+    public SkillResource(SkillRepository skillRepository, SkillSearchRepository skillSearchRepository) {
+        this.skillRepository = skillRepository;
+        this.skillSearchRepository = skillSearchRepository;
+    }
 
     /**
      * POST  /skills : Create a new skill.
@@ -53,12 +59,12 @@ public class SkillResource {
     public ResponseEntity<Skill> createSkill(@RequestBody Skill skill) throws URISyntaxException {
         log.debug("REST request to save Skill : {}", skill);
         if (skill.getId() != null) {
-            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("skill", "idexists", "A new skill cannot already have an ID")).body(null);
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new skill cannot already have an ID")).body(null);
         }
         Skill result = skillRepository.save(skill);
         skillSearchRepository.save(result);
         return ResponseEntity.created(new URI("/api/skills/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert("skill", result.getId().toString()))
+            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
     }
 
@@ -81,7 +87,7 @@ public class SkillResource {
         Skill result = skillRepository.save(skill);
         skillSearchRepository.save(result);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert("skill", skill.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, skill.getId().toString()))
             .body(result);
     }
 
@@ -90,12 +96,10 @@ public class SkillResource {
      *
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of skills in body
-     * @throws URISyntaxException if there is an error to generate the pagination HTTP headers
      */
     @GetMapping("/skills")
     @Timed
-    public ResponseEntity<List<Skill>> getAllSkills(Pageable pageable)
-        throws URISyntaxException {
+    public ResponseEntity<List<Skill>> getAllSkills(@ApiParam Pageable pageable) {
         log.debug("REST request to get a page of Skills");
         Page<Skill> page = skillRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/skills");
@@ -113,11 +117,7 @@ public class SkillResource {
     public ResponseEntity<Skill> getSkill(@PathVariable Long id) {
         log.debug("REST request to get Skill : {}", id);
         Skill skill = skillRepository.findOne(id);
-        return Optional.ofNullable(skill)
-            .map(result -> new ResponseEntity<>(
-                result,
-                HttpStatus.OK))
-            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(skill));
     }
 
     /**
@@ -132,7 +132,7 @@ public class SkillResource {
         log.debug("REST request to delete Skill : {}", id);
         skillRepository.delete(id);
         skillSearchRepository.delete(id);
-        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("skill", id.toString())).build();
+        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 
     /**
@@ -142,12 +142,10 @@ public class SkillResource {
      * @param query the query of the skill search 
      * @param pageable the pagination information
      * @return the result of the search
-     * @throws URISyntaxException if there is an error to generate the pagination HTTP headers
      */
     @GetMapping("/_search/skills")
     @Timed
-    public ResponseEntity<List<Skill>> searchSkills(@RequestParam String query, Pageable pageable)
-        throws URISyntaxException {
+    public ResponseEntity<List<Skill>> searchSkills(@RequestParam String query, @ApiParam Pageable pageable) {
         log.debug("REST request to search for a page of Skills for query {}", query);
         Page<Skill> page = skillSearchRepository.search(queryStringQuery(query), pageable);
         HttpHeaders headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/skills");

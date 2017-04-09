@@ -2,7 +2,7 @@
     'use strict';
 
     var jhiAlertError = {
-        template: '<div class="alerts" ng-cloak="">' +
+        template: '<div class="alerts" ng-cloak="" role="alert">' +
                         '<div ng-repeat="alert in $ctrl.alerts" ng-class="[alert.position, {\'toast\': alert.toast}]">' +
                             '<uib-alert ng-cloak="" type="{{alert.type}}" close="alert.close($ctrl.alerts)"><pre>{{ alert.msg }}</pre></uib-alert>' +
                         '</div>' +
@@ -47,7 +47,7 @@
 
             case 400:
                 var headers = Object.keys(httpResponse.headers()).filter(function (header) {
-                    return header.endsWith('app-error') || header.endsWith('app-params')
+                    return header.indexOf('app-error', header.length - 'app-error'.length) !== -1 || header.indexOf('app-params', header.length - 'app-params'.length) !== -1;
                 }).sort();
                 var errorHeader = httpResponse.headers(headers[0]);
                 var entityKey = httpResponse.headers(headers[1]);

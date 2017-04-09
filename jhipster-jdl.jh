@@ -1,4 +1,4 @@
-relationship ManyToMany{
+relationship OneToOne{
 	Profile{user(login)} to User
 }
 
@@ -38,11 +38,11 @@ entity Skill {
 }
 
 relationship ManyToMany {
-	Course{dependencies(Name)} to Skill
+	Course{impliedSkills(Name)} to Skill
 }
 
 relationship ManyToMany {
-	Course{skillsToLearn(Name)} to Skill
+	Course{acquirableSkills(Name)} to Skill
 }
 
 paginate all with pager

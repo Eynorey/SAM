@@ -24,16 +24,16 @@
         <dd>
             <span>{{vm.course.location}}</span>
         </dd>
-        <dt><span>Dependencies</span></dt>
+        <dt><span>Implied Skills</span></dt>
         <dd>
-            <span ng-repeat="dependencies in vm.course.dependencies">
-                <a ui-sref="skill-detail({id: dependencies.id})">{{dependencies.name}}</a>{{$last ? '' : ', '}}
+            <span ng-repeat="impliedSkills in vm.course.impliedSkills">
+                <a ui-sref="skill-detail({id: impliedSkills.id})">{{impliedSkills.name}}</a>{{$last ? '' : ', '}}
             </span>
         </dd>
-        <dt><span>Skills To Learn</span></dt>
+        <dt><span>Acquirable Skills</span></dt>
         <dd>
-            <span ng-repeat="skillsToLearn in vm.course.skillsToLearns">
-                <a ui-sref="skill-detail({id: skillsToLearn.id})">{{skillsToLearn.name}}</a>{{$last ? '' : ', '}}
+            <span ng-repeat="acquirableSkills in vm.course.acquirableSkills">
+                <a ui-sref="skill-detail({id: acquirableSkills.id})">{{acquirableSkills.name}}</a>{{$last ? '' : ', '}}
             </span>
         </dd>
     </dl>
@@ -46,6 +46,6 @@
 
     <button type="button" ui-sref="course-detail.edit({id:vm.course.id})" class="btn btn-primary">
         <span class="glyphicon glyphicon-pencil"></span>
-        <span class="hidden-xs hidden-sm"> Edit</span>
+        <span class="hidden-sm-down"> Edit</span>
     </button>
 </div>

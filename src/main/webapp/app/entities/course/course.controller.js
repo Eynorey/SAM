@@ -5,9 +5,10 @@
         .module('samApp')
         .controller('CourseController', CourseController);
 
-    CourseController.$inject = ['$scope', '$state', 'Course', 'CourseSearch', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];
+    CourseController.$inject = ['$state', 'Course', 'CourseSearch', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];
 
-    function CourseController ($scope, $state, Course, CourseSearch, ParseLinks, AlertService, paginationConstants, pagingParams) {
+    function CourseController($state, Course, CourseSearch, ParseLinks, AlertService, paginationConstants, pagingParams) {
+
         var vm = this;
 
         vm.loadPage = loadPage;

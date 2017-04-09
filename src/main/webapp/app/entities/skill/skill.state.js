@@ -47,7 +47,7 @@
             }
         })
         .state('skill-detail', {
-            parent: 'entity',
+            parent: 'skill',
             url: '/skill/{id}',
             data: {
                 authorities: ['ROLE_USER'],

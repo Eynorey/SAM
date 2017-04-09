@@ -1,7 +1,6 @@
 version: '2'
 services:
     sam-mysql:
-        container_name: sam-mysql
         image: mysql:5.7.13
         # volumes:
         #     - ~/volumes/jhipster/sam/mysql/:/var/lib/mysql/
@@ -11,4 +10,4 @@ services:
             - MYSQL_DATABASE=sam
         ports:
             - 3306:3306
-        command: mysqld --lower_case_table_names=1 --skip-ssl
+        command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8

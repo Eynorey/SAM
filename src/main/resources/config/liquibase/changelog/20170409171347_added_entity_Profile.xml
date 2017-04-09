@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Profile.
+    -->
+    <changeSet id="20170409171347-1" author="jhipster">
+        <createTable tableName="profile">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="credibility" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="credits" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="jhi_degree" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="semester" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="faculty" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="university" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="birthday" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+            <column name="user_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="profile" columnName="birthday" columnDataType="datetime"/>
+        
+        <createTable tableName="profile_offered_courses">
+            <column name="offered_courses_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="profiles_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="profiles_id, offered_courses_id" tableName="profile_offered_courses"/>
+        
+        <createTable tableName="profile_occupied_courses">
+            <column name="occupied_courses_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="profiles_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="profiles_id, occupied_courses_id" tableName="profile_occupied_courses"/>
+        
+        <createTable tableName="profile_skills">
+            <column name="skills_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="profiles_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="profiles_id, skills_id" tableName="profile_skills"/>
+        
+    </changeSet>
+</databaseChangeLog>

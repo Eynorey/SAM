@@ -47,7 +47,7 @@
             }
         })
         .state('profile-detail', {
-            parent: 'entity',
+            parent: 'profile',
             url: '/profile/{id}',
             data: {
                 authorities: ['ROLE_USER'],

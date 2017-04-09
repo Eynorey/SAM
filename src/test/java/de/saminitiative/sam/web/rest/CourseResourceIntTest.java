@@ -5,22 +5,22 @@ import de.saminitiative.sam.SamApp;
 import de.saminitiative.sam.domain.Course;
 import de.saminitiative.sam.repository.CourseRepository;
 import de.saminitiative.sam.repository.search.CourseSearchRepository;
+import de.saminitiative.sam.web.rest.errors.ExceptionTranslator;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.time.Instant;
 import java.time.ZonedDateTime;
@@ -58,19 +58,22 @@ public class CourseResourceIntTest {
     private static final String DEFAULT_LOCATION = "AAAAAAAAAA";
     private static final String UPDATED_LOCATION = "BBBBBBBBBB";
 
-    @Inject
+    @Autowired
     private CourseRepository courseRepository;
 
-    @Inject
+    @Autowired
     private CourseSearchRepository courseSearchRepository;
 
-    @Inject
+    @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
 
-    @Inject
+    @Autowired
     private PageableHandlerMethodArgumentResolver pageableArgumentResolver;
 
-    @Inject
+    @Autowired
+    private ExceptionTranslator exceptionTranslator;
+
+    @Autowired
     private EntityManager em;
 
     private MockMvc restCourseMockMvc;
@@ -80,11 +83,10 @@ public class CourseResourceIntTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        CourseResource courseResource = new CourseResource();
-        ReflectionTestUtils.setField(courseResource, "courseSearchRepository", courseSearchRepository);
-        ReflectionTestUtils.setField(courseResource, "courseRepository", courseRepository);
+        CourseResource courseResource = new CourseResource(courseRepository, courseSearchRepository);
         this.restCourseMockMvc = MockMvcBuilders.standaloneSetup(courseResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
+            .setControllerAdvice(exceptionTranslator)
             .setMessageConverters(jacksonMessageConverter).build();
     }
 
@@ -96,11 +98,11 @@ public class CourseResourceIntTest {
      */
     public static Course createEntity(EntityManager em) {
         Course course = new Course()
-                .title(DEFAULT_TITLE)
-                .description(DEFAULT_DESCRIPTION)
-                .start(DEFAULT_START)
-                .end(DEFAULT_END)
-                .location(DEFAULT_LOCATION);
+            .title(DEFAULT_TITLE)
+            .description(DEFAULT_DESCRIPTION)
+            .start(DEFAULT_START)
+            .end(DEFAULT_END)
+            .location(DEFAULT_LOCATION);
         return course;
     }
 
@@ -116,25 +118,43 @@ public class CourseResourceIntTest {
         int databaseSizeBeforeCreate = courseRepository.findAll().size();
 
         // Create the Course
-
         restCourseMockMvc.perform(post("/api/courses")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(course)))
             .andExpect(status().isCreated());
 
         // Validate the Course in the database
-        List<Course> courses = courseRepository.findAll();
-        assertThat(courses).hasSize(databaseSizeBeforeCreate + 1);
-        Course testCourse = courses.get(courses.size() - 1);
+        List<Course> courseList = courseRepository.findAll();
+        assertThat(courseList).hasSize(databaseSizeBeforeCreate + 1);
+        Course testCourse = courseList.get(courseList.size() - 1);
         assertThat(testCourse.getTitle()).isEqualTo(DEFAULT_TITLE);
         assertThat(testCourse.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
         assertThat(testCourse.getStart()).isEqualTo(DEFAULT_START);
         assertThat(testCourse.getEnd()).isEqualTo(DEFAULT_END);
         assertThat(testCourse.getLocation()).isEqualTo(DEFAULT_LOCATION);
 
-        // Validate the Course in ElasticSearch
+        // Validate the Course in Elasticsearch
         Course courseEs = courseSearchRepository.findOne(testCourse.getId());
         assertThat(courseEs).isEqualToComparingFieldByField(testCourse);
+    }
+
+    @Test
+    @Transactional
+    public void createCourseWithExistingId() throws Exception {
+        int databaseSizeBeforeCreate = courseRepository.findAll().size();
+
+        // Create the Course with an existing ID
+        course.setId(1L);
+
+        // An entity with an existing ID cannot be created, so this API call must fail
+        restCourseMockMvc.perform(post("/api/courses")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(course)))
+            .andExpect(status().isBadRequest());
+
+        // Validate the Alice in the database
+        List<Course> courseList = courseRepository.findAll();
+        assertThat(courseList).hasSize(databaseSizeBeforeCreate);
     }
 
     @Test
@@ -143,7 +163,7 @@ public class CourseResourceIntTest {
         // Initialize the database
         courseRepository.saveAndFlush(course);
 
-        // Get all the courses
+        // Get all the courseList
         restCourseMockMvc.perform(get("/api/courses?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
@@ -192,11 +212,11 @@ public class CourseResourceIntTest {
         // Update the course
         Course updatedCourse = courseRepository.findOne(course.getId());
         updatedCourse
-                .title(UPDATED_TITLE)
-                .description(UPDATED_DESCRIPTION)
-                .start(UPDATED_START)
-                .end(UPDATED_END)
-                .location(UPDATED_LOCATION);
+            .title(UPDATED_TITLE)
+            .description(UPDATED_DESCRIPTION)
+            .start(UPDATED_START)
+            .end(UPDATED_END)
+            .location(UPDATED_LOCATION);
 
         restCourseMockMvc.perform(put("/api/courses")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -204,18 +224,36 @@ public class CourseResourceIntTest {
             .andExpect(status().isOk());
 
         // Validate the Course in the database
-        List<Course> courses = courseRepository.findAll();
-        assertThat(courses).hasSize(databaseSizeBeforeUpdate);
-        Course testCourse = courses.get(courses.size() - 1);
+        List<Course> courseList = courseRepository.findAll();
+        assertThat(courseList).hasSize(databaseSizeBeforeUpdate);
+        Course testCourse = courseList.get(courseList.size() - 1);
         assertThat(testCourse.getTitle()).isEqualTo(UPDATED_TITLE);
         assertThat(testCourse.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testCourse.getStart()).isEqualTo(UPDATED_START);
         assertThat(testCourse.getEnd()).isEqualTo(UPDATED_END);
         assertThat(testCourse.getLocation()).isEqualTo(UPDATED_LOCATION);
 
-        // Validate the Course in ElasticSearch
+        // Validate the Course in Elasticsearch
         Course courseEs = courseSearchRepository.findOne(testCourse.getId());
         assertThat(courseEs).isEqualToComparingFieldByField(testCourse);
+    }
+
+    @Test
+    @Transactional
+    public void updateNonExistingCourse() throws Exception {
+        int databaseSizeBeforeUpdate = courseRepository.findAll().size();
+
+        // Create the Course
+
+        // If the entity doesn't have an ID, it will be created instead of just being updated
+        restCourseMockMvc.perform(put("/api/courses")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(course)))
+            .andExpect(status().isCreated());
+
+        // Validate the Course in the database
+        List<Course> courseList = courseRepository.findAll();
+        assertThat(courseList).hasSize(databaseSizeBeforeUpdate + 1);
     }
 
     @Test
@@ -231,13 +269,13 @@ public class CourseResourceIntTest {
             .accept(TestUtil.APPLICATION_JSON_UTF8))
             .andExpect(status().isOk());
 
-        // Validate ElasticSearch is empty
+        // Validate Elasticsearch is empty
         boolean courseExistsInEs = courseSearchRepository.exists(course.getId());
         assertThat(courseExistsInEs).isFalse();
 
         // Validate the database is empty
-        List<Course> courses = courseRepository.findAll();
-        assertThat(courses).hasSize(databaseSizeBeforeDelete - 1);
+        List<Course> courseList = courseRepository.findAll();
+        assertThat(courseList).hasSize(databaseSizeBeforeDelete - 1);
     }
 
     @Test
@@ -257,5 +295,11 @@ public class CourseResourceIntTest {
             .andExpect(jsonPath("$.[*].start").value(hasItem(sameInstant(DEFAULT_START))))
             .andExpect(jsonPath("$.[*].end").value(hasItem(sameInstant(DEFAULT_END))))
             .andExpect(jsonPath("$.[*].location").value(hasItem(DEFAULT_LOCATION.toString())));
+    }
+
+    @Test
+    @Transactional
+    public void equalsVerifier() throws Exception {
+        TestUtil.equalsVerifier(Course.class);
     }
 }

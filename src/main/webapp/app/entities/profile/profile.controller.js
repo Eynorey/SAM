@@ -5,9 +5,10 @@
         .module('samApp')
         .controller('ProfileController', ProfileController);
 
-    ProfileController.$inject = ['$scope', '$state', 'Profile', 'ProfileSearch', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];
+    ProfileController.$inject = ['$state', 'Profile', 'ProfileSearch', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];
 
-    function ProfileController ($scope, $state, Profile, ProfileSearch, ParseLinks, AlertService, paginationConstants, pagingParams) {
+    function ProfileController($state, Profile, ProfileSearch, ParseLinks, AlertService, paginationConstants, pagingParams) {
+
         var vm = this;
 
         vm.loadPage = loadPage;

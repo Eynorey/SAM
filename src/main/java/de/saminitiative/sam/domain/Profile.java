@@ -23,7 +23,7 @@ public class Profile implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "credibility")
@@ -32,7 +32,7 @@ public class Profile implements Serializable {
     @Column(name = "credits")
     private Double credits;
 
-    @Column(name = "degree")
+    @Column(name = "jhi_degree")
     private String degree;
 
     @Column(name = "semester")
@@ -47,32 +47,29 @@ public class Profile implements Serializable {
     @Column(name = "birthday")
     private ZonedDateTime birthday;
 
-    @ManyToMany
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "profile_user",
-               joinColumns = @JoinColumn(name="profiles_id", referencedColumnName="ID"),
-               inverseJoinColumns = @JoinColumn(name="users_id", referencedColumnName="ID"))
-    private Set<User> users = new HashSet<>();
+    @OneToOne
+    @JoinColumn(unique = true)
+    private User user;
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "profile_offered_courses",
-               joinColumns = @JoinColumn(name="profiles_id", referencedColumnName="ID"),
-               inverseJoinColumns = @JoinColumn(name="offered_courses_id", referencedColumnName="ID"))
+               joinColumns = @JoinColumn(name="profiles_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="offered_courses_id", referencedColumnName="id"))
     private Set<Course> offeredCourses = new HashSet<>();
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "profile_occupied_courses",
-               joinColumns = @JoinColumn(name="profiles_id", referencedColumnName="ID"),
-               inverseJoinColumns = @JoinColumn(name="occupied_courses_id", referencedColumnName="ID"))
+               joinColumns = @JoinColumn(name="profiles_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="occupied_courses_id", referencedColumnName="id"))
     private Set<Course> occupiedCourses = new HashSet<>();
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "profile_skills",
-               joinColumns = @JoinColumn(name="profiles_id", referencedColumnName="ID"),
-               inverseJoinColumns = @JoinColumn(name="skills_id", referencedColumnName="ID"))
+               joinColumns = @JoinColumn(name="profiles_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="skills_id", referencedColumnName="id"))
     private Set<Skill> skills = new HashSet<>();
 
     public Long getId() {
@@ -174,27 +171,17 @@ public class Profile implements Serializable {
         this.birthday = birthday;
     }
 
-    public Set<User> getUsers() {
-        return users;
+    public User getUser() {
+        return user;
     }
 
-    public Profile users(Set<User> users) {
-        this.users = users;
+    public Profile user(User user) {
+        this.user = user;
         return this;
     }
 
-    public Profile addUser(User user) {
-        users.add(user);
-        return this;
-    }
-
-    public Profile removeUser(User user) {
-        users.remove(user);
-        return this;
-    }
-
-    public void setUsers(Set<User> users) {
-        this.users = users;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Set<Course> getOfferedCourses() {
@@ -207,12 +194,12 @@ public class Profile implements Serializable {
     }
 
     public Profile addOfferedCourses(Course course) {
-        offeredCourses.add(course);
+        this.offeredCourses.add(course);
         return this;
     }
 
     public Profile removeOfferedCourses(Course course) {
-        offeredCourses.remove(course);
+        this.offeredCourses.remove(course);
         return this;
     }
 
@@ -230,12 +217,12 @@ public class Profile implements Serializable {
     }
 
     public Profile addOccupiedCourses(Course course) {
-        occupiedCourses.add(course);
+        this.occupiedCourses.add(course);
         return this;
     }
 
     public Profile removeOccupiedCourses(Course course) {
-        occupiedCourses.remove(course);
+        this.occupiedCourses.remove(course);
         return this;
     }
 
@@ -253,12 +240,12 @@ public class Profile implements Serializable {
     }
 
     public Profile addSkills(Skill skill) {
-        skills.add(skill);
+        this.skills.add(skill);
         return this;
     }
 
     public Profile removeSkills(Skill skill) {
-        skills.remove(skill);
+        this.skills.remove(skill);
         return this;
     }
 
