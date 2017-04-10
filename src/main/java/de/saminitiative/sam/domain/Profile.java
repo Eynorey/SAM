@@ -23,7 +23,6 @@ public class Profile implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "credibility")
@@ -48,7 +47,7 @@ public class Profile implements Serializable {
     private ZonedDateTime birthday;
 
     @OneToOne
-//    @MapsId
+    @MapsId
     @JoinColumn(unique = true)
     private User user;
 
@@ -185,74 +184,74 @@ public class Profile implements Serializable {
         this.user = user;
     }
 
-//    public Set<Course> getOfferedCourses() {
-//        return offeredCourses;
-//    }
-//
-//    public Profile offeredCourses(Set<Course> courses) {
-//        this.offeredCourses = courses;
-//        return this;
-//    }
-//
-//    public Profile addOfferedCourses(Course course) {
-//        this.offeredCourses.add(course);
-//        return this;
-//    }
-//
-//    public Profile removeOfferedCourses(Course course) {
-//        this.offeredCourses.remove(course);
-//        return this;
-//    }
-//
-//    public void setOfferedCourses(Set<Course> courses) {
-//        this.offeredCourses = courses;
-//    }
-//
-//    public Set<Course> getOccupiedCourses() {
-//        return occupiedCourses;
-//    }
-//
-//    public Profile occupiedCourses(Set<Course> courses) {
-//        this.occupiedCourses = courses;
-//        return this;
-//    }
-//
-//    public Profile addOccupiedCourses(Course course) {
-//        this.occupiedCourses.add(course);
-//        return this;
-//    }
-//
-//    public Profile removeOccupiedCourses(Course course) {
-//        this.occupiedCourses.remove(course);
-//        return this;
-//    }
-//
-//    public void setOccupiedCourses(Set<Course> courses) {
-//        this.occupiedCourses = courses;
-//    }
-//
-//    public Set<Skill> getSkills() {
-//        return skills;
-//    }
-//
-//    public Profile skills(Set<Skill> skills) {
-//        this.skills = skills;
-//        return this;
-//    }
-//
-//    public Profile addSkills(Skill skill) {
-//        this.skills.add(skill);
-//        return this;
-//    }
-//
-//    public Profile removeSkills(Skill skill) {
-//        this.skills.remove(skill);
-//        return this;
-//    }
-//
-//    public void setSkills(Set<Skill> skills) {
-//        this.skills = skills;
-//    }
+    public Set<Course> getOfferedCourses() {
+        return offeredCourses;
+    }
+
+    public Profile offeredCourses(Set<Course> courses) {
+        this.offeredCourses = courses;
+        return this;
+    }
+
+    public Profile addOfferedCourses(Course course) {
+        this.offeredCourses.add(course);
+        return this;
+    }
+
+    public Profile removeOfferedCourses(Course course) {
+        this.offeredCourses.remove(course);
+        return this;
+    }
+
+    public void setOfferedCourses(Set<Course> courses) {
+        this.offeredCourses = courses;
+    }
+
+    public Set<Course> getOccupiedCourses() {
+        return occupiedCourses;
+    }
+
+    public Profile occupiedCourses(Set<Course> courses) {
+        this.occupiedCourses = courses;
+        return this;
+    }
+
+    public Profile addOccupiedCourses(Course course) {
+        this.occupiedCourses.add(course);
+        return this;
+    }
+
+    public Profile removeOccupiedCourses(Course course) {
+        this.occupiedCourses.remove(course);
+        return this;
+    }
+
+    public void setOccupiedCourses(Set<Course> courses) {
+        this.occupiedCourses = courses;
+    }
+
+    public Set<Skill> getSkills() {
+        return skills;
+    }
+
+    public Profile skills(Set<Skill> skills) {
+        this.skills = skills;
+        return this;
+    }
+
+    public Profile addSkills(Skill skill) {
+        this.skills.add(skill);
+        return this;
+    }
+
+    public Profile removeSkills(Skill skill) {
+        this.skills.remove(skill);
+        return this;
+    }
+
+    public void setSkills(Set<Skill> skills) {
+        this.skills = skills;
+    }
 
     @Override
     public boolean equals(Object o) {
