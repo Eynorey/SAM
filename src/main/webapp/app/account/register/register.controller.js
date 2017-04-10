@@ -19,6 +19,10 @@
         vm.registerAccount = {};
         vm.success = null;
 
+        //Birthday date picker
+        vm.datePickerOpenStatus = {};
+        vm.openCalendar = openCalendar;
+
         $timeout(function (){angular.element('#login').focus();});
 
         function register () {
@@ -44,6 +48,12 @@
                     }
                 });
             }
+        }
+
+        vm.datePickerOpenStatus.birthday = false;
+
+        function openCalendar (date) {
+            vm.datePickerOpenStatus[date] = true;
         }
     }
 })();

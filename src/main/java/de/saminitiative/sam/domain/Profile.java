@@ -23,6 +23,7 @@ public class Profile implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "credibility")
@@ -47,8 +48,8 @@ public class Profile implements Serializable {
     private ZonedDateTime birthday;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(unique = true)
+    @MapsId("id")
+//    @JoinColumn(unique = true)
     private User user;
 
     @ManyToMany
