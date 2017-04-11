@@ -1,11 +1,14 @@
 package de.saminitiative.sam.service;
 
 import de.saminitiative.sam.domain.Authority;
+import de.saminitiative.sam.domain.Profile;
 import de.saminitiative.sam.domain.User;
 import de.saminitiative.sam.repository.AuthorityRepository;
 import de.saminitiative.sam.repository.PersistentTokenRepository;
 import de.saminitiative.sam.config.Constants;
+import de.saminitiative.sam.repository.ProfileRepository;
 import de.saminitiative.sam.repository.UserRepository;
+import de.saminitiative.sam.repository.search.ProfileSearchRepository;
 import de.saminitiative.sam.repository.search.UserSearchRepository;
 import de.saminitiative.sam.security.AuthoritiesConstants;
 import de.saminitiative.sam.security.SecurityUtils;
@@ -21,6 +24,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.inject.Inject;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.*;
@@ -45,6 +49,12 @@ public class UserService {
     private final PersistentTokenRepository persistentTokenRepository;
 
     private final AuthorityRepository authorityRepository;
+
+    @Inject
+    private ProfileRepository profileRepository;
+
+    @Inject
+    private ProfileSearchRepository profileSearchRepository;
 
     public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, SocialService socialService, UserSearchRepository userSearchRepository, PersistentTokenRepository persistentTokenRepository, AuthorityRepository authorityRepository) {
         this.userRepository = userRepository;
@@ -95,7 +105,8 @@ public class UserService {
     }
 
     public User createUser(String login, String password, String firstName, String lastName, String email,
-        String imageUrl, String langKey) {
+        String imageUrl, String langKey, String degree, int semester, String faculty, String universtity, ZonedDateTime birthday) {
+        Long id;
 
         User newUser = new User();
         Authority authority = authorityRepository.findOne(AuthoritiesConstants.USER);
@@ -115,9 +126,28 @@ public class UserService {
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         authorities.add(authority);
         newUser.setAuthorities(authorities);
-        userRepository.save(newUser);
-        userSearchRepository.save(newUser);
+        log.debug("User id before saving: " + newUser.getId());
+//        userRepository.save(newUser);
+        id =  userRepository.save(newUser).getId();
+        log.debug("User Id in Repo: " + id);
+//        userSearchRepository.save(newUser);
+        log.debug("User Id in SearchRepo: " + userSearchRepository.save(newUser).getId());
         log.debug("Created Information for User: {}", newUser);
+
+        // Create and save the Profile entity
+        Profile profile = new Profile();
+        profile.setId(id);
+        profile.setUser(newUser);
+        profile.setDegree(degree);
+        profile.setSemester(semester);
+        profile.setFaculty(faculty);
+        profile.setUniversity(universtity);
+        profile.setBirthday(birthday);
+
+        profileRepository.save(profile);
+        profileSearchRepository.save(profile);
+        log.debug("Created profile for user: {}", newUser.getLogin());
+
         return newUser;
     }
 
