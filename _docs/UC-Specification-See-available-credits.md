@@ -44,27 +44,14 @@ Implementation of this use case will allow the user to have an overview over his
 
 ### 2.1 Basic Flow
 
-![](ad_register.png)
+![](ad_see-available-credits.png)
 
 ### 2.2 Alternative Flows
-
-![](ad_register-alt1.png)
-
-#### 2.2.1
-
-First Alternative Flow If the "check emails" activity is unsuccessful after a number of repetitions an alternative flow can be chosen.
+No specified alternative flows. 
 
 ## 3\. Special Requirements
 
-[A special requirement is typically a nonfunctional requirement that is specific to a use case, but is not easily or naturally specified in the text of the use case’s event flow. Examples of special requirements include legal and regulatory requirements, application standards, and quality attributes of the system to be built including usability, reliability, performance or supportability requirements. Additionally, other requirementssuch as operating systems and environments, compatibility requirements, and design constraintsshould be captured in this section.]
-
 ### 3.1 Functionality
-
-See Gherkin .feature file below
-
-[Link to file](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_git/sam-private?path=%2Fsrc%2Ftest%2Ffeatures%2Fuser%2Fregister.feature&version=GBmaster&_a=contents)
-
-![](feature_register.png)
 
 ### 3.2 Usability
 
@@ -91,21 +78,16 @@ See Gherkin .feature file below
 ### 3.12 Applicable Standards
 
 ## 4\. Preconditions
+The main preconditions for this use case are: 
 
-[A precondition of a use case is the state of the system that must be present prior to a use case being performed.]
-
-### 4.1 Precondition One
+1. User is registered at SAM
+2. User is logged in 
 
 ## 5\. Postconditions
 
-[A postcondition of a use case is a list of possible states the system can be in immediately after a use case has finished.]
-
-### 5.1 Postcondition One
-
 ## 6\. Extension Points
 
-[Extension points of the use case.]
+Future implementation may contain further activities for managing credit points, such as buttons like "Earn more", which redirects you to a list of courses demanded on a platform (possibly sorted based on your skill tree). 
 
 ### 6.1
-
-[Definition of the location of the extension point in the flow of events.]
+The extension point would follow the "view available credit points" activity. 
