@@ -69,7 +69,7 @@ No specified alternative flows.
 
 ### 3.9 Interfaces
 
-![](wf_register.png)
+![](wf_see-available-credits.png)
 
 ### 3.10 Licensing Requirements
 
