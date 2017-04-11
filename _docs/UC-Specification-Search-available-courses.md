@@ -81,7 +81,6 @@ See Gherkin .feature file below
 ### 3.8 Purchased Components
 
 ### 3.9 Interfaces
-![](wf_register.png)
 
 ### 3.10 Licensing Requirements
 
