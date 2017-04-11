@@ -47,7 +47,8 @@ Implementation of this use case will allow the user to have an overview over his
 ![](ad_see-available-credits.png)
 
 ### 2.2 Alternative Flows
-No specified alternative flows. 
+
+No specified alternative flows.
 
 ## 3\. Special Requirements
 
@@ -70,24 +71,25 @@ No specified alternative flows.
 ### 3.9 Interfaces
 
 ![](wf_see-available-credits.png)
-
-### 3.10 Licensing Requirements
+3.10 Licensing Requirements
 
 ### 3.11 Legal, Copyright, and Other Notices
 
 ### 3.12 Applicable Standards
 
 ## 4\. Preconditions
-The main preconditions for this use case are: 
 
-1. User is registered at SAM
-2. User is logged in 
+The main preconditions for this use case are:
+
+1.  User is registered at SAM
+2.  User is logged in
 
 ## 5\. Postconditions
 
 ## 6\. Extension Points
 
-Future implementation may contain further activities for managing credit points, such as buttons like "Earn more", which redirects you to a list of courses demanded on a platform (possibly sorted based on your skill tree). 
+Future implementation may contain further activities for managing credit points, such as buttons like "Earn more", which redirects you to a list of courses demanded on a platform (possibly sorted based on your skill tree).
 
 ### 6.1
-The extension point would follow the "view available credit points" activity. 
+
+The extension point would follow the "view available credit points" activity.
