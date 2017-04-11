@@ -38,8 +38,7 @@
 
 ### 1.1 Brief Description
 
-The purpose of this use case is for a registered user to be able to see the courses he or she booked.
-They will be listed in a table-like format with the closest upcoming courses being displayed on top if the list.
+The purpose of this use case is for a registered user to be able to see the courses he or she booked. They will be listed in a table-like format with the closest upcoming courses being displayed at the top of the list.
 
 ## 2\. Flow of Events
 
