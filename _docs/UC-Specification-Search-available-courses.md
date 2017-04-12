@@ -6,7 +6,7 @@
 
 * * *
 
-# Use-Case Specification: Register
+# Use-Case Specification: Search available courses
 
 ###### Version 1.0
 
