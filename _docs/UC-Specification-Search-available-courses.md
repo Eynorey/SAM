@@ -44,27 +44,13 @@ The use case in question is supposed to create a tool for the user to find the c
 
 ### 2.1 Basic Flow
 
-![](ad_register.png)
+![](ad_search-available-courses.png)
 
 ### 2.2 Alternative Flows
 
-![](ad_register-alt1.png)
-
-#### 2.2.1
-
-First Alternative Flow If the "check emails" activity is unsuccessful after a number of repetitions an alternative flow can be chosen.
-
 ## 3\. Special Requirements
 
-[A special requirement is typically a nonfunctional requirement that is specific to a use case, but is not easily or naturally specified in the text of the use case’s event flow. Examples of special requirements include legal and regulatory requirements, application standards, and quality attributes of the system to be built including usability, reliability, performance or supportability requirements. Additionally, other requirementssuch as operating systems and environments, compatibility requirements, and design constraintsshould be captured in this section.]
-
 ### 3.1 Functionality
-
-See Gherkin .feature file below
-
-[Link to file](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_git/sam-private?path=%2Fsrc%2Ftest%2Ffeatures%2Fuser%2Fregister.feature&version=GBmaster&_a=contents)
-
-![](feature_register.png)
 
 ### 3.2 Usability
 
@@ -90,20 +76,25 @@ See Gherkin .feature file below
 
 ## 4\. Preconditions
 
-[A precondition of a use case is the state of the system that must be present prior to a use case being performed.]
-
-### 4.1 Precondition One
+There are no preconditions to this use case, as the user does not have to be registered on the platform in order to search through available courses. 
 
 ## 5\. Postconditions
 
-[A postcondition of a use case is a list of possible states the system can be in immediately after a use case has finished.]
+The following sections are listing possible states the system can be in immediately after a use case has finished.
 
 ### 5.1 Postcondition One
 
+A number of courses found is 1 or larger. In this case a list of courses is presented under the search-field. 
+
+### 5.2 Postcondition Two
+
+A number of courses found is 0. In this case a notification is shown to the user, stating that the search had no success and key-words or parameters should be change in order to find needed course. A button "Create this course" should be shown below notifying the user that he can be the first one to offer a course with given parameters.
+ 
 ## 6\. Extension Points
 
-[Extension points of the use case.]
+The following sections represent a list of possible use case extensions. 
 
-### 6.1
+### 6.1 Autofill 
+ 
+An autofill feature can be implemented to extend the use case. The search field would expand into a dynamic list of popular items searched before, starting with the same characters as the user's search-request.  
 
-[Definition of the location of the extension point in the flow of events.]
