@@ -73,6 +73,8 @@ They will be listed in a table-like format with the closest upcoming courses bei
 
 ### 3.9 Interfaces
 
+![](wf_see-schedule.png)
+
 ### 3.10 Licensing Requirements
 
 ### 3.11 Legal, Copyright, and Other Notices
