@@ -68,6 +68,8 @@ The use case in question is supposed to create a tool for the user to find the c
 
 ### 3.9 Interfaces
 
+![](wf_search-available-courses.png)
+
 ### 3.10 Licensing Requirements
 
 ### 3.11 Legal, Copyright, and Other Notices
