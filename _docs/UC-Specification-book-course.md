@@ -43,7 +43,7 @@ Implementation of this use case will allow the user to book a course and by that
 
 ### 2.1 Basic Flow
 
-![](ad_see-available-credits.png)
+![](ad_see-book-course.svg)
 
 ### 2.2 Alternative Flows
 
@@ -69,7 +69,7 @@ No specified alternative flows.
 
 ### 3.9 Interfaces
 
-![](wf_see-available-credits.png)
+![](wf_book-course.svg)
 3.10 Licensing Requirements
 
 ### 3.11 Legal, Copyright, and Other Notices
