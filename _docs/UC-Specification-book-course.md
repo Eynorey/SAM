@@ -11,7 +11,7 @@
 
 ## Table of Contents
 
-1.  [Register](# 1-register)
+1.  [Register](# 1-Book Course)
     1.  [Brief Description](# 11-brief-description)
 2.  [Flow of Events](# 2-flow-of-events)
     1.  [Basic Flow](# 21-basic-flow)
@@ -33,11 +33,11 @@
 5.  [Postconditions](# 5-postconditions)
 6.  [Extension Points](# 6-extension-points)
 
-## 1\. Register
+## 1\. Book Course
 
 ### 1.1 Brief Description
 
-Implementation of this use case will allow the user to have an overview over his or her credits on the platform. Only registered users will have access to this functionality, as there is no way for a guest to take a course offered by SAM. Therefore the information about available credits is going to be placed on the user's personal page, or "classroom", along with other data necessary to manage acquired skills (not included in this use case).
+Implementation of this use case will allow the user to book a course and by that get in touch with somebody who can teach him or her interesting topics. Only registered users will have access to this functionality, as there is no way for a guest to take a course offered by SAM.
 
 ## 2\. Flow of Events
 
