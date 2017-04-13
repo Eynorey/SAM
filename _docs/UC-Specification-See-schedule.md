@@ -72,6 +72,8 @@ The purpose of this use case is for a registered user to be able to see the cour
 
 ### 3.9 Interfaces
 
+![](wf_see-schedule.png)
+
 ### 3.10 Licensing Requirements
 
 ### 3.11 Legal, Copyright, and Other Notices
