@@ -58,6 +58,8 @@ The use case in question is supposed to create a tool for the user to find the c
 
 ### 3.4 Performance
 
+Performance factor can be crucial to the usability of a search engine on the SAM platform. Therefore one of the most importance requirements in this use case is the minimization of search time. The user has to receive search results within the first 5 seconds after confirming his or her request. 
+
 ### 3.5 Supportability
 
 ### 3.6 Design constraints
@@ -102,4 +104,4 @@ An autofill feature can be implemented to extend the use case. The search field 
 
 ### 6.2 Sort function
 
-Along with the filters, user can be offered to filter the search results by date, rating or relevance. 
+Along with the filters, user can be offered to filter the search results by date, rating or relevance.
