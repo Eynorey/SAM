@@ -6,12 +6,12 @@
 
 * * *
 
-# Use-Case Specification: Book Course
+# Use-Case Specification: Manage Account
 ###### Version 1.0
 
 ## Table of Contents
 
-1.  [Register](# 1-Book Course)
+1.  [Register](# 1-Manage Account)
     1.  [Brief Description](# 11-brief-description)
 2.  [Flow of Events](# 2-flow-of-events)
     1.  [Basic Flow](# 21-basic-flow)
@@ -33,11 +33,11 @@
 5.  [Postconditions](# 5-postconditions)
 6.  [Extension Points](# 6-extension-points)
 
-## 1\. Book Course
+## 1\. Manage Account
 
 ### 1.1 Brief Description
 
-Implementation of this use case will allow the user to book a course and by that get in touch with somebody who can teach him or her interesting topics. Only registered users will have access to this functionality, as there is no way for a guest to take a course offered by SAM.
+Implementation of this use case will allow the user to edit his or her profile information (email address, degree, etc). Only registered users will have access to this functionality, as unregistered users don't have a profile on SAM.
 
 ## 2\. Flow of Events
 
