@@ -38,7 +38,7 @@
 
 ### 1.1 Brief Description
 
-The use case in question is supposed to create a tool for the user to find the courses he or she is interested in on the SAM Platform. Guests, as well as registered users, can search through courses available on the Website by clicking the "find a course" button. In the Search-View a number of search options should be presented to the user to make it easier to delimit the search to specific criteria like dates, duration, topic or teacher. After setting the desired parameters a key word can be entered into the search field. By pressing "Search"-button user confirms the search request and will be presented with the results in a list form. 
+The use case in question is supposed to create a tool for the user to find the courses he or she is interested in on the SAM Platform. Guests, as well as registered users, can search through courses available on the Website by clicking the "find a course" button. In the Search-View a number of search options should be presented to the user to make it easier to delimit the search to specific criteria like dates, duration, topic or teacher. After setting the desired parameters a key word can be entered into the search field. By pressing "Search"-button user confirms the search request and will be presented with the results in a list form.
 
 ## 2\. Flow of Events
 
@@ -76,7 +76,7 @@ The use case in question is supposed to create a tool for the user to find the c
 
 ## 4\. Preconditions
 
-There are no preconditions to this use case, as the user does not have to be registered on the platform in order to search through available courses. 
+There are no preconditions to this use case, as the user does not have to be registered on the platform in order to search through available courses.
 
 ## 5\. Postconditions
 
@@ -84,17 +84,20 @@ The following sections are listing possible states the system can be in immediat
 
 ### 5.1 Postcondition One
 
-A number of courses found is 1 or larger. In this case a list of courses is presented under the search-field. 
+A number of courses found is 1 or larger. In this case a list of courses is presented under the search-field.
 
 ### 5.2 Postcondition Two
 
-A number of courses found is 0. In this case a notification is shown to the user, stating that the search had no success and key-words or parameters should be change in order to find needed course. A button "Create this course" should be shown below notifying the user that he can be the first one to offer a course with given parameters.
- 
+A number of courses found is 0\. In this case a notification is shown to the user, stating that the search had no success and key-words or parameters should be change in order to find needed course. A button "Create this course" should be shown below notifying the user that he can be the first one to offer a course with given parameters.
+
 ## 6\. Extension Points
 
-The following sections represent a list of possible use case extensions. 
+The following sections represent a list of possible use case extensions.
 
-### 6.1 Autofill 
- 
-An autofill feature can be implemented to extend the use case. The search field would expand into a dynamic list of popular items searched before, starting with the same characters as the user's search-request.  
+### 6.1 Autofill
 
+An autofill feature can be implemented to extend the use case. The search field would expand into a dynamic list of popular items searched before, starting with the same characters as the user's search-request.
+
+### 6.2 Sort function
+
+Along with the filters, user can be offered to filter the search results by date, rating or relevance. 
