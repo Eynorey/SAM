@@ -79,17 +79,14 @@ No specified alternative flows.
 
 ## 4\. Preconditions
 
-The main preconditions for this use case are:
+[A precondition of a use case is the state of the system that must be present prior to a use case being performed.]
 
-1.  User is registered at SAM
-2.  User is logged in
+### 4.1 Precondition One
 
 ## 5\. Postconditions
 
+[A postcondition of a use case is a list of possible states the system can be in immediately after a use case has finished.]
+
 ## 6\. Extension Points
 
-Future implementation may contain further activities for managing credit points, such as buttons like "Earn more", which redirects you to a list of courses demanded on a platform (possibly sorted based on your skill tree).
-
 ### 6.1
-
-The extension point would follow the "view available credit points" activity.
