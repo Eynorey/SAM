@@ -56,6 +56,8 @@ The purpose of this use case is for a registered user to be able to see the cour
 
 ### 3.1 Functionality
 
+When selecting a course (clicking on an item), the user will be redirected to the course info page fur further reference.
+
 ### 3.2 Usability
 
 ### 3.3 Reliability
@@ -65,6 +67,8 @@ The purpose of this use case is for a registered user to be able to see the cour
 ### 3.5 Supportability
 
 ### 3.6 Design constraints
+
+The list should be sorted in the way so that the most recent upcoming course should be displayed on top and maybe somehow additionally marked.
 
 ### 3.7 On-line User Documentation and Help System Requirements
 
@@ -82,7 +86,7 @@ The purpose of this use case is for a registered user to be able to see the cour
 
 ## 4\. Preconditions
 
-[A precondition of a use case is the state of the system that must be present prior to a use case being performed.]
+In order for the user to see courses, he has to book some first. Those will then show up in this list here.
 
 ### 4.1 Precondition One
 
