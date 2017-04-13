@@ -85,6 +85,8 @@ Figure: Controller
 
 ## 6\. Process View
 
+![](ar_deployment-process.png)
+
 ## 7\. Deployment View
 
 ![](ar_deployment-view.png)
