@@ -6,8 +6,7 @@
 
 * * *
 
-# Use-Case Specification: See available credits
-
+# Use-Case Specification: Book Course
 ###### Version 1.0
 
 ## Table of Contents
