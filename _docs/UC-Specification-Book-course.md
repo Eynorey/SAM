@@ -43,7 +43,7 @@ Implementation of this use case will allow the user to book a course and by that
 
 ### 2.1 Basic Flow
 
-![](ad_see-book-course.png)
+![](ad_book-course.png)
 
 ### 2.2 Alternative Flows
 
