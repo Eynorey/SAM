@@ -21,15 +21,15 @@ public class ManagedUserVM extends UserDTO {
     private String password;
 
     //Properties from Profile
-    private String degree;
+    private String degree = "";
 
-    private Integer semester;
+    private Integer semester = 0;
 
-    private String faculty;
+    private String faculty = "";
 
-    private String university;
+    private String university = "";
 
-    private ZonedDateTime birthday;
+    private ZonedDateTime birthday = ZonedDateTime.now();
 
     public ManagedUserVM() {
         // Empty constructor needed for Jackson.
@@ -38,19 +38,19 @@ public class ManagedUserVM extends UserDTO {
     public ManagedUserVM(Long id, String login, String password, String firstName, String lastName,
                          String email, boolean activated, String imageUrl, String langKey,
                          String createdBy, ZonedDateTime createdDate, String lastModifiedBy, ZonedDateTime lastModifiedDate,
-                        Set<String> authorities,
+                         Set<String> authorities,
 
                          //Profile Properties
                          String degree, Integer semester, String faculty, String university, ZonedDateTime birthday) {
 
         super(id, login, firstName, lastName, email, activated, imageUrl, langKey,
-            createdBy, createdDate, lastModifiedBy, lastModifiedDate,  authorities);
+            createdBy, createdDate, lastModifiedBy, lastModifiedDate, authorities);
 
         this.password = password;
 
         //Profile properties
         this.degree = degree;
-        this. semester = semester;
+        this.semester = semester;
         this.faculty = faculty;
         this.university = university;
         this.birthday = birthday;
@@ -62,7 +62,7 @@ public class ManagedUserVM extends UserDTO {
                          Set<String> authorities) {
 
         super(id, login, firstName, lastName, email, activated, imageUrl, langKey,
-            createdBy, createdDate, lastModifiedBy, lastModifiedDate,  authorities);
+            createdBy, createdDate, lastModifiedBy, lastModifiedDate, authorities);
 
         this.password = password;
     }

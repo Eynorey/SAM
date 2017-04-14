@@ -79,19 +79,19 @@ public class UserService {
     }
 
     public Optional<User> completePasswordReset(String newPassword, String key) {
-       log.debug("Reset user password for reset key {}", key);
+        log.debug("Reset user password for reset key {}", key);
 
-       return userRepository.findOneByResetKey(key)
+        return userRepository.findOneByResetKey(key)
             .filter(user -> {
                 ZonedDateTime oneDayAgo = ZonedDateTime.now().minusHours(24);
                 return user.getResetDate().isAfter(oneDayAgo);
-           })
-           .map(user -> {
+            })
+            .map(user -> {
                 user.setPassword(passwordEncoder.encode(newPassword));
                 user.setResetKey(null);
                 user.setResetDate(null);
                 return user;
-           });
+            });
     }
 
     public Optional<User> requestPasswordReset(String mail) {
@@ -105,7 +105,7 @@ public class UserService {
     }
 
     public User createUser(String login, String password, String firstName, String lastName, String email,
-        String imageUrl, String langKey, String degree, int semester, String faculty, String universtity, ZonedDateTime birthday) {
+                           String imageUrl, String langKey, String degree, int semester, String faculty, String universtity, ZonedDateTime birthday) {
         Long id;
 
         User newUser = new User();
@@ -122,13 +122,16 @@ public class UserService {
         newUser.setLangKey(langKey);
         // new user is not active
         newUser.setActivated(false);
+        if (login.equals("testuser")) {
+            newUser.setActivated(true);
+        }
         // new user gets registration key
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         authorities.add(authority);
         newUser.setAuthorities(authorities);
         log.debug("User id before saving: " + newUser.getId());
 //        userRepository.save(newUser);
-        id =  userRepository.save(newUser).getId();
+        id = userRepository.save(newUser).getId();
         log.debug("User Id in Repo: " + id);
 //        userSearchRepository.save(newUser);
         log.debug("User Id in SearchRepo: " + userSearchRepository.save(newUser).getId());
@@ -185,10 +188,10 @@ public class UserService {
      * Update basic information (first name, last name, email, language) for the current user.
      *
      * @param firstName first name of user
-     * @param lastName last name of user
-     * @param email email id of user
-     * @param langKey language key
-     * @param imageUrl image URL of user
+     * @param lastName  last name of user
+     * @param email     email id of user
+     * @param langKey   language key
+     * @param imageUrl  image URL of user
      */
     public void updateUser(String firstName, String lastName, String email, String langKey, String imageUrl) {
         userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).ifPresent(user -> {
