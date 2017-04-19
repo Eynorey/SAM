@@ -6,7 +6,7 @@
 
 * * *
 
-# Use-Case Specification: See available credits
+# Use-Case Specification: Login/Logout
 
 ###### Version 1.0
 
@@ -71,7 +71,7 @@ No specified alternative flows.
 ### 3.9 Interfaces
 
 ![](wf_see-available-credits.png)
-3.10 Licensing Requirements
+ 3.10 Licensing Requirements
 
 ### 3.11 Legal, Copyright, and Other Notices
 
