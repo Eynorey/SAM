@@ -90,3 +90,7 @@ No specified alternative flows.
 ## 6\. Extension Points
 
 ### 6.1
+
+
+## 7\. Function Points
+![](fp_domain-characteristic_uc-2.png)
