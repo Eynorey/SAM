@@ -1,8 +1,9 @@
-Feature: register
+Feature: Register
 
      Scenario: invalid email
          Given I navigate to "http://localhost:8080/#/register"
          And I wait for 1 sec
+         Then I take screenshot
          #enter email without @ symbol
          And I enter "usertest.com" into input field having id "email"
          And I wait for 1 sec
@@ -29,15 +30,5 @@ Feature: register
         And I enter "testpassword" into input field having id "password"
         And I enter "testpassword" into input field having id "confirmPassword"
         And I click on element having class "btn-primary" and text "Register"
-        # log in with registered user
-        And I navigate to "http://localhost:8080/#/"
-        And I wait for 1 sec
-        And I click on element having id "account-menu"
-        And I click on element having id "login"
-        And I wait for 1 sec
-        And I enter "testuser" into input field having id "username"
-        And I enter "testpassword" into input field having id "password"
-        And I click on element having class "btn" and text "Sign in"
-        #see welcome screen
         And I wait for 2 sec
-        Then element having xpath "/html/body/div[2]/div[1]/div/div/div[2]/h1" should have partial text as "Welcome"
+        Then element having xpath "/html/body/div[2]/div[1]/div/div/div[1]/div[1]/strong" should have partial text as "Registration saved!"
