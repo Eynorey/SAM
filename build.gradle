@@ -130,9 +130,11 @@ repositories {
     maven { url 'https://oss.sonatype.org/content/repositories/releases' }
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     maven { url 'http://repo.maven.apache.org/maven2' }
+    maven { url "https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc" }
 }
 
 dependencies {
+    compile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '6.1.6.jre8-preview' 
     compile "io.github.jhipster:jhipster:${jhipster_server_version}"
     compile "io.dropwizard.metrics:metrics-core:${dropwizard_metrics_version}"
     compile "io.dropwizard.metrics:metrics-jcache:${dropwizard_metrics_version}"
