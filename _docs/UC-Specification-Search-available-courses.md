@@ -12,7 +12,7 @@
 
 ## Table of Contents
 
-1.  [Register](# 1-register)
+1.  [Search available courses](# 1-Search available courses)
     1.  [Brief Description](# 11-brief-description)
 2.  [Flow of Events](# 2-flow-of-events)
     1.  [Basic Flow](# 21-basic-flow)
@@ -34,7 +34,7 @@
 5.  [Postconditions](# 5-postconditions)
 6.  [Extension Points](# 6-extension-points)
 
-## 1\. Register
+## 1\. Search available courses
 
 ### 1.1 Brief Description
 
