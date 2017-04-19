@@ -8,7 +8,7 @@ Time spent on Use Cases
 | Login (UC-2) | 0 h | 3 h 41 min | 2 h 1 min | 2 h 17 min | 7 h 59 min | 658 | 40 |
 | Logout (UC-3) | 0 h | 3 h 41 min | 2 h 1 min | 2 h 17 min | 7 h 59 min | - | - |
 | Manage course offerings (UC-4) | 4 h 11 min | 3 h 41 min | 2 h 1 min | 2 h 17 min | 12 h 10 min | 885 | 31 |
-| See available credits (UC-5) | - | - | - | - | - | - | ? |
+| See available credits (UC-5) | - | - | - | - | - | - | 12 |
 | Search available courses (UC-6) | - | - | - | - | - | - | 15 |
 | Book course (UC-7) | - | - | - | - | - | - | 23 |
 | See schedule (UC-8) | - | - | - | - | - | - | 34 |
