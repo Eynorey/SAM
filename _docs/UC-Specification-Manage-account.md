@@ -92,3 +92,7 @@ Future implementation may contain further activities for managing credit points,
 ### 6.1
 
 The extension point would follow the "view available credit points" activity.
+
+### 7.6 FP Estimation
+As a result, the use case can be estimated with 59 Function Points. 
+![](fp_uc9.PNG)
