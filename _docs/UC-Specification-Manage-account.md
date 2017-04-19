@@ -94,6 +94,30 @@ Future implementation may contain further activities for managing credit points,
 
 The extension point would follow the "view available credit points" activity.
 
+## 7\. Function Points
+
+### 7.1 External Inputs
+
+The only user input, interacting with the internal logic files of the System, is taking place through creating a new user. This interacts with one file (file type reference, or FTR) - User Login-Data file and changes 8 data element types (DET's). Therefore the complexity for this row is low.
+
+### 7.2 External Outputs
+
+The output visible for the user is his registration information when account is created (e-mail). User Login-Data file is interacted with to show this information, but not all of the fields are accessed and displayed. Only user name and email will be shown to the user. Therefore the complexity can be estimated as low.
+
+### 7.3 External Inquiries
+
+There are 4 external inquiries in the use case.
+* 3 are used to register with account data from other social media
+* 1 is an interaction for picking the birth date from a pop-up calendar
+
+Two files are being referenced in this case - a calendar and a User Login-Data table. Each only have a minor amount of data element types referenced. Therefore the complexity is low.
+
+### 7.4 Internal Logical files
+The User Login-Data table is the referenced ILF, which has one logical subgroup (RET) - User, and 8 different fields (DET). Complexity is therefore low. 
+
+### 7.5 External Interface files
+Only one file is used to interact with the external interfaces. It has a minor amount of referenced fields and therefore a low complexity. 
+
 ### 7.6 FP Estimation
-As a result, the use case can be estimated with 59 Function Points. 
+As a result, the use case can be estimated with 35 Function Points. 
 ![](fp_uc9.PNG)
