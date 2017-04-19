@@ -33,6 +33,7 @@
 4.  [Preconditions](# 4-preconditions)
 5.  [Postconditions](# 5-postconditions)
 6.  [Extension Points](# 6-extension-points)
+7.  [Function Points](# 7-function-points)
 
 ## 1\. Manage course offerings
 
@@ -127,3 +128,6 @@ See Gherkin .feature file below
 ### 6.1<name point="" extension="" of=""></name>
 
 > _[Definition of the location of the extension point in the flow of events.]_
+
+## 7\. Function Points
+![](fp_domain-characteristic_uc-4.png)
