@@ -33,6 +33,7 @@
 4.  [Preconditions](# 4-preconditions)
 5.  [Postconditions](# 5-postconditions)
 6.  [Extension Points](# 6-extension-points)
+7.  [Function Points](# 6-function-points)
 
 ## 1\. Register
 
@@ -109,3 +110,13 @@ See Gherkin .feature file below
 ### 6.1
 
 [Definition of the location of the extension point in the flow of events.]
+
+## 7\. Function Points
+### 7.1 External Inputs
+The only user input, interacting with the internal logic files of the System, is taking place through creating a new user. This interacts with one file (file type reference, or FTR) - User Login-Data file and changes 8 data element types (DET's). Therefore the complexity for this row is low. 
+### 7.2 External Outputs
+The output visible for the user is his registration information when account is created (e-mail). User Login-Data file is interacted with to show this information, but not all of the fields are accessed and displayed. Only user name and email will be shown to the user. Therefore the complexity can be estimated as low.  
+### 7.3 External Inquiries
+There are 13 external inquiries in the use case. 
+
+### 7.4 External Inputs
