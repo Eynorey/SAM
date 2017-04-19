@@ -8,6 +8,7 @@ Feature: Manage Courses
         #create course
         When I click on element having class "hidden-xs-down" and text "Create new Course"
         And I wait for 1 sec
+        And I take screenshot
         And I enter "Test Title" into input field having id "field_title"
         And I enter "Test Description" into input field having id "field_description"
         And I enter "2016-11-01 08:00" into input field having id "field_start"
