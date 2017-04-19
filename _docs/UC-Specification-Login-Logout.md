@@ -33,7 +33,7 @@
 4.  [Preconditions](# 4-preconditions)
 5.  [Postconditions](# 5-postconditions)
 6.  [Extension Points](# 6-extension-points)
-6.  [Function Points](# 6-function-points)
+7.  [Function Points](# 6-function-points)
 
 ## 1\. Login/Logout
 
