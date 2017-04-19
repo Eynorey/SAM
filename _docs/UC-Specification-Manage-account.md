@@ -11,7 +11,7 @@
 
 ## Table of Contents
 
-1.  [Register](# 1-Manage Account)
+1.  [Manage Account](# 1-Manage Account)
     1.  [Brief Description](# 11-brief-description)
 2.  [Flow of Events](# 2-flow-of-events)
     1.  [Basic Flow](# 21-basic-flow)
