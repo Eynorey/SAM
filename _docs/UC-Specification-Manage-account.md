@@ -43,7 +43,7 @@ Implementation of this use case will allow the user to edit his or her profile i
 
 ### 2.1 Basic Flow
 
-![](ad_see-book-course.svg)
+![](ad_book-course.png)
 
 ### 2.2 Alternative Flows
 
@@ -69,7 +69,8 @@ No specified alternative flows.
 
 ### 3.9 Interfaces
 
-![](wf_book-course.svg)
+![](wf_book-course.png)
+
 3.10 Licensing Requirements
 
 ### 3.11 Legal, Copyright, and Other Notices
