@@ -137,4 +137,4 @@ Only one file is used to interact with the external interfaces. It has a minor a
 
 ### 7.6 FP Estimation
 As a result, the use case can be estimated with 59 Function Points. 
-![](feature_register.png)
+![](fp_domain-characteristic_uc-1.png)
