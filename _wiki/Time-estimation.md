@@ -12,4 +12,4 @@ Time spent on Use Cases
 | Search available courses (UC-6) | - | - | - | - | - | - | ? |
 | Book course (UC-7) | - | - | - | - | - | - | ? |
 | See schedule (UC-8) | - | - | - | - | - | - | ? |
-| Manage account (UC-9) | - | - | - | - | - | - |
+| Manage account (UC-9) | - | - | - | - | - | - | 34.8 |
