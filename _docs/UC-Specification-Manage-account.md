@@ -43,7 +43,7 @@ Implementation of this use case will allow the user to edit his or her profile i
 
 ### 2.1 Basic Flow
 
-![](ad_book-course.png)
+![](ad_manage-account.png)
 
 ### 2.2 Alternative Flows
 
