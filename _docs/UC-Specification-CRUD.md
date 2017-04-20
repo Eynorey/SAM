@@ -61,21 +61,7 @@ The list of courses can be accessed by creating a new course or jumped to by pre
 
 ### 2.2 Alternative Flows
 
-#### 2.2.1 First Alternative Flow
-
-> _[More complex alternatives are described in a separate section, referred to in the Basic Flow subsection of Flow of Events section. Think of the Alternative Flow subsections like alternative behavior each alternative flow represents alternative behavior usually due to exceptions that occur in the main flow. They may be as long as necessary to describe the events associated with the alternative behavior. When an alternative flow ends, the events of the main flow of events are resumed unless otherwise stated.]_
-
-##### First Alternative Subflow
-
-> _[Alternative flows may, in turn, be divided into subsections if it improves clarity.]_
-
-#### 2.2.2 Second Alternative Flow
-
-> _[There may be, and most likely will be, a number of alternative flows in a use case. Keep each alternative flow separate to improve clarity. Using alternative flows improves the readability of the use case, as well as preventing use cases from being decomposed into hierarchies of use cases. Keep in mind that use cases are just textual descriptions, and their main purpose is to document the behavior of a system in a clear, concise, and understandable way.]_
-
 ## 3\. Special Requirements
-
-> _[A special requirement is typically a nonfunctional requirement that is specific to a use case, but is not easily or naturally specified in the text of the use case’s event flow. Examples of special requirements include legal and regulatory requirements, application standards, and quality attributes of the system to be built including usability, reliability, performance or supportability requirements. Additionally, other requirementssuch as operating systems and environments, compatibility requirements, and design constraintsshould be captured in this section.]_
 
 ### 3.1 Functionality
 
@@ -110,19 +96,27 @@ See Gherkin .feature file below
 ### 3.12 Applicable Standards
 
 ## 4\. Preconditions
+There is a number of preconditions, which depend on the action performed with the course entry (Create, Read, Update or Delete). 
 
-> _[A precondition of a use case is the state of the system that must be present prior to a use case being performed.]_
-
-### 4.1 Precondition One
+### 4.1 Precondition One (Create)
+User has to be logged in on the platform in order to offer a new course. 
+### 4.2 Precondition Two (Read, Update, Delete)
+To update or delete a course the course entry have to be existent in the list of courses displayed to the user. It also has to be offered by the user for him to update or delete it. Displaying the course is available for all the users, inclusive guest-users. 
 
 ## 5\. Postconditions
 
-> _[A postcondition of a use case is a list of possible states the system can be in immediately after a use case has finished.]_
+Postconditions of the case depend on the action, similarly with the preconditions. 
 
-### 5.1 Postcondition One
+### 5.1 Postcondition One (Create)
+A new course with the entered data needs to be created on the platform and appear in the available list of courses. 
+### 5.2 Postcondition Two (Update)
+The information entered into the fields and confirmed by a user is updated in the course detail view and the list view. 
+### 5.3 Postcondition Three(Delete)
+The course disappearse from the list of available courses. 
 
 ## 6\. Extension Points
 
 ## 7\. Function Points
+
 According to the estimation table below, the use case can be measured with 31 function points. 
 ![](fp_domain-characteristic_uc-4.png)
