@@ -70,10 +70,9 @@ It is required, that the user can log in using various other accounts he or she 
 ### 3.8 Purchased Components
 
 ### 3.9 Interfaces
-
-### 
 ![](wf_login-logout.png)
- 3.10 Licensing Requirements
+
+### 3.10 Licensing Requirements
 n/a
 ### 3.11 Legal, Copyright, and Other Notices
 
