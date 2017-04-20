@@ -39,13 +39,11 @@
 
 ### 1.1 Brief Description
 
-Implementation of this use case will allow the user to have an overview over his or her credits on the platform. Only registered users will have access to this functionality, as there is no way for a guest to take a course offered by SAM. Therefore the information about available credits is going to be placed on the user's personal page, or "classroom", along with other data necessary to manage acquired skills (not included in this use case).
+Implementation of this use case will allow the user to change his or her status as registered on the platform. Logging out will make the system apply restrictions, implied for a guest on the website. Logging in will reverse those restrictions. 
 
 ## 2\. Flow of Events
 
 ### 2.1 Basic Flow
-
-![](ad_see-available-credits.png)
 
 ### 2.2 Alternative Flows
 
@@ -54,6 +52,8 @@ No specified alternative flows.
 ## 3\. Special Requirements
 
 ### 3.1 Functionality
+
+It is required, that the user can log in using various other accounts he or she posesses in the social media such as Facebook, Google and Twitter. Three separate buttons should lead the user to respective log in screens. 
 
 ### 3.2 Usability
 
@@ -71,26 +71,35 @@ No specified alternative flows.
 
 ### 3.9 Interfaces
 
-![](wf_see-available-credits.png)
+### 
+![](wf_login-logout.png)
  3.10 Licensing Requirements
-
+n/a
 ### 3.11 Legal, Copyright, and Other Notices
+
+n/a
 
 ### 3.12 Applicable Standards
 
 ## 4\. Preconditions
 
-[A precondition of a use case is the state of the system that must be present prior to a use case being performed.]
+The preconditions vary according to the use case (Login or Logout). 
 
-### 4.1 Precondition One
+### 4.1 Precondition One (Login)
+
+The user is expected to be logged out, seen as a guest by the system. 
+
+### 4.2\. Precondition Two (Logout)
+
+The user is expected to be recognized as a registered user. 
 
 ## 5\. Postconditions
 
-There are two possible postconditions for the Login/Logout use cases. 
+There are two possible postconditions for the Login/Logout use cases.
 
 ### 4.2 Postcondition One
 
-In this postcondition the user is logged in after trying to login or logout. The system identifies the user as a registered user and platform functions are available respectively. 
+In this postcondition the user is logged in after trying to login or logout. The system identifies the user as a registered user and platform functions are available respectively.
 
 Login: expected postcondition
 
@@ -110,6 +119,6 @@ n/a
 
 ## 7\. Function Points
 
-The combination of Login and Logout use cases reach the value of 40 function points. 
+The combination of Login and Logout use cases reach the value of 40 function points.
 
 ![](fp_domain-characteristic_uc-2.png)
