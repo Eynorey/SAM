@@ -86,12 +86,30 @@ No specified alternative flows.
 
 ## 5\. Postconditions
 
-[A postcondition of a use case is a list of possible states the system can be in immediately after a use case has finished.]
+There are two possible postconditions for the Login/Logout use cases. 
+
+### 4.2 Postcondition One
+
+In this postcondition the user is logged in after trying to login or logout. The system identifies the user as a registered user and platform functions are available respectively. 
+
+Login: expected postcondition
+
+Logout: error logging out (to be eliminated)
+
+### 4.3 Postcondition Two
+
+In this postcondition the user is logged out. The system identifies the user as a guest and restricts access to specific platform functions (profile management, schedule, etc.)
+
+Login: error while logging in (wrong user data)
+
+Logout: expected postcondition
 
 ## 6\. Extension Points
 
-### 6.1
-
+n/a
 
 ## 7\. Function Points
+
+The combination of Login and Logout use cases reach the value of 40 function points. 
+
 ![](fp_domain-characteristic_uc-2.png)
