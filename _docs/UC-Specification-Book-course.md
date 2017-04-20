@@ -7,6 +7,7 @@
 * * *
 
 # Use-Case Specification: Book Course
+
 ###### Version 1.0
 
 ## Table of Contents
@@ -71,7 +72,7 @@ No specified alternative flows.
 
 ![](wf_book-course.png)
 
-3.10 Licensing Requirements
+### 3.10 Licensing Requirements
 
 ### 3.11 Legal, Copyright, and Other Notices
 
@@ -107,17 +108,21 @@ The output visible for the user is his registration information when account is 
 ### 7.3 External Inquiries
 
 There are 4 external inquiries in the use case.
-* 3 are used to register with account data from other social media
-* 1 is an interaction for picking the birth date from a pop-up calendar
+
+*   3 are used to register with account data from other social media
+*   1 is an interaction for picking the birth date from a pop-up calendar
 
 Two files are being referenced in this case - a calendar and a User Login-Data table. Each only have a minor amount of data element types referenced. Therefore the complexity is low.
 
 ### 7.4 Internal Logical files
-The User Login-Data table is the referenced ILF, which has one logical subgroup (RET) - User, and 8 different fields (DET). Complexity is therefore low. 
+
+The User Login-Data table is the referenced ILF, which has one logical subgroup (RET) - User, and 8 different fields (DET). Complexity is therefore low.
 
 ### 7.5 External Interface files
-Only one file is used to interact with the external interfaces. It has a minor amount of referenced fields and therefore a low complexity. 
+
+Only one file is used to interact with the external interfaces. It has a minor amount of referenced fields and therefore a low complexity.
 
 ### 7.6 FP Estimation
+
 As a result, the use case can be estimated with 23 Function Points. 
 ![](fp_uc7.PNG)
