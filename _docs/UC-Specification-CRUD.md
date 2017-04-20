@@ -123,11 +123,6 @@ See Gherkin .feature file below
 
 ## 6\. Extension Points
 
-> _[Extension points of the use case.]_
-
-### 6.1<name point="" extension="" of=""></name>
-
-> _[Definition of the location of the extension point in the flow of events.]_
-
 ## 7\. Function Points
+According to the estimation table below, the use case can be measured with 31 function points. 
 ![](fp_domain-characteristic_uc-4.png)
