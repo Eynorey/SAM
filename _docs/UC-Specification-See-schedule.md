@@ -52,8 +52,6 @@ The purpose of this use case is for a registered user to be able to see the cour
 
 ## 3\. Special Requirements
 
-[A special requirement is typically a nonfunctional requirement that is specific to a use case, but is not easily or naturally specified in the text of the use case’s event flow. Examples of special requirements include legal and regulatory requirements, application standards, and quality attributes of the system to be built including usability, reliability, performance or supportability requirements. Additionally, other requirementssuch as operating systems and environments, compatibility requirements, and design constraintsshould be captured in this section.]
-
 ### 3.1 Functionality
 
 When selecting a course (clicking on an item), the user will be redirected to the course info page fur further reference.
@@ -88,46 +86,17 @@ The list should be sorted in the way so that the most recent upcoming course sho
 
 In order for the user to see courses, he has to book some first. Those will then show up in this list here.
 
-### 4.1 Precondition One
-
 ## 5\. Postconditions
 
-[A postcondition of a use case is a list of possible states the system can be in immediately after a use case has finished.]
-
-### 5.1 Postcondition One
+n/a
 
 ## 6\. Extension Points
 
-[Extension points of the use case.]
+### 6.1 Planner
 
-### 6.1
-
-[Definition of the location of the extension point in the flow of events.]
+A planner function can be implemented to visualize the times in a chosen time period which are available for courses. It can be extended by homeworks from the booked courses, which could show up in the calendar mode as well. 
 
 ## 7\. Function Points
 
-### 7.1 External Inputs
-
-The only user input, interacting with the internal logic files of the System, is taking place through creating a new user. This interacts with one file (file type reference, or FTR) - User Login-Data file and changes 8 data element types (DET's). Therefore the complexity for this row is low.
-
-### 7.2 External Outputs
-
-The output visible for the user is his registration information when account is created (e-mail). User Login-Data file is interacted with to show this information, but not all of the fields are accessed and displayed. Only user name and email will be shown to the user. Therefore the complexity can be estimated as low.
-
-### 7.3 External Inquiries
-
-There are 4 external inquiries in the use case.
-* 3 are used to register with account data from other social media
-* 1 is an interaction for picking the birth date from a pop-up calendar
-
-Two files are being referenced in this case - a calendar and a User Login-Data table. Each only have a minor amount of data element types referenced. Therefore the complexity is low.
-
-### 7.4 Internal Logical files
-The User Login-Data table is the referenced ILF, which has one logical subgroup (RET) - User, and 8 different fields (DET). Complexity is therefore low. 
-
-### 7.5 External Interface files
-Only one file is used to interact with the external interfaces. It has a minor amount of referenced fields and therefore a low complexity. 
-
-### 7.6 FP Estimation
 As a result, the use case can be estimated with 34 Function Points. 
 ![](fp_uc8.PNG)
