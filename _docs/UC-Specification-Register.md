@@ -97,7 +97,7 @@ n/a
 
 ## 5\. Postconditions
 
-A new user has been created as a result of this use case. 
+A new user has been created as a result of this use case.
 
 ## 6\. Extension Points
 
