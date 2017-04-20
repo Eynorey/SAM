@@ -61,6 +61,8 @@ The list of courses can be accessed by creating a new course or jumped to by pre
 
 ### 2.2 Alternative Flows
 
+n/a
+
 ## 3\. Special Requirements
 
 ### 3.1 Functionality
@@ -96,25 +98,36 @@ See Gherkin .feature file below
 ### 3.12 Applicable Standards
 
 ## 4\. Preconditions
-There is a number of preconditions, which depend on the action performed with the course entry (Create, Read, Update or Delete). 
+
+There is a number of preconditions, which depend on the action performed with the course entry (Create, Read, Update or Delete).
 
 ### 4.1 Precondition One (Create)
-User has to be logged in on the platform in order to offer a new course. 
+
+User has to be logged in on the platform in order to offer a new course.
+
 ### 4.2 Precondition Two (Read, Update, Delete)
-To update or delete a course the course entry have to be existent in the list of courses displayed to the user. It also has to be offered by the user for him to update or delete it. Displaying the course is available for all the users, inclusive guest-users. 
+
+To update or delete a course the course entry have to be existent in the list of courses displayed to the user. It also has to be offered by the user for him to update or delete it. Displaying the course is available for all the users, inclusive guest-users.
 
 ## 5\. Postconditions
 
-Postconditions of the case depend on the action, similarly with the preconditions. 
+Postconditions of the case depend on the action, similarly with the preconditions.
 
 ### 5.1 Postcondition One (Create)
-A new course with the entered data needs to be created on the platform and appear in the available list of courses. 
+
+A new course with the entered data needs to be created on the platform and appear in the available list of courses.
+
 ### 5.2 Postcondition Two (Update)
-The information entered into the fields and confirmed by a user is updated in the course detail view and the list view. 
+
+The information entered into the fields and confirmed by a user is updated in the course detail view and the list view.
+
 ### 5.3 Postcondition Three(Delete)
-The course disappearse from the list of available courses. 
+
+The course disappearse from the list of available courses.
 
 ## 6\. Extension Points
+
+n/a
 
 ## 7\. Function Points
 
