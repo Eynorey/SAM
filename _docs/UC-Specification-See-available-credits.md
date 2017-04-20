@@ -71,8 +71,9 @@ No specified alternative flows.
 
 ### 3.9 Interfaces
 
+### 
 ![](wf_see-available-credits.png)
-3.10 Licensing Requirements
+ 3.10 Licensing Requirements
 
 ### 3.11 Legal, Copyright, and Other Notices
 
@@ -80,17 +81,27 @@ No specified alternative flows.
 
 ## 4\. Preconditions
 
-[A precondition of a use case is the state of the system that must be present prior to a use case being performed.]
+The main preconditions are: 
 
-### 4.1 Precondition One
+*   The user is registered on the platform
+*   The user is logged in
 
 ## 5\. Postconditions
 
-[A postcondition of a use case is a list of possible states the system can be in immediately after a use case has finished.]
+n/a
 
 ## 6\. Extension Points
 
-### 6.1
+### 6.1 Earn more
+
+The user can be offered options to earn more credits after a click on the available amount in his personal page. 
+
+### 6.2 Information
+
+The information about the credit points and the payment system on the platform can be shown to the user with a tooltip or a question mark icon next to the available amount.
 
 ## 7\. Function Points
+
+The amount of function points for this use case is 12. 
+
 ![](fp_domain-characteristic_uc-5.png)
