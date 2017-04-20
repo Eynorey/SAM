@@ -69,7 +69,7 @@ No specified alternative flows.
 
 ### 3.9 Interfaces
 
-![](wf_book-course.png)
+![](wf_manage-course.png)
 
 3.10 Licensing Requirements
 
