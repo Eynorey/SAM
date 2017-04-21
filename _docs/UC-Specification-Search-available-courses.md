@@ -109,4 +109,4 @@ Along with the filters, user can be offered to filter the search results by date
 ## 7\. Function Points
 
 As a result, the use case can be estimated with 15 Function Points. 
-![](fp_uc6.PNG)
+![](fp_domain-characteristic_uc-6.PNG)
