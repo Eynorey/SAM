@@ -96,4 +96,4 @@ The extension point would follow the "view available credit points" activity.
 
 ## 7\. Function Points
 As a result, the use case can be estimated with 35 Function Points. 
-![](fp_uc9.PNG)
+![](fp_domain-characteristic_uc-9.PNG)
