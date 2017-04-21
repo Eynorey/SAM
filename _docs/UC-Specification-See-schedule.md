@@ -99,4 +99,4 @@ A planner function can be implemented to visualize the times in a chosen time pe
 ## 7\. Function Points
 
 As a result, the use case can be estimated with 34 Function Points. 
-![](fp_uc8.PNG)
+![](fp_domain-characteristic_uc-8.PNG)
