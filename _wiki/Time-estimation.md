@@ -1,6 +1,4 @@
-Time spent on Use Cases
-
-34.8
+Time spent on Use Cases vs Function Points
 
 | Use Case | Docu | Code | Test | Warm-up | Total | LOC | FP |
 | --- | --- | --- | --- | --- | --- | --- | --- |
