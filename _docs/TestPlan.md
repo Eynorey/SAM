@@ -33,11 +33,18 @@
 
 # Master Test Plan
 
-## 1. Introduction
+## 1\. Introduction
 
 ## 1.1 Purpose
 
-This Software Requirements Specification was created to collect and organize the requirements for the Skill Access Management Application. It includes a thorough description of the expected functionality for the project concerned, as well as the nonfunctional requirements. These are crucial for the purposes of establishing the understanding between the suppliers of the software and the customers, as well as minimizing the risks connected to the misinterpreting customer’s expectations. The document will furthermore provide the basis for costs-estimation and later validation of the results achieved.
+The purpose of the Iteration Test Plan is to gather all of the information necessary to plan and control the test effort for the Skill Access Manager. It describes the approach to testing the software, and is the top-level plan generated and used by managers to direct the test effort.
+This Test Plan for the Skill Access Manager supports the following objectives:
+- [Identifies the items that should be targeted by the tests.
+- Identifies the motivation for and ideas behind the test areas to be covered.
+- Outlines the testing approach that will be used.
+- Identifies the required resources and provides an estimate of the test efforts.
+- Lists the deliverable elements of the test project.]
+
 
 ### 1.2 Scope
 
@@ -85,25 +92,25 @@ All the externally obtained components, relevant interfaces and licensing requir
 
 ### 2.1 Function Testing
 
-Long before the digital era, the world has come to realize that knowledge is the key to any type of development. However, by the end of the 20th century the essence of knowledge itself has been changed dramatically. The new level of information accessibility made it into common property rather than a privilege. The fact, that a kid with a smartphone is no worse than a walking encyclopedia, caused a focus shift from information to skill.
-
-Today, Internet can offer a broad variety of information, but fails to teach you how to apply it. Acquiring practical skills is therefore still associated with a new expense item in the budget and having to leave the comfort of your own home. Our platform is designed to change that.
-
-Skill Access Manager, or SAM, will become a network connecting you to those who are ready to share practical knowledge in hundreds of different spheres and those, who want to learn exactly what you have to offer. Earn points by helping your peers out with whatever you like doing most, whether it is playing piano, skating, or solving mathematical equations. Get rated by your students and invest the points earned to learn from others. It is really as simple as that.
-
-We at SAM believe that everyone has some skills to offer. Something you do as a hobby, or without even thinking about it twice, is what others are dying to learn. Use that to become the better version of yourself. Acquire new skills and share them with others. Smartify yourself. Today. With SAM.
+| | Description |
+| --- | --- |
+| Technique Objective: |[Exercise database access methods and processes independent of the UI so you can observe and log incorrect functioning target behavior or data corruption.] |
+| Technique: | [Invoke each database access method and process, seeding each with 	valid and invalid data or requests for data.  Inspect the database to ensure the data has been populated as 	intended and all database events have occurred properly, or review the 	returned data to ensure that the correct data was retrieved for the 	correct reasons.] | 
+| Oracles: | [Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.] | 
+| Required Tools: | [The technique requires the following tools: | 
+| Success Criteria: | [The technique supports the testing of all key database access methods and processes.] | 
+| Special Considerations: | [Testing may require a DBMS development environment or drivers to enter or modify data directly in the databases. Processes should be invoked manually. Small or minimally sized databases (limited number of records) should be used to increase the visibility of any non-acceptable events.] |
 
 ### 2.2 User Interface Testing
 
-![](ud_01.png)
-
-User System
-
-*   [Register](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/docs/UC-Specification-Register)
-
-Course System
-
-*   [Manage course offerings](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/docs/UC-Specification-ManageCourse)
+| | Description |
+| --- | --- |
+| Technique Objective: |[Exercise database access methods and processes independent of the UI so you can observe and log incorrect functioning target behavior or data corruption.] |
+| Technique: | [Invoke each database access method and process, seeding each with 	valid and invalid data or requests for data.  Inspect the database to ensure the data has been populated as 	intended and all database events have occurred properly, or review the 	returned data to ensure that the correct data was retrieved for the 	correct reasons.] | 
+| Oracles: | [Outline one or more strategies that can be used by the technique to accurately observe the outcomes of the test. The oracle combines elements of both the method by which the observation can be made and the characteristics of specific outcome that indicate probable success or failure. Ideally, oracles will be self-verifying, allowing automated tests to make an initial assessment of test pass or failure, however, be careful to mitigate the risks inherent in automated results determination.] | 
+| Required Tools: | [The technique requires the following tools: | 
+| Success Criteria: | [The technique supports the testing of all key database access methods and processes.] | 
+| Special Considerations: | [Testing may require a DBMS development environment or drivers to enter or modify data directly in the databases. Processes should be invoked manually. Small or minimally sized databases (limited number of records) should be used to increase the visibility of any non-acceptable events.] |
 
 ## 3\. Deliverables
 
