@@ -12,7 +12,7 @@
 
 ## Table of Contents
 
-1.  [Introduction](#-1.-introduction)
+1.  [Introduction](#markdown-header-1.-Introduction)
     1.  [Purpose](# 11-purpose)
     2.  [Scope](# 12-scope)
     3.  [Document Terminology and Acronyms](# 13-document-terminology-and-acronyms)
