@@ -8,10 +8,7 @@
 
 # Master Test Plan
 
-###### <div style="text-align: right;">Version 1.0</div>
-
-<br>
-<br>
+###### Version 1.0
 
 ## Table of Contents
 
@@ -31,15 +28,14 @@
 4.  [Testing Workflow](# 4---testing-workflow)
 5.  [Environmental Needs](# 5---environmental-needs)
 6.  [Responsibilities, Staffing and Training Needs](# 6---responsibilities-staffing-and-training-needs)
-7. [Milestones](# 7---milestones)
-8. [Risks, Dependencies, Assumptions and Constraints](# 8---risks-dependencies-assumptions-and-constraints)
-
+7.  [Milestones](# 7---milestones)
+8.  [Risks, Dependencies, Assumptions and Constraints](# 8---risks-dependencies-assumptions-and-constraints)
 
 # Master Test Plan
 
-## 1\. Introduction <a name="introduction"></a>
+## 1\. Introduction
 
-### 1.1 Purpose
+## 1.1 Purpose
 
 This Software Requirements Specification was created to collect and organize the requirements for the Skill Access Management Application. It includes a thorough description of the expected functionality for the project concerned, as well as the nonfunctional requirements. These are crucial for the purposes of establishing the understanding between the suppliers of the software and the customers, as well as minimizing the risks connected to the misinterpreting customer’s expectations. The document will furthermore provide the basis for costs-estimation and later validation of the results achieved.
 
