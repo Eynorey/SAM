@@ -111,13 +111,17 @@ Along with the filters, user can be offered to filter the search results by date
 
 ### 7.1 External Inputs
 
-No external inputs.
+FTR (Files): 1 (Course)
+
+DET (Data Elements): 1 (Description/Title)
+
+--> Low Complexity
 
 ### 7.2 External Outputs
 
 FTR (Files): 1 (Course)
 
-DET (Data Elements): 3 (Start, End, Location)
+DET (Data Elements): 2 (Description, Title)
 
 --> Low Complexity
 
@@ -125,7 +129,7 @@ DET (Data Elements): 3 (Start, End, Location)
 
 FTR (Files): 1 (Course)
 
-DET (Data Elements): 3 (Title, Description, Teacher)
+DET (Data Elements): 2 (Description, Title)
 
 --> Low Complexity
 
@@ -133,7 +137,7 @@ DET (Data Elements): 3 (Title, Description, Teacher)
 
 RET (Logical Subgroups): 1 (Course)
 
-DET (Data Elements): 5 (Title, Description, Teacher)
+DET (Data Elements): 2 (Description, Title)
 
 --> Low Complexity
 
@@ -143,5 +147,5 @@ No external interfaces used.
 
 ### 7.6 FP Estimation
 
-As a result, the use case can be estimated with 12 Function Points. 
+As a result, the use case can be estimated with 15 Function Points. 
 ![](fp_domain-characteristic_uc-6.PNG)
