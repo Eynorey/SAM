@@ -105,7 +105,7 @@ No external inputs.
 
 FTR (Files): 1 (Course)
 
-DET (Data Elements): 3 (Start, End, Location)
+DET (Data Elements): 1 (User name)
 
 --> Low Complexity
 
@@ -113,7 +113,7 @@ DET (Data Elements): 3 (Start, End, Location)
 
 FTR (Files): 1 (Course)
 
-DET (Data Elements): 3 (Title, Description, Teacher)
+DET (Data Elements): 3 (Title, Description, Time)
 
 --> Low Complexity
 
@@ -121,7 +121,7 @@ DET (Data Elements): 3 (Title, Description, Teacher)
 
 RET (Logical Subgroups): 1 (Course)
 
-DET (Data Elements): 5 (Title, Description, Teacher)
+DET (Data Elements): 1 (BookedBy)
 
 --> Low Complexity
 
