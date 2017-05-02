@@ -152,7 +152,12 @@ Furthermore, Unit Tests are executed every time when the master branch is update
 
 ### Base Software Elements in the Test Environment
 
-
+| Software Element Name | Type and Other Notes |
+| --- | --- | 
+| JUnit | Unit Testing library |
+| IntelliJ IDEA | Local Test Runner / IDE | 
+| Chrome Webdriver | Local UI Test Runner; OS: PC, Linux and MAC; Browser: Chrome |
+| Central Unit Test Runner | Visual Studio Team Services |
 
 ### Productivity and Support Tools
 
@@ -164,10 +169,18 @@ Furthermore, Unit Tests are executed every time when the master branch is update
 | Hoster | Azure |
 | Metrics tool | [SonarQube](https://sonarqube.com/dashboard?id=sam) |
 
-
-
 ## 7\. Responsibilities, Staffing and Training Needs
+
+Responsible for all testing topics, including User Interface and Unit test, is Dominik Wunderlich.
+Other team members might have to be informed about the new Test Plan.
 
 ## 8\. Milestones
 
-## 9\. Risks, Dependencies, Assumptions and Constraints
+We want to keep over 50% code coverage.
+
+## 9\. Risks
+
+| Risk | Mitigation Strategy | Contingency (Risk is realized) |
+| --- | --- | --- |
+| Dependency Injection impedes isolated Unit Testing |Abstract into new unit | transfer method into new scope | 
+|Unit test cannot be applied because of framework structure | Pay attention to feature and code linkage | Test via Integration test |
