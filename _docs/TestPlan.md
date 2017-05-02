@@ -130,15 +130,41 @@ For our automated frontend tests we use programmable selenium webdrivers, that o
 
 The project has around 86 tests which are passing. Furthermore Visual Studio Team Services are used to the tests every time the master branch is pdated. The build will fail if the unit tests are failing.
 
-
+![](test-summary.PNG)
 
 ### 3.2 Reporting on Test Coverage
 
+After a successful build in Visual Studio Team Services, the resulting reports are uploaded to SonarQube. According to [SonarQube](https://sonarqube.com/dashboard?id=sam), the current test coverage is around 59%.
+
 ### 4.3 Perceived Quality Reports
+
+The tool which is used for quality reports is also [SonarQube](https://sonarqube.com/dashboard?id=sam). It shows the amount of issues in the code as well as several metrics.
 
 ## 5\. Testing Workflow
 
+Every developer can run tests out of his or her IDE manually. To check if the developed code is compatible with the existing code.
+
+Furthermore, Unit Tests are executed every time when the master branch is updated. This is triggered by Visual Studio Team Services:
+
+![](CI.PNG)
+
 ## 6\. Environmental Needs
+
+### Base Software Elements in the Test Environment
+
+
+
+### Productivity and Support Tools
+
+| Tool Category or Type | Tool Brand Name |
+| --- | --- | 
+| Test Management | IntelliJ IDEA |
+| Test Coverage Monitor or Profiler | [SonarQube](https://sonarqube.com/dashboard?id=sam) | 
+| Project Management | Visual Studio Team Services |
+| Hoster | Azure |
+| Metrics tool | [SonarQube](https://sonarqube.com/dashboard?id=sam) |
+
+
 
 ## 7\. Responsibilities, Staffing and Training Needs
 
