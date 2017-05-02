@@ -33,6 +33,7 @@
 4.  [Preconditions](# 4-preconditions)
 5.  [Postconditions](# 5-postconditions)
 6.  [Extension Points](# 6-extension-points)
+7.  [Function Points](# 6-function-points)
 
 ## 1\. Search available courses
 
@@ -108,5 +109,39 @@ Along with the filters, user can be offered to filter the search results by date
 
 ## 7\. Function Points
 
-As a result, the use case can be estimated with 15 Function Points. 
+### 7.1 External Inputs
+
+No external inputs.
+
+### 7.2 External Outputs
+
+FTR (Files): 1 (Course)
+
+DET (Data Elements): 3 (Start, End, Location)
+
+--> Low Complexity
+
+### 7.3 External Inquiries
+
+FTR (Files): 1 (Course)
+
+DET (Data Elements): 3 (Title, Description, Teacher)
+
+--> Low Complexity
+
+### 7.4 Internal Logical files
+
+RET (Logical Subgroups): 1 (Course)
+
+DET (Data Elements): 5 (Title, Description, Teacher)
+
+--> Low Complexity
+
+### 7.5 External Interface files
+
+No external interfaces used.
+
+### 7.6 FP Estimation
+
+As a result, the use case can be estimated with 12 Function Points. 
 ![](fp_domain-characteristic_uc-6.PNG)
