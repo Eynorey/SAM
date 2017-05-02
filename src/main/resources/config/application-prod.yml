@@ -20,16 +20,8 @@ spring:
         livereload:
             enabled: false
     datasource:
-        type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:sqlserver://smartifytheworld.database.windows.net:1433;database=SAMData;user=samdata@smartifytheworld;password=samSmart!;encrypt=false;trustServerCertificate=false;loginTimeout=30;
-        username: samdata@smartifytheworld
-        password: samSmart!
-        hikari:
-            data-source-properties:
-                cachePrepStmts: true
-                prepStmtCacheSize: 250
-                prepStmtCacheSqlLimit: 2048
-                useServerPrepStmts: true
+        driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        url: jdbc:sqlserver://smartifytheworld.database.windows.net:1433;database=SAMData;user=samdata@smartifytheworld;password=samSmart!;encrypt=false;trustServerCertificate=true;loginTimeout=30;
     jpa:
         database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
         database: MYSQL
