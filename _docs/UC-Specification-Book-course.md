@@ -99,30 +99,38 @@ The extension point would follow the "view available credit points" activity.
 
 ### 7.1 External Inputs
 
-The only user input, interacting with the internal logic files of the System, is taking place through creating a new user. This interacts with one file (file type reference, or FTR) - User Login-Data file and changes 8 data element types (DET's). Therefore the complexity for this row is low.
+No external inputs.
 
 ### 7.2 External Outputs
 
-The output visible for the user is his registration information when account is created (e-mail). User Login-Data file is interacted with to show this information, but not all of the fields are accessed and displayed. Only user name and email will be shown to the user. Therefore the complexity can be estimated as low.
+FTR (Files): 1 (Course)
+
+DET (Data Elements): 3 (Start, End, Location)
+
+--> Low Complexity
 
 ### 7.3 External Inquiries
 
-There are 4 external inquiries in the use case.
+FTR (Files): 1 (Course)
 
-*   3 are used to register with account data from other social media
-*   1 is an interaction for picking the birth date from a pop-up calendar
+DET (Data Elements): 3 (Title, Description, Teacher)
 
-Two files are being referenced in this case - a calendar and a User Login-Data table. Each only have a minor amount of data element types referenced. Therefore the complexity is low.
+--> Low Complexity
 
 ### 7.4 Internal Logical files
 
-The User Login-Data table is the referenced ILF, which has one logical subgroup (RET) - User, and 8 different fields (DET). Complexity is therefore low.
+RET (Logical Subgroups): 1 (Course)
+
+DET (Data Elements): 5 (Title, Description, Teacher)
+
+--> Low Complexity
 
 ### 7.5 External Interface files
 
-Only one file is used to interact with the external interfaces. It has a minor amount of referenced fields and therefore a low complexity.
+No external interfaces used.
 
 ### 7.6 FP Estimation
+
 
 As a result, the use case can be estimated with 23 Function Points. 
 ![](fp_domain-characteristic_uc-7.PNG)
