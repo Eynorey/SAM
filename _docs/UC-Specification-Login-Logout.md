@@ -145,7 +145,7 @@ DET (Data Elements): 3 (User-Id, Email, Password)
 
 RET (Logical Subgroups): 1 (User)
 
-DET (Data Elements): 3 (User-Id, Email, Password)
+DET (Data Elements): 4 (User-Id, Email, Password, Status)
 
 --> Low Complexity
 
