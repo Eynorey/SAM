@@ -136,6 +136,6 @@ No external interfaces used.
 
 ### 7.6 FP Estimation
 
-The amount of function points for this use case is 12\.
+The amount of function points for this use case is 12.
 
 ![](fp_domain-characteristic_uc-5.png)
