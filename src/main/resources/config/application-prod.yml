@@ -21,7 +21,7 @@ spring:
             enabled: false
     datasource:
         driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-        url: jdbc:sqlserver://smartifytheworld.database.windows.net:1433;database=SAMData;user=samdata@smartifytheworld;password=samSmart!;encrypt=false;trustServerCertificate=true;loginTimeout=30;
+        url: jdbc:sqlserver://smartifytheworld.database.windows.net:1433;database=SAMData;user=samdata@smartifytheworld;password=samSmart!;encrypt=false;trustServerCertificate=false;loginTimeout=30;
     jpa:
         database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
         database: MYSQL
