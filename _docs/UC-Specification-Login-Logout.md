@@ -117,6 +117,43 @@ Logout: expected postcondition
 n/a
 
 ## 7\. Function Points
+### 7.1 External inputs
+
+No External Inputs used.
+
+### 7.2 External outputs
+
+FTR (Files): 1 (User-Info)
+
+DET (Data Elements): 1 (Username, Status)
+
+--> Low Complexity
+
+### 7.3 External Inquiries
+
+FTR (Files): 1 (User-Info)
+
+DET (Data Elements): 3 (User-Id, Email, Password)
+
+--> Low Complexity
+
+### 7.4 Internal Logical files
+
+RET (Logical Subgroups): 1 (User)
+
+DET (Data Elements): 2 (User-Id, Email, Password)
+
+--> Low Complexity
+
+### 7.5 External Interface files
+
+RET (Logical Subgroups): 1 (User)
+
+DET (Data Elements): 1 (User-Id)
+
+--> Low Complexity
+
+### 7.6 FP Estimation
 
 The combination of Login and Logout use cases reach the value of 40 function points.
 
