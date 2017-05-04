@@ -1,0 +1,8 @@
+UPDATE DB USING SCHEMA.xml
+cd /mnt/c/dev/.projects/sam-private/src/main/resources
+java -jar /mnt/c/dev/lb/liquibase.jar --changeLogFile="config/liquibase/changelog/00000000000000_initial_schema.xml" --username="samdata@smartifytheworld" --password="samSmart!" --url="jdbc:sqlserver://smartifytheworld.database.windows.net:1433;database=SAMData;user=samdata@smartifytheworld;encrypt=false;trustServerCertificate=true;loginTimeout=30;" --driver="com.microsoft.sqlserver.jdbc.SQLServerDriver" --classpath="/mnt/c/dev/jdbc/sqljdbc_4.2/enu/jre8/sqljdbc42.jar" update
+
+Statements:
+update
+clearCheckSums
+changeLogSync
