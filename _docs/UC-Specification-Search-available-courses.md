@@ -12,7 +12,7 @@
 
 ## Table of Contents
 
-1.  [Register](# 1-register)
+1.  [Search available courses](# 1-Search available courses)
     1.  [Brief Description](# 11-brief-description)
 2.  [Flow of Events](# 2-flow-of-events)
     1.  [Basic Flow](# 21-basic-flow)
@@ -33,8 +33,9 @@
 4.  [Preconditions](# 4-preconditions)
 5.  [Postconditions](# 5-postconditions)
 6.  [Extension Points](# 6-extension-points)
+7.  [Function Points](# 6-function-points)
 
-## 1\. Register
+## 1\. Search available courses
 
 ### 1.1 Brief Description
 
@@ -58,7 +59,7 @@ The use case in question is supposed to create a tool for the user to find the c
 
 ### 3.4 Performance
 
-Performance factor can be crucial to the usability of a search engine on the SAM platform. Therefore one of the most importance requirements in this use case is the minimization of search time. The user has to receive search results within the first 5 seconds after confirming his or her request. 
+Performance factor can be crucial to the usability of a search engine on the SAM platform. Therefore one of the most importance requirements in this use case is the minimization of search time. The user has to receive search results within the first 5 seconds after confirming his or her request.
 
 ### 3.5 Supportability
 
@@ -105,3 +106,46 @@ An autofill feature can be implemented to extend the use case. The search field 
 ### 6.2 Sort function
 
 Along with the filters, user can be offered to filter the search results by date, rating or relevance.
+
+## 7\. Function Points
+
+### 7.1 External Inputs
+
+FTR (Files): 1 (Course)
+
+DET (Data Elements): 1 (Description/Title)
+
+--> Low Complexity
+
+### 7.2 External Outputs
+
+FTR (Files): 1 (Course)
+
+DET (Data Elements): 2 (Description, Title)
+
+--> Low Complexity
+
+### 7.3 External Inquiries
+
+FTR (Files): 1 (Course)
+
+DET (Data Elements): 2 (Description, Title)
+
+--> Low Complexity
+
+### 7.4 Internal Logical files
+
+RET (Logical Subgroups): 1 (Course)
+
+DET (Data Elements): 2 (Description, Title)
+
+--> Low Complexity
+
+### 7.5 External Interface files
+
+No external interfaces used.
+
+### 7.6 FP Estimation
+
+As a result, the use case can be estimated with 15 Function Points. 
+![](fp_domain-characteristic_uc-6.PNG)

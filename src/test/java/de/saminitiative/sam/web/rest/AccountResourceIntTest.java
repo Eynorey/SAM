@@ -156,7 +156,12 @@ public class AccountResourceIntTest {
             null,                   // createdDate
             null,                   // lastModifiedBy
             null,                   // lastModifiedDate
-            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)));
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)),
+            "Bachelor",
+            8,
+            "Computer Science",
+            "DHBW Karlsruhe",
+            null);
 
         restMvc.perform(
             post("/api/register")
@@ -185,7 +190,12 @@ public class AccountResourceIntTest {
             null,                   // createdDate
             null,                   // lastModifiedBy
             null,                   // lastModifiedDate
-            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)));
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)),
+            "Bachelor",
+            8,
+            "Computer Science",
+            "DHBW Karlsruhe",
+            null);
 
         restUserMockMvc.perform(
             post("/api/register")
@@ -214,7 +224,12 @@ public class AccountResourceIntTest {
             null,                   // createdDate
             null,                   // lastModifiedBy
             null,                   // lastModifiedDate
-            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)));
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)),
+            "Bachelor",
+            8,
+            "Computer Science",
+            "DHBW Karlsruhe",
+            null);
 
         restUserMockMvc.perform(
             post("/api/register")
@@ -243,7 +258,12 @@ public class AccountResourceIntTest {
             null,                   // createdDate
             null,                   // lastModifiedBy
             null,                   // lastModifiedDate
-            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)));
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)),
+            "Bachelor",
+            8,
+            "Computer Science",
+            "DHBW Karlsruhe",
+            null);
 
         restUserMockMvc.perform(
             post("/api/register")
@@ -273,11 +293,21 @@ public class AccountResourceIntTest {
             null,                   // createdDate
             null,                   // lastModifiedBy
             null,                   // lastModifiedDate
-            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)));
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)),
+            "Bachelor",
+            8,
+            "Computer Science",
+            "DHBW Karlsruhe",
+            null);
 
         // Duplicate login, different email
         ManagedUserVM duplicatedUser = new ManagedUserVM(validUser.getId(), validUser.getLogin(), validUser.getPassword(), validUser.getFirstName(), validUser.getLastName(),
-            "alicejr@example.com", true, validUser.getImageUrl(), validUser.getLangKey(), validUser.getCreatedBy(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate(), validUser.getAuthorities());
+            "alicejr@example.com", true, validUser.getImageUrl(), validUser.getLangKey(), validUser.getCreatedBy(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate(), validUser.getAuthorities(),
+            "Bachelor",
+            8,
+            "Computer Science",
+            "DHBW Karlsruhe",
+            null);
 
         // Good user
         restMvc.perform(
@@ -315,11 +345,21 @@ public class AccountResourceIntTest {
             null,                   // createdDate
             null,                   // lastModifiedBy
             null,                   // lastModifiedDate
-            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)));
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)),
+            "Bachelor",
+            8,
+            "Computer Science",
+            "DHBW Karlsruhe",
+            null);
 
         // Duplicate email, different login
         ManagedUserVM duplicatedUser = new ManagedUserVM(validUser.getId(), "johnjr", validUser.getPassword(), validUser.getLogin(), validUser.getLastName(),
-            validUser.getEmail(), true, validUser.getImageUrl(), validUser.getLangKey(), validUser.getCreatedBy(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate(), validUser.getAuthorities());
+            validUser.getEmail(), true, validUser.getImageUrl(), validUser.getLangKey(), validUser.getCreatedBy(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate(), validUser.getAuthorities(),
+            "Bachelor",
+            8,
+            "Computer Science",
+            "DHBW Karlsruhe",
+            null);
 
         // Good user
         restMvc.perform(
@@ -356,7 +396,12 @@ public class AccountResourceIntTest {
             null,                   // createdDate
             null,                   // lastModifiedBy
             null,                   // lastModifiedDate
-            new HashSet<>(Arrays.asList(AuthoritiesConstants.ADMIN)));
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.ADMIN)),
+            "Bachelor",
+            8,
+            "Computer Science",
+            "DHBW Karlsruhe",
+            null);
 
         restMvc.perform(
             post("/api/register")

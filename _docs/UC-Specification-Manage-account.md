@@ -6,13 +6,12 @@
 
 * * *
 
-# Use-Case Specification: See available credits
-
+# Use-Case Specification: Manage Account
 ###### Version 1.0
 
 ## Table of Contents
 
-1.  [See available credits](# 1-See available credits)
+1.  [Manage Account](# 1-Manage Account)
     1.  [Brief Description](# 11-brief-description)
 2.  [Flow of Events](# 2-flow-of-events)
     1.  [Basic Flow](# 21-basic-flow)
@@ -33,19 +32,18 @@
 4.  [Preconditions](# 4-preconditions)
 5.  [Postconditions](# 5-postconditions)
 6.  [Extension Points](# 6-extension-points)
-7.  [Function Points](# 7-function-points)
 
-## 1\. See available credits
+## 1\. Manage Account
 
 ### 1.1 Brief Description
 
-Implementation of this use case will allow the user to have an overview over his or her credits on the platform. Only registered users will have access to this functionality, as there is no way for a guest to take a course offered by SAM. Therefore the information about available credits is going to be placed on the user's personal page, or "classroom", along with other data necessary to manage acquired skills (not included in this use case).
+Implementation of this use case will allow the user to edit his or her profile information (email address, degree, etc). Only registered users will have access to this functionality, as unregistered users don't have a profile on SAM.
 
 ## 2\. Flow of Events
 
 ### 2.1 Basic Flow
 
-![](ad_see-available-credits.png)
+![](ad_manage-account.png)
 
 ### 2.2 Alternative Flows
 
@@ -71,9 +69,9 @@ No specified alternative flows.
 
 ### 3.9 Interfaces
 
-### 
-![](wf_see-available-credits.png)
- 3.10 Licensing Requirements
+![](wf_manage-account.png)
+
+3.10 Licensing Requirements
 
 ### 3.11 Legal, Copyright, and Other Notices
 
@@ -81,52 +79,48 @@ No specified alternative flows.
 
 ## 4\. Preconditions
 
-The main preconditions are:
+The main preconditions for this use case are:
 
-*   The user is registered on the platform
-*   The user is logged in
+1.  User is registered at SAM
+2.  User is logged in
 
 ## 5\. Postconditions
 
-n/a
-
 ## 6\. Extension Points
 
-### 6.1 Earn more
+Future implementation may contain further activities for managing credit points, such as buttons like "Earn more", which redirects you to a list of courses demanded on a platform (possibly sorted based on your skill tree).
 
-The user can be offered options to earn more credits after a click on the available amount in his personal page.
+### 6.1
 
-### 6.2 Information
-
-The information about the credit points and the payment system on the platform can be shown to the user with a tooltip or a question mark icon next to the available amount.
+The extension point would follow the "view available credit points" activity.
 
 ## 7\. Function Points
 
-### 7.1 External inputs
+### 7.1 External Inputs
 
-No External Inputs used.
+FTR (Files): 1 (Profile)
 
-### 7.2 External outputs
-
-FTR (Files): 1 (User-Info)
-
-DET (Data Elements): 1 (Creditpoints)
+DET (Data Elements): 9 (user name, email, password, degree, semester, faculty, university, birthday, delete account)
 
 --> Low Complexity
 
+### 7.2 External Outputs
+
+No external outputs.
+
 ### 7.3 External Inquiries
 
-FTR (Files): 1 (User-Info)
+FTR (Files): 1 (User)
 
-DET (Data Elements): 2 (Creditpoints, UserId)
+DET (Data Elements): 2 (Delete, Save)
 
 --> Low Complexity
 
 ### 7.4 Internal Logical files
 
-RET (Logical Subgroups): 1 (User)
+RET (Logical Subgroups): 2 (User, Profile)
 
-DET (Data Elements): 2 (Creditpoints, UserId)
+DET (Data Elements): 1
 
 --> Low Complexity
 
@@ -135,7 +129,5 @@ DET (Data Elements): 2 (Creditpoints, UserId)
 No external interfaces used.
 
 ### 7.6 FP Estimation
-
-The amount of function points for this use case is 12.
-
-![](fp_domain-characteristic_uc-5.png)
+As a result, the use case can be estimated with 35 Function Points. 
+![](fp_domain-characteristic_uc-9.PNG)

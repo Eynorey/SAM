@@ -6,13 +6,13 @@
 
 * * *
 
-# Use-Case Specification: See available credits
+# Use-Case Specification: Login/Logout
 
 ###### Version 1.0
 
 ## Table of Contents
 
-1.  [See available credits](# 1-See available credits)
+1.  [Login/Logout](# 1-Login/Logout)
     1.  [Brief Description](# 11-brief-description)
 2.  [Flow of Events](# 2-flow-of-events)
     1.  [Basic Flow](# 21-basic-flow)
@@ -33,19 +33,17 @@
 4.  [Preconditions](# 4-preconditions)
 5.  [Postconditions](# 5-postconditions)
 6.  [Extension Points](# 6-extension-points)
-7.  [Function Points](# 7-function-points)
+7.  [Function Points](# 6-function-points)
 
-## 1\. See available credits
+## 1\. Login/Logout
 
 ### 1.1 Brief Description
 
-Implementation of this use case will allow the user to have an overview over his or her credits on the platform. Only registered users will have access to this functionality, as there is no way for a guest to take a course offered by SAM. Therefore the information about available credits is going to be placed on the user's personal page, or "classroom", along with other data necessary to manage acquired skills (not included in this use case).
+Implementation of this use case will allow the user to change his or her status as registered on the platform. Logging out will make the system apply restrictions, implied for a guest on the website. Logging in will reverse those restrictions.
 
 ## 2\. Flow of Events
 
 ### 2.1 Basic Flow
-
-![](ad_see-available-credits.png)
 
 ### 2.2 Alternative Flows
 
@@ -54,6 +52,8 @@ No specified alternative flows.
 ## 3\. Special Requirements
 
 ### 3.1 Functionality
+
+It is required, that the user can log in using various other accounts he or she posesses in the social media such as Facebook, Google and Twitter. Three separate buttons should lead the user to respective log in screens.
 
 ### 3.2 Usability
 
@@ -71,34 +71,53 @@ No specified alternative flows.
 
 ### 3.9 Interfaces
 
-### 
-![](wf_see-available-credits.png)
- 3.10 Licensing Requirements
+![](wf_login-logout.png)
+
+### 3.10 Licensing Requirements
+
+n/a
 
 ### 3.11 Legal, Copyright, and Other Notices
+
+n/a
 
 ### 3.12 Applicable Standards
 
 ## 4\. Preconditions
 
-The main preconditions are:
+The preconditions vary according to the use case (Login or Logout).
 
-*   The user is registered on the platform
-*   The user is logged in
+### 4.1 Precondition One (Login)
+
+The user is expected to be logged out, seen as a guest by the system.
+
+### 4.2\. Precondition Two (Logout)
+
+The user is expected to be recognized as a registered user.
 
 ## 5\. Postconditions
 
-n/a
+There are two possible postconditions for the Login/Logout use cases.
+
+### 4.2 Postcondition One
+
+In this postcondition the user is logged in after trying to login or logout. The system identifies the user as a registered user and platform functions are available respectively.
+
+Login: expected postcondition
+
+Logout: error logging out (to be eliminated)
+
+### 4.3 Postcondition Two
+
+In this postcondition the user is logged out. The system identifies the user as a guest and restricts access to specific platform functions (profile management, schedule, etc.)
+
+Login: error while logging in (wrong user data)
+
+Logout: expected postcondition
 
 ## 6\. Extension Points
 
-### 6.1 Earn more
-
-The user can be offered options to earn more credits after a click on the available amount in his personal page.
-
-### 6.2 Information
-
-The information about the credit points and the payment system on the platform can be shown to the user with a tooltip or a question mark icon next to the available amount.
+n/a
 
 ## 7\. Function Points
 
@@ -110,7 +129,7 @@ No External Inputs used.
 
 FTR (Files): 1 (User-Info)
 
-DET (Data Elements): 1 (Creditpoints)
+DET (Data Elements): 1 (Username, Status)
 
 --> Low Complexity
 
@@ -118,7 +137,7 @@ DET (Data Elements): 1 (Creditpoints)
 
 FTR (Files): 1 (User-Info)
 
-DET (Data Elements): 2 (Creditpoints, UserId)
+DET (Data Elements): 3 (User-Id, Email, Password)
 
 --> Low Complexity
 
@@ -126,16 +145,20 @@ DET (Data Elements): 2 (Creditpoints, UserId)
 
 RET (Logical Subgroups): 1 (User)
 
-DET (Data Elements): 2 (Creditpoints, UserId)
+DET (Data Elements): 4 (User-Id, Email, Password, Status)
 
 --> Low Complexity
 
 ### 7.5 External Interface files
 
-No external interfaces used.
+RET (Logical Subgroups): 1 (User)
+
+DET (Data Elements): 1 (User-Id)
+
+--> Low Complexity
 
 ### 7.6 FP Estimation
 
-The amount of function points for this use case is 12.
+The combination of Login and Logout use cases reach the value of 40 function points.
 
-![](fp_domain-characteristic_uc-5.png)
+![](fp_domain-characteristic_uc-2.png)

@@ -33,6 +33,7 @@
 4.  [Preconditions](# 4-preconditions)
 5.  [Postconditions](# 5-postconditions)
 6.  [Extension Points](# 6-extension-points)
+7.  [Function Points](# 6-function-points)
 
 ## 1\. Register
 
@@ -92,20 +93,44 @@ See Gherkin .feature file below
 
 ## 4\. Preconditions
 
-[A precondition of a use case is the state of the system that must be present prior to a use case being performed.]
-
-### 4.1 Precondition One
+n/a
 
 ## 5\. Postconditions
 
-[A postcondition of a use case is a list of possible states the system can be in immediately after a use case has finished.]
-
-### 5.1 Postcondition One
+A new user has been created as a result of this use case.
 
 ## 6\. Extension Points
 
-[Extension points of the use case.]
+n/a
 
-### 6.1
+## 7\. Function Points
 
-[Definition of the location of the extension point in the flow of events.]
+### 7.1 External Inputs
+
+The only user input, interacting with the internal logic files of the System, is taking place through creating a new user. This interacts with one file (file type reference, or FTR) - User Login-Data file and changes 8 data element types (DET's). Therefore the complexity for this row is low.
+
+### 7.2 External Outputs
+
+The output visible for the user is his registration information when account is created (e-mail). User Login-Data file is interacted with to show this information, but not all of the fields are accessed and displayed. Only user name and email will be shown to the user. Therefore the complexity can be estimated as low.
+
+### 7.3 External Inquiries
+
+There are 4 external inquiries in the use case.
+
+*   3 are used to register with account data from other social media
+*   1 is an interaction for picking the birth date from a pop-up calendar
+
+Two files are being referenced in this case - a calendar and a User Login-Data table. Each only have a minor amount of data element types referenced. Therefore the complexity is low.
+
+### 7.4 Internal Logical files
+
+The User Login-Data table is the referenced ILF, which has one logical subgroup (RET) - User, and 8 different fields (DET). Complexity is therefore low.
+
+### 7.5 External Interface files
+
+Only one file is used to interact with the external interfaces. It has a minor amount of referenced fields and therefore a low complexity.
+
+### 7.6 FP Estimation
+
+As a result, the use case can be estimated with 36 Function Points. 
+![](fp_domain-characteristic_uc-1.png)

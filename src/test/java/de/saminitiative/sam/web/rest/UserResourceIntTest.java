@@ -65,6 +65,18 @@ public class UserResourceIntTest {
     private static final String DEFAULT_LANGKEY = "en";
     private static final String UPDATED_LANGKEY = "fr";
 
+    private static final String DEFAULT_DEGREE = "Bachelor";
+    private static final String UPDATED_DEGREE = "Master";
+
+    private static final int DEFAULT_SEMESTER = 8;
+    private static final int UPDATED_SEMESTER = 100;
+
+    private static final String DEFAULT_FACULTY = "Computer Science";
+    private static final String UPDATED_FACULTY = "Developer";
+
+    private static final String DEFAULT_UNIVERSITY = "DHBW Karlsruhe";
+    private static final String UPDATED_UNIVERSITY = "SAP SE";
+
     @Autowired
     private UserRepository userRepository;
 
@@ -106,7 +118,7 @@ public class UserResourceIntTest {
 
     /**
      * Create a User.
-     *
+     * <p>
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which has a required relationship to the User entity.
      */
@@ -150,7 +162,12 @@ public class UserResourceIntTest {
             null,
             null,
             null,
-            authorities);
+            authorities,
+            DEFAULT_DEGREE,
+            DEFAULT_SEMESTER,
+            DEFAULT_FACULTY,
+            DEFAULT_UNIVERSITY,
+            null);
 
         restUserMockMvc.perform(post("/api/users")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -190,7 +207,12 @@ public class UserResourceIntTest {
             null,
             null,
             null,
-            authorities);
+            authorities,
+            DEFAULT_DEGREE,
+            DEFAULT_SEMESTER,
+            DEFAULT_FACULTY,
+            DEFAULT_UNIVERSITY,
+            null);
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restUserMockMvc.perform(post("/api/users")
@@ -227,7 +249,12 @@ public class UserResourceIntTest {
             null,
             null,
             null,
-            authorities);
+            authorities,
+            DEFAULT_DEGREE,
+            DEFAULT_SEMESTER,
+            DEFAULT_FACULTY,
+            DEFAULT_UNIVERSITY,
+            null);
 
         // Create the User
         restUserMockMvc.perform(post("/api/users")
@@ -264,7 +291,12 @@ public class UserResourceIntTest {
             null,
             null,
             null,
-            authorities);
+            authorities,
+            DEFAULT_DEGREE,
+            DEFAULT_SEMESTER,
+            DEFAULT_FACULTY,
+            DEFAULT_UNIVERSITY,
+            null);
 
         // Create the User
         restUserMockMvc.perform(post("/api/users")
@@ -350,7 +382,12 @@ public class UserResourceIntTest {
             updatedUser.getCreatedDate(),
             updatedUser.getLastModifiedBy(),
             updatedUser.getLastModifiedDate(),
-            authorities);
+            authorities,
+            UPDATED_DEGREE,
+            UPDATED_SEMESTER,
+            UPDATED_FACULTY,
+            UPDATED_UNIVERSITY,
+            null);
 
         restUserMockMvc.perform(put("/api/users")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -395,7 +432,12 @@ public class UserResourceIntTest {
             updatedUser.getCreatedDate(),
             updatedUser.getLastModifiedBy(),
             updatedUser.getLastModifiedDate(),
-            authorities);
+            authorities,
+            UPDATED_DEGREE,
+            UPDATED_SEMESTER,
+            UPDATED_FACULTY,
+            UPDATED_UNIVERSITY,
+            null);
 
         restUserMockMvc.perform(put("/api/users")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -452,7 +494,12 @@ public class UserResourceIntTest {
             updatedUser.getCreatedDate(),
             updatedUser.getLastModifiedBy(),
             updatedUser.getLastModifiedDate(),
-            authorities);
+            authorities,
+            DEFAULT_DEGREE,
+            DEFAULT_SEMESTER,
+            DEFAULT_FACULTY,
+            DEFAULT_UNIVERSITY,
+            null);
 
         restUserMockMvc.perform(put("/api/users")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -498,7 +545,12 @@ public class UserResourceIntTest {
             updatedUser.getCreatedDate(),
             updatedUser.getLastModifiedBy(),
             updatedUser.getLastModifiedDate(),
-            authorities);
+            authorities,
+            DEFAULT_DEGREE,
+            DEFAULT_SEMESTER,
+            DEFAULT_FACULTY,
+            DEFAULT_UNIVERSITY,
+            null);
 
         restUserMockMvc.perform(put("/api/users")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)

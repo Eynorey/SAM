@@ -7,11 +7,12 @@
 * * *
 
 # Use-Case Specification: Book Course
+
 ###### Version 1.0
 
 ## Table of Contents
 
-1.  [Register](# 1-Book Course)
+1.  [Book Course](# 1-Book Course)
     1.  [Brief Description](# 11-brief-description)
 2.  [Flow of Events](# 2-flow-of-events)
     1.  [Basic Flow](# 21-basic-flow)
@@ -43,7 +44,7 @@ Implementation of this use case will allow the user to book a course and by that
 
 ### 2.1 Basic Flow
 
-![](ad_see-book-course.svg)
+![](ad_book-course.png)
 
 ### 2.2 Alternative Flows
 
@@ -69,8 +70,9 @@ No specified alternative flows.
 
 ### 3.9 Interfaces
 
-![](wf_book-course.svg)
-3.10 Licensing Requirements
+![](wf_book-course.png)
+
+### 3.10 Licensing Requirements
 
 ### 3.11 Legal, Copyright, and Other Notices
 
@@ -92,3 +94,43 @@ Future implementation may contain further activities for managing credit points,
 ### 6.1
 
 The extension point would follow the "view available credit points" activity.
+
+## 7\. Function Points
+
+### 7.1 External Inputs
+
+No external inputs.
+
+### 7.2 External Outputs
+
+FTR (Files): 1 (Course)
+
+DET (Data Elements): 1 (User name)
+
+--> Low Complexity
+
+### 7.3 External Inquiries
+
+FTR (Files): 1 (Course)
+
+DET (Data Elements): 3 (Title, Description, Time)
+
+--> Low Complexity
+
+### 7.4 Internal Logical files
+
+RET (Logical Subgroups): 1 (Course)
+
+DET (Data Elements): 1 (BookedBy)
+
+--> Low Complexity
+
+### 7.5 External Interface files
+
+No external interfaces used.
+
+### 7.6 FP Estimation
+
+
+As a result, the use case can be estimated with 23 Function Points. 
+![](fp_domain-characteristic_uc-7.PNG)

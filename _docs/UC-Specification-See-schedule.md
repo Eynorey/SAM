@@ -52,9 +52,9 @@ The purpose of this use case is for a registered user to be able to see the cour
 
 ## 3\. Special Requirements
 
-[A special requirement is typically a nonfunctional requirement that is specific to a use case, but is not easily or naturally specified in the text of the use case’s event flow. Examples of special requirements include legal and regulatory requirements, application standards, and quality attributes of the system to be built including usability, reliability, performance or supportability requirements. Additionally, other requirementssuch as operating systems and environments, compatibility requirements, and design constraintsshould be captured in this section.]
-
 ### 3.1 Functionality
+
+When selecting a course (clicking on an item), the user will be redirected to the course info page fur further reference.
 
 ### 3.2 Usability
 
@@ -66,11 +66,15 @@ The purpose of this use case is for a registered user to be able to see the cour
 
 ### 3.6 Design constraints
 
+The list should be sorted in the way so that the most recent upcoming course should be displayed on top and maybe somehow additionally marked.
+
 ### 3.7 On-line User Documentation and Help System Requirements
 
 ### 3.8 Purchased Components
 
 ### 3.9 Interfaces
+
+![](wf_see-schedule.png)
 
 ### 3.10 Licensing Requirements
 
@@ -80,20 +84,49 @@ The purpose of this use case is for a registered user to be able to see the cour
 
 ## 4\. Preconditions
 
-[A precondition of a use case is the state of the system that must be present prior to a use case being performed.]
-
-### 4.1 Precondition One
+In order for the user to see courses, he has to book some first. Those will then show up in this list here.
 
 ## 5\. Postconditions
 
-[A postcondition of a use case is a list of possible states the system can be in immediately after a use case has finished.]
-
-### 5.1 Postcondition One
+n/a
 
 ## 6\. Extension Points
 
-[Extension points of the use case.]
+### 6.1 Planner
 
-### 6.1
+A planner function can be implemented to visualize the times in a chosen time period which are available for courses. It can be extended by homeworks from the booked courses, which could show up in the calendar mode as well. 
 
-[Definition of the location of the extension point in the flow of events.]
+## 7\. Function Points
+
+### 7.1 External Inputs
+
+No External Inputs used.
+
+### 7.2 External Outputs
+
+FTR (Files): 1 (Course)
+
+DET (Data Elements): 3 (Description, Title, Time)
+
+--> Low Complexity
+
+### 7.3 External Inquiries
+
+No external Inquiries.
+
+### 7.4 Internal Logical files
+
+RET (Logical Subgroups): 1 (Course)
+
+DET (Data Elements): 1
+
+--> Low Complexity
+
+### 7.5 External Interface files
+
+No external interfaces used.
+
+### 7.6 FP Estimation
+
+As a result, the use case can be estimated with 34 Function Points. 
+![](fp_domain-characteristic_uc-8.PNG)
