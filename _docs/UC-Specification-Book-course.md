@@ -133,4 +133,5 @@ No external interfaces used.
 
 
 As a result, the use case can be estimated with 23 Function Points. 
+
 ![](fp_domain-characteristic_uc-7.PNG)
