@@ -148,4 +148,4 @@ No external interfaces used.
 ### 7.6 FP Estimation
 
 As a result, the use case can be estimated with 15 Function Points. 
-![](fp_domain-characteristic_uc-6.png)
+![](fp_domain-characteristic_uc-6.PNG)
