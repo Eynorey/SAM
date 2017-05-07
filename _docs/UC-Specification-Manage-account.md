@@ -129,5 +129,5 @@ DET (Data Elements): 1
 No external interfaces used.
 
 ### 7.6 FP Estimation
-As a result, the use case can be estimated with 35 Function Points. 
+As a result, the use case can be estimated with 35 Function Points.
 ![](fp_domain-characteristic_uc-9.PNG)
