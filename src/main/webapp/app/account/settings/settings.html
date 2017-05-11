@@ -72,7 +72,11 @@
                         </p>
                     </div>
                 </div>
-
+                <div class="form-group">
+                    <label class="control-label" for="field_degree">Degree</label>
+                    <input type="text" class="form-control" id="field_degree" name="field_degree" placeholder="Your degree"
+                           ng-model="vm.settingsAccount.degree" ng-minlength=1 ng-maxlength=50 required maxlength="50">
+                </div>
                 <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Save</button>
             </form>
         </div>

@@ -13,6 +13,7 @@
         vm.error = null;
         vm.save = save;
         vm.settingsAccount = null;
+        vm.settingsProfile = null;
         vm.success = null;
 
         /**
@@ -25,9 +26,15 @@
                 firstName: account.firstName,
                 langKey: account.langKey,
                 lastName: account.lastName,
-                login: account.login
+                login: account.login,
+                degree: account.degree,
+                semester: account.semester,
+                faculty: account.faculty,
+                university: account.university,
+                birthday: account.birthday
             };
         };
+
 
         Principal.identity().then(function(account) {
             vm.settingsAccount = copyAccount(account);

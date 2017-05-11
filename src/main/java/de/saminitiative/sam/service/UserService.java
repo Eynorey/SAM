@@ -193,7 +193,9 @@ public class UserService {
      * @param langKey   language key
      * @param imageUrl  image URL of user
      */
-    public void updateUser(String firstName, String lastName, String email, String langKey, String imageUrl) {
+    public void updateUser(String firstName, String lastName, String email, String langKey, String imageUrl,
+                           //Profile Properties
+                           String degree, Integer semester, String faculty, String university, ZonedDateTime birthday) {
         userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).ifPresent(user -> {
             user.setFirstName(firstName);
             user.setLastName(lastName);
@@ -202,7 +204,17 @@ public class UserService {
             user.setImageUrl(imageUrl);
             userSearchRepository.save(user);
             log.debug("Changed Information for User: {}", user);
+
+            Profile profile = profileRepository.findOne(user.getId());
+            profile.setDegree(degree);
+            profile.setSemester(semester);
+            profile.setFaculty(faculty);
+            profile.setUniversity(university);
+            profile.setBirthday(birthday);
+            profileRepository.save(profile);
+            profileSearchRepository.save(profile);
         });
+
     }
 
     /**
