@@ -73,6 +73,16 @@ public class UserDTO {
         // Empty constructor needed for MapStruct.
     }
 
+    public UserDTO(User user, Profile profile) {
+        this(user.getId(), user.getLogin(), user.getFirstName(), user.getLastName(),
+            user.getEmail(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
+            user.getCreatedBy(), user.getCreatedDate(), user.getLastModifiedBy(), user.getLastModifiedDate(),
+            user.getAuthorities().stream().map(Authority::getName)
+                .collect(Collectors.toSet()),
+            //Profile Properties
+            profile.getDegree(), profile.getSemester(), profile.getFaculty(), profile.getUniversity(), profile.getBirthday());
+    }
+
     public UserDTO(User user) {
         this(user.getId(), user.getLogin(), user.getFirstName(), user.getLastName(),
             user.getEmail(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
