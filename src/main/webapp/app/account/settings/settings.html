@@ -72,10 +72,30 @@
                         </p>
                     </div>
                 </div>
+                <!-- Profile fields -->
                 <div class="form-group">
                     <label class="control-label" for="field_degree">Degree</label>
-                    <input type="text" class="form-control" id="field_degree" name="field_degree" placeholder="Your degree"
-                           ng-model="vm.settingsAccount.degree" ng-minlength=1 ng-maxlength=50 required maxlength="50">
+                    <input type="text" class="form-control" name="degree" id="field_degree"
+                           ng-model="vm.settingsAccount.degree"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="field_semester">Semester</label>
+                    <input type="number" class="form-control" name="semester" id="field_semester"
+                           ng-model="vm.settingsAccount.semester"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="field_faculty">Faculty</label>
+                    <input type="text" class="form-control" name="faculty" id="field_faculty"
+                           ng-model="vm.settingsAccount.faculty"
+                    />
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="field_university">University</label>
+                    <input type="text" class="form-control" name="university" id="field_university"
+                           ng-model="vm.settingsAccount.university"
+                    />
                 </div>
                 <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">Save</button>
             </form>
