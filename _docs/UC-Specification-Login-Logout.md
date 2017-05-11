@@ -39,7 +39,7 @@
 
 ### 1.1 Brief Description
 
-Implementation of this use case will allow the user to change his or her status as registered on the platform. Logging out will make the system apply restrictions, implied for a guest on the website. Logging in will reverse those restrictions. 
+Implementation of this use case will allow the user to change his or her status as registered on the platform. Logging out will make the system apply restrictions, implied for a guest on the website. Logging in will reverse those restrictions.
 
 ## 2\. Flow of Events
 
@@ -53,7 +53,7 @@ No specified alternative flows.
 
 ### 3.1 Functionality
 
-It is required, that the user can log in using various other accounts he or she posesses in the social media such as Facebook, Google and Twitter. Three separate buttons should lead the user to respective log in screens. 
+It is required, that the user can log in using various other accounts he or she posesses in the social media such as Facebook, Google and Twitter. Three separate buttons should lead the user to respective log in screens.
 
 ### 3.2 Usability
 
@@ -70,10 +70,13 @@ It is required, that the user can log in using various other accounts he or she 
 ### 3.8 Purchased Components
 
 ### 3.9 Interfaces
+
 ![](wf_login-logout.png)
 
 ### 3.10 Licensing Requirements
+
 n/a
+
 ### 3.11 Legal, Copyright, and Other Notices
 
 n/a
@@ -82,15 +85,15 @@ n/a
 
 ## 4\. Preconditions
 
-The preconditions vary according to the use case (Login or Logout). 
+The preconditions vary according to the use case (Login or Logout).
 
 ### 4.1 Precondition One (Login)
 
-The user is expected to be logged out, seen as a guest by the system. 
+The user is expected to be logged out, seen as a guest by the system.
 
 ### 4.2\. Precondition Two (Logout)
 
-The user is expected to be recognized as a registered user. 
+The user is expected to be recognized as a registered user.
 
 ## 5\. Postconditions
 
@@ -117,6 +120,44 @@ Logout: expected postcondition
 n/a
 
 ## 7\. Function Points
+
+### 7.1 External inputs
+
+No External Inputs used.
+
+### 7.2 External outputs
+
+FTR (Files): 1 (User-Info)
+
+DET (Data Elements): 1 (Username, Status)
+
+--> Low Complexity
+
+### 7.3 External Inquiries
+
+FTR (Files): 1 (User-Info)
+
+DET (Data Elements): 3 (User-Id, Email, Password)
+
+--> Low Complexity
+
+### 7.4 Internal Logical files
+
+RET (Logical Subgroups): 1 (User)
+
+DET (Data Elements): 4 (User-Id, Email, Password, Status)
+
+--> Low Complexity
+
+### 7.5 External Interface files
+
+RET (Logical Subgroups): 1 (User)
+
+DET (Data Elements): 1 (User-Id)
+
+--> Low Complexity
+
+### 7.6 FP Estimation
 
 The combination of Login and Logout use cases reach the value of 40 function points.
 
