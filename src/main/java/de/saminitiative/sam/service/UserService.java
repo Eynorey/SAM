@@ -206,15 +206,17 @@ public class UserService {
             userSearchRepository.save(user);
 
             Profile profile = profileSearchRepository.findOne(user.getId());
-            if (profile != null) {
-                profile.setDegree(degree);
-                profile.setSemester(semester);
-                profile.setFaculty(faculty);
-                profile.setUniversity(university);
-                profile.setBirthday(birthday);
-                profileRepository.save(profile);
-                profileSearchRepository.save(profile);
+            if (profile == null) {
+                profile = new Profile();
+                profile.setId(user.getId());
             }
+            profile.setDegree(degree);
+            profile.setSemester(semester);
+            profile.setFaculty(faculty);
+            profile.setUniversity(university);
+            profile.setBirthday(birthday);
+            profileRepository.save(profile);
+            profileSearchRepository.save(profile);
             log.debug("Changed Information for User: {}", user);
         });
     }
