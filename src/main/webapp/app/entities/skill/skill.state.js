@@ -14,7 +14,7 @@
             url: '/skill?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'Skills'
+                pageTitle: 'SAM -Skills'
             },
             views: {
                 'content@': {
