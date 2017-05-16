@@ -284,7 +284,11 @@ public class UserService {
 
     @Transactional(readOnly = true)
     public Profile getProfile() {
-        return profileRepository.getOne(userRepository.findOneWithAuthoritiesByLogin(SecurityUtils.getCurrentUserLogin()).orElse(null).getId());
+        Profile profile = profileRepository.findOne(userRepository.findOneWithAuthoritiesByLogin(SecurityUtils.getCurrentUserLogin()).orElse(null).getId());
+        if (profile != null) {
+            return profile;
+        }
+        return new Profile();
     }
 
 

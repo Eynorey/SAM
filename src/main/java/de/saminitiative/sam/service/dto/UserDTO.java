@@ -65,10 +65,6 @@ public class UserDTO {
 
     private ZonedDateTime birthday = ZonedDateTime.now();
 
-    @Inject
-    private ProfileRepository profileRepository;
-
-
     public UserDTO() {
         // Empty constructor needed for MapStruct.
     }
@@ -97,8 +93,9 @@ public class UserDTO {
         String email, boolean activated, String imageUrl, String langKey,
         String createdBy, ZonedDateTime createdDate, String lastModifiedBy, ZonedDateTime lastModifiedDate,
         Set<String> authorities,
-                   //Profile Properties
-                         String degree, Integer semester, String faculty, String university, ZonedDateTime birthday) {
+
+       //Profile Properties
+       String degree, Integer semester, String faculty, String university, ZonedDateTime birthday) {
 
         this.id = id;
         this.login = login;
