@@ -16,6 +16,10 @@
         vm.settingsProfile = null;
         vm.success = null;
 
+        //Birthday date picker
+        vm.datePickerOpenStatus = {};
+        vm.openCalendar = openCalendar;
+
         /**
          * Store the "settings account" in a separate variable, and not in the shared "account" variable.
          */
@@ -51,6 +55,12 @@
                 vm.success = null;
                 vm.error = 'ERROR';
             });
+        }
+
+        vm.datePickerOpenStatus.birthday = false;
+
+        function openCalendar (date) {
+            vm.datePickerOpenStatus[date] = true;
         }
     }
 })();
