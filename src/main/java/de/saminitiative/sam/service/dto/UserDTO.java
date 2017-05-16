@@ -1,5 +1,7 @@
 package de.saminitiative.sam.service.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.ZonedDateTimeSerializer;
 import de.saminitiative.sam.config.Constants;
 
 import de.saminitiative.sam.domain.Authority;
@@ -63,7 +65,7 @@ public class UserDTO {
 
     private String university = "";
 
-    private ZonedDateTime birthday = ZonedDateTime.now();
+    private ZonedDateTime birthday;
 
     public UserDTO() {
         // Empty constructor needed for MapStruct.
@@ -111,13 +113,7 @@ public class UserDTO {
         this.lastModifiedDate = lastModifiedDate;
         this.authorities = authorities;
 
-/*        Profile profile = profileRepository.findOne(id);
-        this.degree = profile.getDegree();
-        this.semester = profile.getSemester();
-        this.faculty = profile.getFaculty();
-        this.university = profile.getUniversity();
-        this.birthday = profile.getBirthday();*/
-
+        //Profile Properties
         this.degree = degree;
         this.semester = semester;
         this.faculty = faculty;
@@ -209,7 +205,6 @@ public class UserDTO {
     public ZonedDateTime getBirthday() {
         return birthday;
     }
-
 
     @Override
     public String toString() {

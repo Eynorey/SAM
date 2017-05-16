@@ -35,7 +35,7 @@
                 semester: account.semester,
                 faculty: account.faculty,
                 university: account.university,
-                birthday: account.birthday
+                birthday: new Date(account.birthday)
             };
         };
 
