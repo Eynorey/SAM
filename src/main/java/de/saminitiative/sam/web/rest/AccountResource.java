@@ -3,6 +3,7 @@ package de.saminitiative.sam.web.rest;
 import com.codahale.metrics.annotation.Timed;
 
 import de.saminitiative.sam.domain.PersistentToken;
+import de.saminitiative.sam.domain.Profile;
 import de.saminitiative.sam.domain.User;
 import de.saminitiative.sam.repository.PersistentTokenRepository;
 import de.saminitiative.sam.repository.UserRepository;
@@ -125,8 +126,9 @@ public class AccountResource {
     @GetMapping("/account")
     @Timed
     public ResponseEntity<UserDTO> getAccount() {
+        Profile profile = userService.getProfile();
         return Optional.ofNullable(userService.getUserWithAuthorities())
-            .map(user -> new ResponseEntity<>(new UserDTO(user, userService.getProfile()), HttpStatus.OK))
+            .map(user -> new ResponseEntity<>(new UserDTO(user, profile), HttpStatus.OK))
             .orElse(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR));
     }
 
