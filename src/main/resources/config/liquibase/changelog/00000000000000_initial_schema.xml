@@ -15,10 +15,10 @@
         The initial schema has the '00000000000001' id, so that it is over-written if we re-generate it.
     -->
 
-    <changeSet id="00000000000000" author="jhipster" dbms="postgresql">
+    <changeSet id="00000000000018" author="jhipster" dbms="postgresql">
         <createSequence sequenceName="hibernate_sequence" startValue="1000" incrementBy="1"/>
     </changeSet>
-    <changeSet id="00000000000001" author="jhipster" dbms="postgresql">
+    <changeSet id="00000000000020" author="jhipster">
         <createTable tableName="jhi_user">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -43,7 +43,7 @@
                 <constraints nullable="false"/>
             </column>
             <column name="created_date" type="timestamp">
-                <constraints nullable="false"/>
+                <constraints nullable="true"/>
             </column>
             <column name="reset_date" type="timestamp">
                 <constraints nullable="true"/>
