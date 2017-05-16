@@ -20,12 +20,14 @@ spring:
         livereload:
             enabled: false
     datasource:
-        driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
         url: jdbc:sqlserver://smartifytheworld.database.windows.net:1433;database=SAMData;user=samdata@smartifytheworld;password=samSmart!;encrypt=false;trustServerCertificate=false;loginTimeout=30;
     jpa:
-        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-        database: MYSQL
-        show-sql: false
+        database-platform: org.hibernate.dialect.SQLServerDialect
+        database: SQL_SERVER
+        openInView: false
+        show-sql: true
+        generate-ddl: false
         properties:
             hibernate.id.new_generator_mappings: true
             hibernate.cache.use_second_level_cache: true
