@@ -5,9 +5,9 @@
         .module('samApp')
         .controller('CourseDialogController', CourseDialogController);
 
-    CourseDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Course', 'Skill'];
+    CourseDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Course', 'Skill', 'User'];
 
-    function CourseDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Course, Skill) {
+    function CourseDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Course, Skill, User) {
         var vm = this;
 
         vm.course = entity;
@@ -16,6 +16,7 @@
         vm.openCalendar = openCalendar;
         vm.save = save;
         vm.skills = Skill.query();
+        vm.users = User.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

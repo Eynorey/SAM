@@ -5,9 +5,9 @@
         .module('samApp')
         .controller('CourseDetailController', CourseDetailController);
 
-    CourseDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Course', 'Skill'];
+    CourseDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Course', 'Skill', 'User'];
 
-    function CourseDetailController($scope, $rootScope, $stateParams, previousState, entity, Course, Skill) {
+    function CourseDetailController($scope, $rootScope, $stateParams, previousState, entity, Course, Skill, User) {
         var vm = this;
 
         vm.course = entity;

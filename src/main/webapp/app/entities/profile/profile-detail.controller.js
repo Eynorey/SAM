@@ -5,9 +5,9 @@
         .module('samApp')
         .controller('ProfileDetailController', ProfileDetailController);
 
-    ProfileDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Profile', 'User', 'Course', 'Skill'];
+    ProfileDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Profile', 'User', 'Skill'];
 
-    function ProfileDetailController($scope, $rootScope, $stateParams, previousState, entity, Profile, User, Course, Skill) {
+    function ProfileDetailController($scope, $rootScope, $stateParams, previousState, entity, Profile, User, Skill) {
         var vm = this;
 
         vm.profile = entity;

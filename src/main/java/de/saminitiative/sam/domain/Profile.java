@@ -54,20 +54,6 @@ public class Profile implements Serializable {
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "profile_offered_courses",
-               joinColumns = @JoinColumn(name="profiles_id", referencedColumnName="id"),
-               inverseJoinColumns = @JoinColumn(name="offered_courses_id", referencedColumnName="id"))
-    private Set<Course> offeredCourses = new HashSet<>();
-
-    @ManyToMany
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "profile_occupied_courses",
-               joinColumns = @JoinColumn(name="profiles_id", referencedColumnName="id"),
-               inverseJoinColumns = @JoinColumn(name="occupied_courses_id", referencedColumnName="id"))
-    private Set<Course> occupiedCourses = new HashSet<>();
-
-    @ManyToMany
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "profile_skills",
                joinColumns = @JoinColumn(name="profiles_id", referencedColumnName="id"),
                inverseJoinColumns = @JoinColumn(name="skills_id", referencedColumnName="id"))
@@ -183,52 +169,6 @@ public class Profile implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public Set<Course> getOfferedCourses() {
-        return offeredCourses;
-    }
-
-    public Profile offeredCourses(Set<Course> courses) {
-        this.offeredCourses = courses;
-        return this;
-    }
-
-    public Profile addOfferedCourses(Course course) {
-        this.offeredCourses.add(course);
-        return this;
-    }
-
-    public Profile removeOfferedCourses(Course course) {
-        this.offeredCourses.remove(course);
-        return this;
-    }
-
-    public void setOfferedCourses(Set<Course> courses) {
-        this.offeredCourses = courses;
-    }
-
-    public Set<Course> getOccupiedCourses() {
-        return occupiedCourses;
-    }
-
-    public Profile occupiedCourses(Set<Course> courses) {
-        this.occupiedCourses = courses;
-        return this;
-    }
-
-    public Profile addOccupiedCourses(Course course) {
-        this.occupiedCourses.add(course);
-        return this;
-    }
-
-    public Profile removeOccupiedCourses(Course course) {
-        this.occupiedCourses.remove(course);
-        return this;
-    }
-
-    public void setOccupiedCourses(Set<Course> courses) {
-        this.occupiedCourses = courses;
     }
 
     public Set<Skill> getSkills() {

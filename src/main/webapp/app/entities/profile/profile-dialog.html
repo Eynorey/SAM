@@ -67,14 +67,6 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="field_offeredCourses">Offered Courses</label>
-            <select class="form-control" id="field_offeredCourses" multiple name="offeredCourses" ng-model="vm.profile.offeredCourses" ng-options="course as course.title for course in vm.courses track by course.id"></select>
-        </div>
-        <div class="form-group">
-            <label for="field_occupiedCourses">Occupied Courses</label>
-            <select class="form-control" id="field_occupiedCourses" multiple name="occupiedCourses" ng-model="vm.profile.occupiedCourses" ng-options="course as course.title for course in vm.courses track by course.id"></select>
-        </div>
-        <div class="form-group">
             <label for="field_skills">Skills</label>
             <select class="form-control" id="field_skills" multiple name="skills" ng-model="vm.profile.skills" ng-options="skill as skill.name for skill in vm.skills track by skill.id"></select>
         </div>
