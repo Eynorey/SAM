@@ -1,4 +1,4 @@
 package de.saminitiative.sam.courseState;
 
-public class Booked implements State {
+public class Occupied implements State {
 }

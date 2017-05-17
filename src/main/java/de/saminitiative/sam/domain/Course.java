@@ -1,5 +1,7 @@
 package de.saminitiative.sam.domain;
 
+import de.saminitiative.sam.courseState.Free;
+import de.saminitiative.sam.courseState.Occupied;
 import de.saminitiative.sam.courseState.State;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -77,6 +79,14 @@ public class Course implements Serializable {
 
     public void setState(State state){
         this.state = state;
+    }
+
+    private void updateState() {
+        if(attendees.size() > maxAttendees) {
+            setState(new Occupied());
+        } else {
+            setState(new Free());
+        }
     }
 
     public Long getId() {
@@ -158,11 +168,13 @@ public class Course implements Serializable {
 
     public Course maxAttendees(Integer maxAttendees) {
         this.maxAttendees = maxAttendees;
+        updateState();
         return this;
     }
 
     public void setMaxAttendees(Integer maxAttendees) {
         this.maxAttendees = maxAttendees;
+        updateState();
     }
 
     public Set<Skill> getImpliedSkills() {
@@ -217,22 +229,25 @@ public class Course implements Serializable {
 
     public Course attendees(Set<User> users) {
         this.attendees = users;
+        updateState();
         return this;
     }
 
     public Course addAttendees(User user) {
         this.attendees.add(user);
+        updateState();
         return this;
     }
 
     public Course removeAttendees(User user) {
         this.attendees.remove(user);
+        updateState();
         return this;
     }
 
     public void setAttendees(Set<User> users) {
-
         this.attendees = users;
+        updateState();
     }
 
     public Set<User> getTeachers() {
