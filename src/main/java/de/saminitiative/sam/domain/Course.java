@@ -41,6 +41,9 @@ public class Course implements Serializable {
     @Column(name = "location")
     private String location;
 
+    @Column(name = "max_attendees")
+    private Integer maxAttendees;
+
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "course_implied_skills",
@@ -140,6 +143,19 @@ public class Course implements Serializable {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public Integer getMaxAttendees() {
+        return maxAttendees;
+    }
+
+    public Course maxAttendees(Integer maxAttendees) {
+        this.maxAttendees = maxAttendees;
+        return this;
+    }
+
+    public void setMaxAttendees(Integer maxAttendees) {
+        this.maxAttendees = maxAttendees;
     }
 
     public Set<Skill> getImpliedSkills() {
@@ -263,6 +279,7 @@ public class Course implements Serializable {
             ", start='" + start + "'" +
             ", end='" + end + "'" +
             ", location='" + location + "'" +
+            ", maxAttendees='" + maxAttendees + "'" +
             '}';
     }
 }

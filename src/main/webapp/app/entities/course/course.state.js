@@ -120,6 +120,7 @@
                                 start: null,
                                 end: null,
                                 location: null,
+                                maxAttendees: null,
                                 id: null
                             };
                         }

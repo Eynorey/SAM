@@ -54,6 +54,10 @@
         {
             "fieldName": "location",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "maxAttendees",
+            "fieldType": "Integer"
         }
     ],
     "changelogDate": "20170517232730",
