@@ -75,6 +75,7 @@ public class Course implements Serializable {
                inverseJoinColumns = @JoinColumn(name="teachers_id", referencedColumnName="id"))
     private Set<User> teachers = new HashSet<>();
 
+    @Transient
     private State state;
 
     public void setState(State state){
