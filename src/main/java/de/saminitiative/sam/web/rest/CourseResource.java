@@ -2,13 +2,13 @@ package de.saminitiative.sam.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import de.saminitiative.sam.domain.Course;
-
 import de.saminitiative.sam.repository.CourseRepository;
 import de.saminitiative.sam.repository.search.CourseSearchRepository;
+import de.saminitiative.sam.service.CourseService;
 import de.saminitiative.sam.web.rest.util.HeaderUtil;
 import de.saminitiative.sam.web.rest.util.PaginationUtil;
-import io.swagger.annotations.ApiParam;
 import io.github.jhipster.web.util.ResponseUtil;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -22,10 +22,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
 
 /**
  * REST controller for managing Course.
@@ -37,14 +35,17 @@ public class CourseResource {
     private final Logger log = LoggerFactory.getLogger(CourseResource.class);
 
     private static final String ENTITY_NAME = "course";
-        
+
     private final CourseRepository courseRepository;
 
     private final CourseSearchRepository courseSearchRepository;
 
-    public CourseResource(CourseRepository courseRepository, CourseSearchRepository courseSearchRepository) {
+    private final CourseService courseService;
+
+    public CourseResource(CourseRepository courseRepository, CourseSearchRepository courseSearchRepository, CourseService courseService) {
         this.courseRepository = courseRepository;
         this.courseSearchRepository = courseSearchRepository;
+        this.courseService = courseService;
     }
 
     /**
@@ -139,7 +140,7 @@ public class CourseResource {
      * SEARCH  /_search/courses?query=:query : search for the course corresponding
      * to the query.
      *
-     * @param query the query of the course search 
+     * @param query the query of the course search
      * @param pageable the pagination information
      * @return the result of the search
      */

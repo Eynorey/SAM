@@ -1,15 +1,18 @@
 package de.saminitiative.sam.domain;
 
+import de.saminitiative.sam.courseState.State;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A Course.
@@ -19,6 +22,8 @@ import java.util.Objects;
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "course")
 public class Course implements Serializable {
+
+    private final Logger log = LoggerFactory.getLogger(Course.class);
 
     private static final long serialVersionUID = 1L;
 
@@ -44,16 +49,28 @@ public class Course implements Serializable {
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "course_implied_skills",
-               joinColumns = @JoinColumn(name="courses_id", referencedColumnName="id"),
-               inverseJoinColumns = @JoinColumn(name="implied_skills_id", referencedColumnName="id"))
+        joinColumns = @JoinColumn(name = "courses_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "implied_skills_id", referencedColumnName = "id"))
     private Set<Skill> impliedSkills = new HashSet<>();
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "course_acquirable_skills",
-               joinColumns = @JoinColumn(name="courses_id", referencedColumnName="id"),
-               inverseJoinColumns = @JoinColumn(name="acquirable_skills_id", referencedColumnName="id"))
+        joinColumns = @JoinColumn(name = "courses_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "acquirable_skills_id", referencedColumnName = "id"))
     private Set<Skill> acquirableSkills = new HashSet<>();
+
+    private State state;
+
+    public void setState(State state) {
+        log.debug("setState called!");
+        if (state != null) {
+            log.debug(state.toString());
+            this.state = state;
+        } else {
+
+        }
+    }
 
     public Long getId() {
         return id;
