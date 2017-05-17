@@ -129,12 +129,8 @@ public class UserService {
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         authorities.add(authority);
         newUser.setAuthorities(authorities);
-        log.debug("User id before saving: " + newUser.getId());
-//        userRepository.save(newUser);
         id = userRepository.save(newUser).getId();
-        log.debug("User Id in Repo: " + id);
-//        userSearchRepository.save(newUser);
-        log.debug("User Id in SearchRepo: " + userSearchRepository.save(newUser).getId());
+        userSearchRepository.save(newUser);
         log.debug("Created Information for User: {}", newUser);
 
         // Create and save the Profile entity
