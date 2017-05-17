@@ -89,6 +89,10 @@ public class Course implements Serializable {
         }
     }
 
+    public boolean updatePossible(){
+        return state.updatePossible();
+    }
+
     public Long getId() {
         return id;
     }
