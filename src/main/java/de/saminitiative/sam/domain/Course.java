@@ -1,5 +1,6 @@
 package de.saminitiative.sam.domain;
 
+import de.saminitiative.sam.courseState.State;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -8,8 +9,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A Course.
@@ -71,6 +72,12 @@ public class Course implements Serializable {
                joinColumns = @JoinColumn(name="courses_id", referencedColumnName="id"),
                inverseJoinColumns = @JoinColumn(name="teachers_id", referencedColumnName="id"))
     private Set<User> teachers = new HashSet<>();
+
+    private State state;
+
+    public void setState(State state){
+        this.state = state;
+    }
 
     public Long getId() {
         return id;
@@ -224,6 +231,7 @@ public class Course implements Serializable {
     }
 
     public void setAttendees(Set<User> users) {
+
         this.attendees = users;
     }
 
