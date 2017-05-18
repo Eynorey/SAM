@@ -420,18 +420,23 @@ public class AccountResourceIntTest {
     public void testSaveInvalidLogin() throws Exception {
         UserDTO invalidUser = new UserDTO(
             null,                   // id
-            "funky-log!n",          // login <-- invalid
-            "Funky",                // firstName
-            "One",                  // lastName
-            "funky@example.com",    // email
-            true,                   // activated
+            "funky-log!n",        // login <-- invalid
+            "Funky",           // firstName
+            "One",             // lastName
+            "funky@example.com",  // email
+            true,              // activated
             "http://placehold.it/50x50", //imageUrl
-            "en",                   // langKey
-            null,                   // createdBy
-            null,                   // createdDate
-            null,                   // lastModifiedBy
-            null,                   // lastModifiedDate
-            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER))
+            "en",               // langKey
+            null,              // createdBy
+            null,            // createdDate
+            null,          // lastModifiedBy
+            null,        // lastModifiedDate
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)), // authorities
+            "funky degree",      // degree
+            0,                  // semester
+            "funky faculty",      // faculty
+            "funky university", // university
+            null                 // birthday
         );
 
         restUserMockMvc.perform(
