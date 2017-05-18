@@ -13,7 +13,12 @@
         vm.error = null;
         vm.save = save;
         vm.settingsAccount = null;
+        vm.settingsProfile = null;
         vm.success = null;
+
+        //Birthday date picker
+        vm.datePickerOpenStatus = {};
+        vm.openCalendar = openCalendar;
 
         /**
          * Store the "settings account" in a separate variable, and not in the shared "account" variable.
@@ -25,9 +30,15 @@
                 firstName: account.firstName,
                 langKey: account.langKey,
                 lastName: account.lastName,
-                login: account.login
+                login: account.login,
+                degree: account.degree,
+                semester: account.semester,
+                faculty: account.faculty,
+                university: account.university,
+                birthday: new Date(account.birthday)
             };
         };
+
 
         Principal.identity().then(function(account) {
             vm.settingsAccount = copyAccount(account);
@@ -44,6 +55,12 @@
                 vm.success = null;
                 vm.error = 'ERROR';
             });
+        }
+
+        vm.datePickerOpenStatus.birthday = false;
+
+        function openCalendar (date) {
+            vm.datePickerOpenStatus[date] = true;
         }
     }
 })();

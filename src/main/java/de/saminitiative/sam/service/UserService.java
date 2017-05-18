@@ -193,7 +193,10 @@ public class UserService {
      * @param langKey   language key
      * @param imageUrl  image URL of user
      */
-    public void updateUser(String firstName, String lastName, String email, String langKey, String imageUrl) {
+    @Transactional
+    public void updateUser(String firstName, String lastName, String email, String langKey, String imageUrl,
+                           //Profile Properties
+                           String degree, Integer semester, String faculty, String university, ZonedDateTime birthday) {
         userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).ifPresent(user -> {
             user.setFirstName(firstName);
             user.setLastName(lastName);
@@ -201,6 +204,19 @@ public class UserService {
             user.setLangKey(langKey);
             user.setImageUrl(imageUrl);
             userSearchRepository.save(user);
+
+            Profile profile = profileSearchRepository.findOne(user.getId());
+            if (profile == null) {
+                profile = new Profile();
+                profile.setId(user.getId());
+            }
+            profile.setDegree(degree);
+            profile.setSemester(semester);
+            profile.setFaculty(faculty);
+            profile.setUniversity(university);
+            profile.setBirthday(birthday);
+            profileRepository.save(profile);
+            profileSearchRepository.save(profile);
             log.debug("Changed Information for User: {}", user);
         });
     }
@@ -212,6 +228,7 @@ public class UserService {
      * @return updated user
      */
     public Optional<UserDTO> updateUser(UserDTO userDTO) {
+        log.debug("");
         return Optional.of(userRepository
             .findOne(userDTO.getId()))
             .map(user -> {
@@ -268,6 +285,16 @@ public class UserService {
     @Transactional(readOnly = true)
     public User getUserWithAuthorities() {
         return userRepository.findOneWithAuthoritiesByLogin(SecurityUtils.getCurrentUserLogin()).orElse(null);
+    }
+
+    @Transactional(readOnly = true)
+    public Profile getProfile() {
+        User user = userRepository.findOneWithAuthoritiesByLogin(SecurityUtils.getCurrentUserLogin()).orElse(null);
+        Profile profile = profileSearchRepository.findOne(user.getId());
+        if (profile != null) {
+            return profile;
+        }
+        return new Profile();
     }
 
     /**

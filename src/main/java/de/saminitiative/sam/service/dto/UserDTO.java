@@ -1,12 +1,17 @@
 package de.saminitiative.sam.service.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.ZonedDateTimeSerializer;
 import de.saminitiative.sam.config.Constants;
 
 import de.saminitiative.sam.domain.Authority;
+import de.saminitiative.sam.domain.Profile;
 import de.saminitiative.sam.domain.User;
 
+import de.saminitiative.sam.repository.ProfileRepository;
 import org.hibernate.validator.constraints.Email;
 
+import javax.inject.Inject;
 import javax.validation.constraints.*;
 import java.time.ZonedDateTime;
 import java.util.Set;
@@ -51,8 +56,29 @@ public class UserDTO {
 
     private Set<String> authorities;
 
+    //Properties from Profile
+    private String degree = "";
+
+    private Integer semester = 0;
+
+    private String faculty = "";
+
+    private String university = "";
+
+    private ZonedDateTime birthday;
+
     public UserDTO() {
         // Empty constructor needed for MapStruct.
+    }
+
+    public UserDTO(User user, Profile profile) {
+        this(user.getId(), user.getLogin(), user.getFirstName(), user.getLastName(),
+            user.getEmail(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
+            user.getCreatedBy(), user.getCreatedDate(), user.getLastModifiedBy(), user.getLastModifiedDate(),
+            user.getAuthorities().stream().map(Authority::getName)
+                .collect(Collectors.toSet()),
+            //Profile Properties
+            profile.getDegree(), profile.getSemester(), profile.getFaculty(), profile.getUniversity(), profile.getBirthday());
     }
 
     public UserDTO(User user) {
@@ -60,13 +86,18 @@ public class UserDTO {
             user.getEmail(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
             user.getCreatedBy(), user.getCreatedDate(), user.getLastModifiedBy(), user.getLastModifiedDate(),
             user.getAuthorities().stream().map(Authority::getName)
-                .collect(Collectors.toSet()));
+                .collect(Collectors.toSet()),
+            //Profile Properties
+                null, null, null, null, null);
     }
 
     public UserDTO(Long id, String login, String firstName, String lastName,
         String email, boolean activated, String imageUrl, String langKey,
         String createdBy, ZonedDateTime createdDate, String lastModifiedBy, ZonedDateTime lastModifiedDate,
-        Set<String> authorities) {
+        Set<String> authorities,
+
+       //Profile Properties
+       String degree, Integer semester, String faculty, String university, ZonedDateTime birthday) {
 
         this.id = id;
         this.login = login;
@@ -81,6 +112,13 @@ public class UserDTO {
         this.lastModifiedBy = lastModifiedBy;
         this.lastModifiedDate = lastModifiedDate;
         this.authorities = authorities;
+
+        //Profile Properties
+        this.degree = degree;
+        this.semester = semester;
+        this.faculty = faculty;
+        this.university = university;
+        this.birthday = birthday;
     }
 
     public Long getId() {
@@ -147,6 +185,27 @@ public class UserDTO {
         return authorities;
     }
 
+    //Getters for Profile
+    public String getDegree() {
+        return degree;
+    }
+
+    public Integer getSemester() {
+        return semester;
+    }
+
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public String getUniversity() {
+        return university;
+    }
+
+    public ZonedDateTime getBirthday() {
+        return birthday;
+    }
+
     @Override
     public String toString() {
         return "UserDTO{" +
@@ -162,6 +221,11 @@ public class UserDTO {
             ", lastModifiedBy='" + lastModifiedBy + '\'' +
             ", lastModifiedDate=" + lastModifiedDate +
             ", authorities=" + authorities +
+            ", degree='" + degree + '\'' +
+            ", semester=" + semester +
+            ", faculty='" + faculty + '\'' +
+            ", university='" + university + '\'' +
+            ", birthday=" + birthday +
             "}";
     }
 }
