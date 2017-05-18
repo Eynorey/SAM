@@ -2,13 +2,12 @@ package de.saminitiative.sam.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
 import de.saminitiative.sam.domain.Profile;
-
 import de.saminitiative.sam.repository.ProfileRepository;
 import de.saminitiative.sam.repository.search.ProfileSearchRepository;
 import de.saminitiative.sam.web.rest.util.HeaderUtil;
 import de.saminitiative.sam.web.rest.util.PaginationUtil;
-import io.swagger.annotations.ApiParam;
 import io.github.jhipster.web.util.ResponseUtil;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -22,10 +21,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
 
 /**
  * REST controller for managing Profile.
@@ -37,7 +34,7 @@ public class ProfileResource {
     private final Logger log = LoggerFactory.getLogger(ProfileResource.class);
 
     private static final String ENTITY_NAME = "profile";
-        
+
     private final ProfileRepository profileRepository;
 
     private final ProfileSearchRepository profileSearchRepository;
@@ -139,7 +136,7 @@ public class ProfileResource {
      * SEARCH  /_search/profiles?query=:query : search for the profile corresponding
      * to the query.
      *
-     * @param query the query of the profile search 
+     * @param query the query of the profile search
      * @param pageable the pagination information
      * @return the result of the search
      */

@@ -15,79 +15,85 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
 
     <!--
-        Added the entity Profile.
+        Added the entity Course.
     -->
-    <changeSet id="20170409171347-1" author="jhipster">
-        <createTable tableName="profile">
+    <changeSet id="20170517232730-1" author="jhipster">
+        <createTable tableName="course">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="credibility" type="integer">
+            <column name="title" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="credits" type="double">
+            <column name="description" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="jhi_degree" type="varchar(255)">
+            <column name="jhi_start" type="timestamp">
                 <constraints nullable="true" />
             </column>
 
-            <column name="semester" type="integer">
+            <column name="jhi_end" type="timestamp">
                 <constraints nullable="true" />
             </column>
 
-            <column name="faculty" type="varchar(255)">
+            <column name="location" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
-            <column name="university" type="varchar(255)">
+            <column name="max_attendees" type="integer">
                 <constraints nullable="true" />
             </column>
 
-            <column name="birthday" type="timestamp">
-                <constraints nullable="true" />
-            </column>
-            <column name="user_id" type="bigint">
-                <constraints unique="true" nullable="true" />
-            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
-        <dropDefaultValue tableName="profile" columnName="birthday" columnDataType="datetime"/>
+        <dropDefaultValue tableName="course" columnName="jhi_start" columnDataType="datetime"/>
+        <dropDefaultValue tableName="course" columnName="jhi_end" columnDataType="datetime"/>
         
-        <createTable tableName="profile_offered_courses">
-            <column name="offered_courses_id" type="bigint">
+        <createTable tableName="course_implied_skills">
+            <column name="implied_skills_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="profiles_id" type="bigint">
+            <column name="courses_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
         </createTable>
 
-        <addPrimaryKey columnNames="profiles_id, offered_courses_id" tableName="profile_offered_courses"/>
+        <addPrimaryKey columnNames="courses_id, implied_skills_id" tableName="course_implied_skills"/>
         
-        <createTable tableName="profile_occupied_courses">
-            <column name="occupied_courses_id" type="bigint">
+        <createTable tableName="course_acquirable_skills">
+            <column name="acquirable_skills_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="profiles_id" type="bigint">
+            <column name="courses_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
         </createTable>
 
-        <addPrimaryKey columnNames="profiles_id, occupied_courses_id" tableName="profile_occupied_courses"/>
+        <addPrimaryKey columnNames="courses_id, acquirable_skills_id" tableName="course_acquirable_skills"/>
         
-        <createTable tableName="profile_skills">
-            <column name="skills_id" type="bigint">
+        <createTable tableName="course_attendees">
+            <column name="attendees_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="profiles_id" type="bigint">
+            <column name="courses_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
         </createTable>
 
-        <addPrimaryKey columnNames="profiles_id, skills_id" tableName="profile_skills"/>
+        <addPrimaryKey columnNames="courses_id, attendees_id" tableName="course_attendees"/>
+        
+        <createTable tableName="course_teachers">
+            <column name="teachers_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="courses_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="courses_id, teachers_id" tableName="course_teachers"/>
         
     </changeSet>
 </databaseChangeLog>

@@ -1,5 +1,8 @@
 package de.saminitiative.sam.domain;
 
+import de.saminitiative.sam.courseState.Free;
+import de.saminitiative.sam.courseState.Occupied;
+import de.saminitiative.sam.courseState.State;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -8,8 +11,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A Course.
@@ -41,6 +44,9 @@ public class Course implements Serializable {
     @Column(name = "location")
     private String location;
 
+    @Column(name = "max_attendees")
+    private Integer maxAttendees;
+
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "course_implied_skills",
@@ -54,6 +60,39 @@ public class Course implements Serializable {
                joinColumns = @JoinColumn(name="courses_id", referencedColumnName="id"),
                inverseJoinColumns = @JoinColumn(name="acquirable_skills_id", referencedColumnName="id"))
     private Set<Skill> acquirableSkills = new HashSet<>();
+
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "course_attendees",
+               joinColumns = @JoinColumn(name="courses_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="attendees_id", referencedColumnName="id"))
+    private Set<User> attendees = new HashSet<>();
+
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "course_teachers",
+               joinColumns = @JoinColumn(name="courses_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="teachers_id", referencedColumnName="id"))
+    private Set<User> teachers = new HashSet<>();
+
+    @Transient
+    private State state;
+
+    public void setState(State state){
+        this.state = state;
+    }
+
+    private void updateState() {
+        if(attendees.size() > maxAttendees) {
+            setState(new Occupied());
+        } else {
+            setState(new Free());
+        }
+    }
+
+    public boolean updatePossible(){
+        return state.updatePossible();
+    }
 
     public Long getId() {
         return id;
@@ -128,6 +167,21 @@ public class Course implements Serializable {
         this.location = location;
     }
 
+    public Integer getMaxAttendees() {
+        return maxAttendees;
+    }
+
+    public Course maxAttendees(Integer maxAttendees) {
+        this.maxAttendees = maxAttendees;
+        updateState();
+        return this;
+    }
+
+    public void setMaxAttendees(Integer maxAttendees) {
+        this.maxAttendees = maxAttendees;
+        updateState();
+    }
+
     public Set<Skill> getImpliedSkills() {
         return impliedSkills;
     }
@@ -174,6 +228,56 @@ public class Course implements Serializable {
         this.acquirableSkills = skills;
     }
 
+    public Set<User> getAttendees() {
+        return attendees;
+    }
+
+    public Course attendees(Set<User> users) {
+        this.attendees = users;
+        updateState();
+        return this;
+    }
+
+    public Course addAttendees(User user) {
+        this.attendees.add(user);
+        updateState();
+        return this;
+    }
+
+    public Course removeAttendees(User user) {
+        this.attendees.remove(user);
+        updateState();
+        return this;
+    }
+
+    public void setAttendees(Set<User> users) {
+        this.attendees = users;
+        updateState();
+    }
+
+    public Set<User> getTeachers() {
+        return teachers;
+    }
+
+    public Course teachers(Set<User> users) {
+        this.teachers = users;
+        return this;
+    }
+
+    public Course addTeachers(User user) {
+        this.teachers.add(user);
+        return this;
+    }
+
+    public Course removeTeachers(User user) {
+        this.teachers.remove(user);
+        return this;
+    }
+
+    public void setTeachers(Set<User> users) {
+        this.teachers = users;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -203,6 +307,7 @@ public class Course implements Serializable {
             ", start='" + start + "'" +
             ", end='" + end + "'" +
             ", location='" + location + "'" +
+            ", maxAttendees='" + maxAttendees + "'" +
             '}';
     }
 }

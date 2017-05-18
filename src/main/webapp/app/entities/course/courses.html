@@ -41,6 +41,7 @@
                     <th jh-sort-by="start"><span>Start</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="end"><span>End</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="location"><span>Location</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="maxAttendees"><span>Max Attendees</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -52,6 +53,7 @@
                     <td>{{course.start | date:'medium'}}</td>
                     <td>{{course.end | date:'medium'}}</td>
                     <td>{{course.location}}</td>
+                    <td>{{course.maxAttendees}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

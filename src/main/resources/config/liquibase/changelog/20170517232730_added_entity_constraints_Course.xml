@@ -6,7 +6,7 @@
     <!--
         Added the constraints for entity Course.
     -->
-    <changeSet id="20170409171348-2" author="jhipster">
+    <changeSet id="20170517232730-2" author="jhipster">
         
         <addForeignKeyConstraint baseColumnNames="courses_id"
                                  baseTableName="course_implied_skills"
@@ -29,6 +29,28 @@
                                  constraintName="fk_course_acquirable_skills_acquirable_skills_id"
                                  referencedColumnNames="id"
                                  referencedTableName="skill"/>
+        
+        <addForeignKeyConstraint baseColumnNames="courses_id"
+                                 baseTableName="course_attendees"
+                                 constraintName="fk_course_attendees_courses_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="course"/>
+        <addForeignKeyConstraint baseColumnNames="attendees_id"
+                                 baseTableName="course_attendees"
+                                 constraintName="fk_course_attendees_attendees_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+        
+        <addForeignKeyConstraint baseColumnNames="courses_id"
+                                 baseTableName="course_teachers"
+                                 constraintName="fk_course_teachers_courses_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="course"/>
+        <addForeignKeyConstraint baseColumnNames="teachers_id"
+                                 baseTableName="course_teachers"
+                                 constraintName="fk_course_teachers_teachers_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
         
     </changeSet>
 </databaseChangeLog>

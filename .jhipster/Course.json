@@ -16,6 +16,22 @@
             "otherEntityName": "skill",
             "otherEntityField": "name",
             "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "attendees",
+            "otherEntityName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "teachers",
+            "otherEntityName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true
         }
     ],
     "fields": [
@@ -38,9 +54,13 @@
         {
             "fieldName": "location",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "maxAttendees",
+            "fieldType": "Integer"
         }
     ],
-    "changelogDate": "20170409171348",
+    "changelogDate": "20170517232730",
     "entityTableName": "course",
     "dto": "no",
     "pagination": "pager",

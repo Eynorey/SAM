@@ -13,10 +13,10 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface ProfileRepository extends JpaRepository<Profile,Long> {
 
-    @Query("select distinct profile from Profile profile left join fetch profile.offeredCourses left join fetch profile.occupiedCourses left join fetch profile.skills")
+    @Query("select distinct profile from Profile profile left join fetch profile.skills")
     List<Profile> findAllWithEagerRelationships();
 
-    @Query("select profile from Profile profile left join fetch profile.offeredCourses left join fetch profile.occupiedCourses left join fetch profile.skills where profile.id =:id")
+    @Query("select profile from Profile profile left join fetch profile.skills where profile.id =:id")
     Profile findOneWithEagerRelationships(@Param("id") Long id);
 
 }
