@@ -14,7 +14,7 @@
             url: '/course?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'Courses'
+                pageTitle: 'SAM - Courses'
             },
             views: {
                 'content@': {
