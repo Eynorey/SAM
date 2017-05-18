@@ -131,5 +131,43 @@ n/a
 
 ## 7\. Function Points
 
+### 7.1 External Inputs
+
+FTR (Files): 1 (Course)
+
+DET (Data Elements): 6 (Date, Time, Name, Description, Tutor, Preconditions)
+
+--> Low Complexity
+
+### 7.2 External Outputs
+
+FTR (Files): 1 (Course)
+
+DET (Data Elements): 6 (Date, Time, Name, Description, Tutor, Preconditions)
+
+--> Low Complexity
+
+### 7.3 External Inquiries
+
+FTR (Files): 2 (Course, User-Calendar)
+
+DET (Data Elements): 3 (Title, Date, Time)
+
+--> Low Complexity
+
+### 7.4 Internal Logical files
+
+RET (Logical Subgroups): 2 (Course, User-Calendar)
+
+DET (Data Elements): 6 (Date, Time, Name, Description, Tutor, Preconditions)
+
+--> Low Complexity
+
+### 7.5 External Interface files
+
+No external interfaces used.
+
+### 7.6 FP Estimation
+
 According to the estimation table below, the use case can be measured with 31 function points. 
 ![](fp_domain-characteristic_uc-4.png)

@@ -98,5 +98,35 @@ A planner function can be implemented to visualize the times in a chosen time pe
 
 ## 7\. Function Points
 
+### 7.1 External Inputs
+
+No External Inputs used.
+
+### 7.2 External Outputs
+
+FTR (Files): 1 (Course)
+
+DET (Data Elements): 3 (Description, Title, Time)
+
+--> Low Complexity
+
+### 7.3 External Inquiries
+
+No external Inquiries.
+
+### 7.4 Internal Logical files
+
+RET (Logical Subgroups): 1 (Course)
+
+DET (Data Elements): 1
+
+--> Low Complexity
+
+### 7.5 External Interface files
+
+No external interfaces used.
+
+### 7.6 FP Estimation
+
 As a result, the use case can be estimated with 34 Function Points. 
 ![](fp_domain-characteristic_uc-8.PNG)

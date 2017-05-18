@@ -81,7 +81,7 @@ No specified alternative flows.
 
 ## 4\. Preconditions
 
-The main preconditions are: 
+The main preconditions are:
 
 *   The user is registered on the platform
 *   The user is logged in
@@ -94,7 +94,7 @@ n/a
 
 ### 6.1 Earn more
 
-The user can be offered options to earn more credits after a click on the available amount in his personal page. 
+The user can be offered options to earn more credits after a click on the available amount in his personal page.
 
 ### 6.2 Information
 
@@ -102,6 +102,40 @@ The information about the credit points and the payment system on the platform c
 
 ## 7\. Function Points
 
-The amount of function points for this use case is 12. 
+### 7.1 External inputs
+
+No External Inputs used.
+
+### 7.2 External outputs
+
+FTR (Files): 1 (User-Info)
+
+DET (Data Elements): 1 (Creditpoints)
+
+--> Low Complexity
+
+### 7.3 External Inquiries
+
+FTR (Files): 1 (User-Info)
+
+DET (Data Elements): 2 (Creditpoints, UserId)
+
+--> Low Complexity
+
+### 7.4 Internal Logical files
+
+RET (Logical Subgroups): 1 (User)
+
+DET (Data Elements): 2 (Creditpoints, UserId)
+
+--> Low Complexity
+
+### 7.5 External Interface files
+
+No external interfaces used.
+
+### 7.6 FP Estimation
+
+The amount of function points for this use case is 12.
 
 ![](fp_domain-characteristic_uc-5.png)

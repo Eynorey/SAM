@@ -95,5 +95,39 @@ Future implementation may contain further activities for managing credit points,
 The extension point would follow the "view available credit points" activity.
 
 ## 7\. Function Points
-As a result, the use case can be estimated with 35 Function Points. 
+
+### 7.1 External Inputs
+
+FTR (Files): 1 (Profile)
+
+DET (Data Elements): 9 (user name, email, password, degree, semester, faculty, university, birthday, delete account)
+
+--> Low Complexity
+
+### 7.2 External Outputs
+
+No external outputs.
+
+### 7.3 External Inquiries
+
+FTR (Files): 1 (User)
+
+DET (Data Elements): 2 (Delete, Save)
+
+--> Low Complexity
+
+### 7.4 Internal Logical files
+
+RET (Logical Subgroups): 2 (User, Profile)
+
+DET (Data Elements): 1
+
+--> Low Complexity
+
+### 7.5 External Interface files
+
+No external interfaces used.
+
+### 7.6 FP Estimation
+As a result, the use case can be estimated with 35 Function Points.
 ![](fp_domain-characteristic_uc-9.PNG)
