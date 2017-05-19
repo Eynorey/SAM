@@ -50,7 +50,7 @@
         </createTable>
         <dropDefaultValue tableName="course" columnName="jhi_start" columnDataType="datetime"/>
         <dropDefaultValue tableName="course" columnName="jhi_end" columnDataType="datetime"/>
-        
+
         <createTable tableName="course_implied_skills">
             <column name="implied_skills_id" type="bigint">
                 <constraints nullable="false"/>
@@ -61,7 +61,7 @@
         </createTable>
 
         <addPrimaryKey columnNames="courses_id, implied_skills_id" tableName="course_implied_skills"/>
-        
+
         <createTable tableName="course_acquirable_skills">
             <column name="acquirable_skills_id" type="bigint">
                 <constraints nullable="false"/>
@@ -72,7 +72,7 @@
         </createTable>
 
         <addPrimaryKey columnNames="courses_id, acquirable_skills_id" tableName="course_acquirable_skills"/>
-        
+
         <createTable tableName="course_attendees">
             <column name="attendees_id" type="bigint">
                 <constraints nullable="false"/>
@@ -83,7 +83,7 @@
         </createTable>
 
         <addPrimaryKey columnNames="courses_id, attendees_id" tableName="course_attendees"/>
-        
+
         <createTable tableName="course_teachers">
             <column name="teachers_id" type="bigint">
                 <constraints nullable="false"/>
@@ -93,7 +93,19 @@
             </column>
         </createTable>
 
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/courses.csv"
+                  separator=";"
+                  tableName="course">
+        </loadData>
+
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/course_teachers.csv"
+                  separator=";"
+                  tableName="course_teachers">
+        </loadData>
+
         <addPrimaryKey columnNames="courses_id, teachers_id" tableName="course_teachers"/>
-        
+
     </changeSet>
 </databaseChangeLog>
