@@ -1,4 +1,4 @@
-(function () {
+(function() {
     'use strict';
 
     angular
@@ -22,14 +22,9 @@
         vm.searchQuery = pagingParams.search;
         vm.currentSearch = pagingParams.search;
 
-        function getFreePlaces(course) {
-            // Course.get({id : course.id}).then(function(c){
-            //     return c.maxAttendees - c.attendees.length}
-            // );
-            return 0;
-        }
+        loadAll();
 
-        function loadAll() {
+        function loadAll () {
             if (pagingParams.search) {
                 CourseSearch.query({
                     query: pagingParams.search,
@@ -51,7 +46,6 @@
                 }
                 return result;
             }
-
             function onSuccess(data, headers) {
                 vm.links = ParseLinks.parse(headers('link'));
                 vm.totalItems = headers('X-Total-Count');
@@ -59,7 +53,6 @@
                 vm.courses = data;
                 vm.page = pagingParams.page;
             }
-
             function onError(error) {
                 AlertService.error(error.data.message);
             }
@@ -79,7 +72,7 @@
         }
 
         function search(searchQuery) {
-            if (!searchQuery) {
+            if (!searchQuery){
                 return vm.clear();
             }
             vm.links = null;
