@@ -1,56 +1,52 @@
 
 <div>
-    <h2><span>Course</span> {{vm.course.id}}</h2>
+    <h4>Details for Course:</h4>
+    <h2>{{vm.course.title}}</h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span>Title</span></dt>
+        <dt><span>Teacher(s)</span></dt>
         <dd>
-            <span>{{vm.course.title}}</span>
+            <span ng-repeat="teachers in vm.course.teachers">
+                {{teachers.firstName}} {{$last ? '' : ', '}}
+            </span>
         </dd>
         <dt><span>Description</span></dt>
         <dd>
-            <span>{{vm.course.description}}</span>
-        </dd>
-        <dt><span>Start</span></dt>
-        <dd>
-            <span>{{vm.course.start | date:'medium'}}</span>
-        </dd>
-        <dt><span>End</span></dt>
-        <dd>
-            <span>{{vm.course.end | date:'medium'}}</span>
-        </dd>
-        <dt><span>Location</span></dt>
-        <dd>
-            <span>{{vm.course.location}}</span>
-        </dd>
-        <dt><span>Max Attendees</span></dt>
-        <dd>
-            <span>{{vm.course.maxAttendees}}</span>
-        </dd>
-        <dt><span>Implied Skills</span></dt>
-        <dd>
-            <span ng-repeat="impliedSkills in vm.course.impliedSkills">
-                <a ui-sref="skill-detail({id: impliedSkills.id})">{{impliedSkills.name}}</a>{{$last ? '' : ', '}}
-            </span>
+        <span>{{vm.course.description}}</span>
         </dd>
         <dt><span>Acquirable Skills</span></dt>
         <dd>
-            <span ng-repeat="acquirableSkills in vm.course.acquirableSkills">
-                <a ui-sref="skill-detail({id: acquirableSkills.id})">{{acquirableSkills.name}}</a>{{$last ? '' : ', '}}
-            </span>
+        <span ng-repeat="acquirableSkills in vm.course.acquirableSkills">
+        <a ui-sref="skill-detail({id: acquirableSkills.id})">{{acquirableSkills.name}}</a>{{$last ? '' : ', '}}
+        </span>
         </dd>
-        <dt><span>Attendees</span></dt>
+        <dt><span>Start</span></dt>
         <dd>
-            <span ng-repeat="attendees in vm.course.attendees">
-                {{attendees.login}}{{$last ? '' : ', '}}
-            </span>
+        <span>{{vm.course.start | date:'medium'}}</span>
         </dd>
-        <dt><span>Teachers</span></dt>
+        <dt><span>End</span></dt>
         <dd>
-            <span ng-repeat="teachers in vm.course.teachers">
-                {{teachers.login}}{{$last ? '' : ', '}}
-            </span>
+        <span>{{vm.course.end | date:'medium'}}</span>
+        </dd>
+        <dt><span>Location</span></dt>
+        <dd>
+        <span>{{vm.course.location}}</span>
+        </dd>
+        <dt><span>Implied Skills</span></dt>
+        <dd>
+        <span ng-repeat="impliedSkills in vm.course.impliedSkills">
+        <a ui-sref="skill-detail({id: impliedSkills.id})">{{impliedSkills.name}}</a>{{$last ? '' : ', '}}
+        </span>
+        </dd>
+        <dt>
+            <span>Attendees ({{vm.course.attendees.length}})</span><br>
+            <span>Maximum: {{vm.course.maxAttendees}}</span>
+        </dt>
+        <dd>
+        <span ng-repeat="attendees in vm.course.attendees">
+        {{attendees.login}}{{$last ? '' : ', '}}
+        </span>
         </dd>
     </dl>
 
@@ -60,8 +56,20 @@
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
     </button>
 
-    <button type="button" ui-sref="course-detail.edit({id:vm.course.id})" class="btn btn-primary">
-        <span class="glyphicon glyphicon-pencil"></span>
-        <span class="hidden-sm-down"> Edit</span>
+    <button type="button" ng-click="vm.book()" class="btn btn-success" disabled
+            ng-if="(vm.course.maxAttendees - vm.course.attendees.length) > 0 && vm.alreadyBooked()">
+        <span class="glyphicon glyphicon-ok"></span>
+        <span class="hidden-sm-down"> Already Booked!</span>
+    </button>
+
+    <button type="button" ng-click="vm.book()" class="btn btn-success" ng-disabled="vm.isSaving"
+            ng-if="(vm.course.maxAttendees - vm.course.attendees.length) > 0 && !(vm.alreadyBooked())">
+        <span class="glyphicon glyphicon-ok"></span>
+        <span class="hidden-sm-down"> Book Course</span>
+    </button>
+
+    <button type="button" class="btn btn-success" disabled ng-if="vm.course.maxAttendees - vm.course.attendees.length <= 0">
+        <span class="glyphicon glyphicon-ok"></span>
+        <span class="hidden-sm-down"> Maxiumum number of attendees reached!</span>
     </button>
 </div>
