@@ -286,7 +286,8 @@ public class UserService {
     @Transactional(readOnly = true)
     public Profile getProfile() {
         User user = userRepository.findOneWithAuthoritiesByLogin(SecurityUtils.getCurrentUserLogin()).orElse(null);
-        Profile profile = profileSearchRepository.findOne(user.getId());
+        System.out.println(user.getId());
+        Profile profile = profileRepository.findOne(user.getId());
         if (profile != null) {
             return profile;
         }
