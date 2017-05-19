@@ -55,7 +55,14 @@
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         <dropDefaultValue tableName="profile" columnName="birthday" columnDataType="datetime"/>
-        
+
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/profiles.csv"
+                  separator=";"
+                  tableName="profile">
+            <column name="birthday" type="timestamp"/>
+        </loadData>
+
         <createTable tableName="profile_skills">
             <column name="skills_id" type="bigint">
                 <constraints nullable="false"/>
@@ -66,6 +73,6 @@
         </createTable>
 
         <addPrimaryKey columnNames="profiles_id, skills_id" tableName="profile_skills"/>
-        
+
     </changeSet>
 </databaseChangeLog>
