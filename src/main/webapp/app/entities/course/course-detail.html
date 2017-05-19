@@ -56,10 +56,10 @@
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
     </button>
 
-    <button type="button" ng-click="vm.book()" class="btn btn-success" disabled
+    <button type="button" ng-click="vm.cancel()" class="btn btn-danger" ng-disabled="vm.isSaving"
             ng-if="(vm.course.maxAttendees - vm.course.attendees.length) > 0 && vm.alreadyBooked()">
-        <span class="glyphicon glyphicon-ok"></span>
-        <span class="hidden-sm-down"> Already Booked!</span>
+        <span class="glyphicon glyphicon-remove"></span>
+        <span class="hidden-sm-down"> Cancel Booking</span>
     </button>
 
     <button type="button" ng-click="vm.book()" class="btn btn-success" ng-disabled="vm.isSaving"

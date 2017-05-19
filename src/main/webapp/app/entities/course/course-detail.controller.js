@@ -25,6 +25,12 @@
             Course.update(vm.course, onSaveSuccess, onSaveError);
         };
 
+        vm.cancel = function () {
+            vm.isSaving = true;
+            vm.course.attendees.pop(vm.currentUser);
+            Course.update(vm.course, onSaveSuccess, onSaveError);
+        };
+
         function onSaveSuccess (result) {
             vm.isSaving = false;
         }
