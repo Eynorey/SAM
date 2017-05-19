@@ -57,7 +57,7 @@
     </button>
 
     <button type="button" ng-click="vm.cancel()" class="btn btn-danger" ng-disabled="vm.isSaving"
-            ng-if="(vm.course.maxAttendees - vm.course.attendees.length) > 0 && vm.alreadyBooked()">
+            ng-if="vm.alreadyBooked()">
         <span class="glyphicon glyphicon-remove"></span>
         <span class="hidden-sm-down"> Cancel Booking</span>
     </button>
@@ -68,7 +68,7 @@
         <span class="hidden-sm-down"> Book Course</span>
     </button>
 
-    <button type="button" class="btn btn-success" disabled ng-if="vm.course.maxAttendees - vm.course.attendees.length <= 0">
+    <button type="button" class="btn btn-success" disabled ng-if="vm.course.maxAttendees - vm.course.attendees.length <= 0 && !vm.alreadyBooked()">
         <span class="glyphicon glyphicon-ok"></span>
         <span class="hidden-sm-down"> Maxiumum number of attendees reached!</span>
     </button>
