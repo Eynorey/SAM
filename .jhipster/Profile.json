@@ -2,30 +2,6 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "one-to-one",
-            "relationshipName": "user",
-            "otherEntityName": "user",
-            "otherEntityField": "login",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "profile"
-        },
-        {
-            "relationshipType": "many-to-many",
-            "otherEntityRelationshipName": "",
-            "relationshipName": "offeredCourses",
-            "otherEntityName": "course",
-            "otherEntityField": "title",
-            "ownerSide": true
-        },
-        {
-            "relationshipType": "many-to-many",
-            "otherEntityRelationshipName": "",
-            "relationshipName": "occupiedCourses",
-            "otherEntityName": "course",
-            "otherEntityField": "title",
-            "ownerSide": true
-        },
-        {
             "relationshipType": "many-to-many",
             "otherEntityRelationshipName": "",
             "relationshipName": "skills",
@@ -64,7 +40,7 @@
             "fieldType": "ZonedDateTime"
         }
     ],
-    "changelogDate": "20170409171347",
+    "changelogDate": "20170517232730",
     "entityTableName": "profile",
     "dto": "no",
     "pagination": "pager",

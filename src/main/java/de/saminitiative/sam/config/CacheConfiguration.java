@@ -51,6 +51,8 @@ public class CacheConfiguration {
             cm.createCache(de.saminitiative.sam.domain.Course.class.getName() + ".impliedSkills", jcacheConfiguration);
             cm.createCache(de.saminitiative.sam.domain.Course.class.getName() + ".acquirableSkills", jcacheConfiguration);
             cm.createCache(de.saminitiative.sam.domain.Skill.class.getName(), jcacheConfiguration);
+            cm.createCache(de.saminitiative.sam.domain.Course.class.getName() + ".attendees", jcacheConfiguration);
+            cm.createCache(de.saminitiative.sam.domain.Course.class.getName() + ".teachers", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

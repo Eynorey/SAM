@@ -36,18 +36,6 @@
         <dd>
             {{vm.profile.user.login}}
         </dd>
-        <dt><span>Offered Courses</span></dt>
-        <dd>
-            <span ng-repeat="offeredCourses in vm.profile.offeredCourses">
-                <a ui-sref="course-detail({id: offeredCourses.id})">{{offeredCourses.title}}</a>{{$last ? '' : ', '}}
-            </span>
-        </dd>
-        <dt><span>Occupied Courses</span></dt>
-        <dd>
-            <span ng-repeat="occupiedCourses in vm.profile.occupiedCourses">
-                <a ui-sref="course-detail({id: occupiedCourses.id})">{{occupiedCourses.title}}</a>{{$last ? '' : ', '}}
-            </span>
-        </dd>
         <dt><span>Skills</span></dt>
         <dd>
             <span ng-repeat="skills in vm.profile.skills">

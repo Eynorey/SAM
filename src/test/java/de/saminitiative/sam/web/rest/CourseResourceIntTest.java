@@ -58,6 +58,9 @@ public class CourseResourceIntTest {
     private static final String DEFAULT_LOCATION = "AAAAAAAAAA";
     private static final String UPDATED_LOCATION = "BBBBBBBBBB";
 
+    private static final Integer DEFAULT_MAX_ATTENDEES = 1;
+    private static final Integer UPDATED_MAX_ATTENDEES = 2;
+
     @Autowired
     private CourseRepository courseRepository;
 
@@ -102,7 +105,8 @@ public class CourseResourceIntTest {
             .description(DEFAULT_DESCRIPTION)
             .start(DEFAULT_START)
             .end(DEFAULT_END)
-            .location(DEFAULT_LOCATION);
+            .location(DEFAULT_LOCATION)
+            .maxAttendees(DEFAULT_MAX_ATTENDEES);
         return course;
     }
 
@@ -132,6 +136,7 @@ public class CourseResourceIntTest {
         assertThat(testCourse.getStart()).isEqualTo(DEFAULT_START);
         assertThat(testCourse.getEnd()).isEqualTo(DEFAULT_END);
         assertThat(testCourse.getLocation()).isEqualTo(DEFAULT_LOCATION);
+        assertThat(testCourse.getMaxAttendees()).isEqualTo(DEFAULT_MAX_ATTENDEES);
 
         // Validate the Course in Elasticsearch
         Course courseEs = courseSearchRepository.findOne(testCourse.getId());
@@ -172,7 +177,8 @@ public class CourseResourceIntTest {
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
             .andExpect(jsonPath("$.[*].start").value(hasItem(sameInstant(DEFAULT_START))))
             .andExpect(jsonPath("$.[*].end").value(hasItem(sameInstant(DEFAULT_END))))
-            .andExpect(jsonPath("$.[*].location").value(hasItem(DEFAULT_LOCATION.toString())));
+            .andExpect(jsonPath("$.[*].location").value(hasItem(DEFAULT_LOCATION.toString())))
+            .andExpect(jsonPath("$.[*].maxAttendees").value(hasItem(DEFAULT_MAX_ATTENDEES)));
     }
 
     @Test
@@ -190,7 +196,8 @@ public class CourseResourceIntTest {
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
             .andExpect(jsonPath("$.start").value(sameInstant(DEFAULT_START)))
             .andExpect(jsonPath("$.end").value(sameInstant(DEFAULT_END)))
-            .andExpect(jsonPath("$.location").value(DEFAULT_LOCATION.toString()));
+            .andExpect(jsonPath("$.location").value(DEFAULT_LOCATION.toString()))
+            .andExpect(jsonPath("$.maxAttendees").value(DEFAULT_MAX_ATTENDEES));
     }
 
     @Test
@@ -216,7 +223,8 @@ public class CourseResourceIntTest {
             .description(UPDATED_DESCRIPTION)
             .start(UPDATED_START)
             .end(UPDATED_END)
-            .location(UPDATED_LOCATION);
+            .location(UPDATED_LOCATION)
+            .maxAttendees(UPDATED_MAX_ATTENDEES);
 
         restCourseMockMvc.perform(put("/api/courses")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -232,6 +240,7 @@ public class CourseResourceIntTest {
         assertThat(testCourse.getStart()).isEqualTo(UPDATED_START);
         assertThat(testCourse.getEnd()).isEqualTo(UPDATED_END);
         assertThat(testCourse.getLocation()).isEqualTo(UPDATED_LOCATION);
+        assertThat(testCourse.getMaxAttendees()).isEqualTo(UPDATED_MAX_ATTENDEES);
 
         // Validate the Course in Elasticsearch
         Course courseEs = courseSearchRepository.findOne(testCourse.getId());
@@ -294,7 +303,8 @@ public class CourseResourceIntTest {
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
             .andExpect(jsonPath("$.[*].start").value(hasItem(sameInstant(DEFAULT_START))))
             .andExpect(jsonPath("$.[*].end").value(hasItem(sameInstant(DEFAULT_END))))
-            .andExpect(jsonPath("$.[*].location").value(hasItem(DEFAULT_LOCATION.toString())));
+            .andExpect(jsonPath("$.[*].location").value(hasItem(DEFAULT_LOCATION.toString())))
+            .andExpect(jsonPath("$.[*].maxAttendees").value(hasItem(DEFAULT_MAX_ATTENDEES)));
     }
 
     @Test

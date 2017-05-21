@@ -129,12 +129,8 @@ public class UserService {
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         authorities.add(authority);
         newUser.setAuthorities(authorities);
-        log.debug("User id before saving: " + newUser.getId());
-//        userRepository.save(newUser);
         id = userRepository.save(newUser).getId();
-        log.debug("User Id in Repo: " + id);
-//        userSearchRepository.save(newUser);
-        log.debug("User Id in SearchRepo: " + userSearchRepository.save(newUser).getId());
+        userSearchRepository.save(newUser);
         log.debug("Created Information for User: {}", newUser);
 
         // Create and save the Profile entity
@@ -290,7 +286,8 @@ public class UserService {
     @Transactional(readOnly = true)
     public Profile getProfile() {
         User user = userRepository.findOneWithAuthoritiesByLogin(SecurityUtils.getCurrentUserLogin()).orElse(null);
-        Profile profile = profileSearchRepository.findOne(user.getId());
+        System.out.println(user.getId());
+        Profile profile = profileRepository.findOne(user.getId());
         if (profile != null) {
             return profile;
         }
