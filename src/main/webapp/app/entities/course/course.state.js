@@ -46,6 +46,21 @@
                 }]
             }
         })
+        .state('schedule', {
+            parent: 'entity',
+            url: '/schedule',
+            data: {
+                authorities: ['ROLE_USER'],
+                pageTitle: 'SAM - Schedule'
+            },
+            views: {
+                'content@': {
+                    templateUrl: 'app/entities/course/schedule.html',
+                    controller: 'ScheduleController',
+                    controllerAs: 'vm'
+                }
+            }
+        })
         .state('course-detail', {
             parent: 'course',
             url: '/course/{id}',
