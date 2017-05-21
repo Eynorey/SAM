@@ -3,6 +3,7 @@ package de.saminitiative.sam.web.rest;
 import de.saminitiative.sam.SamApp;
 import de.saminitiative.sam.domain.Authority;
 import de.saminitiative.sam.domain.User;
+import de.saminitiative.sam.domain.Profile;
 import de.saminitiative.sam.repository.AuthorityRepository;
 import de.saminitiative.sam.repository.PersistentTokenRepository;
 import de.saminitiative.sam.repository.UserRepository;
@@ -24,6 +25,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -115,6 +118,14 @@ public class AccountResourceIntTest {
         user.setImageUrl("http://placehold.it/50x50");
         user.setLangKey("en");
         user.setAuthorities(authorities);
+
+        //Profile
+        Profile profile = new Profile();
+        profile.setDegree("Bachelor");
+        profile.setSemester(19);
+        profile.setFaculty("Grease");
+        profile.setUniversity("TheVarsity");
+        profile.setBirthday(ZonedDateTime.of(2011, 11, 11, 11, 11, 11, 1111, ZoneId.of("UTC+1")));
         when(mockUserService.getUserWithAuthorities()).thenReturn(user);
 
         restUserMockMvc.perform(get("/api/account")

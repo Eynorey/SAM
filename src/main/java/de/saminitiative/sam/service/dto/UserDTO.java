@@ -78,7 +78,12 @@ public class UserDTO {
             user.getAuthorities().stream().map(Authority::getName)
                 .collect(Collectors.toSet()),
             //Profile Properties
-            profile.getDegree(), profile.getSemester(), profile.getFaculty(), profile.getUniversity(), profile.getBirthday());
+
+            profile.getDegree(),
+            profile.getSemester(),
+            profile.getFaculty(),
+            profile.getUniversity(),
+            profile.getBirthday());
     }
 
     public UserDTO(User user) {
@@ -88,7 +93,7 @@ public class UserDTO {
             user.getAuthorities().stream().map(Authority::getName)
                 .collect(Collectors.toSet()),
             //Profile Properties
-                null, null, null, null, null);
+                "", 0, "", "", null);
     }
 
     public UserDTO(Long id, String login, String firstName, String lastName,
