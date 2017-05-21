@@ -28,9 +28,6 @@
                 return result;
             }
             function onSuccess(data, headers) {
-                //implement filter logic
-                vm.totalItems = headers('X-Total-Count');
-                vm.queryCount = vm.totalItems;
                 vm.courses = data;
             }
             function onError(error) {
