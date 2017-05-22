@@ -28,7 +28,11 @@
                 return result;
             }
             function onSuccess(data, headers) {
-                //implement filter logic
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                    var promise = Course.get({id : data[i].id}).$promise.then(function(course) {
+                    });
+                }
                 vm.totalItems = headers('X-Total-Count');
                 vm.queryCount = vm.totalItems;
                 vm.courses = data;
