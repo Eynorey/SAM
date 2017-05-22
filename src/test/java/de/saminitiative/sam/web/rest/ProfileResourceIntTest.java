@@ -243,7 +243,7 @@ public class ProfileResourceIntTest {
         // Validate the Profile in the database
         List<Profile> profileList = profileRepository.findAll();
         assertThat(profileList).hasSize(databaseSizeBeforeUpdate);
-        Profile testProfile = profileList.get(profileList.size() - 1);
+        Profile testProfile = profileRepository.findOne(profile.getId());
         assertThat(testProfile.getCredibility()).isEqualTo(UPDATED_CREDIBILITY);
         assertThat(testProfile.getCredits()).isEqualTo(UPDATED_CREDITS);
         assertThat(testProfile.getDegree()).isEqualTo(UPDATED_DEGREE);
