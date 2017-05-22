@@ -126,7 +126,9 @@ public class AccountResourceIntTest {
         profile.setFaculty("Grease");
         profile.setUniversity("TheVarsity");
         profile.setBirthday(ZonedDateTime.of(2011, 11, 11, 11, 11, 11, 1111, ZoneId.of("UTC+1")));
+
         when(mockUserService.getUserWithAuthorities()).thenReturn(user);
+        when(mockUserService.getProfile()).thenReturn(profile);
 
         restUserMockMvc.perform(get("/api/account")
             .accept(MediaType.APPLICATION_JSON))
