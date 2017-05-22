@@ -17,6 +17,8 @@ buildscript {
         classpath "org.springframework.build.gradle:propdeps-plugin:0.0.7"
         classpath "com.moowork.gradle:gradle-node-plugin:1.1.1"
         classpath "io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE"
+        classpath "com.microsoft.sqlserver:mssql-jdbc:6.1.0.jre8"
+        classpath "com.github.sabomichal:liquibase-mssql:1.5"
         //jhipster-needle-gradle-buildscript-dependency - JHipster will add additional gradle build script plugins here
     }
 }
@@ -133,6 +135,8 @@ repositories {
 }
 
 dependencies {
+    compile group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '6.1.0.jre8'
+    compile "com.github.sabomichal:liquibase-mssql:1.5"
     compile "io.github.jhipster:jhipster:${jhipster_server_version}"
     compile "io.dropwizard.metrics:metrics-core:${dropwizard_metrics_version}"
     compile "io.dropwizard.metrics:metrics-jcache:${dropwizard_metrics_version}"
