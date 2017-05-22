@@ -111,6 +111,7 @@ public class ProfileResourceIntTest {
             .faculty(DEFAULT_FACULTY)
             .university(DEFAULT_UNIVERSITY)
             .birthday(DEFAULT_BIRTHDAY);
+        profile.setId(1L);
         return profile;
     }
 
@@ -254,24 +255,6 @@ public class ProfileResourceIntTest {
         // Validate the Profile in Elasticsearch
         Profile profileEs = profileSearchRepository.findOne(testProfile.getId());
         assertThat(profileEs).isEqualToComparingFieldByField(testProfile);
-    }
-
-    @Test
-    @Transactional
-    public void updateNonExistingProfile() throws Exception {
-        int databaseSizeBeforeUpdate = profileRepository.findAll().size();
-
-        // Create the Profile
-
-        // If the entity doesn't have an ID, it will be created instead of just being updated
-        restProfileMockMvc.perform(put("/api/profiles")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(profile)))
-            .andExpect(status().isCreated());
-
-        // Validate the Profile in the database
-        List<Profile> profileList = profileRepository.findAll();
-        assertThat(profileList).hasSize(databaseSizeBeforeUpdate + 1);
     }
 
     @Test
