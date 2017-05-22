@@ -123,25 +123,6 @@ public class ProfileResourceIntTest {
 
     @Test
     @Transactional
-    public void createProfileWithExistingId() throws Exception {
-        int databaseSizeBeforeCreate = profileRepository.findAll().size();
-
-        // Create the Profile with an existing ID
-        profile.setId(1L);
-
-        // An entity with an existing ID cannot be created, so this API call must fail
-        restProfileMockMvc.perform(post("/api/profiles")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(profile)))
-            .andExpect(status().isBadRequest());
-
-        // Validate the Alice in the database
-        List<Profile> profileList = profileRepository.findAll();
-        assertThat(profileList).hasSize(databaseSizeBeforeCreate);
-    }
-
-    @Test
-    @Transactional
     public void getAllProfiles() throws Exception {
         // Initialize the database
         profileRepository.saveAndFlush(profile);
