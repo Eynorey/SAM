@@ -140,7 +140,7 @@ public class CourseResourceIntTest {
 
         // Validate the Course in Elasticsearch
         Course courseEs = courseSearchRepository.findOne(testCourse.getId());
-        assertThat(courseEs).isEqualToComparingFieldByField(testCourse);
+        assertThat(courseEs).isEqualTo(testCourse);
     }
 
     @Test
@@ -244,7 +244,7 @@ public class CourseResourceIntTest {
 
         // Validate the Course in Elasticsearch
         Course courseEs = courseSearchRepository.findOne(testCourse.getId());
-        assertThat(courseEs).isEqualToComparingFieldByField(testCourse);
+        assertThat(courseEs).isEqualTo(testCourse);
     }
 
     @Test

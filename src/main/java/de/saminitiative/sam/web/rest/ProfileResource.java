@@ -17,7 +17,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
@@ -44,26 +43,26 @@ public class ProfileResource {
         this.profileSearchRepository = profileSearchRepository;
     }
 
-    /**
-     * POST  /profiles : Create a new profile.
-     *
-     * @param profile the profile to create
-     * @return the ResponseEntity with status 201 (Created) and with body the new profile, or with status 400 (Bad Request) if the profile has already an ID
-     * @throws URISyntaxException if the Location URI syntax is incorrect
-     */
-    @PostMapping("/profiles")
-    @Timed
-    public ResponseEntity<Profile> createProfile(@RequestBody Profile profile) throws URISyntaxException {
-        log.debug("REST request to save Profile : {}", profile);
-        if (profile.getId() != null) {
-            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new profile cannot already have an ID")).body(null);
-        }
-        Profile result = profileRepository.save(profile);
-        profileSearchRepository.save(result);
-        return ResponseEntity.created(new URI("/api/profiles/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
-            .body(result);
-    }
+//    /**
+//     * POST  /profiles : Create a new profile.
+//     *
+//     * @param profile the profile to create
+//     * @return the ResponseEntity with status 201 (Created) and with body the new profile, or with status 400 (Bad Request) if the profile has already an ID
+//     * @throws URISyntaxException if the Location URI syntax is incorrect
+//     */
+//    @PostMapping("/profiles")
+//    @Timed
+//    public ResponseEntity<Profile> createProfile(@RequestBody Profile profile) throws URISyntaxException {
+//        log.debug("REST request to save Profile : {}", profile);
+//        if (profile.getId() != null) {
+//            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new profile cannot already have an ID")).body(null);
+//        }
+//        Profile result = profileRepository.save(profile);
+//        profileSearchRepository.save(result);
+//        return ResponseEntity.created(new URI("/api/profiles/" + result.getId()))
+//            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
+//            .body(result);
+//    }
 
     /**
      * PUT  /profiles : Updates an existing profile.
@@ -79,7 +78,7 @@ public class ProfileResource {
     public ResponseEntity<Profile> updateProfile(@RequestBody Profile profile) throws URISyntaxException {
         log.debug("REST request to update Profile : {}", profile);
         if (profile.getId() == null) {
-            return createProfile(profile);
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idnull", "A new profile has to be created via registration. Updated profiles must have an id.")).body(null);
         }
         Profile result = profileRepository.save(profile);
         profileSearchRepository.save(result);

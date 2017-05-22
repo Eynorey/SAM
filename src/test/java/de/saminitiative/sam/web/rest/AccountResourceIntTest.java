@@ -3,6 +3,7 @@ package de.saminitiative.sam.web.rest;
 import de.saminitiative.sam.SamApp;
 import de.saminitiative.sam.domain.Authority;
 import de.saminitiative.sam.domain.User;
+import de.saminitiative.sam.domain.Profile;
 import de.saminitiative.sam.repository.AuthorityRepository;
 import de.saminitiative.sam.repository.PersistentTokenRepository;
 import de.saminitiative.sam.repository.UserRepository;
@@ -24,6 +25,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -115,7 +118,17 @@ public class AccountResourceIntTest {
         user.setImageUrl("http://placehold.it/50x50");
         user.setLangKey("en");
         user.setAuthorities(authorities);
+
+        //Profile
+        Profile profile = new Profile();
+        profile.setDegree("Bachelor");
+        profile.setSemester(19);
+        profile.setFaculty("Grease");
+        profile.setUniversity("TheVarsity");
+        profile.setBirthday(ZonedDateTime.of(2011, 11, 11, 11, 11, 11, 1111, ZoneId.of("UTC+1")));
+
         when(mockUserService.getUserWithAuthorities()).thenReturn(user);
+        when(mockUserService.getProfile()).thenReturn(profile);
 
         restUserMockMvc.perform(get("/api/account")
             .accept(MediaType.APPLICATION_JSON))
@@ -420,18 +433,23 @@ public class AccountResourceIntTest {
     public void testSaveInvalidLogin() throws Exception {
         UserDTO invalidUser = new UserDTO(
             null,                   // id
-            "funky-log!n",          // login <-- invalid
-            "Funky",                // firstName
-            "One",                  // lastName
-            "funky@example.com",    // email
-            true,                   // activated
+            "funky-log!n",        // login <-- invalid
+            "Funky",           // firstName
+            "One",             // lastName
+            "funky@example.com",  // email
+            true,              // activated
             "http://placehold.it/50x50", //imageUrl
-            "en",                   // langKey
-            null,                   // createdBy
-            null,                   // createdDate
-            null,                   // lastModifiedBy
-            null,                   // lastModifiedDate
-            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER))
+            "en",               // langKey
+            null,              // createdBy
+            null,            // createdDate
+            null,          // lastModifiedBy
+            null,        // lastModifiedDate
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER)), // authorities
+            "funky degree",      // degree
+            0,                  // semester
+            "funky faculty",      // faculty
+            "funky university", // university
+            null                 // birthday
         );
 
         restUserMockMvc.perform(

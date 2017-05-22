@@ -111,6 +111,7 @@ public class ProfileResourceIntTest {
             .faculty(DEFAULT_FACULTY)
             .university(DEFAULT_UNIVERSITY)
             .birthday(DEFAULT_BIRTHDAY);
+        profile.setId(1L);
         return profile;
     }
 
@@ -118,53 +119,6 @@ public class ProfileResourceIntTest {
     public void initTest() {
         profileSearchRepository.deleteAll();
         profile = createEntity(em);
-    }
-
-    @Test
-    @Transactional
-    public void createProfile() throws Exception {
-        int databaseSizeBeforeCreate = profileRepository.findAll().size();
-
-        // Create the Profile
-        restProfileMockMvc.perform(post("/api/profiles")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(profile)))
-            .andExpect(status().isCreated());
-
-        // Validate the Profile in the database
-        List<Profile> profileList = profileRepository.findAll();
-        assertThat(profileList).hasSize(databaseSizeBeforeCreate + 1);
-        Profile testProfile = profileList.get(profileList.size() - 1);
-        assertThat(testProfile.getCredibility()).isEqualTo(DEFAULT_CREDIBILITY);
-        assertThat(testProfile.getCredits()).isEqualTo(DEFAULT_CREDITS);
-        assertThat(testProfile.getDegree()).isEqualTo(DEFAULT_DEGREE);
-        assertThat(testProfile.getSemester()).isEqualTo(DEFAULT_SEMESTER);
-        assertThat(testProfile.getFaculty()).isEqualTo(DEFAULT_FACULTY);
-        assertThat(testProfile.getUniversity()).isEqualTo(DEFAULT_UNIVERSITY);
-        assertThat(testProfile.getBirthday()).isEqualTo(DEFAULT_BIRTHDAY);
-
-        // Validate the Profile in Elasticsearch
-        Profile profileEs = profileSearchRepository.findOne(testProfile.getId());
-        assertThat(profileEs).isEqualToComparingFieldByField(testProfile);
-    }
-
-    @Test
-    @Transactional
-    public void createProfileWithExistingId() throws Exception {
-        int databaseSizeBeforeCreate = profileRepository.findAll().size();
-
-        // Create the Profile with an existing ID
-        profile.setId(1L);
-
-        // An entity with an existing ID cannot be created, so this API call must fail
-        restProfileMockMvc.perform(post("/api/profiles")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(profile)))
-            .andExpect(status().isBadRequest());
-
-        // Validate the Alice in the database
-        List<Profile> profileList = profileRepository.findAll();
-        assertThat(profileList).hasSize(databaseSizeBeforeCreate);
     }
 
     @Test
@@ -242,7 +196,7 @@ public class ProfileResourceIntTest {
         // Validate the Profile in the database
         List<Profile> profileList = profileRepository.findAll();
         assertThat(profileList).hasSize(databaseSizeBeforeUpdate);
-        Profile testProfile = profileList.get(profileList.size() - 1);
+        Profile testProfile = profileRepository.findOne(profile.getId());
         assertThat(testProfile.getCredibility()).isEqualTo(UPDATED_CREDIBILITY);
         assertThat(testProfile.getCredits()).isEqualTo(UPDATED_CREDITS);
         assertThat(testProfile.getDegree()).isEqualTo(UPDATED_DEGREE);
@@ -254,24 +208,6 @@ public class ProfileResourceIntTest {
         // Validate the Profile in Elasticsearch
         Profile profileEs = profileSearchRepository.findOne(testProfile.getId());
         assertThat(profileEs).isEqualToComparingFieldByField(testProfile);
-    }
-
-    @Test
-    @Transactional
-    public void updateNonExistingProfile() throws Exception {
-        int databaseSizeBeforeUpdate = profileRepository.findAll().size();
-
-        // Create the Profile
-
-        // If the entity doesn't have an ID, it will be created instead of just being updated
-        restProfileMockMvc.perform(put("/api/profiles")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(profile)))
-            .andExpect(status().isCreated());
-
-        // Validate the Profile in the database
-        List<Profile> profileList = profileRepository.findAll();
-        assertThat(profileList).hasSize(databaseSizeBeforeUpdate + 1);
     }
 
     @Test
