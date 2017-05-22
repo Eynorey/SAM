@@ -123,34 +123,6 @@ public class ProfileResourceIntTest {
 
     @Test
     @Transactional
-    public void createProfile() throws Exception {
-        int databaseSizeBeforeCreate = profileRepository.findAll().size();
-
-        // Create the Profile
-        restProfileMockMvc.perform(post("/api/profiles")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(profile)))
-            .andExpect(status().isCreated());
-
-        // Validate the Profile in the database
-        List<Profile> profileList = profileRepository.findAll();
-        assertThat(profileList).hasSize(databaseSizeBeforeCreate + 1);
-        Profile testProfile = profileList.get(profileList.size() - 1);
-        assertThat(testProfile.getCredibility()).isEqualTo(DEFAULT_CREDIBILITY);
-        assertThat(testProfile.getCredits()).isEqualTo(DEFAULT_CREDITS);
-        assertThat(testProfile.getDegree()).isEqualTo(DEFAULT_DEGREE);
-        assertThat(testProfile.getSemester()).isEqualTo(DEFAULT_SEMESTER);
-        assertThat(testProfile.getFaculty()).isEqualTo(DEFAULT_FACULTY);
-        assertThat(testProfile.getUniversity()).isEqualTo(DEFAULT_UNIVERSITY);
-        assertThat(testProfile.getBirthday()).isEqualTo(DEFAULT_BIRTHDAY);
-
-        // Validate the Profile in Elasticsearch
-        Profile profileEs = profileSearchRepository.findOne(testProfile.getId());
-        assertThat(profileEs).isEqualToComparingFieldByField(testProfile);
-    }
-
-    @Test
-    @Transactional
     public void createProfileWithExistingId() throws Exception {
         int databaseSizeBeforeCreate = profileRepository.findAll().size();
 
