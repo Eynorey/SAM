@@ -5,50 +5,53 @@
         .module('samApp')
         .controller('ScheduleController', ScheduleController);
 
-    ScheduleController.$inject = ['$state', 'Course', 'ParseLinks', 'AlertService'];
+    ScheduleController.$inject = ['$state', 'Course', 'ParseLinks', 'AlertService', 'Principal'];
 
-    function ScheduleController($state, Course, ParseLinks, AlertService) {
+    function ScheduleController($state, Course, ParseLinks, AlertService, Principal) {
 
         var vm = this;
 
-        vm.transition = transition;
+        Course.query({
+            sort: ['start,asc', 'id']
+        }, onSuccess, onError);
 
-        loadAll();
-
-        function loadAll () {
-            Course.query({
-                sort: ['start,asc', 'id']
-            }, onSuccess, onError);
-
-            function sort() {
-                var result = [vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc')];
-                if (vm.predicate !== 'id') {
-                    result.push('id');
-                }
-                return result;
-            }
-            function onSuccess(data, headers) {
-                console.log(data);
-                for (var i = 0; i < data.length; i++) {
-                    var promise = Course.get({id : data[i].id}).$promise.then(function(course) {
-                    });
-                }
-                vm.totalItems = headers('X-Total-Count');
-                vm.queryCount = vm.totalItems;
-                vm.courses = data;
-            }
-            function onError(error) {
-                AlertService.error(error.data.message);
+        function onSuccess(data, headers) {
+            vm.courses = [];
+            for (var i = 0; i < data.length; i++) {
+                Course.get({id : data[i].id}).$promise.then(function(course) {
+                    if(course.attendees.find(function(user){
+                            return user.login === vm.currentUser.login;
+                        })) {
+                        vm.courses.push(course);
+                    }
+                });
             }
         }
 
-        function transition() {
-            $state.transitionTo($state.$current, {
-                page: vm.page,
-                sort: vm.predicate + ',' + (vm.reverse ? 'asc' : 'desc'),
-                search: vm.currentSearch
-            });
+        function onError(error) {
+            AlertService.error(error.data.message);
         }
 
+        /**
+         * Store the "currentUser" in a separate variable, and not in the shared "account" variable.
+         */
+        var copyAccount = function (account) {
+            return {
+                id: account.id,
+                login: account.login,
+                firstName: account.firstName,
+                lastName: account.lastName,
+                email: account.email,
+                activated: account.activated,
+                langKey: account.langKey,
+                imageUrl: account.imageUrl,
+                resetKey: account.resetKey,
+                resetDate: account.resetDate
+            };
+        };
+
+        Principal.identity().then(function(account) {
+            vm.currentUser = copyAccount(account);
+        });
     }
 })();
