@@ -1,20 +1,20 @@
 package de.saminitiative.sam.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-import de.saminitiative.sam.domain.Course;
+
 import de.saminitiative.sam.domain.PersistentToken;
 import de.saminitiative.sam.domain.Profile;
 import de.saminitiative.sam.domain.User;
-import de.saminitiative.sam.repository.CourseRepository;
 import de.saminitiative.sam.repository.PersistentTokenRepository;
 import de.saminitiative.sam.repository.UserRepository;
 import de.saminitiative.sam.security.SecurityUtils;
 import de.saminitiative.sam.service.MailService;
 import de.saminitiative.sam.service.UserService;
 import de.saminitiative.sam.service.dto.UserDTO;
-import de.saminitiative.sam.web.rest.util.HeaderUtil;
 import de.saminitiative.sam.web.rest.vm.KeyAndPasswordVM;
 import de.saminitiative.sam.web.rest.vm.ManagedUserVM;
+import de.saminitiative.sam.web.rest.util.HeaderUtil;
+
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,9 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * REST controller for managing the current user's account.
@@ -49,39 +47,13 @@ public class AccountResource {
 
     private final PersistentTokenRepository persistentTokenRepository;
 
-    private final CourseRepository courseRepository;
-
     public AccountResource(UserRepository userRepository, UserService userService,
-            MailService mailService, PersistentTokenRepository persistentTokenRepository, CourseRepository courseRepository) {
+            MailService mailService, PersistentTokenRepository persistentTokenRepository) {
 
         this.userRepository = userRepository;
         this.userService = userService;
         this.mailService = mailService;
         this.persistentTokenRepository = persistentTokenRepository;
-        this.courseRepository = courseRepository;
-    }
-
-    /**
-     * GET  /schedule : get all the booked courses for the logged in user.
-     *
-     * @return the ResponseEntity with status 200 (OK) and the list of courses in body
-     */
-    @GetMapping("/schedule")
-    @Timed
-    public ResponseEntity<List<Course>> getAllCourses() {
-        User user = userService.getUserWithAuthorities();
-        log.debug("REST request to get {}'s schedule", user.getLogin());
-        List<Course> courses = new LinkedList<>();
-        for (Course course : courseRepository.findAllWithEagerRelationships()) {
-            System.out.println(course.getTitle());
-            System.out.println(course.getAttendees());
-            if (course.getAttendees().contains(user)) {
-                System.out.println("Added: " + course.getTitle());
-                courses.add(course);
-            }
-        }
-        return ResponseEntity.ok()
-            .body(courses);
     }
 
     /**
