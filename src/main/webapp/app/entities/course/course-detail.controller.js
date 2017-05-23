@@ -62,13 +62,22 @@
             vm.currentUser = copyAccount(account);
         });
 
-        vm.alreadyBooked = function () {
+        vm.booked = function () {
             if(vm.course.attendees.find(function(user){
                 return user.login === vm.currentUser.login;
             })) {
                 return true;
             }
             return false;
-        }
+        };
+
+        vm.offered = function () {
+            if(vm.course.teachers.find(function(user){
+                return user.login === vm.currentUser.login;
+            })) {
+                return true;
+            }
+            return false;
+        };
     }
 })();
