@@ -129,8 +129,8 @@
                     });
                 }]
             })
-            .state('course.new', {
-                parent: 'course',
+            .state('offerings.new', {
+                parent: 'offerings',
                 url: '/new',
                 data: {
                     authorities: ['ROLE_USER']
@@ -156,14 +156,14 @@
                             }
                         }
                     }).result.then(function () {
-                        $state.go('course', null, {reload: 'course'});
+                        $state.go('offerings', null, {reload: 'offerings'});
                     }, function () {
-                        $state.go('course');
+                        $state.go('offerings');
                     });
                 }]
             })
-            .state('course.edit', {
-                parent: 'course',
+            .state('offerings.edit', {
+                parent: 'offerings',
                 url: '/{id}/edit',
                 data: {
                     authorities: ['ROLE_USER']
@@ -181,14 +181,14 @@
                             }]
                         }
                     }).result.then(function () {
-                        $state.go('course', null, {reload: 'course'});
+                        $state.go('offerings', null, {reload: 'offerings'});
                     }, function () {
-                        $state.go('^');
+                        $state.go('offerings');
                     });
                 }]
             })
-            .state('course.delete', {
-                parent: 'course',
+            .state('offerings.delete', {
+                parent: 'offerings',
                 url: '/{id}/delete',
                 data: {
                     authorities: ['ROLE_USER']
@@ -205,9 +205,9 @@
                             }]
                         }
                     }).result.then(function () {
-                        $state.go('course', null, {reload: 'course'});
+                        $state.go('offerings', null, {reload: 'offerings'});
                     }, function () {
-                        $state.go('^');
+                        $state.go('offerings');
                     });
                 }]
             });

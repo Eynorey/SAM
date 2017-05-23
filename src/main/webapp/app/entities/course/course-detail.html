@@ -1,4 +1,3 @@
-
 <div>
     <h4>Details for Course:</h4>
     <h2>{{vm.course.title}}</h2>
@@ -13,7 +12,7 @@
         </dd>
         <dt><span>Description</span></dt>
         <dd>
-        <span>{{vm.course.description}}</span>
+            <span>{{vm.course.description}}</span>
         </dd>
         <dt><span>Acquirable Skills</span></dt>
         <dd>
@@ -23,15 +22,15 @@
         </dd>
         <dt><span>Start</span></dt>
         <dd>
-        <span>{{vm.course.start | date:'medium'}}</span>
+            <span>{{vm.course.start | date:'medium'}}</span>
         </dd>
         <dt><span>End</span></dt>
         <dd>
-        <span>{{vm.course.end | date:'medium'}}</span>
+            <span>{{vm.course.end | date:'medium'}}</span>
         </dd>
         <dt><span>Location</span></dt>
         <dd>
-        <span>{{vm.course.location}}</span>
+            <span>{{vm.course.location}}</span>
         </dd>
         <dt><span>Implied Skills</span></dt>
         <dd>
@@ -57,19 +56,26 @@
     </button>
 
     <button type="button" ng-click="vm.cancel()" class="btn btn-danger" ng-disabled="vm.isSaving"
-            ng-if="vm.booked()">
+            ng-if="vm.booked() && !vm.offered()">
         <span class="glyphicon glyphicon-remove"></span>
         <span class="hidden-sm-down"> Cancel Booking</span>
     </button>
 
     <button type="button" ng-click="vm.book()" class="btn btn-success" ng-disabled="vm.isSaving"
-            ng-if="(vm.course.maxAttendees - vm.course.attendees.length) > 0 && !(vm.booked())">
+            ng-if="(vm.course.maxAttendees - vm.course.attendees.length) > 0 && !(vm.booked())  && !vm.offered()">
         <span class="glyphicon glyphicon-ok"></span>
         <span class="hidden-sm-down"> Book Course</span>
     </button>
 
-    <button type="button" class="btn btn-success" disabled ng-if="vm.course.maxAttendees - vm.course.attendees.length <= 0 && !vm.booked()">
+    <button type="button" class="btn btn-success" disabled
+            ng-if="vm.course.maxAttendees - vm.course.attendees.length <= 0 && !vm.booked()  && !vm.offered()">
         <span class="glyphicon glyphicon-ok"></span>
         <span class="hidden-sm-down"> Maxiumum number of attendees reached!</span>
+    </button>
+
+    <button type="button" ui-sref="course-detail.edit({id:vm.course.id})" class="btn btn-primary"
+            ng-if="vm.offered()">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
     </button>
 </div>
