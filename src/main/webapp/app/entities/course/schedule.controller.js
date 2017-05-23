@@ -5,11 +5,18 @@
         .module('samApp')
         .controller('ScheduleController', ScheduleController);
 
-    ScheduleController.$inject = ['$state', 'Course', 'ParseLinks', 'AlertService', 'Principal'];
+    ScheduleController.$inject = ['$state', 'Course', 'AlertService', 'Principal'];
 
-    function ScheduleController($state, Course, ParseLinks, AlertService, Principal) {
-
+    function ScheduleController($state, Course, AlertService, Principal) {
         var vm = this;
+        vm.listToSearch = null;
+
+        if($state.current.name === "offerings"){
+            vm.listToSearch = "teachers";
+        } else {
+            vm.listToSearch = "attendees"
+        }
+
 
         Course.query({
             sort: ['start,asc', 'id']
@@ -19,7 +26,7 @@
             vm.courses = [];
             for (var i = 0; i < data.length; i++) {
                 Course.get({id : data[i].id}).$promise.then(function(course) {
-                    if(course.attendees.find(function(user){
+                    if(course[vm.listToSearch].find(function(user){
                             return user.login === vm.currentUser.login;
                         })) {
                         vm.courses.push(course);
