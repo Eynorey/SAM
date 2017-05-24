@@ -93,17 +93,19 @@
             </column>
         </createTable>
 
-        <loadData encoding="UTF-8"
+        <ext:loadData encoding="UTF-8"
                   file="config/liquibase/courses.csv"
                   separator=";"
-                  tableName="course">
-        </loadData>
+                  tableName="course"
+                  identityInsertEnabled="true">
+        </ext:loadData>
 
-        <loadData encoding="UTF-8"
+        <ext:loadData encoding="UTF-8"
                   file="config/liquibase/course_teachers.csv"
                   separator=";"
-                  tableName="course_teachers">
-        </loadData>
+                  tableName="course_teachers"
+                  identityInsertEnabled="true">
+        </ext:loadData>
 
         <addPrimaryKey columnNames="courses_id, teachers_id" tableName="course_teachers"/>
 
