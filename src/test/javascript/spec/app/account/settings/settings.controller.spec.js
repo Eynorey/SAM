@@ -35,8 +35,15 @@ describe('Controller Tests', function() {
                 activated: true,
                 email: "john.doe@mail.com",
                 langKey: "en",
-                login: "john"
-            };
+                login: "john",
+
+                //Profile
+                degree: "Bachelor",
+                semester: 19,
+                faculty: "Grease",
+                university: "TheVarsity",
+                birthday: new Date(2011, 11, 11, 11, 11, 11, 1111)
+        };
             MockPrincipal.identity.and.returnValue($q.resolve(accountValues));
             MockAuth.updateAccount.and.returnValue($q.resolve());
             $scope.$apply(createController);
