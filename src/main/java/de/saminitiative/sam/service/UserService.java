@@ -135,7 +135,7 @@ public class UserService {
 
         // Create and save the Profile entity
         Profile profile = new Profile();
-        profile.setId(id);
+        //profile.setId(id);
         profile.setUser(newUser);
         profile.setDegree(degree);
         profile.setSemester(semester);
@@ -204,7 +204,7 @@ public class UserService {
             Profile profile = profileSearchRepository.findOne(user.getId());
             if (profile == null) {
                 profile = new Profile();
-                profile.setId(user.getId());
+                //profile.setId(user.getId());
             }
             profile.setDegree(degree);
             profile.setSemester(semester);
