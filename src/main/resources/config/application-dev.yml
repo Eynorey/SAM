@@ -51,10 +51,16 @@ spring:
                   logs: target/elasticsearch/log
                   data: target/elasticsearch/data
     mail:
-        host: localhost
-        port: 25
-        username:
-        password:
+        host: smtp-mail.outlook.com
+        port: 587
+        username: smartify.with.sam@outlook.com
+        password: samSmart!
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp-mail.outlook.com
     messages:
         cache-seconds: 1
     thymeleaf:

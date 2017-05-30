@@ -96,7 +96,16 @@ jhipster:
         #allow-credentials: true
         #max-age: 1800
     mail:
-        from: sam@localhost
+        host: smtp-mail.outlook.com
+        port: 587
+        username: smartify.with.sam@outlook.com
+        password: samSmart!
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp-mail.outlook.com
     swagger:
         default-include-pattern: /api/.*
         title: sam API
