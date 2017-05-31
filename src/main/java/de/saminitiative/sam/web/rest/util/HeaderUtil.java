@@ -32,7 +32,7 @@ public final class HeaderUtil {
         return createAlert("A " + entityName + " is deleted with identifier " + param, param);
     }
 
-    public static HttpHeaders createFailureAlert(String entityName, String errorKey, String defaultMessage) {
+    public static HttpHeaders createFailureAlert(String entityName, String defaultMessage) {
         log.error("Entity creation failed, {}", defaultMessage);
         HttpHeaders headers = new HttpHeaders();
         headers.add("X-samApp-error", defaultMessage);
