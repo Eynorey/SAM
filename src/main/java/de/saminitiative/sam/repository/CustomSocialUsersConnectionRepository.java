@@ -1,6 +1,7 @@
 package de.saminitiative.sam.repository;
 
 import de.saminitiative.sam.domain.SocialUserConnection;
+
 import org.springframework.social.connect.*;
 
 import java.util.List;

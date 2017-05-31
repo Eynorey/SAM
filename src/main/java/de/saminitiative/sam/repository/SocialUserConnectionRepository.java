@@ -1,8 +1,8 @@
 package de.saminitiative.sam.repository;
 
 import de.saminitiative.sam.domain.SocialUserConnection;
-import org.springframework.data.jpa.repository.JpaRepository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Set;
 

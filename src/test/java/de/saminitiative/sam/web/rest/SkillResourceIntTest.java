@@ -1,10 +1,12 @@
 package de.saminitiative.sam.web.rest;
 
 import de.saminitiative.sam.SamApp;
+
 import de.saminitiative.sam.domain.Skill;
 import de.saminitiative.sam.repository.SkillRepository;
 import de.saminitiative.sam.repository.search.SkillSearchRepository;
 import de.saminitiative.sam.web.rest.errors.ExceptionTranslator;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

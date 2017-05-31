@@ -1,19 +1,20 @@
 package de.saminitiative.sam.service;
 
-import de.saminitiative.sam.config.Constants;
 import de.saminitiative.sam.domain.Authority;
 import de.saminitiative.sam.domain.Profile;
 import de.saminitiative.sam.domain.User;
 import de.saminitiative.sam.repository.AuthorityRepository;
 import de.saminitiative.sam.repository.PersistentTokenRepository;
+import de.saminitiative.sam.config.Constants;
 import de.saminitiative.sam.repository.ProfileRepository;
 import de.saminitiative.sam.repository.UserRepository;
 import de.saminitiative.sam.repository.search.ProfileSearchRepository;
 import de.saminitiative.sam.repository.search.UserSearchRepository;
 import de.saminitiative.sam.security.AuthoritiesConstants;
 import de.saminitiative.sam.security.SecurityUtils;
-import de.saminitiative.sam.service.dto.UserDTO;
 import de.saminitiative.sam.service.util.RandomUtil;
+import de.saminitiative.sam.service.dto.UserDTO;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -26,10 +27,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.inject.Inject;
 import java.time.LocalDate;
 import java.time.ZonedDateTime;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Service class for managing users.

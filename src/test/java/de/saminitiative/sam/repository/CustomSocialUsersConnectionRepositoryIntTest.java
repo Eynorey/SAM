@@ -2,6 +2,7 @@ package de.saminitiative.sam.repository;
 
 import de.saminitiative.sam.SamApp;
 import de.saminitiative.sam.domain.SocialUserConnection;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

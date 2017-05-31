@@ -2,6 +2,7 @@ package de.saminitiative.sam.web.rest;
 
 import de.saminitiative.sam.service.AuditEventService;
 import de.saminitiative.sam.web.rest.util.PaginationUtil;
+
 import io.github.jhipster.web.util.ResponseUtil;
 import io.swagger.annotations.ApiParam;
 import org.springframework.boot.actuate.audit.AuditEvent;

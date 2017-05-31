@@ -1,9 +1,11 @@
 package de.saminitiative.sam.config.social;
 
-import de.saminitiative.sam.repository.CustomSocialUsersConnectionRepository;
 import de.saminitiative.sam.repository.SocialUserConnectionRepository;
+import de.saminitiative.sam.repository.CustomSocialUsersConnectionRepository;
 import de.saminitiative.sam.security.social.CustomSignInAdapter;
+
 import io.github.jhipster.config.JHipsterProperties;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;

@@ -6,6 +6,8 @@ import de.saminitiative.sam.domain.User;
 import de.saminitiative.sam.repository.AuthorityRepository;
 import de.saminitiative.sam.repository.UserRepository;
 import de.saminitiative.sam.repository.search.UserSearchRepository;
+import de.saminitiative.sam.service.MailService;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
