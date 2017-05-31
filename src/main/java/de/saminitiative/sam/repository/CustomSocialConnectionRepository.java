@@ -1,7 +1,6 @@
 package de.saminitiative.sam.repository;
 
 import de.saminitiative.sam.domain.SocialUserConnection;
-
 import org.springframework.social.connect.*;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.LinkedMultiValueMap;

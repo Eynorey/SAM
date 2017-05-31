@@ -1,10 +1,7 @@
 package de.saminitiative.sam.repository;
 
 import de.saminitiative.sam.domain.Skill;
-
-import org.springframework.data.jpa.repository.*;
-
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * Spring Data JPA repository for the Skill entity.
