@@ -46,7 +46,7 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="birthday" type="timestamp">
+            <column name="birthday" type="date">
                 <constraints nullable="true" />
             </column>
             <column name="user_id" type="bigint">
@@ -54,14 +54,13 @@
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
-        <dropDefaultValue tableName="profile" columnName="birthday" columnDataType="datetime"/>
+        <dropDefaultValue tableName="profile" columnName="birthday" columnDataType="date"/>
 
         <ext:loadData encoding="UTF-8"
                   file="config/liquibase/profiles.csv"
                   separator=";"
                   tableName="profile"
                   identityInsertEnabled="true">
-            <column name="birthday" type="timestamp"/>
         </ext:loadData>
 
         <createTable tableName="profile_skills">
