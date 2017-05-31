@@ -5,7 +5,6 @@ import de.saminitiative.sam.domain.User;
 import de.saminitiative.sam.repository.AuthorityRepository;
 import de.saminitiative.sam.repository.UserRepository;
 import de.saminitiative.sam.repository.search.UserSearchRepository;
-
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -120,12 +119,9 @@ public class SocialService {
      *         Because provider like Google or Facebook didn't provide login or login like "12099388847393"
      */
     private String getLoginDependingOnProviderId(UserProfile userProfile, String providerId) {
-        switch (providerId) {
-            case "twitter":
-                return userProfile.getUsername().toLowerCase();
-            default:
-                return userProfile.getEmail();
-        }
+        if (providerId == "twitter")
+            return userProfile.getUsername().toLowerCase();
+        return userProfile.getEmail();
     }
 
     private void createSocialConnection(String login, Connection<?> connection) {

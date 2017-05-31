@@ -1,10 +1,10 @@
 package de.saminitiative.sam.domain;
 
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 

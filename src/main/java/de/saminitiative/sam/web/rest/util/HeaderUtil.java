@@ -35,6 +35,7 @@ public final class HeaderUtil {
     public static HttpHeaders createFailureAlert(String entityName, String errorKey, String defaultMessage) {
         log.error("Entity creation failed, {}", defaultMessage);
         HttpHeaders headers = new HttpHeaders();
+        headers.add("X-samApp-errorKey", errorKey);
         headers.add("X-samApp-error", defaultMessage);
         headers.add("X-samApp-params", entityName);
         return headers;
