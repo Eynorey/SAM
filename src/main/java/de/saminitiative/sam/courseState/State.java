@@ -1,5 +1,7 @@
 package de.saminitiative.sam.courseState;
 
-public interface State {
-    boolean updatePossible();
+import java.io.Serializable;
+
+public abstract class State implements Serializable{
+    public abstract boolean updatePossible();
 }
