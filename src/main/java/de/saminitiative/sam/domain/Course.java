@@ -36,10 +36,10 @@ public class Course implements Serializable {
     private String description;
 
     @Column(name = "jhi_start")
-    private transient ZonedDateTime start;
+    private ZonedDateTime start;
 
     @Column(name = "jhi_end")
-    private transient ZonedDateTime end;
+    private ZonedDateTime end;
 
     @Column(name = "location")
     private String location;
