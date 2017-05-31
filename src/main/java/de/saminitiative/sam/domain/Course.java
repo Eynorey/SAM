@@ -76,7 +76,7 @@ public class Course implements Serializable {
     private Set<User> teachers = new HashSet<>();
 
     @Transient
-    private State state;
+    private transient State state;
 
     public void setState(State state){
         this.state = state;

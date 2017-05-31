@@ -1,6 +1,7 @@
 package de.saminitiative.sam.courseState;
 
-public class Occupied extends State {
+public class Occupied implements State{
+
     @Override
     public boolean updatePossible() {
         return false;
