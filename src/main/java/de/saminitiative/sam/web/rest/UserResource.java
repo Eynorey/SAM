@@ -1,7 +1,7 @@
 package de.saminitiative.sam.web.rest;
 
-import de.saminitiative.sam.config.Constants;
 import com.codahale.metrics.annotation.Timed;
+import de.saminitiative.sam.config.Constants;
 import de.saminitiative.sam.domain.User;
 import de.saminitiative.sam.repository.UserRepository;
 import de.saminitiative.sam.repository.search.UserSearchRepository;
@@ -9,12 +9,11 @@ import de.saminitiative.sam.security.AuthoritiesConstants;
 import de.saminitiative.sam.service.MailService;
 import de.saminitiative.sam.service.UserService;
 import de.saminitiative.sam.service.dto.UserDTO;
-import de.saminitiative.sam.web.rest.vm.ManagedUserVM;
 import de.saminitiative.sam.web.rest.util.HeaderUtil;
 import de.saminitiative.sam.web.rest.util.PaginationUtil;
+import de.saminitiative.sam.web.rest.vm.ManagedUserVM;
 import io.github.jhipster.web.util.ResponseUtil;
 import io.swagger.annotations.ApiParam;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -27,11 +26,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
 
 /**
  * REST controller for managing users.

@@ -1,7 +1,7 @@
 package de.saminitiative.sam.web.rest;
 
-import io.github.jhipster.config.JHipsterProperties;
 import de.saminitiative.sam.SamApp;
+import io.github.jhipster.config.JHipsterProperties;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

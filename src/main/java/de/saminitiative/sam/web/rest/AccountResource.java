@@ -1,7 +1,6 @@
 package de.saminitiative.sam.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-
 import de.saminitiative.sam.domain.PersistentToken;
 import de.saminitiative.sam.domain.Profile;
 import de.saminitiative.sam.domain.User;
@@ -11,10 +10,9 @@ import de.saminitiative.sam.security.SecurityUtils;
 import de.saminitiative.sam.service.MailService;
 import de.saminitiative.sam.service.UserService;
 import de.saminitiative.sam.service.dto.UserDTO;
+import de.saminitiative.sam.web.rest.util.HeaderUtil;
 import de.saminitiative.sam.web.rest.vm.KeyAndPasswordVM;
 import de.saminitiative.sam.web.rest.vm.ManagedUserVM;
-import de.saminitiative.sam.web.rest.util.HeaderUtil;
-
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +26,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * REST controller for managing the current user's account.

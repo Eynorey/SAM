@@ -3,7 +3,8 @@ package de.saminitiative.sam.service.mapper;
 import de.saminitiative.sam.domain.Authority;
 import de.saminitiative.sam.domain.User;
 import de.saminitiative.sam.service.dto.UserDTO;
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 import java.util.Set;
