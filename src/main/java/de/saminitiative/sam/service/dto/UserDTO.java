@@ -1,18 +1,13 @@
 package de.saminitiative.sam.service.dto;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.ser.ZonedDateTimeSerializer;
 import de.saminitiative.sam.config.Constants;
-
 import de.saminitiative.sam.domain.Authority;
 import de.saminitiative.sam.domain.Profile;
 import de.saminitiative.sam.domain.User;
-
-import de.saminitiative.sam.repository.ProfileRepository;
 import org.hibernate.validator.constraints.Email;
 
-import javax.inject.Inject;
-import javax.validation.constraints.*;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.time.ZonedDateTime;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -70,7 +65,7 @@ public class UserDTO {
     public UserDTO() {
         // Empty constructor needed for MapStruct.
     }
-
+    
     public UserDTO(User user, Profile profile) {
         this(user.getId(), user.getLogin(), user.getFirstName(), user.getLastName(),
             user.getEmail(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
