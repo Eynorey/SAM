@@ -80,7 +80,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     private String resetKey;
 
     @Column(name = "reset_date")
-    private ZonedDateTime resetDate = null;
+    private transient ZonedDateTime resetDate = null;
 
     @JsonIgnore
     @ManyToMany
