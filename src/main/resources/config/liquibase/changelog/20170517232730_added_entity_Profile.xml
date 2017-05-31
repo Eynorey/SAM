@@ -56,12 +56,13 @@
         </createTable>
         <dropDefaultValue tableName="profile" columnName="birthday" columnDataType="datetime"/>
 
-        <loadData encoding="UTF-8"
+        <ext:loadData encoding="UTF-8"
                   file="config/liquibase/profiles.csv"
                   separator=";"
-                  tableName="profile">
+                  tableName="profile"
+                  identityInsertEnabled="true">
             <column name="birthday" type="timestamp"/>
-        </loadData>
+        </ext:loadData>
 
         <createTable tableName="profile_skills">
             <column name="skills_id" type="bigint">
