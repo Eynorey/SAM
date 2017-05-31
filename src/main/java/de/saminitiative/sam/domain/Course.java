@@ -1,8 +1,8 @@
 package de.saminitiative.sam.domain;
 
-import de.saminitiative.sam.courseState.Free;
-import de.saminitiative.sam.courseState.Occupied;
-import de.saminitiative.sam.courseState.State;
+import de.saminitiative.sam.coursestate.Free;
+import de.saminitiative.sam.coursestate.Occupied;
+import de.saminitiative.sam.coursestate.State;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;

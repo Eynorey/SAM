@@ -1,4 +1,4 @@
-package de.saminitiative.sam.courseState;
+package de.saminitiative.sam.coursestate;
 
 public class Free extends State {
     @Override
