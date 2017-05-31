@@ -119,9 +119,12 @@ public class SocialService {
      *         Because provider like Google or Facebook didn't provide login or login like "12099388847393"
      */
     private String getLoginDependingOnProviderId(UserProfile userProfile, String providerId) {
-        if (providerId == "twitter")
-            return userProfile.getUsername().toLowerCase();
-        return userProfile.getEmail();
+        switch (providerId) {
+            case "twitter":
+                return userProfile.getUsername().toLowerCase();
+            default:
+                return userProfile.getEmail();
+        }
     }
 
     private void createSocialConnection(String login, Connection<?> connection) {
