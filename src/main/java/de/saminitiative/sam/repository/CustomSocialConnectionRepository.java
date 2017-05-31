@@ -35,7 +35,7 @@ public class CustomSocialConnectionRepository implements ConnectionRepository {
         }
         for (Connection<?> connection : connections) {
             String providerId = connection.getKey().getProviderId();
-            if (connectionsByProviderId.get(providerId).size() == 0) {
+            if (connectionsByProviderId.get(providerId).isEmpty()) {
                 connectionsByProviderId.put(providerId, new LinkedList<>());
             }
             connectionsByProviderId.add(providerId, connection);
@@ -146,7 +146,7 @@ public class CustomSocialConnectionRepository implements ConnectionRepository {
 
     private Connection<?> findPrimaryConnection(String providerId) {
         List<SocialUserConnection> socialUserConnections = socialUserConnectionRepository.findAllByUserIdAndProviderIdOrderByRankAsc(userId, providerId);
-        if (socialUserConnections.size() > 0) {
+        if (!socialUserConnections.isEmpty()) {
             return socialUserConnectionToConnection(socialUserConnections.get(0));
         } else {
             return null;

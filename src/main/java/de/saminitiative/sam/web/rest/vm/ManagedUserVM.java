@@ -2,7 +2,6 @@ package de.saminitiative.sam.web.rest.vm;
 
 import de.saminitiative.sam.service.dto.UserDTO;
 
-import javax.persistence.Column;
 import javax.validation.constraints.Size;
 
 import java.time.ZonedDateTime;
