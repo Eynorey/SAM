@@ -2,6 +2,7 @@ package de.saminitiative.sam.web.rest;
 
 import de.saminitiative.sam.SamApp;
 import de.saminitiative.sam.domain.Course;
+import de.saminitiative.sam.domain.User;
 import de.saminitiative.sam.repository.CourseRepository;
 import de.saminitiative.sam.repository.search.CourseSearchRepository;
 import de.saminitiative.sam.web.rest.errors.ExceptionTranslator;
@@ -116,10 +117,10 @@ public class CourseResourceIntTest {
 
     @Test
     @Transactional
-    public void createCourse() throws Exception {
+    public void createFreeCourse() throws Exception {
         int databaseSizeBeforeCreate = courseRepository.findAll().size();
 
-        // Create the Course
+        // Create the Free Course
         restCourseMockMvc.perform(post("/api/courses")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(course)))
@@ -139,6 +140,25 @@ public class CourseResourceIntTest {
         // Validate the Course in Elasticsearch
         Course courseEs = courseSearchRepository.findOne(testCourse.getId());
         assertThat(courseEs).isEqualTo(testCourse);
+    }
+
+
+    @Test
+    @Transactional
+    public void createOccupiedCourse() throws Exception {
+        int databaseSizeBeforeCreate = courseRepository.findAll().size();
+
+        course.setMaxAttendees(-1);
+
+        // Create the Occupied Course
+        restCourseMockMvc.perform(post("/api/courses")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(course)))
+            .andExpect(status().isBadRequest());
+
+        // Validate the Course is not in the database
+        List<Course> courseList = courseRepository.findAll();
+        assertThat(courseList).hasSize(databaseSizeBeforeCreate);
     }
 
     @Test
@@ -208,7 +228,7 @@ public class CourseResourceIntTest {
 
     @Test
     @Transactional
-    public void updateCourse() throws Exception {
+    public void updateFreeCourse() throws Exception {
         // Initialize the database
         courseRepository.saveAndFlush(course);
         courseSearchRepository.save(course);
@@ -243,6 +263,36 @@ public class CourseResourceIntTest {
         // Validate the Course in Elasticsearch
         Course courseEs = courseSearchRepository.findOne(testCourse.getId());
         assertThat(courseEs).isEqualTo(testCourse);
+    }
+
+    @Test
+    @Transactional
+    public void updateOccupiedCourse() throws Exception {
+        // Initialize the database
+        courseRepository.saveAndFlush(course);
+        courseSearchRepository.save(course);
+        int databaseSizeBeforeUpdate = courseRepository.findAll().size();
+
+        // Update the course
+        Course updatedCourse = courseRepository.findOne(course.getId());
+        updatedCourse
+            .title(UPDATED_TITLE)
+            .description(UPDATED_DESCRIPTION)
+            .start(UPDATED_START)
+            .end(UPDATED_END)
+            .location(UPDATED_LOCATION)
+            .maxAttendees(-1);
+
+        restCourseMockMvc.perform(put("/api/courses")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(updatedCourse)))
+            .andExpect(status().isBadRequest());
+
+
+        // Validate the Course is not in the database
+        List<Course> courseList = courseRepository.findAll();
+        assertThat(courseList).hasSize(databaseSizeBeforeUpdate);
+
     }
 
     @Test

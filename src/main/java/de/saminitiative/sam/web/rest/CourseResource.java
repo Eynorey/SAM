@@ -49,12 +49,16 @@ public class CourseResource {
      *
      * @param course the course to create
      * @return the ResponseEntity with status 201 (Created) and with body the new course, or with status 400 (Bad Request) if the course has already an ID
+     *                                                                                  * or with status 400 (Bad Request) if the course is occupied
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PostMapping("/courses")
     @Timed
     public ResponseEntity<Course> createCourse(@RequestBody Course course) throws URISyntaxException {
         log.debug("REST request to save Course : {}", course);
+        if (!course.updatePossible()) {
+            return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "occupied", "The course has more attendees than possible!")).body(null);
+        }
         if (course.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new course cannot already have an ID")).body(null);
         }
@@ -70,7 +74,7 @@ public class CourseResource {
      *
      * @param course the course to update
      * @return the ResponseEntity with status 200 (OK) and with body the updated course,
-     * or with status 400 (Bad Request) if the course is not valid,
+     * or with status 400 (Bad Request) if the course is occupied,
      * or with status 500 (Internal Server Error) if the course couldn't be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
@@ -78,10 +82,10 @@ public class CourseResource {
     @Timed
     public ResponseEntity<Course> updateCourse(@RequestBody Course course) throws URISyntaxException {
         log.debug("REST request to update Course : {}", course);
-        if (course.getId() == null) {
-            return createCourse(course);
-        }
         if (course.updatePossible()) {
+            if (course.getId() == null) {
+                return createCourse(course);
+            }
             Course result = courseRepository.save(course);
             courseSearchRepository.save(result);
             return ResponseEntity.ok()
