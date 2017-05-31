@@ -33,7 +33,7 @@ public class PersistentToken implements Serializable {
     private String tokenValue;
 
     @Column(name = "token_date")
-    private LocalDate tokenDate;
+    private transient LocalDate tokenDate;
 
     //an IPV6 address max length is 39 characters
     @Size(min = 0, max = 39)
@@ -110,11 +110,7 @@ public class PersistentToken implements Serializable {
 
         PersistentToken that = (PersistentToken) o;
 
-        if (!series.equals(that.series)) {
-            return false;
-        }
-
-        return true;
+        return series.equals(that.series);
     }
 
     @Override
