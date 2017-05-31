@@ -1,13 +1,11 @@
 package de.saminitiative.sam.web.rest;
 
 import de.saminitiative.sam.SamApp;
-
 import de.saminitiative.sam.domain.Course;
 import de.saminitiative.sam.domain.User;
 import de.saminitiative.sam.repository.CourseRepository;
 import de.saminitiative.sam.repository.search.CourseSearchRepository;
 import de.saminitiative.sam.web.rest.errors.ExceptionTranslator;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,10 +22,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import java.time.Instant;
-import java.time.ZonedDateTime;
-import java.time.ZoneOffset;
 import java.time.ZoneId;
-import java.util.HashSet;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 import static de.saminitiative.sam.web.rest.TestUtil.sameInstant;

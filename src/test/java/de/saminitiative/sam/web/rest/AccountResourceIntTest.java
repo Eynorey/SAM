@@ -2,8 +2,8 @@ package de.saminitiative.sam.web.rest;
 
 import de.saminitiative.sam.SamApp;
 import de.saminitiative.sam.domain.Authority;
-import de.saminitiative.sam.domain.User;
 import de.saminitiative.sam.domain.Profile;
+import de.saminitiative.sam.domain.User;
 import de.saminitiative.sam.repository.AuthorityRepository;
 import de.saminitiative.sam.repository.PersistentTokenRepository;
 import de.saminitiative.sam.repository.UserRepository;
@@ -27,7 +27,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.anyObject;
