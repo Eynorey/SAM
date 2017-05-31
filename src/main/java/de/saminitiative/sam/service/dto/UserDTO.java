@@ -65,7 +65,7 @@ public class UserDTO {
     public UserDTO() {
         // Empty constructor needed for MapStruct.
     }
-    
+
     public UserDTO(User user, Profile profile) {
         this(user.getId(), user.getLogin(), user.getFirstName(), user.getLastName(),
             user.getEmail(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
