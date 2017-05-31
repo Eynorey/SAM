@@ -50,11 +50,10 @@ public class ProfileResource {
      * @return the ResponseEntity with status 200 (OK) and with body the updated profile,
      * or with status 400 (Bad Request) if the profile is not valid,
      * or with status 500 (Internal Server Error) if the profile couldnt be updated
-     * @throws URISyntaxException if the Location URI syntax is incorrect
      */
     @PutMapping("/profiles")
     @Timed
-    public ResponseEntity<Profile> updateProfile(@RequestBody Profile profile) throws URISyntaxException {
+    public ResponseEntity<Profile> updateProfile(@RequestBody Profile profile) {
         log.debug("REST request to update Profile : {}", profile);
         if (profile.getId() == null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idnull", "A new profile has to be created via registration. Updated profiles must have an id.")).body(null);
