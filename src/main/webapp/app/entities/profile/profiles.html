@@ -1,41 +1,35 @@
 <div>
-    <h2>Profiles</h2>
+    <h2>Users</h2>
     <jhi-alert></jhi-alert>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="profile.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span class="hidden-xs-down" >
-                        Create new Profile
-                    </span>
-                </button>
-            </div>
-            <div class="col-xs-8 no-padding-right">
-                <form name="searchForm" class="form-inline">
-                    <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="Query">
-                        <span  class="input-group-btn width-min" >
-                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-info" ng-click="vm.clear()">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                        </span>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <!--<div class="container-fluid">-->
+        <!--<div class="row">-->
+            <!--<div class="col-xs-4 no-padding-left">-->
+            <!--</div>-->
+            <!--<div class="col-xs-8 no-padding-right">-->
+                <!--<form name="searchForm" class="form-inline">-->
+                    <!--<div class="input-group pull-right" >-->
+                        <!--<input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="Query">-->
+                        <!--<span  class="input-group-btn width-min" >-->
+                            <!--<button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">-->
+                                <!--<span class="glyphicon glyphicon-search"></span>-->
+                            <!--</button>-->
+                        <!--</span>-->
+                        <!--<span class="input-group-btn width-min" ng-if="vm.currentSearch">-->
+                            <!--<button class="btn btn-info" ng-click="vm.clear()">-->
+                                <!--<span class="glyphicon glyphicon-trash"></span>-->
+                            <!--</button>-->
+                        <!--</span>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
     <br/>
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="user.login"><span>User</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="credibility"><span>Credibility</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="credits"><span>Credits</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="degree"><span>Degree</span> <span class="glyphicon glyphicon-sort"></span></th>
@@ -43,13 +37,12 @@
                     <th jh-sort-by="faculty"><span>Faculty</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="university"><span>University</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="birthday"><span>Birthday</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="user.login"><span>User</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="profile in vm.profiles track by profile.id">
-                    <td><a ui-sref="profile-detail({id:profile.id})">{{profile.id}}</a></td>
+                    <td>{{profile.user.login}}</td>
                     <td>{{profile.credibility}}</td>
                     <td>{{profile.credits}}</td>
                     <td>{{profile.degree}}</td>
@@ -57,28 +50,12 @@
                     <td>{{profile.faculty}}</td>
                     <td>{{profile.university}}</td>
                     <td>{{profile.birthday | date:'medium'}}</td>
-                    <td>
-                        {{profile.user.login}}
-                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
                                     ui-sref="profile-detail({id:profile.id})"
                                     class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-sm-down"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="profile.edit({id:profile.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-sm-down"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="profile.delete({id:profile.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-sm-down"></span>
+                                <span class="glyphicon glyphicon-eye-open col-xs-4"></span>
                             </button>
                         </div>
                     </td>
