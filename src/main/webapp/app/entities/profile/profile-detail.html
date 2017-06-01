@@ -1,9 +1,17 @@
 
 <div>
-    <h2><span>Profile</span> {{vm.profile.id}}</h2>
+    <h2>{{vm.user.login}}<span>'s Profile</span></h2>
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.user.firstName}} {{vm.user.lastName}}</span>
+        </dd>
+        <dt><span>Email</span></dt>
+        <dd>
+            <span>{{vm.user.email}}</span>
+        </dd>
         <dt><span>Credibility</span></dt>
         <dd>
             <span>{{vm.profile.credibility}}</span>
@@ -30,11 +38,7 @@
         </dd>
         <dt><span>Birthday</span></dt>
         <dd>
-            <span>{{vm.profile.birthday | date:'medium'}}</span>
-        </dd>
-        <dt><span>User</span></dt>
-        <dd>
-            {{vm.profile.user.login}}
+            <span>{{vm.profile.birthday | date:'dd.MM.yyyy'}}</span>
         </dd>
         <dt><span>Skills</span></dt>
         <dd>
@@ -50,8 +54,8 @@
         <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
     </button>
 
-    <button type="button" ui-sref="profile-detail.edit({id:vm.profile.id})" class="btn btn-primary">
-        <span class="glyphicon glyphicon-pencil"></span>
-        <span class="hidden-sm-down"> Edit</span>
-    </button>
+    <!--<button type="button" ui-sref="profile-detail.edit({id:vm.profile.id})" class="btn btn-primary">-->
+        <!--<span class="glyphicon glyphicon-pencil"></span>-->
+        <!--<span class="hidden-sm-down"> Edit</span>-->
+    <!--</button>-->
 </div>
