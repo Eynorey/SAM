@@ -1,5 +1,10 @@
 [![Build Status](https://eynorey.visualstudio.com/_apis/public/build/definitions/a5593139-cad8-4cc9-bb8c-b0b77cda90b0/9/badge)](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_build/index?context=allDefinitions&path=%5C&definitionId=9&_a=completed)
 [![Quality Gate](http://193.196.7.25/api/badges/gate?key=io.bookster:bookster-2)](https://sonarcloud.io/dashboard?id=sam_new)
+[![Code Coverage](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=coverage)](https://sonarcloud.io/dashboard?id=sam_new)
+[![lines of code](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=lines)](https://sonarcloud.io/dashboard?id=sam_new)
+[![test_errors](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=test_errors)](https://sonarcloud.io/dashboard?id=sam_new)
+[![test_failures](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=test_failures)](https://sonarcloud.io/dashboard?id=sam_new)
+[![bugs](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=bugs)](https://sonarcloud.io/dashboard?id=sam_new)
 
 
 # SAM
