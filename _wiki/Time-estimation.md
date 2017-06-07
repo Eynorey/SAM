@@ -4,7 +4,7 @@ Time spent on Use Cases vs Function Points
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Register (UC-1) | 6 h 11 min | 3 h 41 min | 2 h 1 min | 2 h 17 min | 14 h 10 min | 2152 | 36 |
 | Login (UC-2) | 0 h | 3 h 41 min | 2 h 1 min | 2 h 17 min | 7 h 59 min | 658 | 40 |
-| Logout (UC-3) | 0 h | 3 h 41 min | 2 h 1 min | 2 h 17 min | 7 h 59 min | - | - |
+| Logout (UC-3) | 0 h | 3 h 41 min | 2 h 1 min | 2 h 17 min | 7 h 59 min | a part of UC2  | a part of UC2 |
 | Manage course offerings (UC-4) | 4 h 11 min | 3 h 41 min | 2 h 1 min | 2 h 17 min | 12 h 10 min | 885 | 31 |
 | See available credits (UC-5) | - | - | - | - | - | - | 12 |
 | Search available courses (UC-6) | - | - | - | - | - | - | 15 |
