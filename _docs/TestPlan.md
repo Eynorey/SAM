@@ -26,6 +26,7 @@
 3.  [Test Approach](# 2---test-approach)
     1.  <a href="">Unit Testing</a>
     2.  [User Interface Testing](# 22-user-interface-testing)
+    3. <a href="">Functional Testing</a>
 4.  [Deliverables](# 3---deliverables)
     1.  [Test Evaluation Summaries](# 31-reporting-on-test-coverage)
     2.  [Reporting on Test Coverage](# 32-incident-logs-and-change-requests)
@@ -71,8 +72,18 @@ Definitions, Acronyms and Abbreviations relevant for the interpretation of the p
 | --- | --- | --- |
 | [Project Glossary](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/wiki/ProjectGlossary) | 23/10/16 | SAM Initiative |
 | [Project Blog](https://smartifytheworld.wordpress.com/) | 27/10/16 | SAM Initiative |
-| [UC Specification Manage Course](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/docs/UC-Specification-ManageCourse) | 11/11/16 | SAM Initiative |
+| [UC-Estimations](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki#/wiki/Time-estimation) | 06/04/17 | SAM Initiative |
 | [UC Specification Register](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/docs/UC-Specification-Register) | 11/11/16 | SAM Initiative |
+| [UC Specification Login/Logout](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/UC-Specification-Login-Logout) | 19/04/17 | SAM Initiative |
+| [UC Specification Manage Course](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/docs/UC-Specification-ManageCourse) | 11/11/16 | SAM Initiative |
+| [UC Specification See available credits](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/UC-Specification-See-available-credits) | 11/04/17 | SAM Initiative |
+| [UC Specification Search available courses](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/UC-Specification-Search-available-courses) | 11/04/17 | SAM Initiative |
+| [UC Specification Book Course](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/UC-Specification-Book-course) | 12/04/17 | SAM Initiative |
+| [UC Specification See schedule](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/UC-Specification-See-schedule) | 11/04/17 | SAM Initiative |
+| [UC Specification Manage Account](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/UC-Specification-Manage-account) | 13/04/17 | SAM Initiative |
+| [Software Requirements Specification](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/SRS) | 11/11/16 | SAM Initiative |
+| [Software-Architecture-Document](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/Software-Architecture-Document) | 24/11/16 | SAM Initiative |
+
 
 ## 2\. Evaluation Mission and Test Motivation
 
@@ -121,15 +132,26 @@ For our automated frontend tests we use programmable selenium webdrivers, that o
 | Success Criteria: | All user interface tests have to be successful. |
 | Special Considerations: | The user has to receive e-mails at some points of the process. These steps can not be tested. |
 
+### 3.3 Functional Testing
+
+|  | Description |
+| --- | --- |
+| Technique Objective: | Product evaluation based on user interaction. Gathering direct input on different aspects of the system by observing participants behaviour while in contact with the object of the test. |
+| Techniques: |Hallway Testing: randomly selected users are asked to interact with the product. The interaction is observed by the designers in order to determine possible problems, causing complications for the user or preventing him or her from advancing. |
+|  |Synchronous Remote Usability Testing: a version of usability testing, which is based on the usage of video conferencing for user observation. Is often used when the participants do not have an opportunity to be present at the specific test-location. |
+| Oracles: | Test is successful if the user is able to proceed from the given start point to the required result by interacting with the system in the ways, expected by the observers |
+| Required Tools: | No specific tools required |
+| Success Criteria: | No "brick walls" (problems so serious, that the users cannot advance) |
+
 ## 4\. Deliverables
 
-### 3.1 Test Evaluation Summaries
+### 4.1 Test Evaluation Summaries
 
 The project has around 86 tests which are passing. Furthermore Visual Studio Team Services are used to the tests every time the master branch is pdated. The build will fail if the unit tests are failing.
 
 ![](test-summary.PNG)
 
-### 3.2 Reporting on Test Coverage
+### 4.2 Reporting on Test Coverage
 
 After a successful build in Visual Studio Team Services, the resulting reports are uploaded to SonarQube. According to [SonarQube](https://sonarqube.com/dashboard?id=sam), the current test coverage is around 59%.
 
