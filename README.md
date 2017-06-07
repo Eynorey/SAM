@@ -41,7 +41,7 @@ auto-refreshes when files change on your hard drive.
 specifying a newer version in [bower.json](bower.json). You can also run `bower update` and `bower install` to manage dependencies.
 Add the `-h` flag on any command to see how you can use it. For example, `bower update -h`.
 
-For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
+For further instructions on how to develop with JHipster, have a look at [Using JHipster in development](https://jhipster.github.io/development/).
 
 
 ## Building for production
@@ -67,4 +67,4 @@ To launch our cucumber tests, run:
 
     src\test\seleniumcucumber\runtests.bat
 
-For more information, refer to the [Test Plan][_docs/TestPlan.md].
+For more information, refer to our Test Plan.
