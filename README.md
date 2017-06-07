@@ -5,6 +5,11 @@
 [![test_errors](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=test_errors)](https://sonarcloud.io/dashboard?id=sam_new)
 [![test_failures](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=test_failures)](https://sonarcloud.io/dashboard?id=sam_new)
 [![bugs](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=bugs)](https://sonarcloud.io/dashboard?id=sam_new)
+[![code_smells](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=new_code_smells)](https://sonarcloud.io/dashboard?id=sam_new)
+[![new_vulnerabilities](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=new_vulnerabilities)](https://sonarcloud.io/dashboard?id=sam_new)
+[![new_maintainability_rating](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=new_maintainability_rating)](https://sonarcloud.io/dashboard?id=sam_new)
+[![new_reliability_rating](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=new_reliability_rating)](https://sonarcloud.io/dashboard?id=sam_new)
+[![new_security_rating](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=new_security_rating)](https://sonarcloud.io/dashboard?id=sam_new)
 
 
 # SAM
