@@ -1,4 +1,18 @@
-# sam
+[![Build Status](https://eynorey.visualstudio.com/_apis/public/build/definitions/a5593139-cad8-4cc9-bb8c-b0b77cda90b0/9/badge)](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_build/index?context=allDefinitions&path=%5C&definitionId=9&_a=completed)
+[![Quality Gate](http://193.196.7.25/api/badges/gate?key=io.bookster:bookster-2)](https://sonarcloud.io/dashboard?id=sam_new)
+[![Code Coverage](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=coverage)](https://sonarcloud.io/dashboard?id=sam_new)
+[![lines of code](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=lines)](https://sonarcloud.io/dashboard?id=sam_new)
+[![test_errors](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=test_errors)](https://sonarcloud.io/dashboard?id=sam_new)
+[![test_failures](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=test_failures)](https://sonarcloud.io/dashboard?id=sam_new)
+[![bugs](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=bugs)](https://sonarcloud.io/dashboard?id=sam_new)
+[![code_smells](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=new_code_smells)](https://sonarcloud.io/dashboard?id=sam_new)
+[![new_vulnerabilities](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=new_vulnerabilities)](https://sonarcloud.io/dashboard?id=sam_new)
+[![new_maintainability_rating](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=new_maintainability_rating)](https://sonarcloud.io/dashboard?id=sam_new)
+[![new_reliability_rating](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=new_reliability_rating)](https://sonarcloud.io/dashboard?id=sam_new)
+[![new_security_rating](https://sonarcloud.io/api/badges/measure?key=sam_new&metric=new_security_rating)](https://sonarcloud.io/dashboard?id=sam_new)
+
+
+# SAM
 This application was generated using JHipster 4.2.0, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.2.0](https://jhipster.github.io/documentation-archive/v4.2.0).
 
 ## Development
@@ -27,7 +41,7 @@ auto-refreshes when files change on your hard drive.
 specifying a newer version in [bower.json](bower.json). You can also run `bower update` and `bower install` to manage dependencies.
 Add the `-h` flag on any command to see how you can use it. For example, `bower update -h`.
 
-For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
+For further instructions on how to develop with JHipster, have a look at [Using JHipster in development](https://jhipster.github.io/development/).
 
 
 ## Building for production
@@ -43,67 +57,14 @@ To ensure everything worked, run:
 
 Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
 
-Refer to [Using JHipster in production][] for more details.
-
 ## Testing
 
-To launch your application's tests, run:
+To launch our application's Java Unit tests, run:
 
-    ./gradlew test
+    .\gradlew test
 
-### Client tests
+To launch our cucumber tests, run:
 
-Unit tests are run by [Karma][] and written with [Jasmine][]. They're located in [src/test/javascript/](src/test/javascript/) and can be run with:
+    src\test\seleniumcucumber\runtests.bat
 
-    gulp test
-
-
-
-For more information, refer to the [Running tests page][].
-
-## Using Docker to simplify development (optional)
-
-You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the [src/main/docker](src/main/docker) folder to launch required third party services.
-For example, to start a mysql database in a docker container, run:
-
-    docker-compose -f src/main/docker/mysql.yml up -d
-
-To stop it and remove the container, run:
-
-    docker-compose -f src/main/docker/mysql.yml down
-
-You can also fully dockerize your application and all the services that it depends on.
-To achieve this, first build a docker image of your app by running:
-
-    ./gradlew bootRepackage -Pprod buildDocker
-
-Then run:
-
-    docker-compose -f src/main/docker/app.yml up -d
-
-For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`yo jhipster:docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
-
-## Continuous Integration (optional)
-
-To configure CI for your project, run the ci-cd sub-generator (`yo jhipster:ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
-
-[JHipster Homepage and latest documentation]: https://jhipster.github.io
-[JHipster 4.2.0 archive]: https://jhipster.github.io/documentation-archive/v4.2.0
-
-[Using JHipster in development]: https://jhipster.github.io/documentation-archive/v4.2.0/development/
-[Using Docker and Docker-Compose]: https://jhipster.github.io/documentation-archive/v4.2.0/docker-compose
-[Using JHipster in production]: https://jhipster.github.io/documentation-archive/v4.2.0/production/
-[Running tests page]: https://jhipster.github.io/documentation-archive/v4.2.0/running-tests/
-[Setting up Continuous Integration]: https://jhipster.github.io/documentation-archive/v4.2.0/setting-up-ci/
-
-
-[Node.js]: https://nodejs.org/
-[Yarn]: https://yarnpkg.org/
-[Bower]: http://bower.io/
-[Gulp]: http://gulpjs.com/
-[BrowserSync]: http://www.browsersync.io/
-[Karma]: http://karma-runner.github.io/
-[Jasmine]: http://jasmine.github.io/2.0/introduction.html
-[Protractor]: https://angular.github.io/protractor/
-[Leaflet]: http://leafletjs.com/
-[DefinitelyTyped]: http://definitelytyped.org/
+For more information, refer to our Test Plan.
