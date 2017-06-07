@@ -1,3 +1,7 @@
+[![Build Status](https://eynorey.visualstudio.com/_apis/public/build/definitions/a5593139-cad8-4cc9-bb8c-b0b77cda90b0/9/badge)](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_build/index?context=allDefinitions&path=%5C&definitionId=9&_a=completed)
+
+
+
 # SAM
 This application was generated using JHipster 4.2.0, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.2.0](https://jhipster.github.io/documentation-archive/v4.2.0).
 
