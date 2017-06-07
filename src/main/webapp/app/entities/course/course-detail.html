@@ -7,7 +7,11 @@
         <dt><span>Teacher(s)</span></dt>
         <dd>
             <span ng-repeat="teachers in vm.course.teachers">
-                {{teachers.firstName}} {{$last ? '' : ', '}}
+                <button type="submit"
+                        ui-sref="profile-detail({id:teachers.id})"
+                        class="btn btn-outline-primary">
+                        <span>{{teachers.login}}</span>
+                </button>
             </span>
         </dd>
         <dt><span>Description</span></dt>
@@ -44,16 +48,20 @@
         </dt>
         <dd>
         <span ng-repeat="attendees in vm.course.attendees">
-        {{attendees.login}}{{$last ? '' : ', '}}
+            <button type="submit"
+                    ui-sref="profile-detail({id:attendees.id})"
+                    class="btn btn-outline-primary">
+                    <span>{{attendees.login}}</span>
+            </button>
         </span>
         </dd>
     </dl>
 
-    <button type="submit"
-            ui-sref="{{ vm.previousState }}"
-            class="btn btn-info">
-        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
-    </button>
+    <!--<button type="submit"-->
+            <!--ui-sref="{{ vm.previousState }}"-->
+            <!--class="btn btn-info">-->
+        <!--<span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>-->
+    <!--</button>-->
 
     <button type="button" ng-click="vm.cancel()" class="btn btn-danger" ng-disabled="vm.isSaving"
             ng-if="vm.booked() && !vm.offered()">

@@ -12,6 +12,16 @@
 
         vm.profile = entity;
         vm.previousState = previousState.name;
+        vm.user = null;
+
+        User.query().$promise.then(function(users) {
+            for (var i = 0; i < users.length; i++) {
+                var user = users[i];
+                if(user.id === vm.profile.id) {
+                    vm.user = user;
+                }
+            }
+        });
 
         var unsubscribe = $rootScope.$on('samApp:profileUpdate', function(event, result) {
             vm.profile = result;

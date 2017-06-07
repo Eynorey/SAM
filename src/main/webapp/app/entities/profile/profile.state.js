@@ -14,7 +14,7 @@
             url: '/profile?page&sort&search',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'Profiles'
+                pageTitle: 'SAM - Users'
             },
             views: {
                 'content@': {
