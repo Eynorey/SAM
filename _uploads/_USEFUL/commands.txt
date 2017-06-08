@@ -1,0 +1,2 @@
+TEST & SEND TO SONARCUBE
+	test sonarqube -Dsonar.login=cf4aca53438d3d30f995b12a1ed9f927a2bea903

@@ -1,0 +1,17 @@
+drop table DATABASECHANGELOGLOCK
+drop table DATABASECHANGELOG
+drop table jhi_user
+drop table jhi_authority
+drop table jhi_user_authority
+drop table jhi_persistent_token
+drop table jhi_persistent_audit_event
+drop table jhi_persistent_audit_evt_data
+drop table jhi_social_user_connection
+drop table "profile"
+drop table profile_offered_courses
+drop table profile_occupied_courses
+drop table profile_skills
+drop table course
+drop table course_implied_skills
+drop table course_acquirable_skills
+drop table skill
