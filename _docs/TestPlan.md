@@ -143,6 +143,23 @@ For our automated frontend tests we use programmable selenium webdrivers, that o
 | Required Tools: | No specific tools required |
 | Success Criteria: | No "brick walls" (problems so serious, that the users cannot advance) |
 
+### 3.4 Installation Tests
+
+|  | Description |
+| --- | --- |
+| Technique Objective: | Quality assurance based on customers feedback on the installation and set up processes. |
+| Techniques: | The test participants run an install program (package software) on their machines. All the possible configurations should receive an appropriate level of testing, so that the software can be released to a wide range of customers.|
+| Oracles: | Test is successful if the user is able to install and run the software on his or her machine|
+| Required Tools: | No specific tools required |
+| Success Criteria: | Installation Certificate is issued by the user to confirm the successful installation. User did not run into fatal problems trying to install the software. |
+
+The Installation Certificates for Skill Access Manager can be found in the table below:
+
+| Participant |Date | Certificate |
+| --- | --- | --- |
+| Enrico Kaack | 07/06/17 | [Installation Certificate (Linux) ](https://github.com/Eynorey/SAM/blob/master/_uploads/installation_tests/InstallationTestCertificate-Enrico.pdf) |
+| Tim Schmidt | 07/06/17| [Installation Certificate (Windows) ](https://github.com/Eynorey/SAM/blob/master/_uploads/installation_tests/InstallationTestCertificate-Tim.pdf)|
+
 ## 4\. Deliverables
 
 ### 4.1 Test Evaluation Summaries
