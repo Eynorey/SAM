@@ -50,9 +50,17 @@
 | --- | --- | --- |
 | [Project Glossary](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/wiki/ProjectGlossary) | 23/10/16 | SAM Initiative |
 | [Project Blog](https://smartifytheworld.wordpress.com/) | 27/10/16 | SAM Initiative |
-| [Software Requirement Specification](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/docs/SRS) | 23/10/16 | SAM Initiative |
-| [UC Specification Manage Course](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/docs/UC-Specification-ManageCourse) | 11/11/16 | SAM Initiative |
+| [UC-Estimations](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki#/wiki/Time-estimation) | 06/04/17 | SAM Initiative |
 | [UC Specification Register](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/docs/UC-Specification-Register) | 11/11/16 | SAM Initiative |
+| [UC Specification Login/Logout](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/UC-Specification-Login-Logout) | 19/04/17 | SAM Initiative |
+| [UC Specification Manage Course](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/agile-extensions.wiki.wiki#/docs/UC-Specification-ManageCourse) | 11/11/16 | SAM Initiative |
+| [UC Specification See available credits](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/UC-Specification-See-available-credits) | 11/04/17 | SAM Initiative |
+| [UC Specification Search available courses](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/UC-Specification-Search-available-courses) | 11/04/17 | SAM Initiative |
+| [UC Specification Book Course](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/UC-Specification-Book-course) | 12/04/17 | SAM Initiative |
+| [UC Specification See schedule](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/UC-Specification-See-schedule) | 11/04/17 | SAM Initiative |
+| [UC Specification Manage Account](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/UC-Specification-Manage-account) | 13/04/17 | SAM Initiative |
+| [Test Plan](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/TestPlan) | 27/04/17 | SAM Initiative |
+| [Software Requirements Specification](https://eynorey.visualstudio.com/SAM%20-%20Smartify%20The%20World/_apps/hub/ms-devlabs.wiki.wiki?/docs#/docs/SRS) | 11/11/16 | SAM Initiative |
 
 ### 1.5 Overview
 

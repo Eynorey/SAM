@@ -3,7 +3,6 @@ package de.saminitiative.sam.repository;
 import de.saminitiative.sam.config.Constants;
 import de.saminitiative.sam.config.audit.AuditEventConverter;
 import de.saminitiative.sam.domain.PersistentAuditEvent;
-
 import org.springframework.boot.actuate.audit.AuditEvent;
 import org.springframework.boot.actuate.audit.AuditEventRepository;
 import org.springframework.stereotype.Repository;

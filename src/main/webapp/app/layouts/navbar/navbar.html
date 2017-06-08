@@ -46,6 +46,12 @@
                         <span>Skills</span>
                     </a>
                 </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="profile" ng-click="vm.collapseNavbar()">
+                        <span class="glyphicon glyphicon-user"></span>&nbsp;
+                        <span>My classroom</span>
+                    </a>
+                </li>
                 <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
                 <!--<li ng-class="{active: vm.$state.includes('entity')}" ng-switch-when="true" uib-dropdown class="dropdown pointer">-->
@@ -71,7 +77,7 @@
                 <li ng-class="{active: vm.$state.includes('account')}" uib-dropdown class="dropdown pointer">
                     <a class="dropdown-toggle" uib-dropdown-toggle href="" id="account-menu">
                         <span>
-                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="glyphicon glyphicon-cog"></span>
                             <span class="hidden-sm">
                                 Account
                             </span>
@@ -113,12 +119,6 @@
                             <a ui-sref="register" ng-click="vm.collapseNavbar()">
                                 <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;
                                 <span>Register</span>
-                            </a>
-                        </li>
-                        <li ui-sref-active="active">
-                            <a ui-sref="profile" ng-click="vm.collapseNavbar()">
-                                <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
-                                <span>Profile</span>
                             </a>
                         </li>
                     </ul>
