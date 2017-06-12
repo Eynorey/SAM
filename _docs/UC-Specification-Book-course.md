@@ -14,6 +14,8 @@
 
 1.  [Book Course](# 1-Book Course)
     1.  [Brief Description](# 11-brief-description)
+    2. <a href="chapter1">Mockup</a>
+    3. Screenshot
 2.  [Flow of Events](# 2-flow-of-events)
     1.  [Basic Flow](# 21-basic-flow)
     2.  [Alternative Flows](# 22-alternative-flows)
@@ -41,6 +43,12 @@
 
 Implementation of this use case will allow the user to book a course and by that get in touch with somebody who can teach him or her interesting topics. Only registered users will have access to this functionality, as there is no way for a guest to take a course offered by SAM.
 
+### 1.2 <a name="chapter1">Mockup </a>
+
+![](wf_book-course.png)
+
+### 1.3 Screenshot 
+
 ## 2\. Flow of Events
 
 ### 2.1 Basic Flow
@@ -53,31 +61,7 @@ No specified alternative flows.
 
 ## 3\. Special Requirements
 
-### 3.1 Functionality
-
-### 3.2 Usability
-
-### 3.3 Reliability
-
-### 3.4 Performance
-
-### 3.5 Supportability
-
-### 3.6 Design constraints
-
-### 3.7 On-line User Documentation and Help System Requirements
-
-### 3.8 Purchased Components
-
-### 3.9 Interfaces
-
-![](wf_book-course.png)
-
-### 3.10 Licensing Requirements
-
-### 3.11 Legal, Copyright, and Other Notices
-
-### 3.12 Applicable Standards
+No special requirements.
 
 ## 4\. Preconditions
 
