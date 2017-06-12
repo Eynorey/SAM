@@ -13,7 +13,7 @@
 ## Table of Contents
 
 1.  [Book Course](# 1-Book Course)
-    1.  [Brief Description](#11-brief-description)
+    1.  [Brief Description](#briefdescription)
     2. Mockup
     3. Screenshot
 2.  [Flow of Events](# 2-flow-of-events)
@@ -39,7 +39,7 @@
 
 ## 1\. Book Course
 
-### 1.1 Brief Description
+### 1.1 <a name="briefdescription">Brief Description</a>
 
 Implementation of this use case will allow the user to book a course and by that get in touch with somebody who can teach him or her interesting topics. Only registered users will have access to this functionality, as there is no way for a guest to take a course offered by SAM.
 
